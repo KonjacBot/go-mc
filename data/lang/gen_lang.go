@@ -171,7 +171,8 @@ func assetIndexURL() (string, error) {
 	// $assetIndexURL = $version.assetIndex.url
 	var manifest struct {
 		Latest struct {
-			Release string `json:"release"`
+			Release  string `json:"release"`
+			Snapshot string `json:"snapshot"`
 		} `json:"latest"`
 		Versions []struct {
 			ID  string `json:"id"`
@@ -191,7 +192,7 @@ func assetIndexURL() (string, error) {
 
 	var versionURL string
 	for _, v := range manifest.Versions {
-		if manifest.Latest.Release == v.ID {
+		if manifest.Latest.Snapshot == v.ID {
 			versionURL = v.URL
 			break
 		}

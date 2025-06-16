@@ -20,6 +20,7 @@ var CustomStat = []string{
 	"minecraft:minecart_one_cm",
 	"minecraft:boat_one_cm",
 	"minecraft:pig_one_cm",
+	"minecraft:happy_ghast_one_cm",
 	"minecraft:horse_one_cm",
 	"minecraft:aviate_one_cm",
 	"minecraft:swim_one_cm",

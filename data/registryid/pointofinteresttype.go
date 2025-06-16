@@ -22,5 +22,6 @@ var PointOfInterestType = []string{
 	"minecraft:bee_nest",
 	"minecraft:nether_portal",
 	"minecraft:lodestone",
+	"minecraft:test_instance",
 	"minecraft:lightning_rod",
 }

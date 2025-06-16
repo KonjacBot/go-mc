@@ -13,6 +13,7 @@ var BlockEntityType = []string{
 	"minecraft:sign",
 	"minecraft:hanging_sign",
 	"minecraft:mob_spawner",
+	"minecraft:creaking_heart",
 	"minecraft:piston",
 	"minecraft:brewing_stand",
 	"minecraft:enchanting_table",
@@ -47,4 +48,6 @@ var BlockEntityType = []string{
 	"minecraft:crafter",
 	"minecraft:trial_spawner",
 	"minecraft:vault",
+	"minecraft:test_block",
+	"minecraft:test_instance_block",
 }

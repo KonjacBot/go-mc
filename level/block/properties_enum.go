@@ -1088,3 +1088,82 @@ func (t *TrialSpawnerState) UnmarshalText(text []byte) error {
 	}
 	return nil
 }
+
+type TestBlockMode byte
+
+const (
+	TestBlockModeStart TestBlockMode = iota
+	TestBlockModeLog
+	TestBlockModeFail
+	TestBlockModeAccept
+)
+
+var strTestBlockMode = [...]string{"start", "log", "fail", "accept"}
+
+func (t TestBlockMode) String() string {
+	if int(t) < len(strTestBlockMode) {
+		return strTestBlockMode[t]
+	}
+	return "invalid TestBlockMode"
+}
+
+func (t TestBlockMode) MarshalText() (text []byte, err error) {
+	if int(t) < len(strTestBlockMode) {
+		return []byte(strTestBlockMode[t]), nil
+	}
+	return nil, errors.New("invalid TestBlockMode: " + strconv.Itoa(int(t)))
+}
+
+func (t *TestBlockMode) UnmarshalText(text []byte) error {
+	switch str := string(text); str {
+	case "start":
+		*t = TestBlockModeStart
+	case "log":
+		*t = TestBlockModeLog
+	case "fail":
+		*t = TestBlockModeFail
+	case "accept":
+		*t = TestBlockModeAccept
+	default:
+		return errors.New("unknown TestBlockMode: " + str)
+	}
+	return nil
+}
+
+type CreakingHeartState byte
+
+const (
+	CreakingHeartStateUprooted CreakingHeartState = iota
+	CreakingHeartStateDormant
+	CreakingHeartStateAwake
+)
+
+var strCreakingHeartState = [...]string{"uprooted", "dormant", "awake"}
+
+func (c CreakingHeartState) String() string {
+	if int(c) < len(strCreakingHeartState) {
+		return strCreakingHeartState[c]
+	}
+	return "invalid CreakingHeartState"
+}
+
+func (c CreakingHeartState) MarshalText() (text []byte, err error) {
+	if int(c) < len(strCreakingHeartState) {
+		return []byte(strCreakingHeartState[c]), nil
+	}
+	return nil, errors.New("invalid CreakingHeartState: " + strconv.Itoa(int(c)))
+}
+
+func (c *CreakingHeartState) UnmarshalText(text []byte) error {
+	switch str := string(text); str {
+	case "uprooted":
+		*c = CreakingHeartStateUprooted
+	case "dormant":
+		*c = CreakingHeartStateDormant
+	case "awake":
+		*c = CreakingHeartStateAwake
+	default:
+		return errors.New("unknown CreakingHeartState: " + str)
+	}
+	return nil
+}

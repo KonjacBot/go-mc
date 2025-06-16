@@ -58,6 +58,12 @@ var EnumProperties = []EnumProperty{
 	{Name: "TrialSpawnerState", Values: []string{
 		"inactive", "waiting_for_players", "active", "waiting_for_reward_ejection", "ejecting_reward", "cooldown",
 	}},
+	{Name: "TestBlockMode", Values: []string{
+		"start", "log", "fail", "accept",
+	}},
+	{Name: "CreakingHeartState", Values: []string{
+		"uprooted", "dormant", "awake",
+	}},
 }
 
 //go:embed properties_enum.go.tmpl

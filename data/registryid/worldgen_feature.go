@@ -5,6 +5,7 @@ package registryid
 var WorldgenFeature = []string{
 	"minecraft:no_op",
 	"minecraft:tree",
+	"minecraft:fallen_tree",
 	"minecraft:flower",
 	"minecraft:no_bonemeal_flower",
 	"minecraft:random_patch",

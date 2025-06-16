@@ -11,7 +11,7 @@ type (
 const (
 	ClientboundLoginLoginDisconnect ClientboundPacketID = iota
 	ClientboundLoginHello
-	ClientboundLoginGameProfile
+	ClientboundLoginLoginFinished
 	ClientboundLoginLoginCompression
 	ClientboundLoginCustomQuery
 	ClientboundLoginCookieRequest
@@ -57,6 +57,8 @@ const (
 	ClientboundConfigSelectKnownPacks
 	ClientboundConfigCustomReportDetails
 	ClientboundConfigServerLinks
+	ClientboundConfigClearDialog
+	ClientboundConfigShowDialog
 )
 
 // Configuration Serverbound
@@ -69,13 +71,13 @@ const (
 	ServerboundConfigPong
 	ServerboundConfigResourcePack
 	ServerboundConfigSelectKnownPacks
+	ServerboundConfigCustomClickAction
 )
 
 // Game Clientbound
 const (
 	BundleDelimiter ClientboundPacketID = iota
 	ClientboundAddEntity
-	ClientboundAddExperienceOrb
 	ClientboundAnimate
 	ClientboundAwardStats
 	ClientboundBlockChangedAck
@@ -105,6 +107,7 @@ const (
 	ClientboundDisconnect
 	ClientboundDisguisedChat
 	ClientboundEntityEvent
+	ClientboundEntityPositionSync
 	ClientboundExplode
 	ClientboundForgetLevelChunk
 	ClientboundGameEvent
@@ -121,6 +124,7 @@ const (
 	ClientboundMerchantOffers
 	ClientboundMoveEntityPos
 	ClientboundMoveEntityPosRot
+	ClientboundMoveMinecartAlongTrack
 	ClientboundMoveEntityRot
 	ClientboundMoveVehicle
 	ClientboundOpenBook
@@ -138,7 +142,10 @@ const (
 	ClientboundPlayerInfoUpdate
 	ClientboundPlayerLookAt
 	ClientboundPlayerPosition
-	ClientboundRecipe
+	ClientboundPlayerRotation
+	ClientboundRecipeBookAdd
+	ClientboundRecipeBookRemove
+	ClientboundRecipeBookSettings
 	ClientboundRemoveEntities
 	ClientboundRemoveMobEffect
 	ClientboundResetScore
@@ -156,9 +163,9 @@ const (
 	ClientboundSetBorderWarningDelay
 	ClientboundSetBorderWarningDistance
 	ClientboundSetCamera
-	ClientboundSetCarriedItem
 	ClientboundSetChunkCacheCenter
 	ClientboundSetChunkCacheRadius
+	ClientboundSetCursorItem
 	ClientboundSetDefaultSpawnPosition
 	ClientboundSetDisplayObjective
 	ClientboundSetEntityData
@@ -167,8 +174,10 @@ const (
 	ClientboundSetEquipment
 	ClientboundSetExperience
 	ClientboundSetHealth
+	ClientboundSetHeldSlot
 	ClientboundSetObjective
 	ClientboundSetPassengers
+	ClientboundSetPlayerInventory
 	ClientboundSetPlayerTeam
 	ClientboundSetScore
 	ClientboundSetSimulationDistance
@@ -186,6 +195,7 @@ const (
 	ClientboundTagQuery
 	ClientboundTakeItemEntity
 	ClientboundTeleportEntity
+	ClientboundTestInstanceBlockStatus
 	ClientboundTickingState
 	ClientboundTickingStep
 	ClientboundTransfer
@@ -197,6 +207,9 @@ const (
 	ClientboundProjectilePower
 	ClientboundCustomReportDetails
 	ClientboundServerLinks
+	ClientboundWaypoint
+	ClientboundClearDialog
+	ClientboundShowDialog
 	ClientboundPacketIDGuard
 )
 
@@ -204,7 +217,9 @@ const (
 const (
 	ServerboundAcceptTeleportation ServerboundPacketID = iota
 	ServerboundBlockEntityTagQuery
+	ServerboundBundleItemSelected
 	ServerboundChangeDifficulty
+	ServerboundChangeGameMode
 	ServerboundChatAck
 	ServerboundChatCommand
 	ServerboundChatCommandSigned
@@ -212,6 +227,7 @@ const (
 	ServerboundChatSessionUpdate
 	ServerboundChunkBatchReceived
 	ServerboundClientCommand
+	ServerboundClientTickEnd
 	ServerboundClientInformation
 	ServerboundCommandSuggestion
 	ServerboundConfigurationAcknowledged
@@ -234,13 +250,15 @@ const (
 	ServerboundMovePlayerStatusOnly
 	ServerboundMoveVehicle
 	ServerboundPaddleBoat
-	ServerboundPickItem
+	ServerboundPickItemFromBlock
+	ServerboundPickItemFromEntity
 	ServerboundPingRequest
 	ServerboundPlaceRecipe
 	ServerboundPlayerAbilities
 	ServerboundPlayerAction
 	ServerboundPlayerCommand
 	ServerboundPlayerInput
+	ServerboundPlayerLoaded
 	ServerboundPong
 	ServerboundRecipeBookChangeSettings
 	ServerboundRecipeBookSeenRecipe
@@ -255,10 +273,13 @@ const (
 	ServerboundSetCreativeModeSlot
 	ServerboundSetJigsawBlock
 	ServerboundSetStructureBlock
+	ServerboundSetTestBlock
 	ServerboundSignUpdate
 	ServerboundSwing
 	ServerboundTeleportToEntity
+	ServerboundTestInstanceBlockAction
 	ServerboundUseItemOn
 	ServerboundUseItem
+	ServerboundCustomClickAction
 	ServerboundPacketIDGuard
 )

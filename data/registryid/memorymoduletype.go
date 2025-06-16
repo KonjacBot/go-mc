@@ -15,6 +15,7 @@ var MemoryModuleType = []string{
 	"minecraft:nearest_players",
 	"minecraft:nearest_visible_player",
 	"minecraft:nearest_visible_targetable_player",
+	"minecraft:nearest_visible_targetable_players",
 	"minecraft:walk_target",
 	"minecraft:look_target",
 	"minecraft:attack_target",
