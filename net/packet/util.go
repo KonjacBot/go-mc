@@ -313,7 +313,10 @@ func (o OptID[T, P]) WriteTo(w io.Writer) (n int64, err error) {
 		o.ID++
 	}
 	n1, err := (*VarInt)(&o.ID).WriteTo(w)
-	if err != nil || o.ID > 0 {
+	if err != nil {
+		return n1, err
+	}
+	if o.Has {
 		return n1, err
 	}
 	n2, err := o.Val.WriteTo(w)
@@ -323,6 +326,7 @@ func (o OptID[T, P]) WriteTo(w io.Writer) (n int64, err error) {
 func (o *OptID[T, P]) ReadFrom(r io.Reader) (n int64, err error) {
 	n1, err := (*VarInt)(&o.ID).ReadFrom(r)
 	if o.ID > 0 {
+		o.Has = true
 		o.ID--
 		return n1, err
 	}
