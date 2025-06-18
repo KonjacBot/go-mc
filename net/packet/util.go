@@ -248,6 +248,99 @@ func (o OptionEncoder[T]) WriteTo(w io.Writer) (n int64, err error) {
 	return n1 + n2, err
 }
 
+type IDSet struct {
+	TagName Identifier
+	IDs     []int32
+}
+
+func (i *IDSet) WriteTo(w io.Writer) (n int64, err error) {
+	if i.TagName != "" {
+		n1, err := VarInt(0).WriteTo(w)
+		if err != nil {
+			return n1, err
+		}
+		n2, err := i.TagName.WriteTo(w)
+		return n1 + n2, err
+	} else {
+		n1, err := VarInt(len(i.IDs) + 1).WriteTo(w)
+		if err != nil {
+			return n1, err
+		}
+		n2 := int64(0)
+		for _, id := range i.IDs {
+			temp, err := VarInt(id).WriteTo(w)
+			n2 += temp
+			if err != nil {
+				return n1 + n2, err
+			}
+		}
+		return n1 + n2, err
+	}
+}
+
+func (i *IDSet) ReadFrom(r io.Reader) (n int64, err error) {
+	var v VarInt
+	n1, err := v.ReadFrom(r)
+	if err != nil {
+		return n1, err
+	}
+	if v == 0 {
+		n2, err := i.TagName.ReadFrom(r)
+		return n1 + n2, err
+	}
+
+	i.IDs = make([]int32, int(v-1))
+	var d VarInt
+	for j := 0; j < int(v-1); j++ {
+		n2, err := d.ReadFrom(r)
+		if err != nil {
+			return n1 + n2, err
+		}
+		n1 += n2
+		i.IDs[j] = int32(n1)
+	}
+	return n1, err
+}
+
+type OptID[T FieldEncoder, P fieldPointer[T]] struct {
+	Has bool
+	ID  int32
+	Val T
+}
+
+func (o OptID[T, P]) WriteTo(w io.Writer) (n int64, err error) {
+	if o.Has {
+		o.ID++
+	}
+	n1, err := (*VarInt)(&o.ID).WriteTo(w)
+	if err != nil || o.ID > 0 {
+		return n1, err
+	}
+	n2, err := o.Val.WriteTo(w)
+	return n1 + n2, err
+}
+
+func (o *OptID[T, P]) ReadFrom(r io.Reader) (n int64, err error) {
+	n1, err := (*VarInt)(&o.ID).ReadFrom(r)
+	if o.ID > 0 {
+		o.ID--
+		return n1, err
+	}
+	if err != nil {
+		return n1, err
+	}
+	n2, err := P(&o.Val).ReadFrom(r)
+	return n1 + n2, err
+}
+
+// Pointer returns the pointer of Val if Has is true, otherwise return nil.
+func (o *OptID[T, P]) Pointer() (p *T) {
+	if o.Has {
+		p = &o.Val
+	}
+	return
+}
+
 type Tuple []any // FieldEncoder, FieldDecoder or both (Field)
 
 // WriteTo write Tuple to io.Writer, panic when any of filed don't implement FieldEncoder
