@@ -251,7 +251,7 @@ func (c *Chunk) WriteTo(w io.Writer) (int64, error) {
 	if err != nil {
 		return 0, err
 	}
-	light := lightData{
+	light := LightData{
 		SkyLightMask:   make(pk.BitSet, (16*16*16-1)>>6+1),
 		BlockLightMask: make(pk.BitSet, (16*16*16-1)>>6+1),
 		SkyLight:       []pk.ByteArray{},
@@ -295,7 +295,7 @@ func (c *Chunk) ReadFrom(r io.Reader) (int64, error) {
 		pk.NBT(&heightmaps),
 		&data,
 		pk.Array(&c.BlockEntity),
-		&lightData{
+		&LightData{
 			SkyLightMask:   make(pk.BitSet, (16*16*16-1)>>6+1),
 			BlockLightMask: make(pk.BitSet, (16*16*16-1)>>6+1),
 			SkyLight:       []pk.ByteArray{},
@@ -422,7 +422,7 @@ func (s *Section) ReadFrom(r io.Reader) (int64, error) {
 	}.ReadFrom(r)
 }
 
-type lightData struct {
+type LightData struct {
 	SkyLightMask   pk.BitSet
 	BlockLightMask pk.BitSet
 	SkyLight       []pk.ByteArray
@@ -437,7 +437,7 @@ func bitSetRev(set pk.BitSet) pk.BitSet {
 	return rev
 }
 
-func (l *lightData) WriteTo(w io.Writer) (int64, error) {
+func (l *LightData) WriteTo(w io.Writer) (int64, error) {
 	return pk.Tuple{
 		pk.Boolean(true), // Trust Edges
 		l.SkyLightMask,
@@ -449,7 +449,7 @@ func (l *lightData) WriteTo(w io.Writer) (int64, error) {
 	}.WriteTo(w)
 }
 
-func (l *lightData) ReadFrom(r io.Reader) (int64, error) {
+func (l *LightData) ReadFrom(r io.Reader) (int64, error) {
 	var RevSkyLightMask, RevBlockLightMask pk.BitSet
 	return pk.Tuple{
 		&l.SkyLightMask,
