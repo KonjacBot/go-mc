@@ -34,7 +34,7 @@ func (reg *Registry[E]) ReadFrom(r io.Reader) (int64, error) {
 		}
 
 		if hasData {
-			n3, err = pk.NBTField{V: &data, AllowUnknownFields: true}.ReadFrom(r)
+			n3, err = pk.NBTField{V: &data, DisallowUnknownFields: true}.ReadFrom(r)
 			if err != nil {
 				return n + n1 + n2 + n3, err
 			}

@@ -253,7 +253,7 @@ type IDSet struct {
 	IDs     []int32
 }
 
-func (i *IDSet) WriteTo(w io.Writer) (n int64, err error) {
+func (i IDSet) WriteTo(w io.Writer) (n int64, err error) {
 	if i.TagName != "" {
 		n1, err := VarInt(0).WriteTo(w)
 		if err != nil {

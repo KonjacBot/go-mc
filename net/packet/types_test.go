@@ -192,7 +192,7 @@ func TestNBTField_ReadFrom(t *testing.T) {
 		t.Errorf("disallow unknown field by default")
 	}
 
-	err = p.Scan(&pk.NBTField{V: &recv, AllowUnknownFields: true})
+	err = p.Scan(&pk.NBTField{V: &recv, DisallowUnknownFields: true})
 	if err != nil {
 		t.Errorf("should allow the unknown field here: %v", err)
 	}

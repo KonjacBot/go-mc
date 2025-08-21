@@ -15,6 +15,7 @@ func UpperTheFirst(word string) string {
 
 func ToGoTypeName(name string) string {
 	name = strings.TrimPrefix(name, "minecraft:")
+	name = strings.ReplaceAll(name, ".", "_")
 	words := strings.Split(name, "_")
 	for i := range words {
 		words[i] = UpperTheFirst(words[i])

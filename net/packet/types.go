@@ -489,7 +489,7 @@ func NBT(v any) Field {
 type NBTField struct {
 	V any
 
-	AllowUnknownFields bool
+	DisallowUnknownFields bool
 }
 
 func (n NBTField) WriteTo(w io.Writer) (int64, error) {
@@ -511,7 +511,7 @@ func (n NBTField) ReadFrom(r io.Reader) (int64, error) {
 	cr := countingReader{r: r}
 	dec := nbt.NewDecoder(&cr)
 	dec.NetworkFormat(true)
-	if !n.AllowUnknownFields {
+	if n.DisallowUnknownFields {
 		dec.DisallowUnknownFields()
 	}
 	_, err := dec.Decode(n.V)
