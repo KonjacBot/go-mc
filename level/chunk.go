@@ -329,6 +329,10 @@ func (c *Chunk) PutData(data []byte) error {
 	r := bytes.NewReader(data)
 	for i := range c.Sections {
 		_, err := c.Sections[i].ReadFrom(r)
+		if errors.Is(err, io.EOF) {
+			c.Sections = c.Sections[:i]
+			break
+		}
 		if err != nil {
 			return err
 		}

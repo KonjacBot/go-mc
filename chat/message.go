@@ -180,6 +180,25 @@ var colors = map[string]string{
 	White:       "97",
 }
 
+var colorsLegacy = map[string]string{
+	Black:       "0",
+	DarkBlue:    "1",
+	DarkGreen:   "2",
+	DarkAqua:    "3",
+	DarkRed:     "4",
+	DarkPurple:  "5",
+	Gold:        "6",
+	Gray:        "7",
+	DarkGray:    "8",
+	Blue:        "9",
+	Green:       "a",
+	Aqua:        "b",
+	Red:         "c",
+	LightPurple: "d",
+	Yellow:      "e",
+	White:       "f",
+}
+
 // translateMap is the translation table.
 // By default, it's en-us.
 var translateMap = en_us.Map
@@ -259,6 +278,51 @@ func (m Message) String() string {
 	if format.Len() > 0 || ok {
 		msg.WriteString("\033[0m")
 	}
+	return msg.String()
+}
+
+func (m Message) LegacyString() string {
+	var msg strings.Builder
+	if m.Bold {
+		msg.WriteString("&l")
+	}
+	if m.Italic {
+		msg.WriteString("&o")
+	}
+	if m.UnderLined {
+		msg.WriteString("&n")
+	}
+	if m.StrikeThrough {
+		msg.WriteString("&m")
+	}
+	if m.Color != "" {
+		msg.WriteString("&" + colorsLegacy[m.Color])
+	}
+
+	text := fmtPat.ReplaceAllStringFunc(
+		m.Text,
+		func(str string) string {
+			return "&" + string(str[2])
+		},
+	)
+	msg.WriteString(text)
+
+	// handle translate
+	if m.Translate != "" {
+		args := make([]any, len(m.With))
+		for i, v := range m.With {
+			args[i] = v
+		}
+
+		_, _ = fmt.Fprintf(&msg, translateMap[m.Translate], args...)
+	}
+
+	if m.Extra != nil {
+		for i := range m.Extra {
+			msg.WriteString(m.Extra[i].LegacyString())
+		}
+	}
+
 	return msg.String()
 }
 
