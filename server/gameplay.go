@@ -3,8 +3,8 @@ package server
 import (
 	_ "embed"
 
-	"github.com/Tnze/go-mc/net"
-	"github.com/Tnze/go-mc/yggdrasil/user"
+	"git.konjactw.dev/falloutBot/go-mc/net"
+	"git.konjactw.dev/falloutBot/go-mc/yggdrasil/user"
 
 	"github.com/google/uuid"
 )

@@ -4,9 +4,9 @@ import (
 	"io"
 	"strconv"
 
-	"github.com/Tnze/go-mc/level/biome"
-	"github.com/Tnze/go-mc/level/block"
-	pk "github.com/Tnze/go-mc/net/packet"
+	"git.konjactw.dev/falloutBot/go-mc/level/biome"
+	"git.konjactw.dev/falloutBot/go-mc/level/block"
+	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
 )
 
 type State interface {
@@ -142,12 +142,14 @@ func (p *PaletteContainer[T]) ReadFrom(r io.Reader) (n int64, err error) {
 		return n, err
 	}
 
+	p.data = NewBitStorage(p.bits, p.data.length, nil)
+
 	nn, err = p.data.ReadFrom(r)
 	n += nn
 	if err != nil {
 		return n, err
 	}
-	return n, p.data.Fix(p.bits)
+	return n, nil
 }
 
 func (p *PaletteContainer[T]) WriteTo(w io.Writer) (n int64, err error) {

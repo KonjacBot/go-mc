@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/Tnze/go-mc/nbt"
+	"git.konjactw.dev/falloutBot/go-mc/nbt"
 )
 
 func TestValue_new(t *testing.T) {

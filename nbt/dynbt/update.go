@@ -1,6 +1,6 @@
 package dynbt
 
-import "github.com/Tnze/go-mc/nbt"
+import "git.konjactw.dev/falloutBot/go-mc/nbt"
 
 func (v *Value) Set(key string, val *Value) {
 	if v.tag != nbt.TagCompound {

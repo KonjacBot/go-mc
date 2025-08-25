@@ -2,7 +2,7 @@
 
 package rpr
 
-import "github.com/Tnze/go-mc/chat"
+import "git.konjactw.dev/falloutBot/go-mc/chat"
 
 func init() { chat.SetLanguage(Map) }
 

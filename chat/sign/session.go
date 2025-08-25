@@ -7,9 +7,9 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/Tnze/go-mc/chat"
-	pk "github.com/Tnze/go-mc/net/packet"
-	"github.com/Tnze/go-mc/yggdrasil/user"
+	"git.konjactw.dev/falloutBot/go-mc/chat"
+	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
+	"git.konjactw.dev/falloutBot/go-mc/yggdrasil/user"
 )
 
 type Message struct {

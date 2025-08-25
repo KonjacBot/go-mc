@@ -3,7 +3,7 @@ package save
 import (
 	"io"
 
-	"github.com/Tnze/go-mc/nbt"
+	"git.konjactw.dev/falloutBot/go-mc/nbt"
 )
 
 type PlayerData struct {

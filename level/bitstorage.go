@@ -5,7 +5,7 @@ import (
 	"io"
 	"math"
 
-	pk "github.com/Tnze/go-mc/net/packet"
+	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
 )
 
 const (
@@ -153,17 +153,7 @@ func (b *BitStorage) Raw() []uint64 {
 	return b.data
 }
 
-func (b *BitStorage) ReadFrom(r io.Reader) (int64, error) {
-	var Len pk.VarInt
-	n, err := Len.ReadFrom(r)
-	if err != nil {
-		return n, err
-	}
-	if cap(b.data) >= int(Len) {
-		b.data = b.data[:Len]
-	} else {
-		b.data = make([]uint64, Len)
-	}
+func (b *BitStorage) ReadFrom(r io.Reader) (n int64, err error) {
 	var v pk.Long
 	for i := range b.data {
 		nn, err := v.ReadFrom(r)
@@ -211,5 +201,21 @@ func (b *BitStorage) Fix(bits int) error {
 	if l := len(b.data); l != dataLen {
 		return newBitStorageErr{ArrlLen: l, WantLen: dataLen}
 	}
+	return nil
+}
+
+func (b *BitStorage) Expand(bits int) error {
+	if bits == 0 {
+		b.mask = 0
+		b.bits = 0
+		b.valuesPerLong = 0
+		return nil
+	}
+	b.mask = 1<<bits - 1
+	b.bits = bits
+	b.valuesPerLong = 64 / bits
+	// check data length
+	dataLen := calcBitStorageSize(bits, b.length)
+	b.data = make([]uint64, dataLen)
 	return nil
 }

@@ -1,6 +1,6 @@
 package net
 
-import pk "github.com/Tnze/go-mc/net/packet"
+import pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
 
 type Writer interface {
 	WritePacket(p pk.Packet) error

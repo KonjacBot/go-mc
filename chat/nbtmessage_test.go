@@ -3,9 +3,9 @@ package chat_test
 import (
 	"testing"
 
-	"github.com/Tnze/go-mc/chat"
-	en_us "github.com/Tnze/go-mc/data/lang/en-us"
-	"github.com/Tnze/go-mc/nbt"
+	"git.konjactw.dev/falloutBot/go-mc/chat"
+	en_us "git.konjactw.dev/falloutBot/go-mc/data/lang/en-us"
+	"git.konjactw.dev/falloutBot/go-mc/nbt"
 )
 
 func TestMessage_UnmarshalJSON_string(t *testing.T) {

@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"math/bits"
 
-	"github.com/Tnze/go-mc/nbt"
+	"git.konjactw.dev/falloutBot/go-mc/nbt"
 )
 
 type Block interface {

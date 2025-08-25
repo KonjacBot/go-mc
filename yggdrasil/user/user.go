@@ -10,7 +10,7 @@ import (
 	"net/http"
 	"time"
 
-	pk "github.com/Tnze/go-mc/net/packet"
+	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
 )
 
 var ServicesURL = "https://api.minecraftservices.com"

@@ -5,13 +5,12 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"math/bits"
 	"strconv"
 
-	"github.com/Tnze/go-mc/level/block"
-	"github.com/Tnze/go-mc/nbt"
-	pk "github.com/Tnze/go-mc/net/packet"
-	"github.com/Tnze/go-mc/save"
+	"git.konjactw.dev/falloutBot/go-mc/level/block"
+	"git.konjactw.dev/falloutBot/go-mc/nbt"
+	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
+	"git.konjactw.dev/falloutBot/go-mc/save"
 )
 
 type ChunkPos [2]int32
@@ -55,16 +54,9 @@ func EmptyChunk(secs int) *Chunk {
 		}
 	}
 	return &Chunk{
-		Sections: sections,
-		HeightMaps: HeightMaps{
-			WorldSurfaceWG:         NewBitStorage(bits.Len(uint(secs)*16+1), 16*16, nil),
-			WorldSurface:           NewBitStorage(bits.Len(uint(secs)*16+1), 16*16, nil),
-			OceanFloorWG:           NewBitStorage(bits.Len(uint(secs)*16+1), 16*16, nil),
-			OceanFloor:             NewBitStorage(bits.Len(uint(secs)*16+1), 16*16, nil),
-			MotionBlocking:         NewBitStorage(bits.Len(uint(secs)*16+1), 16*16, nil),
-			MotionBlockingNoLeaves: NewBitStorage(bits.Len(uint(secs)*16+1), 16*16, nil),
-		},
-		Status: StatusEmpty,
+		Sections:   sections,
+		HeightMaps: HeightMaps{},
+		Status:     StatusEmpty,
 	}
 }
 
@@ -110,17 +102,10 @@ func ChunkFromSave(c *save.Chunk) (*Chunk, error) {
 		blockEntities[i].Type = block.EntityTypes[tmp.ID]
 	}
 
-	bitsForHeight := bits.Len( /* chunk height in blocks */ uint(secs)*16 + 1)
+	// bitsForHeight := bits.Len( /* chunk height in blocks */ uint(secs)*16 + 1)
 	return &Chunk{
-		Sections: sections,
-		HeightMaps: HeightMaps{
-			WorldSurface:           NewBitStorage(bitsForHeight, 16*16, c.Heightmaps["WORLD_SURFACE_WG"]),
-			WorldSurfaceWG:         NewBitStorage(bitsForHeight, 16*16, c.Heightmaps["WORLD_SURFACE"]),
-			OceanFloorWG:           NewBitStorage(bitsForHeight, 16*16, c.Heightmaps["OCEAN_FLOOR_WG"]),
-			OceanFloor:             NewBitStorage(bitsForHeight, 16*16, c.Heightmaps["OCEAN_FLOOR"]),
-			MotionBlocking:         NewBitStorage(bitsForHeight, 16*16, c.Heightmaps["MOTION_BLOCKING"]),
-			MotionBlockingNoLeaves: NewBitStorage(bitsForHeight, 16*16, c.Heightmaps["MOTION_BLOCKING_NO_LEAVES"]),
-		},
+		Sections:    sections,
+		HeightMaps:  HeightMaps{},
 		BlockEntity: blockEntities,
 		Status:      ChunkStatus(c.Status),
 	}, nil
@@ -193,12 +178,12 @@ func ChunkToSave(c *Chunk, dst *save.Chunk) (err error) {
 	if dst.Heightmaps == nil {
 		dst.Heightmaps = make(map[string][]uint64)
 	}
-	dst.Heightmaps["WORLD_SURFACE_WG"] = c.HeightMaps.WorldSurfaceWG.Raw()
-	dst.Heightmaps["WORLD_SURFACE"] = c.HeightMaps.WorldSurface.Raw()
-	dst.Heightmaps["OCEAN_FLOOR_WG"] = c.HeightMaps.OceanFloorWG.Raw()
-	dst.Heightmaps["OCEAN_FLOOR"] = c.HeightMaps.OceanFloor.Raw()
-	dst.Heightmaps["MOTION_BLOCKING"] = c.HeightMaps.MotionBlocking.Raw()
-	dst.Heightmaps["MOTION_BLOCKING_NO_LEAVES"] = c.HeightMaps.MotionBlockingNoLeaves.Raw()
+	// dst.Heightmaps["WORLD_SURFACE_WG"] = c.HeightMaps.WorldSurfaceWG.Raw()
+	// dst.Heightmaps["WORLD_SURFACE"] = c.HeightMaps.WorldSurface.Raw()
+	// dst.Heightmaps["OCEAN_FLOOR_WG"] = c.HeightMaps.OceanFloorWG.Raw()
+	// dst.Heightmaps["OCEAN_FLOOR"] = c.HeightMaps.OceanFloor.Raw()
+	// dst.Heightmaps["MOTION_BLOCKING"] = c.HeightMaps.MotionBlocking.Raw()
+	// dst.Heightmaps["MOTION_BLOCKING_NO_LEAVES"] = c.HeightMaps.MotionBlockingNoLeaves.Raw()
 	dst.Status = string(c.Status)
 	return
 }
@@ -269,46 +254,50 @@ func (c *Chunk) WriteTo(w io.Writer) (int64, error) {
 	}
 	return pk.Tuple{
 		// Heightmaps
-		pk.NBT(struct {
-			MotionBlocking []uint64 `nbt:"MOTION_BLOCKING"`
-			WorldSurface   []uint64 `nbt:"WORLD_SURFACE"`
-		}{
-			MotionBlocking: c.HeightMaps.MotionBlocking.Raw(),
-			WorldSurface:   c.HeightMaps.WorldSurface.Raw(),
-		}),
+		c.HeightMaps,
 		pk.ByteArray(data),
 		pk.Array(c.BlockEntity),
 		&light,
 	}.WriteTo(w)
 }
 
-func (c *Chunk) ReadFrom(r io.Reader) (int64, error) {
+type HeightMap struct {
+	Type int32
+	Data []pk.Long
+}
+
+func (h *HeightMap) ReadFrom(r io.Reader) (int64, error) {
 	var (
 		heightmaps struct {
-			MotionBlocking []uint64 `nbt:"MOTION_BLOCKING"`
-			WorldSurface   []uint64 `nbt:"WORLD_SURFACE"`
+			Type pk.VarInt
+			Data []pk.Long
 		}
-		data pk.ByteArray
 	)
-
 	n, err := pk.Tuple{
-		pk.NBT(&heightmaps),
-		&data,
-		pk.Array(&c.BlockEntity),
-		&LightData{
-			SkyLightMask:   make(pk.BitSet, (16*16*16-1)>>6+1),
-			BlockLightMask: make(pk.BitSet, (16*16*16-1)>>6+1),
-			SkyLight:       []pk.ByteArray{},
-			BlockLight:     []pk.ByteArray{},
-		},
+		&heightmaps.Type,
+		pk.Array(&heightmaps.Data),
 	}.ReadFrom(r)
 	if err != nil {
 		return n, err
 	}
+	h.Type = int32(heightmaps.Type)
+	h.Data = heightmaps.Data
+	return n, nil
+}
 
-	bitsForHeight := bits.Len( /* chunk height in blocks */ uint(len(c.Sections))*16 + 1)
-	c.HeightMaps.MotionBlocking = NewBitStorage(bitsForHeight, 16*16, heightmaps.MotionBlocking)
-	c.HeightMaps.WorldSurface = NewBitStorage(bitsForHeight, 16*16, heightmaps.WorldSurface)
+func (c *Chunk) ReadFrom(r io.Reader) (int64, error) {
+	var (
+		heightmaps []HeightMap
+		data       pk.ByteArray
+	)
+
+	n, err := pk.Tuple{
+		pk.Array(&heightmaps),
+		&data,
+	}.ReadFrom(r)
+	if err != nil {
+		return n, err
+	}
 
 	err = c.PutData(data)
 	return n, err
@@ -340,13 +329,14 @@ func (c *Chunk) PutData(data []byte) error {
 	return nil
 }
 
-type HeightMaps struct {
-	WorldSurfaceWG         *BitStorage // test = NOT_AIR
-	WorldSurface           *BitStorage // test = NOT_AIR
-	OceanFloorWG           *BitStorage // test = MATERIAL_MOTION_BLOCKING
-	OceanFloor             *BitStorage // test = MATERIAL_MOTION_BLOCKING
-	MotionBlocking         *BitStorage // test = BlocksMotion or isFluid
-	MotionBlockingNoLeaves *BitStorage // test = BlocksMotion or isFluid
+type HeightMaps []HeightMap
+
+func (h *HeightMaps) ReadFrom(r io.Reader) (int64, error) {
+	n, err := pk.Array(&h).ReadFrom(r)
+	if err != nil {
+		return n, err
+	}
+	return n, nil
 }
 
 type BlockEntity struct {

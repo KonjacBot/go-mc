@@ -3,11 +3,12 @@ package item
 import (
 	_ "embed"
 
-	"github.com/Tnze/go-mc/level/block"
+	"git.konjactw.dev/falloutBot/go-mc/level/block"
 )
 
 type Item interface {
-	ID() string
+	ID() ID
+	Name() string
 }
 
 type BlockItem interface {

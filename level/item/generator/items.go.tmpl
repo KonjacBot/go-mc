@@ -3,7 +3,7 @@
 package item
 
 import (
-	"github.com/Tnze/go-mc/level/block"
+	"git.konjactw.dev/falloutBot/go-mc/level/block"
 )
 
 type (
@@ -13,7 +13,8 @@ type (
 )
 
 {{- range .}}
-func ({{.Name | ToGoTypeName}}) ID() string { return {{.Name | printf "%q"}} }
+func ({{.Name | ToGoTypeName}}) Name() string { return {{.Name | printf "%q"}} }
+func ({{.Name | ToGoTypeName}}) ID() ID { return {{.Id | printf "%d"}} }
 {{- end}}
 
 {{- range .}}

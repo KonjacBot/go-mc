@@ -4,7 +4,7 @@ import (
 	"errors"
 	"io"
 
-	"github.com/Tnze/go-mc/nbt"
+	"git.konjactw.dev/falloutBot/go-mc/nbt"
 )
 
 func (v *Value) TagType() byte { return v.tag }
