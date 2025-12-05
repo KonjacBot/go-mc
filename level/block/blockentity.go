@@ -47,6 +47,7 @@ type (
 	SculkCatalystEntity         struct{}
 	SculkShriekerEntity         struct{}
 	ChiseledBookshelfEntity     struct{}
+	ShelfEntity                 struct{}
 	SuspiciousSandEntity        struct{}
 	BrushableBlockEntity        struct{}
 	DecoratedPotEntity          struct{}
@@ -55,6 +56,7 @@ type (
 	VaultEntity                 struct{}
 	TestBlockEntity             struct{}
 	TestInstanceBlockEntity     struct{}
+	CopperGolemStatueEntity     struct{}
 )
 
 type EntityType int32
