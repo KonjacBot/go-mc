@@ -78,9 +78,10 @@ func genSourceFile(states []State) {
 }
 
 var typeMaps = map[string]string{
-	"BooleanProperty":   "Boolean",
-	"DirectionProperty": "Direction",
-	"IntegerProperty":   "Integer",
+	"BooleanProperty":             "Boolean",
+	"DirectionProperty":           "Direction",
+	"IntegerProperty":             "Integer",
+	"CopperGolemStatueBlock.Pose": "CopperGolemStatueBlockPose",
 }
 
 func GetType(v string) string {

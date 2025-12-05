@@ -3662,44 +3662,44 @@ type (
 		Waterlogged Boolean   `nbt:"waterlogged"`
 	}
 	CopperGolemStatue struct {
-		Copper_golem_pose Pose      `nbt:"copper_golem_pose"`
-		Facing            Direction `nbt:"facing"`
-		Waterlogged       Boolean   `nbt:"waterlogged"`
+		Copper_golem_pose CopperGolemStatueBlockPose `nbt:"copper_golem_pose"`
+		Facing            Direction                  `nbt:"facing"`
+		Waterlogged       Boolean                    `nbt:"waterlogged"`
 	}
 	ExposedCopperGolemStatue struct {
-		Copper_golem_pose Pose      `nbt:"copper_golem_pose"`
-		Facing            Direction `nbt:"facing"`
-		Waterlogged       Boolean   `nbt:"waterlogged"`
+		Copper_golem_pose CopperGolemStatueBlockPose `nbt:"copper_golem_pose"`
+		Facing            Direction                  `nbt:"facing"`
+		Waterlogged       Boolean                    `nbt:"waterlogged"`
 	}
 	WeatheredCopperGolemStatue struct {
-		Copper_golem_pose Pose      `nbt:"copper_golem_pose"`
-		Facing            Direction `nbt:"facing"`
-		Waterlogged       Boolean   `nbt:"waterlogged"`
+		Copper_golem_pose CopperGolemStatueBlockPose `nbt:"copper_golem_pose"`
+		Facing            Direction                  `nbt:"facing"`
+		Waterlogged       Boolean                    `nbt:"waterlogged"`
 	}
 	OxidizedCopperGolemStatue struct {
-		Copper_golem_pose Pose      `nbt:"copper_golem_pose"`
-		Facing            Direction `nbt:"facing"`
-		Waterlogged       Boolean   `nbt:"waterlogged"`
+		Copper_golem_pose CopperGolemStatueBlockPose `nbt:"copper_golem_pose"`
+		Facing            Direction                  `nbt:"facing"`
+		Waterlogged       Boolean                    `nbt:"waterlogged"`
 	}
 	WaxedCopperGolemStatue struct {
-		Copper_golem_pose Pose      `nbt:"copper_golem_pose"`
-		Facing            Direction `nbt:"facing"`
-		Waterlogged       Boolean   `nbt:"waterlogged"`
+		Copper_golem_pose CopperGolemStatueBlockPose `nbt:"copper_golem_pose"`
+		Facing            Direction                  `nbt:"facing"`
+		Waterlogged       Boolean                    `nbt:"waterlogged"`
 	}
 	WaxedExposedCopperGolemStatue struct {
-		Copper_golem_pose Pose      `nbt:"copper_golem_pose"`
-		Facing            Direction `nbt:"facing"`
-		Waterlogged       Boolean   `nbt:"waterlogged"`
+		Copper_golem_pose CopperGolemStatueBlockPose `nbt:"copper_golem_pose"`
+		Facing            Direction                  `nbt:"facing"`
+		Waterlogged       Boolean                    `nbt:"waterlogged"`
 	}
 	WaxedWeatheredCopperGolemStatue struct {
-		Copper_golem_pose Pose      `nbt:"copper_golem_pose"`
-		Facing            Direction `nbt:"facing"`
-		Waterlogged       Boolean   `nbt:"waterlogged"`
+		Copper_golem_pose CopperGolemStatueBlockPose `nbt:"copper_golem_pose"`
+		Facing            Direction                  `nbt:"facing"`
+		Waterlogged       Boolean                    `nbt:"waterlogged"`
 	}
 	WaxedOxidizedCopperGolemStatue struct {
-		Copper_golem_pose Pose      `nbt:"copper_golem_pose"`
-		Facing            Direction `nbt:"facing"`
-		Waterlogged       Boolean   `nbt:"waterlogged"`
+		Copper_golem_pose CopperGolemStatueBlockPose `nbt:"copper_golem_pose"`
+		Facing            Direction                  `nbt:"facing"`
+		Waterlogged       Boolean                    `nbt:"waterlogged"`
 	}
 	LightningRod struct {
 		Facing      Direction `nbt:"facing"`

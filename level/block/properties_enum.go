@@ -1167,3 +1167,85 @@ func (c *CreakingHeartState) UnmarshalText(text []byte) error {
 	}
 	return nil
 }
+
+type SideChainPart byte
+
+const (
+	SideChainPartUnconnected SideChainPart = iota
+	SideChainPartRight
+	SideChainPartCenter
+	SideChainPartLeft
+)
+
+var strSideChainPart = [...]string{"unconnected", "right", "center", "left"}
+
+func (s SideChainPart) String() string {
+	if int(s) < len(strSideChainPart) {
+		return strSideChainPart[s]
+	}
+	return "invalid SideChainPart"
+}
+
+func (s SideChainPart) MarshalText() (text []byte, err error) {
+	if int(s) < len(strSideChainPart) {
+		return []byte(strSideChainPart[s]), nil
+	}
+	return nil, errors.New("invalid SideChainPart: " + strconv.Itoa(int(s)))
+}
+
+func (s *SideChainPart) UnmarshalText(text []byte) error {
+	switch str := string(text); str {
+	case "unconnected":
+		*s = SideChainPartUnconnected
+	case "right":
+		*s = SideChainPartRight
+	case "center":
+		*s = SideChainPartCenter
+	case "left":
+		*s = SideChainPartLeft
+	default:
+		return errors.New("unknown SideChainPart: " + str)
+	}
+	return nil
+}
+
+type CopperGolemStatueBlockPose byte
+
+const (
+	CopperGolemStatueBlockPoseStanding CopperGolemStatueBlockPose = iota
+	CopperGolemStatueBlockPoseSitting
+	CopperGolemStatueBlockPoseRunning
+	CopperGolemStatueBlockPoseStar
+)
+
+var strCopperGolemStatueBlockPose = [...]string{"standing", "sitting", "running", "star"}
+
+func (c CopperGolemStatueBlockPose) String() string {
+	if int(c) < len(strCopperGolemStatueBlockPose) {
+		return strCopperGolemStatueBlockPose[c]
+	}
+	return "invalid CopperGolemStatueBlockPose"
+}
+
+func (c CopperGolemStatueBlockPose) MarshalText() (text []byte, err error) {
+	if int(c) < len(strCopperGolemStatueBlockPose) {
+		return []byte(strCopperGolemStatueBlockPose[c]), nil
+	}
+	return nil, errors.New("invalid CopperGolemStatueBlockPose: " + strconv.Itoa(int(c)))
+}
+
+func (c *CopperGolemStatueBlockPose) UnmarshalText(text []byte) error {
+	switch str := string(text); str {
+	case "standing":
+		*c = CopperGolemStatueBlockPoseStanding
+	case "sitting":
+		*c = CopperGolemStatueBlockPoseSitting
+	case "running":
+		*c = CopperGolemStatueBlockPoseRunning
+	case "star":
+		*c = CopperGolemStatueBlockPoseStar
+	default:
+		return errors.New("unknown CopperGolemStatueBlockPose: " + str)
+	}
+	return nil
+}

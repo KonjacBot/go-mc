@@ -64,6 +64,12 @@ var EnumProperties = []EnumProperty{
 	{Name: "CreakingHeartState", Values: []string{
 		"uprooted", "dormant", "awake",
 	}},
+	{Name: "SideChainPart", Values: []string{
+		"unconnected", "right", "center", "left",
+	}},
+	{Name: "CopperGolemStatueBlockPose", Values: []string{
+		"standing", "sitting", "running", "star",
+	}},
 }
 
 //go:embed properties_enum.go.tmpl
