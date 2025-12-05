@@ -24,6 +24,7 @@ func _() {
 	_ = x[ServerboundConfigResourcePack-6]
 	_ = x[ServerboundConfigSelectKnownPacks-7]
 	_ = x[ServerboundConfigCustomClickAction-8]
+	_ = x[ServerboundConfigAcceptCodeOfConduct-9]
 	_ = x[ServerboundAcceptTeleportation-0]
 	_ = x[ServerboundBlockEntityTagQuery-1]
 	_ = x[ServerboundBundleItemSelected-2]
@@ -46,7 +47,7 @@ func _() {
 	_ = x[ServerboundContainerSlotStateChanged-19]
 	_ = x[ServerboundCookieResponse-20]
 	_ = x[ServerboundCustomPayload-21]
-	_ = x[ServerboundDebugSampleSubscription-22]
+	_ = x[ServerboundDebugSubscriptionRequest-22]
 	_ = x[ServerboundEditBook-23]
 	_ = x[ServerboundEntityTagQuery-24]
 	_ = x[ServerboundInteract-25]
@@ -93,13 +94,14 @@ func _() {
 	_ = x[ServerboundPacketIDGuard-66]
 }
 
-const _ServerboundPacketID_name = "ServerboundLoginHelloServerboundLoginKeyServerboundLoginCustomQueryAnswerServerboundLoginLoginAcknowledgedServerboundLoginCookieResponseServerboundConfigPongServerboundConfigResourcePackServerboundConfigSelectKnownPacksServerboundConfigCustomClickActionServerboundChatSessionUpdateServerboundChunkBatchReceivedServerboundClientCommandServerboundClientTickEndServerboundClientInformationServerboundCommandSuggestionServerboundConfigurationAcknowledgedServerboundContainerButtonClickServerboundContainerClickServerboundContainerCloseServerboundContainerSlotStateChangedServerboundCookieResponseServerboundCustomPayloadServerboundDebugSampleSubscriptionServerboundEditBookServerboundEntityTagQueryServerboundInteractServerboundJigsawGenerateServerboundKeepAliveServerboundLockDifficultyServerboundMovePlayerPosServerboundMovePlayerPosRotServerboundMovePlayerRotServerboundMovePlayerStatusOnlyServerboundMoveVehicleServerboundPaddleBoatServerboundPickItemFromBlockServerboundPickItemFromEntityServerboundPingRequestServerboundPlaceRecipeServerboundPlayerAbilitiesServerboundPlayerActionServerboundPlayerCommandServerboundPlayerInputServerboundPlayerLoadedServerboundPongServerboundRecipeBookChangeSettingsServerboundRecipeBookSeenRecipeServerboundRenameItemServerboundResourcePackServerboundSeenAdvancementsServerboundSelectTradeServerboundSetBeaconServerboundSetCarriedItemServerboundSetCommandBlockServerboundSetCommandMinecartServerboundSetCreativeModeSlotServerboundSetJigsawBlockServerboundSetStructureBlockServerboundSetTestBlockServerboundSignUpdateServerboundSwingServerboundTeleportToEntityServerboundTestInstanceBlockActionServerboundUseItemOnServerboundUseItemServerboundCustomClickActionServerboundPacketIDGuard"
+const _ServerboundPacketID_name = "ServerboundLoginHelloServerboundLoginKeyServerboundLoginCustomQueryAnswerServerboundLoginLoginAcknowledgedServerboundLoginCookieResponseServerboundConfigPongServerboundConfigResourcePackServerboundConfigSelectKnownPacksServerboundConfigCustomClickActionServerboundConfigAcceptCodeOfConductServerboundChunkBatchReceivedServerboundClientCommandServerboundClientTickEndServerboundClientInformationServerboundCommandSuggestionServerboundConfigurationAcknowledgedServerboundContainerButtonClickServerboundContainerClickServerboundContainerCloseServerboundContainerSlotStateChangedServerboundCookieResponseServerboundCustomPayloadServerboundDebugSubscriptionRequestServerboundEditBookServerboundEntityTagQueryServerboundInteractServerboundJigsawGenerateServerboundKeepAliveServerboundLockDifficultyServerboundMovePlayerPosServerboundMovePlayerPosRotServerboundMovePlayerRotServerboundMovePlayerStatusOnlyServerboundMoveVehicleServerboundPaddleBoatServerboundPickItemFromBlockServerboundPickItemFromEntityServerboundPingRequestServerboundPlaceRecipeServerboundPlayerAbilitiesServerboundPlayerActionServerboundPlayerCommandServerboundPlayerInputServerboundPlayerLoadedServerboundPongServerboundRecipeBookChangeSettingsServerboundRecipeBookSeenRecipeServerboundRenameItemServerboundResourcePackServerboundSeenAdvancementsServerboundSelectTradeServerboundSetBeaconServerboundSetCarriedItemServerboundSetCommandBlockServerboundSetCommandMinecartServerboundSetCreativeModeSlotServerboundSetJigsawBlockServerboundSetStructureBlockServerboundSetTestBlockServerboundSignUpdateServerboundSwingServerboundTeleportToEntityServerboundTestInstanceBlockActionServerboundUseItemOnServerboundUseItemServerboundCustomClickActionServerboundPacketIDGuard"
 
-var _ServerboundPacketID_index = [...]uint16{0, 21, 40, 73, 106, 136, 157, 186, 219, 253, 281, 310, 334, 358, 386, 414, 450, 481, 506, 531, 567, 592, 616, 650, 669, 694, 713, 738, 758, 783, 807, 834, 858, 889, 911, 932, 960, 989, 1011, 1033, 1059, 1082, 1106, 1128, 1151, 1166, 1201, 1232, 1253, 1276, 1303, 1325, 1345, 1370, 1396, 1425, 1455, 1480, 1508, 1531, 1552, 1568, 1595, 1629, 1649, 1667, 1695, 1719}
+var _ServerboundPacketID_index = [...]uint16{0, 21, 40, 73, 106, 136, 157, 186, 219, 253, 289, 318, 342, 366, 394, 422, 458, 489, 514, 539, 575, 600, 624, 659, 678, 703, 722, 747, 767, 792, 816, 843, 867, 898, 920, 941, 969, 998, 1020, 1042, 1068, 1091, 1115, 1137, 1160, 1175, 1210, 1241, 1262, 1285, 1312, 1334, 1354, 1379, 1405, 1434, 1464, 1489, 1517, 1540, 1561, 1577, 1604, 1638, 1658, 1676, 1704, 1728}
 
 func (i ServerboundPacketID) String() string {
-	if i < 0 || i >= ServerboundPacketID(len(_ServerboundPacketID_index)-1) {
+	idx := int(i) - 0
+	if i < 0 || idx >= len(_ServerboundPacketID_index)-1 {
 		return "ServerboundPacketID(" + strconv.FormatInt(int64(i), 10) + ")"
 	}
-	return _ServerboundPacketID_name[_ServerboundPacketID_index[i]:_ServerboundPacketID_index[i+1]]
+	return _ServerboundPacketID_name[_ServerboundPacketID_index[idx]:_ServerboundPacketID_index[idx+1]]
 }

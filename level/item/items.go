@@ -312,6 +312,18 @@ type (
 	SmoothSandstone                    struct{}
 	SmoothStone                        struct{}
 	Bricks                             struct{}
+	AcaciaShelf                        struct{}
+	BambooShelf                        struct{}
+	BirchShelf                         struct{}
+	CherryShelf                        struct{}
+	CrimsonShelf                       struct{}
+	DarkOakShelf                       struct{}
+	JungleShelf                        struct{}
+	MangroveShelf                      struct{}
+	OakShelf                           struct{}
+	PaleOakShelf                       struct{}
+	SpruceShelf                        struct{}
+	WarpedShelf                        struct{}
 	Bookshelf                          struct{}
 	ChiseledBookshelf                  struct{}
 	DecoratedPot                       struct{}
@@ -361,6 +373,7 @@ type (
 	PolishedBasalt                     struct{}
 	SmoothBasalt                       struct{}
 	SoulTorch                          struct{}
+	CopperTorch                        struct{}
 	Glowstone                          struct{}
 	InfestedStone                      struct{}
 	InfestedCobblestone                struct{}
@@ -385,7 +398,23 @@ type (
 	RedMushroomBlock                   struct{}
 	MushroomStem                       struct{}
 	IronBars                           struct{}
-	Chain                              struct{}
+	CopperBars                         struct{}
+	ExposedCopperBars                  struct{}
+	WeatheredCopperBars                struct{}
+	OxidizedCopperBars                 struct{}
+	WaxedCopperBars                    struct{}
+	WaxedExposedCopperBars             struct{}
+	WaxedWeatheredCopperBars           struct{}
+	WaxedOxidizedCopperBars            struct{}
+	IronChain                          struct{}
+	CopperChain                        struct{}
+	ExposedCopperChain                 struct{}
+	WeatheredCopperChain               struct{}
+	OxidizedCopperChain                struct{}
+	WaxedCopperChain                   struct{}
+	WaxedExposedCopperChain            struct{}
+	WaxedWeatheredCopperChain          struct{}
+	WaxedOxidizedCopperChain           struct{}
 	GlassPane                          struct{}
 	Melon                              struct{}
 	Vine                               struct{}
@@ -712,6 +741,13 @@ type (
 	Target                             struct{}
 	Lever                              struct{}
 	LightningRod                       struct{}
+	ExposedLightningRod                struct{}
+	WeatheredLightningRod              struct{}
+	OxidizedLightningRod               struct{}
+	WaxedLightningRod                  struct{}
+	WaxedExposedLightningRod           struct{}
+	WaxedWeatheredLightningRod         struct{}
+	WaxedOxidizedLightningRod          struct{}
 	DaylightDetector                   struct{}
 	SculkSensor                        struct{}
 	CalibratedSculkSensor              struct{}
@@ -887,6 +923,11 @@ type (
 	WoodenPickaxe                      struct{}
 	WoodenAxe                          struct{}
 	WoodenHoe                          struct{}
+	CopperSword                        struct{}
+	CopperShovel                       struct{}
+	CopperPickaxe                      struct{}
+	CopperAxe                          struct{}
+	CopperHoe                          struct{}
 	StoneSword                         struct{}
 	StoneShovel                        struct{}
 	StonePickaxe                       struct{}
@@ -924,6 +965,10 @@ type (
 	LeatherChestplate                  struct{}
 	LeatherLeggings                    struct{}
 	LeatherBoots                       struct{}
+	CopperHelmet                       struct{}
+	CopperChestplate                   struct{}
+	CopperLeggings                     struct{}
+	CopperBoots                        struct{}
 	ChainmailHelmet                    struct{}
 	ChainmailChestplate                struct{}
 	ChainmailLeggings                  struct{}
@@ -1105,6 +1150,7 @@ type (
 	CaveSpiderSpawnEgg                 struct{}
 	ChickenSpawnEgg                    struct{}
 	CodSpawnEgg                        struct{}
+	CopperGolemSpawnEgg                struct{}
 	CowSpawnEgg                        struct{}
 	CreeperSpawnEgg                    struct{}
 	DolphinSpawnEgg                    struct{}
@@ -1212,6 +1258,7 @@ type (
 	RabbitFoot                         struct{}
 	RabbitHide                         struct{}
 	ArmorStand                         struct{}
+	CopperHorseArmor                   struct{}
 	IronHorseArmor                     struct{}
 	GoldenHorseArmor                   struct{}
 	DiamondHorseArmor                  struct{}
@@ -1254,6 +1301,7 @@ type (
 	TotemOfUndying                     struct{}
 	ShulkerShell                       struct{}
 	IronNugget                         struct{}
+	CopperNugget                       struct{}
 	KnowledgeBook                      struct{}
 	DebugStick                         struct{}
 	MusicDisc13                        struct{}
@@ -1307,6 +1355,14 @@ type (
 	Bell                               struct{}
 	Lantern                            struct{}
 	SoulLantern                        struct{}
+	CopperLantern                      struct{}
+	ExposedCopperLantern               struct{}
+	WeatheredCopperLantern             struct{}
+	OxidizedCopperLantern              struct{}
+	WaxedCopperLantern                 struct{}
+	WaxedExposedCopperLantern          struct{}
+	WaxedWeatheredCopperLantern        struct{}
+	WaxedOxidizedCopperLantern         struct{}
 	SweetBerries                       struct{}
 	GlowBerries                        struct{}
 	Campfire                           struct{}
@@ -1418,6 +1474,22 @@ type (
 	WaxedExposedCopperBulb             struct{}
 	WaxedWeatheredCopperBulb           struct{}
 	WaxedOxidizedCopperBulb            struct{}
+	CopperChest                        struct{}
+	ExposedCopperChest                 struct{}
+	WeatheredCopperChest               struct{}
+	OxidizedCopperChest                struct{}
+	WaxedCopperChest                   struct{}
+	WaxedExposedCopperChest            struct{}
+	WaxedWeatheredCopperChest          struct{}
+	WaxedOxidizedCopperChest           struct{}
+	CopperGolemStatue                  struct{}
+	ExposedCopperGolemStatue           struct{}
+	WeatheredCopperGolemStatue         struct{}
+	OxidizedCopperGolemStatue          struct{}
+	WaxedCopperGolemStatue             struct{}
+	WaxedExposedCopperGolemStatue      struct{}
+	WaxedWeatheredCopperGolemStatue    struct{}
+	WaxedOxidizedCopperGolemStatue     struct{}
 	TrialSpawner                       struct{}
 	TrialKey                           struct{}
 	OminousTrialKey                    struct{}
@@ -2039,2272 +2111,2422 @@ func (SmoothStone) Name() string                 { return "minecraft:smooth_ston
 func (SmoothStone) ID() ID                       { return 303 }
 func (Bricks) Name() string                      { return "minecraft:bricks" }
 func (Bricks) ID() ID                            { return 304 }
+func (AcaciaShelf) Name() string                 { return "minecraft:acacia_shelf" }
+func (AcaciaShelf) ID() ID                       { return 305 }
+func (BambooShelf) Name() string                 { return "minecraft:bamboo_shelf" }
+func (BambooShelf) ID() ID                       { return 306 }
+func (BirchShelf) Name() string                  { return "minecraft:birch_shelf" }
+func (BirchShelf) ID() ID                        { return 307 }
+func (CherryShelf) Name() string                 { return "minecraft:cherry_shelf" }
+func (CherryShelf) ID() ID                       { return 308 }
+func (CrimsonShelf) Name() string                { return "minecraft:crimson_shelf" }
+func (CrimsonShelf) ID() ID                      { return 309 }
+func (DarkOakShelf) Name() string                { return "minecraft:dark_oak_shelf" }
+func (DarkOakShelf) ID() ID                      { return 310 }
+func (JungleShelf) Name() string                 { return "minecraft:jungle_shelf" }
+func (JungleShelf) ID() ID                       { return 311 }
+func (MangroveShelf) Name() string               { return "minecraft:mangrove_shelf" }
+func (MangroveShelf) ID() ID                     { return 312 }
+func (OakShelf) Name() string                    { return "minecraft:oak_shelf" }
+func (OakShelf) ID() ID                          { return 313 }
+func (PaleOakShelf) Name() string                { return "minecraft:pale_oak_shelf" }
+func (PaleOakShelf) ID() ID                      { return 314 }
+func (SpruceShelf) Name() string                 { return "minecraft:spruce_shelf" }
+func (SpruceShelf) ID() ID                       { return 315 }
+func (WarpedShelf) Name() string                 { return "minecraft:warped_shelf" }
+func (WarpedShelf) ID() ID                       { return 316 }
 func (Bookshelf) Name() string                   { return "minecraft:bookshelf" }
-func (Bookshelf) ID() ID                         { return 305 }
+func (Bookshelf) ID() ID                         { return 317 }
 func (ChiseledBookshelf) Name() string           { return "minecraft:chiseled_bookshelf" }
-func (ChiseledBookshelf) ID() ID                 { return 306 }
+func (ChiseledBookshelf) ID() ID                 { return 318 }
 func (DecoratedPot) Name() string                { return "minecraft:decorated_pot" }
-func (DecoratedPot) ID() ID                      { return 307 }
+func (DecoratedPot) ID() ID                      { return 319 }
 func (MossyCobblestone) Name() string            { return "minecraft:mossy_cobblestone" }
-func (MossyCobblestone) ID() ID                  { return 308 }
+func (MossyCobblestone) ID() ID                  { return 320 }
 func (Obsidian) Name() string                    { return "minecraft:obsidian" }
-func (Obsidian) ID() ID                          { return 309 }
+func (Obsidian) ID() ID                          { return 321 }
 func (Torch) Name() string                       { return "minecraft:torch" }
-func (Torch) ID() ID                             { return 310 }
+func (Torch) ID() ID                             { return 322 }
 func (EndRod) Name() string                      { return "minecraft:end_rod" }
-func (EndRod) ID() ID                            { return 311 }
+func (EndRod) ID() ID                            { return 323 }
 func (ChorusPlant) Name() string                 { return "minecraft:chorus_plant" }
-func (ChorusPlant) ID() ID                       { return 312 }
+func (ChorusPlant) ID() ID                       { return 324 }
 func (ChorusFlower) Name() string                { return "minecraft:chorus_flower" }
-func (ChorusFlower) ID() ID                      { return 313 }
+func (ChorusFlower) ID() ID                      { return 325 }
 func (PurpurBlock) Name() string                 { return "minecraft:purpur_block" }
-func (PurpurBlock) ID() ID                       { return 314 }
+func (PurpurBlock) ID() ID                       { return 326 }
 func (PurpurPillar) Name() string                { return "minecraft:purpur_pillar" }
-func (PurpurPillar) ID() ID                      { return 315 }
+func (PurpurPillar) ID() ID                      { return 327 }
 func (PurpurStairs) Name() string                { return "minecraft:purpur_stairs" }
-func (PurpurStairs) ID() ID                      { return 316 }
+func (PurpurStairs) ID() ID                      { return 328 }
 func (Spawner) Name() string                     { return "minecraft:spawner" }
-func (Spawner) ID() ID                           { return 317 }
+func (Spawner) ID() ID                           { return 329 }
 func (CreakingHeart) Name() string               { return "minecraft:creaking_heart" }
-func (CreakingHeart) ID() ID                     { return 318 }
+func (CreakingHeart) ID() ID                     { return 330 }
 func (Chest) Name() string                       { return "minecraft:chest" }
-func (Chest) ID() ID                             { return 319 }
+func (Chest) ID() ID                             { return 331 }
 func (CraftingTable) Name() string               { return "minecraft:crafting_table" }
-func (CraftingTable) ID() ID                     { return 320 }
+func (CraftingTable) ID() ID                     { return 332 }
 func (Farmland) Name() string                    { return "minecraft:farmland" }
-func (Farmland) ID() ID                          { return 321 }
+func (Farmland) ID() ID                          { return 333 }
 func (Furnace) Name() string                     { return "minecraft:furnace" }
-func (Furnace) ID() ID                           { return 322 }
+func (Furnace) ID() ID                           { return 334 }
 func (Ladder) Name() string                      { return "minecraft:ladder" }
-func (Ladder) ID() ID                            { return 323 }
+func (Ladder) ID() ID                            { return 335 }
 func (CobblestoneStairs) Name() string           { return "minecraft:cobblestone_stairs" }
-func (CobblestoneStairs) ID() ID                 { return 324 }
+func (CobblestoneStairs) ID() ID                 { return 336 }
 func (Snow) Name() string                        { return "minecraft:snow" }
-func (Snow) ID() ID                              { return 325 }
+func (Snow) ID() ID                              { return 337 }
 func (Ice) Name() string                         { return "minecraft:ice" }
-func (Ice) ID() ID                               { return 326 }
+func (Ice) ID() ID                               { return 338 }
 func (SnowBlock) Name() string                   { return "minecraft:snow_block" }
-func (SnowBlock) ID() ID                         { return 327 }
+func (SnowBlock) ID() ID                         { return 339 }
 func (Cactus) Name() string                      { return "minecraft:cactus" }
-func (Cactus) ID() ID                            { return 328 }
+func (Cactus) ID() ID                            { return 340 }
 func (CactusFlower) Name() string                { return "minecraft:cactus_flower" }
-func (CactusFlower) ID() ID                      { return 329 }
+func (CactusFlower) ID() ID                      { return 341 }
 func (Clay) Name() string                        { return "minecraft:clay" }
-func (Clay) ID() ID                              { return 330 }
+func (Clay) ID() ID                              { return 342 }
 func (Jukebox) Name() string                     { return "minecraft:jukebox" }
-func (Jukebox) ID() ID                           { return 331 }
+func (Jukebox) ID() ID                           { return 343 }
 func (OakFence) Name() string                    { return "minecraft:oak_fence" }
-func (OakFence) ID() ID                          { return 332 }
+func (OakFence) ID() ID                          { return 344 }
 func (SpruceFence) Name() string                 { return "minecraft:spruce_fence" }
-func (SpruceFence) ID() ID                       { return 333 }
+func (SpruceFence) ID() ID                       { return 345 }
 func (BirchFence) Name() string                  { return "minecraft:birch_fence" }
-func (BirchFence) ID() ID                        { return 334 }
+func (BirchFence) ID() ID                        { return 346 }
 func (JungleFence) Name() string                 { return "minecraft:jungle_fence" }
-func (JungleFence) ID() ID                       { return 335 }
+func (JungleFence) ID() ID                       { return 347 }
 func (AcaciaFence) Name() string                 { return "minecraft:acacia_fence" }
-func (AcaciaFence) ID() ID                       { return 336 }
+func (AcaciaFence) ID() ID                       { return 348 }
 func (CherryFence) Name() string                 { return "minecraft:cherry_fence" }
-func (CherryFence) ID() ID                       { return 337 }
+func (CherryFence) ID() ID                       { return 349 }
 func (DarkOakFence) Name() string                { return "minecraft:dark_oak_fence" }
-func (DarkOakFence) ID() ID                      { return 338 }
+func (DarkOakFence) ID() ID                      { return 350 }
 func (PaleOakFence) Name() string                { return "minecraft:pale_oak_fence" }
-func (PaleOakFence) ID() ID                      { return 339 }
+func (PaleOakFence) ID() ID                      { return 351 }
 func (MangroveFence) Name() string               { return "minecraft:mangrove_fence" }
-func (MangroveFence) ID() ID                     { return 340 }
+func (MangroveFence) ID() ID                     { return 352 }
 func (BambooFence) Name() string                 { return "minecraft:bamboo_fence" }
-func (BambooFence) ID() ID                       { return 341 }
+func (BambooFence) ID() ID                       { return 353 }
 func (CrimsonFence) Name() string                { return "minecraft:crimson_fence" }
-func (CrimsonFence) ID() ID                      { return 342 }
+func (CrimsonFence) ID() ID                      { return 354 }
 func (WarpedFence) Name() string                 { return "minecraft:warped_fence" }
-func (WarpedFence) ID() ID                       { return 343 }
+func (WarpedFence) ID() ID                       { return 355 }
 func (Pumpkin) Name() string                     { return "minecraft:pumpkin" }
-func (Pumpkin) ID() ID                           { return 344 }
+func (Pumpkin) ID() ID                           { return 356 }
 func (CarvedPumpkin) Name() string               { return "minecraft:carved_pumpkin" }
-func (CarvedPumpkin) ID() ID                     { return 345 }
+func (CarvedPumpkin) ID() ID                     { return 357 }
 func (JackOLantern) Name() string                { return "minecraft:jack_o_lantern" }
-func (JackOLantern) ID() ID                      { return 346 }
+func (JackOLantern) ID() ID                      { return 358 }
 func (Netherrack) Name() string                  { return "minecraft:netherrack" }
-func (Netherrack) ID() ID                        { return 347 }
+func (Netherrack) ID() ID                        { return 359 }
 func (SoulSand) Name() string                    { return "minecraft:soul_sand" }
-func (SoulSand) ID() ID                          { return 348 }
+func (SoulSand) ID() ID                          { return 360 }
 func (SoulSoil) Name() string                    { return "minecraft:soul_soil" }
-func (SoulSoil) ID() ID                          { return 349 }
+func (SoulSoil) ID() ID                          { return 361 }
 func (Basalt) Name() string                      { return "minecraft:basalt" }
-func (Basalt) ID() ID                            { return 350 }
+func (Basalt) ID() ID                            { return 362 }
 func (PolishedBasalt) Name() string              { return "minecraft:polished_basalt" }
-func (PolishedBasalt) ID() ID                    { return 351 }
+func (PolishedBasalt) ID() ID                    { return 363 }
 func (SmoothBasalt) Name() string                { return "minecraft:smooth_basalt" }
-func (SmoothBasalt) ID() ID                      { return 352 }
+func (SmoothBasalt) ID() ID                      { return 364 }
 func (SoulTorch) Name() string                   { return "minecraft:soul_torch" }
-func (SoulTorch) ID() ID                         { return 353 }
+func (SoulTorch) ID() ID                         { return 365 }
+func (CopperTorch) Name() string                 { return "minecraft:copper_torch" }
+func (CopperTorch) ID() ID                       { return 366 }
 func (Glowstone) Name() string                   { return "minecraft:glowstone" }
-func (Glowstone) ID() ID                         { return 354 }
+func (Glowstone) ID() ID                         { return 367 }
 func (InfestedStone) Name() string               { return "minecraft:infested_stone" }
-func (InfestedStone) ID() ID                     { return 355 }
+func (InfestedStone) ID() ID                     { return 368 }
 func (InfestedCobblestone) Name() string         { return "minecraft:infested_cobblestone" }
-func (InfestedCobblestone) ID() ID               { return 356 }
+func (InfestedCobblestone) ID() ID               { return 369 }
 func (InfestedStoneBricks) Name() string         { return "minecraft:infested_stone_bricks" }
-func (InfestedStoneBricks) ID() ID               { return 357 }
+func (InfestedStoneBricks) ID() ID               { return 370 }
 func (InfestedMossyStoneBricks) Name() string    { return "minecraft:infested_mossy_stone_bricks" }
-func (InfestedMossyStoneBricks) ID() ID          { return 358 }
+func (InfestedMossyStoneBricks) ID() ID          { return 371 }
 func (InfestedCrackedStoneBricks) Name() string  { return "minecraft:infested_cracked_stone_bricks" }
-func (InfestedCrackedStoneBricks) ID() ID        { return 359 }
+func (InfestedCrackedStoneBricks) ID() ID        { return 372 }
 func (InfestedChiseledStoneBricks) Name() string { return "minecraft:infested_chiseled_stone_bricks" }
-func (InfestedChiseledStoneBricks) ID() ID       { return 360 }
+func (InfestedChiseledStoneBricks) ID() ID       { return 373 }
 func (InfestedDeepslate) Name() string           { return "minecraft:infested_deepslate" }
-func (InfestedDeepslate) ID() ID                 { return 361 }
+func (InfestedDeepslate) ID() ID                 { return 374 }
 func (StoneBricks) Name() string                 { return "minecraft:stone_bricks" }
-func (StoneBricks) ID() ID                       { return 362 }
+func (StoneBricks) ID() ID                       { return 375 }
 func (MossyStoneBricks) Name() string            { return "minecraft:mossy_stone_bricks" }
-func (MossyStoneBricks) ID() ID                  { return 363 }
+func (MossyStoneBricks) ID() ID                  { return 376 }
 func (CrackedStoneBricks) Name() string          { return "minecraft:cracked_stone_bricks" }
-func (CrackedStoneBricks) ID() ID                { return 364 }
+func (CrackedStoneBricks) ID() ID                { return 377 }
 func (ChiseledStoneBricks) Name() string         { return "minecraft:chiseled_stone_bricks" }
-func (ChiseledStoneBricks) ID() ID               { return 365 }
+func (ChiseledStoneBricks) ID() ID               { return 378 }
 func (PackedMud) Name() string                   { return "minecraft:packed_mud" }
-func (PackedMud) ID() ID                         { return 366 }
+func (PackedMud) ID() ID                         { return 379 }
 func (MudBricks) Name() string                   { return "minecraft:mud_bricks" }
-func (MudBricks) ID() ID                         { return 367 }
+func (MudBricks) ID() ID                         { return 380 }
 func (DeepslateBricks) Name() string             { return "minecraft:deepslate_bricks" }
-func (DeepslateBricks) ID() ID                   { return 368 }
+func (DeepslateBricks) ID() ID                   { return 381 }
 func (CrackedDeepslateBricks) Name() string      { return "minecraft:cracked_deepslate_bricks" }
-func (CrackedDeepslateBricks) ID() ID            { return 369 }
+func (CrackedDeepslateBricks) ID() ID            { return 382 }
 func (DeepslateTiles) Name() string              { return "minecraft:deepslate_tiles" }
-func (DeepslateTiles) ID() ID                    { return 370 }
+func (DeepslateTiles) ID() ID                    { return 383 }
 func (CrackedDeepslateTiles) Name() string       { return "minecraft:cracked_deepslate_tiles" }
-func (CrackedDeepslateTiles) ID() ID             { return 371 }
+func (CrackedDeepslateTiles) ID() ID             { return 384 }
 func (ChiseledDeepslate) Name() string           { return "minecraft:chiseled_deepslate" }
-func (ChiseledDeepslate) ID() ID                 { return 372 }
+func (ChiseledDeepslate) ID() ID                 { return 385 }
 func (ReinforcedDeepslate) Name() string         { return "minecraft:reinforced_deepslate" }
-func (ReinforcedDeepslate) ID() ID               { return 373 }
+func (ReinforcedDeepslate) ID() ID               { return 386 }
 func (BrownMushroomBlock) Name() string          { return "minecraft:brown_mushroom_block" }
-func (BrownMushroomBlock) ID() ID                { return 374 }
+func (BrownMushroomBlock) ID() ID                { return 387 }
 func (RedMushroomBlock) Name() string            { return "minecraft:red_mushroom_block" }
-func (RedMushroomBlock) ID() ID                  { return 375 }
+func (RedMushroomBlock) ID() ID                  { return 388 }
 func (MushroomStem) Name() string                { return "minecraft:mushroom_stem" }
-func (MushroomStem) ID() ID                      { return 376 }
+func (MushroomStem) ID() ID                      { return 389 }
 func (IronBars) Name() string                    { return "minecraft:iron_bars" }
-func (IronBars) ID() ID                          { return 377 }
-func (Chain) Name() string                       { return "minecraft:chain" }
-func (Chain) ID() ID                             { return 378 }
+func (IronBars) ID() ID                          { return 390 }
+func (CopperBars) Name() string                  { return "minecraft:copper_bars" }
+func (CopperBars) ID() ID                        { return 391 }
+func (ExposedCopperBars) Name() string           { return "minecraft:exposed_copper_bars" }
+func (ExposedCopperBars) ID() ID                 { return 392 }
+func (WeatheredCopperBars) Name() string         { return "minecraft:weathered_copper_bars" }
+func (WeatheredCopperBars) ID() ID               { return 393 }
+func (OxidizedCopperBars) Name() string          { return "minecraft:oxidized_copper_bars" }
+func (OxidizedCopperBars) ID() ID                { return 394 }
+func (WaxedCopperBars) Name() string             { return "minecraft:waxed_copper_bars" }
+func (WaxedCopperBars) ID() ID                   { return 395 }
+func (WaxedExposedCopperBars) Name() string      { return "minecraft:waxed_exposed_copper_bars" }
+func (WaxedExposedCopperBars) ID() ID            { return 396 }
+func (WaxedWeatheredCopperBars) Name() string    { return "minecraft:waxed_weathered_copper_bars" }
+func (WaxedWeatheredCopperBars) ID() ID          { return 397 }
+func (WaxedOxidizedCopperBars) Name() string     { return "minecraft:waxed_oxidized_copper_bars" }
+func (WaxedOxidizedCopperBars) ID() ID           { return 398 }
+func (IronChain) Name() string                   { return "minecraft:iron_chain" }
+func (IronChain) ID() ID                         { return 399 }
+func (CopperChain) Name() string                 { return "minecraft:copper_chain" }
+func (CopperChain) ID() ID                       { return 400 }
+func (ExposedCopperChain) Name() string          { return "minecraft:exposed_copper_chain" }
+func (ExposedCopperChain) ID() ID                { return 401 }
+func (WeatheredCopperChain) Name() string        { return "minecraft:weathered_copper_chain" }
+func (WeatheredCopperChain) ID() ID              { return 402 }
+func (OxidizedCopperChain) Name() string         { return "minecraft:oxidized_copper_chain" }
+func (OxidizedCopperChain) ID() ID               { return 403 }
+func (WaxedCopperChain) Name() string            { return "minecraft:waxed_copper_chain" }
+func (WaxedCopperChain) ID() ID                  { return 404 }
+func (WaxedExposedCopperChain) Name() string     { return "minecraft:waxed_exposed_copper_chain" }
+func (WaxedExposedCopperChain) ID() ID           { return 405 }
+func (WaxedWeatheredCopperChain) Name() string   { return "minecraft:waxed_weathered_copper_chain" }
+func (WaxedWeatheredCopperChain) ID() ID         { return 406 }
+func (WaxedOxidizedCopperChain) Name() string    { return "minecraft:waxed_oxidized_copper_chain" }
+func (WaxedOxidizedCopperChain) ID() ID          { return 407 }
 func (GlassPane) Name() string                   { return "minecraft:glass_pane" }
-func (GlassPane) ID() ID                         { return 379 }
+func (GlassPane) ID() ID                         { return 408 }
 func (Melon) Name() string                       { return "minecraft:melon" }
-func (Melon) ID() ID                             { return 380 }
+func (Melon) ID() ID                             { return 409 }
 func (Vine) Name() string                        { return "minecraft:vine" }
-func (Vine) ID() ID                              { return 381 }
+func (Vine) ID() ID                              { return 410 }
 func (GlowLichen) Name() string                  { return "minecraft:glow_lichen" }
-func (GlowLichen) ID() ID                        { return 382 }
+func (GlowLichen) ID() ID                        { return 411 }
 func (ResinClump) Name() string                  { return "minecraft:resin_clump" }
-func (ResinClump) ID() ID                        { return 383 }
+func (ResinClump) ID() ID                        { return 412 }
 func (ResinBlock) Name() string                  { return "minecraft:resin_block" }
-func (ResinBlock) ID() ID                        { return 384 }
+func (ResinBlock) ID() ID                        { return 413 }
 func (ResinBricks) Name() string                 { return "minecraft:resin_bricks" }
-func (ResinBricks) ID() ID                       { return 385 }
+func (ResinBricks) ID() ID                       { return 414 }
 func (ResinBrickStairs) Name() string            { return "minecraft:resin_brick_stairs" }
-func (ResinBrickStairs) ID() ID                  { return 386 }
+func (ResinBrickStairs) ID() ID                  { return 415 }
 func (ResinBrickSlab) Name() string              { return "minecraft:resin_brick_slab" }
-func (ResinBrickSlab) ID() ID                    { return 387 }
+func (ResinBrickSlab) ID() ID                    { return 416 }
 func (ResinBrickWall) Name() string              { return "minecraft:resin_brick_wall" }
-func (ResinBrickWall) ID() ID                    { return 388 }
+func (ResinBrickWall) ID() ID                    { return 417 }
 func (ChiseledResinBricks) Name() string         { return "minecraft:chiseled_resin_bricks" }
-func (ChiseledResinBricks) ID() ID               { return 389 }
+func (ChiseledResinBricks) ID() ID               { return 418 }
 func (BrickStairs) Name() string                 { return "minecraft:brick_stairs" }
-func (BrickStairs) ID() ID                       { return 390 }
+func (BrickStairs) ID() ID                       { return 419 }
 func (StoneBrickStairs) Name() string            { return "minecraft:stone_brick_stairs" }
-func (StoneBrickStairs) ID() ID                  { return 391 }
+func (StoneBrickStairs) ID() ID                  { return 420 }
 func (MudBrickStairs) Name() string              { return "minecraft:mud_brick_stairs" }
-func (MudBrickStairs) ID() ID                    { return 392 }
+func (MudBrickStairs) ID() ID                    { return 421 }
 func (Mycelium) Name() string                    { return "minecraft:mycelium" }
-func (Mycelium) ID() ID                          { return 393 }
+func (Mycelium) ID() ID                          { return 422 }
 func (LilyPad) Name() string                     { return "minecraft:lily_pad" }
-func (LilyPad) ID() ID                           { return 394 }
+func (LilyPad) ID() ID                           { return 423 }
 func (NetherBricks) Name() string                { return "minecraft:nether_bricks" }
-func (NetherBricks) ID() ID                      { return 395 }
+func (NetherBricks) ID() ID                      { return 424 }
 func (CrackedNetherBricks) Name() string         { return "minecraft:cracked_nether_bricks" }
-func (CrackedNetherBricks) ID() ID               { return 396 }
+func (CrackedNetherBricks) ID() ID               { return 425 }
 func (ChiseledNetherBricks) Name() string        { return "minecraft:chiseled_nether_bricks" }
-func (ChiseledNetherBricks) ID() ID              { return 397 }
+func (ChiseledNetherBricks) ID() ID              { return 426 }
 func (NetherBrickFence) Name() string            { return "minecraft:nether_brick_fence" }
-func (NetherBrickFence) ID() ID                  { return 398 }
+func (NetherBrickFence) ID() ID                  { return 427 }
 func (NetherBrickStairs) Name() string           { return "minecraft:nether_brick_stairs" }
-func (NetherBrickStairs) ID() ID                 { return 399 }
+func (NetherBrickStairs) ID() ID                 { return 428 }
 func (Sculk) Name() string                       { return "minecraft:sculk" }
-func (Sculk) ID() ID                             { return 400 }
+func (Sculk) ID() ID                             { return 429 }
 func (SculkVein) Name() string                   { return "minecraft:sculk_vein" }
-func (SculkVein) ID() ID                         { return 401 }
+func (SculkVein) ID() ID                         { return 430 }
 func (SculkCatalyst) Name() string               { return "minecraft:sculk_catalyst" }
-func (SculkCatalyst) ID() ID                     { return 402 }
+func (SculkCatalyst) ID() ID                     { return 431 }
 func (SculkShrieker) Name() string               { return "minecraft:sculk_shrieker" }
-func (SculkShrieker) ID() ID                     { return 403 }
+func (SculkShrieker) ID() ID                     { return 432 }
 func (EnchantingTable) Name() string             { return "minecraft:enchanting_table" }
-func (EnchantingTable) ID() ID                   { return 404 }
+func (EnchantingTable) ID() ID                   { return 433 }
 func (EndPortalFrame) Name() string              { return "minecraft:end_portal_frame" }
-func (EndPortalFrame) ID() ID                    { return 405 }
+func (EndPortalFrame) ID() ID                    { return 434 }
 func (EndStone) Name() string                    { return "minecraft:end_stone" }
-func (EndStone) ID() ID                          { return 406 }
+func (EndStone) ID() ID                          { return 435 }
 func (EndStoneBricks) Name() string              { return "minecraft:end_stone_bricks" }
-func (EndStoneBricks) ID() ID                    { return 407 }
+func (EndStoneBricks) ID() ID                    { return 436 }
 func (DragonEgg) Name() string                   { return "minecraft:dragon_egg" }
-func (DragonEgg) ID() ID                         { return 408 }
+func (DragonEgg) ID() ID                         { return 437 }
 func (SandstoneStairs) Name() string             { return "minecraft:sandstone_stairs" }
-func (SandstoneStairs) ID() ID                   { return 409 }
+func (SandstoneStairs) ID() ID                   { return 438 }
 func (EnderChest) Name() string                  { return "minecraft:ender_chest" }
-func (EnderChest) ID() ID                        { return 410 }
+func (EnderChest) ID() ID                        { return 439 }
 func (EmeraldBlock) Name() string                { return "minecraft:emerald_block" }
-func (EmeraldBlock) ID() ID                      { return 411 }
+func (EmeraldBlock) ID() ID                      { return 440 }
 func (OakStairs) Name() string                   { return "minecraft:oak_stairs" }
-func (OakStairs) ID() ID                         { return 412 }
+func (OakStairs) ID() ID                         { return 441 }
 func (SpruceStairs) Name() string                { return "minecraft:spruce_stairs" }
-func (SpruceStairs) ID() ID                      { return 413 }
+func (SpruceStairs) ID() ID                      { return 442 }
 func (BirchStairs) Name() string                 { return "minecraft:birch_stairs" }
-func (BirchStairs) ID() ID                       { return 414 }
+func (BirchStairs) ID() ID                       { return 443 }
 func (JungleStairs) Name() string                { return "minecraft:jungle_stairs" }
-func (JungleStairs) ID() ID                      { return 415 }
+func (JungleStairs) ID() ID                      { return 444 }
 func (AcaciaStairs) Name() string                { return "minecraft:acacia_stairs" }
-func (AcaciaStairs) ID() ID                      { return 416 }
+func (AcaciaStairs) ID() ID                      { return 445 }
 func (CherryStairs) Name() string                { return "minecraft:cherry_stairs" }
-func (CherryStairs) ID() ID                      { return 417 }
+func (CherryStairs) ID() ID                      { return 446 }
 func (DarkOakStairs) Name() string               { return "minecraft:dark_oak_stairs" }
-func (DarkOakStairs) ID() ID                     { return 418 }
+func (DarkOakStairs) ID() ID                     { return 447 }
 func (PaleOakStairs) Name() string               { return "minecraft:pale_oak_stairs" }
-func (PaleOakStairs) ID() ID                     { return 419 }
+func (PaleOakStairs) ID() ID                     { return 448 }
 func (MangroveStairs) Name() string              { return "minecraft:mangrove_stairs" }
-func (MangroveStairs) ID() ID                    { return 420 }
+func (MangroveStairs) ID() ID                    { return 449 }
 func (BambooStairs) Name() string                { return "minecraft:bamboo_stairs" }
-func (BambooStairs) ID() ID                      { return 421 }
+func (BambooStairs) ID() ID                      { return 450 }
 func (BambooMosaicStairs) Name() string          { return "minecraft:bamboo_mosaic_stairs" }
-func (BambooMosaicStairs) ID() ID                { return 422 }
+func (BambooMosaicStairs) ID() ID                { return 451 }
 func (CrimsonStairs) Name() string               { return "minecraft:crimson_stairs" }
-func (CrimsonStairs) ID() ID                     { return 423 }
+func (CrimsonStairs) ID() ID                     { return 452 }
 func (WarpedStairs) Name() string                { return "minecraft:warped_stairs" }
-func (WarpedStairs) ID() ID                      { return 424 }
+func (WarpedStairs) ID() ID                      { return 453 }
 func (CommandBlock) Name() string                { return "minecraft:command_block" }
-func (CommandBlock) ID() ID                      { return 425 }
+func (CommandBlock) ID() ID                      { return 454 }
 func (Beacon) Name() string                      { return "minecraft:beacon" }
-func (Beacon) ID() ID                            { return 426 }
+func (Beacon) ID() ID                            { return 455 }
 func (CobblestoneWall) Name() string             { return "minecraft:cobblestone_wall" }
-func (CobblestoneWall) ID() ID                   { return 427 }
+func (CobblestoneWall) ID() ID                   { return 456 }
 func (MossyCobblestoneWall) Name() string        { return "minecraft:mossy_cobblestone_wall" }
-func (MossyCobblestoneWall) ID() ID              { return 428 }
+func (MossyCobblestoneWall) ID() ID              { return 457 }
 func (BrickWall) Name() string                   { return "minecraft:brick_wall" }
-func (BrickWall) ID() ID                         { return 429 }
+func (BrickWall) ID() ID                         { return 458 }
 func (PrismarineWall) Name() string              { return "minecraft:prismarine_wall" }
-func (PrismarineWall) ID() ID                    { return 430 }
+func (PrismarineWall) ID() ID                    { return 459 }
 func (RedSandstoneWall) Name() string            { return "minecraft:red_sandstone_wall" }
-func (RedSandstoneWall) ID() ID                  { return 431 }
+func (RedSandstoneWall) ID() ID                  { return 460 }
 func (MossyStoneBrickWall) Name() string         { return "minecraft:mossy_stone_brick_wall" }
-func (MossyStoneBrickWall) ID() ID               { return 432 }
+func (MossyStoneBrickWall) ID() ID               { return 461 }
 func (GraniteWall) Name() string                 { return "minecraft:granite_wall" }
-func (GraniteWall) ID() ID                       { return 433 }
+func (GraniteWall) ID() ID                       { return 462 }
 func (StoneBrickWall) Name() string              { return "minecraft:stone_brick_wall" }
-func (StoneBrickWall) ID() ID                    { return 434 }
+func (StoneBrickWall) ID() ID                    { return 463 }
 func (MudBrickWall) Name() string                { return "minecraft:mud_brick_wall" }
-func (MudBrickWall) ID() ID                      { return 435 }
+func (MudBrickWall) ID() ID                      { return 464 }
 func (NetherBrickWall) Name() string             { return "minecraft:nether_brick_wall" }
-func (NetherBrickWall) ID() ID                   { return 436 }
+func (NetherBrickWall) ID() ID                   { return 465 }
 func (AndesiteWall) Name() string                { return "minecraft:andesite_wall" }
-func (AndesiteWall) ID() ID                      { return 437 }
+func (AndesiteWall) ID() ID                      { return 466 }
 func (RedNetherBrickWall) Name() string          { return "minecraft:red_nether_brick_wall" }
-func (RedNetherBrickWall) ID() ID                { return 438 }
+func (RedNetherBrickWall) ID() ID                { return 467 }
 func (SandstoneWall) Name() string               { return "minecraft:sandstone_wall" }
-func (SandstoneWall) ID() ID                     { return 439 }
+func (SandstoneWall) ID() ID                     { return 468 }
 func (EndStoneBrickWall) Name() string           { return "minecraft:end_stone_brick_wall" }
-func (EndStoneBrickWall) ID() ID                 { return 440 }
+func (EndStoneBrickWall) ID() ID                 { return 469 }
 func (DioriteWall) Name() string                 { return "minecraft:diorite_wall" }
-func (DioriteWall) ID() ID                       { return 441 }
+func (DioriteWall) ID() ID                       { return 470 }
 func (BlackstoneWall) Name() string              { return "minecraft:blackstone_wall" }
-func (BlackstoneWall) ID() ID                    { return 442 }
+func (BlackstoneWall) ID() ID                    { return 471 }
 func (PolishedBlackstoneWall) Name() string      { return "minecraft:polished_blackstone_wall" }
-func (PolishedBlackstoneWall) ID() ID            { return 443 }
+func (PolishedBlackstoneWall) ID() ID            { return 472 }
 func (PolishedBlackstoneBrickWall) Name() string { return "minecraft:polished_blackstone_brick_wall" }
-func (PolishedBlackstoneBrickWall) ID() ID       { return 444 }
+func (PolishedBlackstoneBrickWall) ID() ID       { return 473 }
 func (CobbledDeepslateWall) Name() string        { return "minecraft:cobbled_deepslate_wall" }
-func (CobbledDeepslateWall) ID() ID              { return 445 }
+func (CobbledDeepslateWall) ID() ID              { return 474 }
 func (PolishedDeepslateWall) Name() string       { return "minecraft:polished_deepslate_wall" }
-func (PolishedDeepslateWall) ID() ID             { return 446 }
+func (PolishedDeepslateWall) ID() ID             { return 475 }
 func (DeepslateBrickWall) Name() string          { return "minecraft:deepslate_brick_wall" }
-func (DeepslateBrickWall) ID() ID                { return 447 }
+func (DeepslateBrickWall) ID() ID                { return 476 }
 func (DeepslateTileWall) Name() string           { return "minecraft:deepslate_tile_wall" }
-func (DeepslateTileWall) ID() ID                 { return 448 }
+func (DeepslateTileWall) ID() ID                 { return 477 }
 func (Anvil) Name() string                       { return "minecraft:anvil" }
-func (Anvil) ID() ID                             { return 449 }
+func (Anvil) ID() ID                             { return 478 }
 func (ChippedAnvil) Name() string                { return "minecraft:chipped_anvil" }
-func (ChippedAnvil) ID() ID                      { return 450 }
+func (ChippedAnvil) ID() ID                      { return 479 }
 func (DamagedAnvil) Name() string                { return "minecraft:damaged_anvil" }
-func (DamagedAnvil) ID() ID                      { return 451 }
+func (DamagedAnvil) ID() ID                      { return 480 }
 func (ChiseledQuartzBlock) Name() string         { return "minecraft:chiseled_quartz_block" }
-func (ChiseledQuartzBlock) ID() ID               { return 452 }
+func (ChiseledQuartzBlock) ID() ID               { return 481 }
 func (QuartzBlock) Name() string                 { return "minecraft:quartz_block" }
-func (QuartzBlock) ID() ID                       { return 453 }
+func (QuartzBlock) ID() ID                       { return 482 }
 func (QuartzBricks) Name() string                { return "minecraft:quartz_bricks" }
-func (QuartzBricks) ID() ID                      { return 454 }
+func (QuartzBricks) ID() ID                      { return 483 }
 func (QuartzPillar) Name() string                { return "minecraft:quartz_pillar" }
-func (QuartzPillar) ID() ID                      { return 455 }
+func (QuartzPillar) ID() ID                      { return 484 }
 func (QuartzStairs) Name() string                { return "minecraft:quartz_stairs" }
-func (QuartzStairs) ID() ID                      { return 456 }
+func (QuartzStairs) ID() ID                      { return 485 }
 func (WhiteTerracotta) Name() string             { return "minecraft:white_terracotta" }
-func (WhiteTerracotta) ID() ID                   { return 457 }
+func (WhiteTerracotta) ID() ID                   { return 486 }
 func (OrangeTerracotta) Name() string            { return "minecraft:orange_terracotta" }
-func (OrangeTerracotta) ID() ID                  { return 458 }
+func (OrangeTerracotta) ID() ID                  { return 487 }
 func (MagentaTerracotta) Name() string           { return "minecraft:magenta_terracotta" }
-func (MagentaTerracotta) ID() ID                 { return 459 }
+func (MagentaTerracotta) ID() ID                 { return 488 }
 func (LightBlueTerracotta) Name() string         { return "minecraft:light_blue_terracotta" }
-func (LightBlueTerracotta) ID() ID               { return 460 }
+func (LightBlueTerracotta) ID() ID               { return 489 }
 func (YellowTerracotta) Name() string            { return "minecraft:yellow_terracotta" }
-func (YellowTerracotta) ID() ID                  { return 461 }
+func (YellowTerracotta) ID() ID                  { return 490 }
 func (LimeTerracotta) Name() string              { return "minecraft:lime_terracotta" }
-func (LimeTerracotta) ID() ID                    { return 462 }
+func (LimeTerracotta) ID() ID                    { return 491 }
 func (PinkTerracotta) Name() string              { return "minecraft:pink_terracotta" }
-func (PinkTerracotta) ID() ID                    { return 463 }
+func (PinkTerracotta) ID() ID                    { return 492 }
 func (GrayTerracotta) Name() string              { return "minecraft:gray_terracotta" }
-func (GrayTerracotta) ID() ID                    { return 464 }
+func (GrayTerracotta) ID() ID                    { return 493 }
 func (LightGrayTerracotta) Name() string         { return "minecraft:light_gray_terracotta" }
-func (LightGrayTerracotta) ID() ID               { return 465 }
+func (LightGrayTerracotta) ID() ID               { return 494 }
 func (CyanTerracotta) Name() string              { return "minecraft:cyan_terracotta" }
-func (CyanTerracotta) ID() ID                    { return 466 }
+func (CyanTerracotta) ID() ID                    { return 495 }
 func (PurpleTerracotta) Name() string            { return "minecraft:purple_terracotta" }
-func (PurpleTerracotta) ID() ID                  { return 467 }
+func (PurpleTerracotta) ID() ID                  { return 496 }
 func (BlueTerracotta) Name() string              { return "minecraft:blue_terracotta" }
-func (BlueTerracotta) ID() ID                    { return 468 }
+func (BlueTerracotta) ID() ID                    { return 497 }
 func (BrownTerracotta) Name() string             { return "minecraft:brown_terracotta" }
-func (BrownTerracotta) ID() ID                   { return 469 }
+func (BrownTerracotta) ID() ID                   { return 498 }
 func (GreenTerracotta) Name() string             { return "minecraft:green_terracotta" }
-func (GreenTerracotta) ID() ID                   { return 470 }
+func (GreenTerracotta) ID() ID                   { return 499 }
 func (RedTerracotta) Name() string               { return "minecraft:red_terracotta" }
-func (RedTerracotta) ID() ID                     { return 471 }
+func (RedTerracotta) ID() ID                     { return 500 }
 func (BlackTerracotta) Name() string             { return "minecraft:black_terracotta" }
-func (BlackTerracotta) ID() ID                   { return 472 }
+func (BlackTerracotta) ID() ID                   { return 501 }
 func (Barrier) Name() string                     { return "minecraft:barrier" }
-func (Barrier) ID() ID                           { return 473 }
+func (Barrier) ID() ID                           { return 502 }
 func (Light) Name() string                       { return "minecraft:light" }
-func (Light) ID() ID                             { return 474 }
+func (Light) ID() ID                             { return 503 }
 func (HayBlock) Name() string                    { return "minecraft:hay_block" }
-func (HayBlock) ID() ID                          { return 475 }
+func (HayBlock) ID() ID                          { return 504 }
 func (WhiteCarpet) Name() string                 { return "minecraft:white_carpet" }
-func (WhiteCarpet) ID() ID                       { return 476 }
+func (WhiteCarpet) ID() ID                       { return 505 }
 func (OrangeCarpet) Name() string                { return "minecraft:orange_carpet" }
-func (OrangeCarpet) ID() ID                      { return 477 }
+func (OrangeCarpet) ID() ID                      { return 506 }
 func (MagentaCarpet) Name() string               { return "minecraft:magenta_carpet" }
-func (MagentaCarpet) ID() ID                     { return 478 }
+func (MagentaCarpet) ID() ID                     { return 507 }
 func (LightBlueCarpet) Name() string             { return "minecraft:light_blue_carpet" }
-func (LightBlueCarpet) ID() ID                   { return 479 }
+func (LightBlueCarpet) ID() ID                   { return 508 }
 func (YellowCarpet) Name() string                { return "minecraft:yellow_carpet" }
-func (YellowCarpet) ID() ID                      { return 480 }
+func (YellowCarpet) ID() ID                      { return 509 }
 func (LimeCarpet) Name() string                  { return "minecraft:lime_carpet" }
-func (LimeCarpet) ID() ID                        { return 481 }
+func (LimeCarpet) ID() ID                        { return 510 }
 func (PinkCarpet) Name() string                  { return "minecraft:pink_carpet" }
-func (PinkCarpet) ID() ID                        { return 482 }
+func (PinkCarpet) ID() ID                        { return 511 }
 func (GrayCarpet) Name() string                  { return "minecraft:gray_carpet" }
-func (GrayCarpet) ID() ID                        { return 483 }
+func (GrayCarpet) ID() ID                        { return 512 }
 func (LightGrayCarpet) Name() string             { return "minecraft:light_gray_carpet" }
-func (LightGrayCarpet) ID() ID                   { return 484 }
+func (LightGrayCarpet) ID() ID                   { return 513 }
 func (CyanCarpet) Name() string                  { return "minecraft:cyan_carpet" }
-func (CyanCarpet) ID() ID                        { return 485 }
+func (CyanCarpet) ID() ID                        { return 514 }
 func (PurpleCarpet) Name() string                { return "minecraft:purple_carpet" }
-func (PurpleCarpet) ID() ID                      { return 486 }
+func (PurpleCarpet) ID() ID                      { return 515 }
 func (BlueCarpet) Name() string                  { return "minecraft:blue_carpet" }
-func (BlueCarpet) ID() ID                        { return 487 }
+func (BlueCarpet) ID() ID                        { return 516 }
 func (BrownCarpet) Name() string                 { return "minecraft:brown_carpet" }
-func (BrownCarpet) ID() ID                       { return 488 }
+func (BrownCarpet) ID() ID                       { return 517 }
 func (GreenCarpet) Name() string                 { return "minecraft:green_carpet" }
-func (GreenCarpet) ID() ID                       { return 489 }
+func (GreenCarpet) ID() ID                       { return 518 }
 func (RedCarpet) Name() string                   { return "minecraft:red_carpet" }
-func (RedCarpet) ID() ID                         { return 490 }
+func (RedCarpet) ID() ID                         { return 519 }
 func (BlackCarpet) Name() string                 { return "minecraft:black_carpet" }
-func (BlackCarpet) ID() ID                       { return 491 }
+func (BlackCarpet) ID() ID                       { return 520 }
 func (Terracotta) Name() string                  { return "minecraft:terracotta" }
-func (Terracotta) ID() ID                        { return 492 }
+func (Terracotta) ID() ID                        { return 521 }
 func (PackedIce) Name() string                   { return "minecraft:packed_ice" }
-func (PackedIce) ID() ID                         { return 493 }
+func (PackedIce) ID() ID                         { return 522 }
 func (DirtPath) Name() string                    { return "minecraft:dirt_path" }
-func (DirtPath) ID() ID                          { return 494 }
+func (DirtPath) ID() ID                          { return 523 }
 func (Sunflower) Name() string                   { return "minecraft:sunflower" }
-func (Sunflower) ID() ID                         { return 495 }
+func (Sunflower) ID() ID                         { return 524 }
 func (Lilac) Name() string                       { return "minecraft:lilac" }
-func (Lilac) ID() ID                             { return 496 }
+func (Lilac) ID() ID                             { return 525 }
 func (RoseBush) Name() string                    { return "minecraft:rose_bush" }
-func (RoseBush) ID() ID                          { return 497 }
+func (RoseBush) ID() ID                          { return 526 }
 func (Peony) Name() string                       { return "minecraft:peony" }
-func (Peony) ID() ID                             { return 498 }
+func (Peony) ID() ID                             { return 527 }
 func (TallGrass) Name() string                   { return "minecraft:tall_grass" }
-func (TallGrass) ID() ID                         { return 499 }
+func (TallGrass) ID() ID                         { return 528 }
 func (LargeFern) Name() string                   { return "minecraft:large_fern" }
-func (LargeFern) ID() ID                         { return 500 }
+func (LargeFern) ID() ID                         { return 529 }
 func (WhiteStainedGlass) Name() string           { return "minecraft:white_stained_glass" }
-func (WhiteStainedGlass) ID() ID                 { return 501 }
+func (WhiteStainedGlass) ID() ID                 { return 530 }
 func (OrangeStainedGlass) Name() string          { return "minecraft:orange_stained_glass" }
-func (OrangeStainedGlass) ID() ID                { return 502 }
+func (OrangeStainedGlass) ID() ID                { return 531 }
 func (MagentaStainedGlass) Name() string         { return "minecraft:magenta_stained_glass" }
-func (MagentaStainedGlass) ID() ID               { return 503 }
+func (MagentaStainedGlass) ID() ID               { return 532 }
 func (LightBlueStainedGlass) Name() string       { return "minecraft:light_blue_stained_glass" }
-func (LightBlueStainedGlass) ID() ID             { return 504 }
+func (LightBlueStainedGlass) ID() ID             { return 533 }
 func (YellowStainedGlass) Name() string          { return "minecraft:yellow_stained_glass" }
-func (YellowStainedGlass) ID() ID                { return 505 }
+func (YellowStainedGlass) ID() ID                { return 534 }
 func (LimeStainedGlass) Name() string            { return "minecraft:lime_stained_glass" }
-func (LimeStainedGlass) ID() ID                  { return 506 }
+func (LimeStainedGlass) ID() ID                  { return 535 }
 func (PinkStainedGlass) Name() string            { return "minecraft:pink_stained_glass" }
-func (PinkStainedGlass) ID() ID                  { return 507 }
+func (PinkStainedGlass) ID() ID                  { return 536 }
 func (GrayStainedGlass) Name() string            { return "minecraft:gray_stained_glass" }
-func (GrayStainedGlass) ID() ID                  { return 508 }
+func (GrayStainedGlass) ID() ID                  { return 537 }
 func (LightGrayStainedGlass) Name() string       { return "minecraft:light_gray_stained_glass" }
-func (LightGrayStainedGlass) ID() ID             { return 509 }
+func (LightGrayStainedGlass) ID() ID             { return 538 }
 func (CyanStainedGlass) Name() string            { return "minecraft:cyan_stained_glass" }
-func (CyanStainedGlass) ID() ID                  { return 510 }
+func (CyanStainedGlass) ID() ID                  { return 539 }
 func (PurpleStainedGlass) Name() string          { return "minecraft:purple_stained_glass" }
-func (PurpleStainedGlass) ID() ID                { return 511 }
+func (PurpleStainedGlass) ID() ID                { return 540 }
 func (BlueStainedGlass) Name() string            { return "minecraft:blue_stained_glass" }
-func (BlueStainedGlass) ID() ID                  { return 512 }
+func (BlueStainedGlass) ID() ID                  { return 541 }
 func (BrownStainedGlass) Name() string           { return "minecraft:brown_stained_glass" }
-func (BrownStainedGlass) ID() ID                 { return 513 }
+func (BrownStainedGlass) ID() ID                 { return 542 }
 func (GreenStainedGlass) Name() string           { return "minecraft:green_stained_glass" }
-func (GreenStainedGlass) ID() ID                 { return 514 }
+func (GreenStainedGlass) ID() ID                 { return 543 }
 func (RedStainedGlass) Name() string             { return "minecraft:red_stained_glass" }
-func (RedStainedGlass) ID() ID                   { return 515 }
+func (RedStainedGlass) ID() ID                   { return 544 }
 func (BlackStainedGlass) Name() string           { return "minecraft:black_stained_glass" }
-func (BlackStainedGlass) ID() ID                 { return 516 }
+func (BlackStainedGlass) ID() ID                 { return 545 }
 func (WhiteStainedGlassPane) Name() string       { return "minecraft:white_stained_glass_pane" }
-func (WhiteStainedGlassPane) ID() ID             { return 517 }
+func (WhiteStainedGlassPane) ID() ID             { return 546 }
 func (OrangeStainedGlassPane) Name() string      { return "minecraft:orange_stained_glass_pane" }
-func (OrangeStainedGlassPane) ID() ID            { return 518 }
+func (OrangeStainedGlassPane) ID() ID            { return 547 }
 func (MagentaStainedGlassPane) Name() string     { return "minecraft:magenta_stained_glass_pane" }
-func (MagentaStainedGlassPane) ID() ID           { return 519 }
+func (MagentaStainedGlassPane) ID() ID           { return 548 }
 func (LightBlueStainedGlassPane) Name() string   { return "minecraft:light_blue_stained_glass_pane" }
-func (LightBlueStainedGlassPane) ID() ID         { return 520 }
+func (LightBlueStainedGlassPane) ID() ID         { return 549 }
 func (YellowStainedGlassPane) Name() string      { return "minecraft:yellow_stained_glass_pane" }
-func (YellowStainedGlassPane) ID() ID            { return 521 }
+func (YellowStainedGlassPane) ID() ID            { return 550 }
 func (LimeStainedGlassPane) Name() string        { return "minecraft:lime_stained_glass_pane" }
-func (LimeStainedGlassPane) ID() ID              { return 522 }
+func (LimeStainedGlassPane) ID() ID              { return 551 }
 func (PinkStainedGlassPane) Name() string        { return "minecraft:pink_stained_glass_pane" }
-func (PinkStainedGlassPane) ID() ID              { return 523 }
+func (PinkStainedGlassPane) ID() ID              { return 552 }
 func (GrayStainedGlassPane) Name() string        { return "minecraft:gray_stained_glass_pane" }
-func (GrayStainedGlassPane) ID() ID              { return 524 }
+func (GrayStainedGlassPane) ID() ID              { return 553 }
 func (LightGrayStainedGlassPane) Name() string   { return "minecraft:light_gray_stained_glass_pane" }
-func (LightGrayStainedGlassPane) ID() ID         { return 525 }
+func (LightGrayStainedGlassPane) ID() ID         { return 554 }
 func (CyanStainedGlassPane) Name() string        { return "minecraft:cyan_stained_glass_pane" }
-func (CyanStainedGlassPane) ID() ID              { return 526 }
+func (CyanStainedGlassPane) ID() ID              { return 555 }
 func (PurpleStainedGlassPane) Name() string      { return "minecraft:purple_stained_glass_pane" }
-func (PurpleStainedGlassPane) ID() ID            { return 527 }
+func (PurpleStainedGlassPane) ID() ID            { return 556 }
 func (BlueStainedGlassPane) Name() string        { return "minecraft:blue_stained_glass_pane" }
-func (BlueStainedGlassPane) ID() ID              { return 528 }
+func (BlueStainedGlassPane) ID() ID              { return 557 }
 func (BrownStainedGlassPane) Name() string       { return "minecraft:brown_stained_glass_pane" }
-func (BrownStainedGlassPane) ID() ID             { return 529 }
+func (BrownStainedGlassPane) ID() ID             { return 558 }
 func (GreenStainedGlassPane) Name() string       { return "minecraft:green_stained_glass_pane" }
-func (GreenStainedGlassPane) ID() ID             { return 530 }
+func (GreenStainedGlassPane) ID() ID             { return 559 }
 func (RedStainedGlassPane) Name() string         { return "minecraft:red_stained_glass_pane" }
-func (RedStainedGlassPane) ID() ID               { return 531 }
+func (RedStainedGlassPane) ID() ID               { return 560 }
 func (BlackStainedGlassPane) Name() string       { return "minecraft:black_stained_glass_pane" }
-func (BlackStainedGlassPane) ID() ID             { return 532 }
+func (BlackStainedGlassPane) ID() ID             { return 561 }
 func (Prismarine) Name() string                  { return "minecraft:prismarine" }
-func (Prismarine) ID() ID                        { return 533 }
+func (Prismarine) ID() ID                        { return 562 }
 func (PrismarineBricks) Name() string            { return "minecraft:prismarine_bricks" }
-func (PrismarineBricks) ID() ID                  { return 534 }
+func (PrismarineBricks) ID() ID                  { return 563 }
 func (DarkPrismarine) Name() string              { return "minecraft:dark_prismarine" }
-func (DarkPrismarine) ID() ID                    { return 535 }
+func (DarkPrismarine) ID() ID                    { return 564 }
 func (PrismarineStairs) Name() string            { return "minecraft:prismarine_stairs" }
-func (PrismarineStairs) ID() ID                  { return 536 }
+func (PrismarineStairs) ID() ID                  { return 565 }
 func (PrismarineBrickStairs) Name() string       { return "minecraft:prismarine_brick_stairs" }
-func (PrismarineBrickStairs) ID() ID             { return 537 }
+func (PrismarineBrickStairs) ID() ID             { return 566 }
 func (DarkPrismarineStairs) Name() string        { return "minecraft:dark_prismarine_stairs" }
-func (DarkPrismarineStairs) ID() ID              { return 538 }
+func (DarkPrismarineStairs) ID() ID              { return 567 }
 func (SeaLantern) Name() string                  { return "minecraft:sea_lantern" }
-func (SeaLantern) ID() ID                        { return 539 }
+func (SeaLantern) ID() ID                        { return 568 }
 func (RedSandstone) Name() string                { return "minecraft:red_sandstone" }
-func (RedSandstone) ID() ID                      { return 540 }
+func (RedSandstone) ID() ID                      { return 569 }
 func (ChiseledRedSandstone) Name() string        { return "minecraft:chiseled_red_sandstone" }
-func (ChiseledRedSandstone) ID() ID              { return 541 }
+func (ChiseledRedSandstone) ID() ID              { return 570 }
 func (CutRedSandstone) Name() string             { return "minecraft:cut_red_sandstone" }
-func (CutRedSandstone) ID() ID                   { return 542 }
+func (CutRedSandstone) ID() ID                   { return 571 }
 func (RedSandstoneStairs) Name() string          { return "minecraft:red_sandstone_stairs" }
-func (RedSandstoneStairs) ID() ID                { return 543 }
+func (RedSandstoneStairs) ID() ID                { return 572 }
 func (RepeatingCommandBlock) Name() string       { return "minecraft:repeating_command_block" }
-func (RepeatingCommandBlock) ID() ID             { return 544 }
+func (RepeatingCommandBlock) ID() ID             { return 573 }
 func (ChainCommandBlock) Name() string           { return "minecraft:chain_command_block" }
-func (ChainCommandBlock) ID() ID                 { return 545 }
+func (ChainCommandBlock) ID() ID                 { return 574 }
 func (MagmaBlock) Name() string                  { return "minecraft:magma_block" }
-func (MagmaBlock) ID() ID                        { return 546 }
+func (MagmaBlock) ID() ID                        { return 575 }
 func (NetherWartBlock) Name() string             { return "minecraft:nether_wart_block" }
-func (NetherWartBlock) ID() ID                   { return 547 }
+func (NetherWartBlock) ID() ID                   { return 576 }
 func (WarpedWartBlock) Name() string             { return "minecraft:warped_wart_block" }
-func (WarpedWartBlock) ID() ID                   { return 548 }
+func (WarpedWartBlock) ID() ID                   { return 577 }
 func (RedNetherBricks) Name() string             { return "minecraft:red_nether_bricks" }
-func (RedNetherBricks) ID() ID                   { return 549 }
+func (RedNetherBricks) ID() ID                   { return 578 }
 func (BoneBlock) Name() string                   { return "minecraft:bone_block" }
-func (BoneBlock) ID() ID                         { return 550 }
+func (BoneBlock) ID() ID                         { return 579 }
 func (StructureVoid) Name() string               { return "minecraft:structure_void" }
-func (StructureVoid) ID() ID                     { return 551 }
+func (StructureVoid) ID() ID                     { return 580 }
 func (ShulkerBox) Name() string                  { return "minecraft:shulker_box" }
-func (ShulkerBox) ID() ID                        { return 552 }
+func (ShulkerBox) ID() ID                        { return 581 }
 func (WhiteShulkerBox) Name() string             { return "minecraft:white_shulker_box" }
-func (WhiteShulkerBox) ID() ID                   { return 553 }
+func (WhiteShulkerBox) ID() ID                   { return 582 }
 func (OrangeShulkerBox) Name() string            { return "minecraft:orange_shulker_box" }
-func (OrangeShulkerBox) ID() ID                  { return 554 }
+func (OrangeShulkerBox) ID() ID                  { return 583 }
 func (MagentaShulkerBox) Name() string           { return "minecraft:magenta_shulker_box" }
-func (MagentaShulkerBox) ID() ID                 { return 555 }
+func (MagentaShulkerBox) ID() ID                 { return 584 }
 func (LightBlueShulkerBox) Name() string         { return "minecraft:light_blue_shulker_box" }
-func (LightBlueShulkerBox) ID() ID               { return 556 }
+func (LightBlueShulkerBox) ID() ID               { return 585 }
 func (YellowShulkerBox) Name() string            { return "minecraft:yellow_shulker_box" }
-func (YellowShulkerBox) ID() ID                  { return 557 }
+func (YellowShulkerBox) ID() ID                  { return 586 }
 func (LimeShulkerBox) Name() string              { return "minecraft:lime_shulker_box" }
-func (LimeShulkerBox) ID() ID                    { return 558 }
+func (LimeShulkerBox) ID() ID                    { return 587 }
 func (PinkShulkerBox) Name() string              { return "minecraft:pink_shulker_box" }
-func (PinkShulkerBox) ID() ID                    { return 559 }
+func (PinkShulkerBox) ID() ID                    { return 588 }
 func (GrayShulkerBox) Name() string              { return "minecraft:gray_shulker_box" }
-func (GrayShulkerBox) ID() ID                    { return 560 }
+func (GrayShulkerBox) ID() ID                    { return 589 }
 func (LightGrayShulkerBox) Name() string         { return "minecraft:light_gray_shulker_box" }
-func (LightGrayShulkerBox) ID() ID               { return 561 }
+func (LightGrayShulkerBox) ID() ID               { return 590 }
 func (CyanShulkerBox) Name() string              { return "minecraft:cyan_shulker_box" }
-func (CyanShulkerBox) ID() ID                    { return 562 }
+func (CyanShulkerBox) ID() ID                    { return 591 }
 func (PurpleShulkerBox) Name() string            { return "minecraft:purple_shulker_box" }
-func (PurpleShulkerBox) ID() ID                  { return 563 }
+func (PurpleShulkerBox) ID() ID                  { return 592 }
 func (BlueShulkerBox) Name() string              { return "minecraft:blue_shulker_box" }
-func (BlueShulkerBox) ID() ID                    { return 564 }
+func (BlueShulkerBox) ID() ID                    { return 593 }
 func (BrownShulkerBox) Name() string             { return "minecraft:brown_shulker_box" }
-func (BrownShulkerBox) ID() ID                   { return 565 }
+func (BrownShulkerBox) ID() ID                   { return 594 }
 func (GreenShulkerBox) Name() string             { return "minecraft:green_shulker_box" }
-func (GreenShulkerBox) ID() ID                   { return 566 }
+func (GreenShulkerBox) ID() ID                   { return 595 }
 func (RedShulkerBox) Name() string               { return "minecraft:red_shulker_box" }
-func (RedShulkerBox) ID() ID                     { return 567 }
+func (RedShulkerBox) ID() ID                     { return 596 }
 func (BlackShulkerBox) Name() string             { return "minecraft:black_shulker_box" }
-func (BlackShulkerBox) ID() ID                   { return 568 }
+func (BlackShulkerBox) ID() ID                   { return 597 }
 func (WhiteGlazedTerracotta) Name() string       { return "minecraft:white_glazed_terracotta" }
-func (WhiteGlazedTerracotta) ID() ID             { return 569 }
+func (WhiteGlazedTerracotta) ID() ID             { return 598 }
 func (OrangeGlazedTerracotta) Name() string      { return "minecraft:orange_glazed_terracotta" }
-func (OrangeGlazedTerracotta) ID() ID            { return 570 }
+func (OrangeGlazedTerracotta) ID() ID            { return 599 }
 func (MagentaGlazedTerracotta) Name() string     { return "minecraft:magenta_glazed_terracotta" }
-func (MagentaGlazedTerracotta) ID() ID           { return 571 }
+func (MagentaGlazedTerracotta) ID() ID           { return 600 }
 func (LightBlueGlazedTerracotta) Name() string   { return "minecraft:light_blue_glazed_terracotta" }
-func (LightBlueGlazedTerracotta) ID() ID         { return 572 }
+func (LightBlueGlazedTerracotta) ID() ID         { return 601 }
 func (YellowGlazedTerracotta) Name() string      { return "minecraft:yellow_glazed_terracotta" }
-func (YellowGlazedTerracotta) ID() ID            { return 573 }
+func (YellowGlazedTerracotta) ID() ID            { return 602 }
 func (LimeGlazedTerracotta) Name() string        { return "minecraft:lime_glazed_terracotta" }
-func (LimeGlazedTerracotta) ID() ID              { return 574 }
+func (LimeGlazedTerracotta) ID() ID              { return 603 }
 func (PinkGlazedTerracotta) Name() string        { return "minecraft:pink_glazed_terracotta" }
-func (PinkGlazedTerracotta) ID() ID              { return 575 }
+func (PinkGlazedTerracotta) ID() ID              { return 604 }
 func (GrayGlazedTerracotta) Name() string        { return "minecraft:gray_glazed_terracotta" }
-func (GrayGlazedTerracotta) ID() ID              { return 576 }
+func (GrayGlazedTerracotta) ID() ID              { return 605 }
 func (LightGrayGlazedTerracotta) Name() string   { return "minecraft:light_gray_glazed_terracotta" }
-func (LightGrayGlazedTerracotta) ID() ID         { return 577 }
+func (LightGrayGlazedTerracotta) ID() ID         { return 606 }
 func (CyanGlazedTerracotta) Name() string        { return "minecraft:cyan_glazed_terracotta" }
-func (CyanGlazedTerracotta) ID() ID              { return 578 }
+func (CyanGlazedTerracotta) ID() ID              { return 607 }
 func (PurpleGlazedTerracotta) Name() string      { return "minecraft:purple_glazed_terracotta" }
-func (PurpleGlazedTerracotta) ID() ID            { return 579 }
+func (PurpleGlazedTerracotta) ID() ID            { return 608 }
 func (BlueGlazedTerracotta) Name() string        { return "minecraft:blue_glazed_terracotta" }
-func (BlueGlazedTerracotta) ID() ID              { return 580 }
+func (BlueGlazedTerracotta) ID() ID              { return 609 }
 func (BrownGlazedTerracotta) Name() string       { return "minecraft:brown_glazed_terracotta" }
-func (BrownGlazedTerracotta) ID() ID             { return 581 }
+func (BrownGlazedTerracotta) ID() ID             { return 610 }
 func (GreenGlazedTerracotta) Name() string       { return "minecraft:green_glazed_terracotta" }
-func (GreenGlazedTerracotta) ID() ID             { return 582 }
+func (GreenGlazedTerracotta) ID() ID             { return 611 }
 func (RedGlazedTerracotta) Name() string         { return "minecraft:red_glazed_terracotta" }
-func (RedGlazedTerracotta) ID() ID               { return 583 }
+func (RedGlazedTerracotta) ID() ID               { return 612 }
 func (BlackGlazedTerracotta) Name() string       { return "minecraft:black_glazed_terracotta" }
-func (BlackGlazedTerracotta) ID() ID             { return 584 }
+func (BlackGlazedTerracotta) ID() ID             { return 613 }
 func (WhiteConcrete) Name() string               { return "minecraft:white_concrete" }
-func (WhiteConcrete) ID() ID                     { return 585 }
+func (WhiteConcrete) ID() ID                     { return 614 }
 func (OrangeConcrete) Name() string              { return "minecraft:orange_concrete" }
-func (OrangeConcrete) ID() ID                    { return 586 }
+func (OrangeConcrete) ID() ID                    { return 615 }
 func (MagentaConcrete) Name() string             { return "minecraft:magenta_concrete" }
-func (MagentaConcrete) ID() ID                   { return 587 }
+func (MagentaConcrete) ID() ID                   { return 616 }
 func (LightBlueConcrete) Name() string           { return "minecraft:light_blue_concrete" }
-func (LightBlueConcrete) ID() ID                 { return 588 }
+func (LightBlueConcrete) ID() ID                 { return 617 }
 func (YellowConcrete) Name() string              { return "minecraft:yellow_concrete" }
-func (YellowConcrete) ID() ID                    { return 589 }
+func (YellowConcrete) ID() ID                    { return 618 }
 func (LimeConcrete) Name() string                { return "minecraft:lime_concrete" }
-func (LimeConcrete) ID() ID                      { return 590 }
+func (LimeConcrete) ID() ID                      { return 619 }
 func (PinkConcrete) Name() string                { return "minecraft:pink_concrete" }
-func (PinkConcrete) ID() ID                      { return 591 }
+func (PinkConcrete) ID() ID                      { return 620 }
 func (GrayConcrete) Name() string                { return "minecraft:gray_concrete" }
-func (GrayConcrete) ID() ID                      { return 592 }
+func (GrayConcrete) ID() ID                      { return 621 }
 func (LightGrayConcrete) Name() string           { return "minecraft:light_gray_concrete" }
-func (LightGrayConcrete) ID() ID                 { return 593 }
+func (LightGrayConcrete) ID() ID                 { return 622 }
 func (CyanConcrete) Name() string                { return "minecraft:cyan_concrete" }
-func (CyanConcrete) ID() ID                      { return 594 }
+func (CyanConcrete) ID() ID                      { return 623 }
 func (PurpleConcrete) Name() string              { return "minecraft:purple_concrete" }
-func (PurpleConcrete) ID() ID                    { return 595 }
+func (PurpleConcrete) ID() ID                    { return 624 }
 func (BlueConcrete) Name() string                { return "minecraft:blue_concrete" }
-func (BlueConcrete) ID() ID                      { return 596 }
+func (BlueConcrete) ID() ID                      { return 625 }
 func (BrownConcrete) Name() string               { return "minecraft:brown_concrete" }
-func (BrownConcrete) ID() ID                     { return 597 }
+func (BrownConcrete) ID() ID                     { return 626 }
 func (GreenConcrete) Name() string               { return "minecraft:green_concrete" }
-func (GreenConcrete) ID() ID                     { return 598 }
+func (GreenConcrete) ID() ID                     { return 627 }
 func (RedConcrete) Name() string                 { return "minecraft:red_concrete" }
-func (RedConcrete) ID() ID                       { return 599 }
+func (RedConcrete) ID() ID                       { return 628 }
 func (BlackConcrete) Name() string               { return "minecraft:black_concrete" }
-func (BlackConcrete) ID() ID                     { return 600 }
+func (BlackConcrete) ID() ID                     { return 629 }
 func (WhiteConcretePowder) Name() string         { return "minecraft:white_concrete_powder" }
-func (WhiteConcretePowder) ID() ID               { return 601 }
+func (WhiteConcretePowder) ID() ID               { return 630 }
 func (OrangeConcretePowder) Name() string        { return "minecraft:orange_concrete_powder" }
-func (OrangeConcretePowder) ID() ID              { return 602 }
+func (OrangeConcretePowder) ID() ID              { return 631 }
 func (MagentaConcretePowder) Name() string       { return "minecraft:magenta_concrete_powder" }
-func (MagentaConcretePowder) ID() ID             { return 603 }
+func (MagentaConcretePowder) ID() ID             { return 632 }
 func (LightBlueConcretePowder) Name() string     { return "minecraft:light_blue_concrete_powder" }
-func (LightBlueConcretePowder) ID() ID           { return 604 }
+func (LightBlueConcretePowder) ID() ID           { return 633 }
 func (YellowConcretePowder) Name() string        { return "minecraft:yellow_concrete_powder" }
-func (YellowConcretePowder) ID() ID              { return 605 }
+func (YellowConcretePowder) ID() ID              { return 634 }
 func (LimeConcretePowder) Name() string          { return "minecraft:lime_concrete_powder" }
-func (LimeConcretePowder) ID() ID                { return 606 }
+func (LimeConcretePowder) ID() ID                { return 635 }
 func (PinkConcretePowder) Name() string          { return "minecraft:pink_concrete_powder" }
-func (PinkConcretePowder) ID() ID                { return 607 }
+func (PinkConcretePowder) ID() ID                { return 636 }
 func (GrayConcretePowder) Name() string          { return "minecraft:gray_concrete_powder" }
-func (GrayConcretePowder) ID() ID                { return 608 }
+func (GrayConcretePowder) ID() ID                { return 637 }
 func (LightGrayConcretePowder) Name() string     { return "minecraft:light_gray_concrete_powder" }
-func (LightGrayConcretePowder) ID() ID           { return 609 }
+func (LightGrayConcretePowder) ID() ID           { return 638 }
 func (CyanConcretePowder) Name() string          { return "minecraft:cyan_concrete_powder" }
-func (CyanConcretePowder) ID() ID                { return 610 }
+func (CyanConcretePowder) ID() ID                { return 639 }
 func (PurpleConcretePowder) Name() string        { return "minecraft:purple_concrete_powder" }
-func (PurpleConcretePowder) ID() ID              { return 611 }
+func (PurpleConcretePowder) ID() ID              { return 640 }
 func (BlueConcretePowder) Name() string          { return "minecraft:blue_concrete_powder" }
-func (BlueConcretePowder) ID() ID                { return 612 }
+func (BlueConcretePowder) ID() ID                { return 641 }
 func (BrownConcretePowder) Name() string         { return "minecraft:brown_concrete_powder" }
-func (BrownConcretePowder) ID() ID               { return 613 }
+func (BrownConcretePowder) ID() ID               { return 642 }
 func (GreenConcretePowder) Name() string         { return "minecraft:green_concrete_powder" }
-func (GreenConcretePowder) ID() ID               { return 614 }
+func (GreenConcretePowder) ID() ID               { return 643 }
 func (RedConcretePowder) Name() string           { return "minecraft:red_concrete_powder" }
-func (RedConcretePowder) ID() ID                 { return 615 }
+func (RedConcretePowder) ID() ID                 { return 644 }
 func (BlackConcretePowder) Name() string         { return "minecraft:black_concrete_powder" }
-func (BlackConcretePowder) ID() ID               { return 616 }
+func (BlackConcretePowder) ID() ID               { return 645 }
 func (TurtleEgg) Name() string                   { return "minecraft:turtle_egg" }
-func (TurtleEgg) ID() ID                         { return 617 }
+func (TurtleEgg) ID() ID                         { return 646 }
 func (SnifferEgg) Name() string                  { return "minecraft:sniffer_egg" }
-func (SnifferEgg) ID() ID                        { return 618 }
+func (SnifferEgg) ID() ID                        { return 647 }
 func (DriedGhast) Name() string                  { return "minecraft:dried_ghast" }
-func (DriedGhast) ID() ID                        { return 619 }
+func (DriedGhast) ID() ID                        { return 648 }
 func (DeadTubeCoralBlock) Name() string          { return "minecraft:dead_tube_coral_block" }
-func (DeadTubeCoralBlock) ID() ID                { return 620 }
+func (DeadTubeCoralBlock) ID() ID                { return 649 }
 func (DeadBrainCoralBlock) Name() string         { return "minecraft:dead_brain_coral_block" }
-func (DeadBrainCoralBlock) ID() ID               { return 621 }
+func (DeadBrainCoralBlock) ID() ID               { return 650 }
 func (DeadBubbleCoralBlock) Name() string        { return "minecraft:dead_bubble_coral_block" }
-func (DeadBubbleCoralBlock) ID() ID              { return 622 }
+func (DeadBubbleCoralBlock) ID() ID              { return 651 }
 func (DeadFireCoralBlock) Name() string          { return "minecraft:dead_fire_coral_block" }
-func (DeadFireCoralBlock) ID() ID                { return 623 }
+func (DeadFireCoralBlock) ID() ID                { return 652 }
 func (DeadHornCoralBlock) Name() string          { return "minecraft:dead_horn_coral_block" }
-func (DeadHornCoralBlock) ID() ID                { return 624 }
+func (DeadHornCoralBlock) ID() ID                { return 653 }
 func (TubeCoralBlock) Name() string              { return "minecraft:tube_coral_block" }
-func (TubeCoralBlock) ID() ID                    { return 625 }
+func (TubeCoralBlock) ID() ID                    { return 654 }
 func (BrainCoralBlock) Name() string             { return "minecraft:brain_coral_block" }
-func (BrainCoralBlock) ID() ID                   { return 626 }
+func (BrainCoralBlock) ID() ID                   { return 655 }
 func (BubbleCoralBlock) Name() string            { return "minecraft:bubble_coral_block" }
-func (BubbleCoralBlock) ID() ID                  { return 627 }
+func (BubbleCoralBlock) ID() ID                  { return 656 }
 func (FireCoralBlock) Name() string              { return "minecraft:fire_coral_block" }
-func (FireCoralBlock) ID() ID                    { return 628 }
+func (FireCoralBlock) ID() ID                    { return 657 }
 func (HornCoralBlock) Name() string              { return "minecraft:horn_coral_block" }
-func (HornCoralBlock) ID() ID                    { return 629 }
+func (HornCoralBlock) ID() ID                    { return 658 }
 func (TubeCoral) Name() string                   { return "minecraft:tube_coral" }
-func (TubeCoral) ID() ID                         { return 630 }
+func (TubeCoral) ID() ID                         { return 659 }
 func (BrainCoral) Name() string                  { return "minecraft:brain_coral" }
-func (BrainCoral) ID() ID                        { return 631 }
+func (BrainCoral) ID() ID                        { return 660 }
 func (BubbleCoral) Name() string                 { return "minecraft:bubble_coral" }
-func (BubbleCoral) ID() ID                       { return 632 }
+func (BubbleCoral) ID() ID                       { return 661 }
 func (FireCoral) Name() string                   { return "minecraft:fire_coral" }
-func (FireCoral) ID() ID                         { return 633 }
+func (FireCoral) ID() ID                         { return 662 }
 func (HornCoral) Name() string                   { return "minecraft:horn_coral" }
-func (HornCoral) ID() ID                         { return 634 }
+func (HornCoral) ID() ID                         { return 663 }
 func (DeadBrainCoral) Name() string              { return "minecraft:dead_brain_coral" }
-func (DeadBrainCoral) ID() ID                    { return 635 }
+func (DeadBrainCoral) ID() ID                    { return 664 }
 func (DeadBubbleCoral) Name() string             { return "minecraft:dead_bubble_coral" }
-func (DeadBubbleCoral) ID() ID                   { return 636 }
+func (DeadBubbleCoral) ID() ID                   { return 665 }
 func (DeadFireCoral) Name() string               { return "minecraft:dead_fire_coral" }
-func (DeadFireCoral) ID() ID                     { return 637 }
+func (DeadFireCoral) ID() ID                     { return 666 }
 func (DeadHornCoral) Name() string               { return "minecraft:dead_horn_coral" }
-func (DeadHornCoral) ID() ID                     { return 638 }
+func (DeadHornCoral) ID() ID                     { return 667 }
 func (DeadTubeCoral) Name() string               { return "minecraft:dead_tube_coral" }
-func (DeadTubeCoral) ID() ID                     { return 639 }
+func (DeadTubeCoral) ID() ID                     { return 668 }
 func (TubeCoralFan) Name() string                { return "minecraft:tube_coral_fan" }
-func (TubeCoralFan) ID() ID                      { return 640 }
+func (TubeCoralFan) ID() ID                      { return 669 }
 func (BrainCoralFan) Name() string               { return "minecraft:brain_coral_fan" }
-func (BrainCoralFan) ID() ID                     { return 641 }
+func (BrainCoralFan) ID() ID                     { return 670 }
 func (BubbleCoralFan) Name() string              { return "minecraft:bubble_coral_fan" }
-func (BubbleCoralFan) ID() ID                    { return 642 }
+func (BubbleCoralFan) ID() ID                    { return 671 }
 func (FireCoralFan) Name() string                { return "minecraft:fire_coral_fan" }
-func (FireCoralFan) ID() ID                      { return 643 }
+func (FireCoralFan) ID() ID                      { return 672 }
 func (HornCoralFan) Name() string                { return "minecraft:horn_coral_fan" }
-func (HornCoralFan) ID() ID                      { return 644 }
+func (HornCoralFan) ID() ID                      { return 673 }
 func (DeadTubeCoralFan) Name() string            { return "minecraft:dead_tube_coral_fan" }
-func (DeadTubeCoralFan) ID() ID                  { return 645 }
+func (DeadTubeCoralFan) ID() ID                  { return 674 }
 func (DeadBrainCoralFan) Name() string           { return "minecraft:dead_brain_coral_fan" }
-func (DeadBrainCoralFan) ID() ID                 { return 646 }
+func (DeadBrainCoralFan) ID() ID                 { return 675 }
 func (DeadBubbleCoralFan) Name() string          { return "minecraft:dead_bubble_coral_fan" }
-func (DeadBubbleCoralFan) ID() ID                { return 647 }
+func (DeadBubbleCoralFan) ID() ID                { return 676 }
 func (DeadFireCoralFan) Name() string            { return "minecraft:dead_fire_coral_fan" }
-func (DeadFireCoralFan) ID() ID                  { return 648 }
+func (DeadFireCoralFan) ID() ID                  { return 677 }
 func (DeadHornCoralFan) Name() string            { return "minecraft:dead_horn_coral_fan" }
-func (DeadHornCoralFan) ID() ID                  { return 649 }
+func (DeadHornCoralFan) ID() ID                  { return 678 }
 func (BlueIce) Name() string                     { return "minecraft:blue_ice" }
-func (BlueIce) ID() ID                           { return 650 }
+func (BlueIce) ID() ID                           { return 679 }
 func (Conduit) Name() string                     { return "minecraft:conduit" }
-func (Conduit) ID() ID                           { return 651 }
+func (Conduit) ID() ID                           { return 680 }
 func (PolishedGraniteStairs) Name() string       { return "minecraft:polished_granite_stairs" }
-func (PolishedGraniteStairs) ID() ID             { return 652 }
+func (PolishedGraniteStairs) ID() ID             { return 681 }
 func (SmoothRedSandstoneStairs) Name() string    { return "minecraft:smooth_red_sandstone_stairs" }
-func (SmoothRedSandstoneStairs) ID() ID          { return 653 }
+func (SmoothRedSandstoneStairs) ID() ID          { return 682 }
 func (MossyStoneBrickStairs) Name() string       { return "minecraft:mossy_stone_brick_stairs" }
-func (MossyStoneBrickStairs) ID() ID             { return 654 }
+func (MossyStoneBrickStairs) ID() ID             { return 683 }
 func (PolishedDioriteStairs) Name() string       { return "minecraft:polished_diorite_stairs" }
-func (PolishedDioriteStairs) ID() ID             { return 655 }
+func (PolishedDioriteStairs) ID() ID             { return 684 }
 func (MossyCobblestoneStairs) Name() string      { return "minecraft:mossy_cobblestone_stairs" }
-func (MossyCobblestoneStairs) ID() ID            { return 656 }
+func (MossyCobblestoneStairs) ID() ID            { return 685 }
 func (EndStoneBrickStairs) Name() string         { return "minecraft:end_stone_brick_stairs" }
-func (EndStoneBrickStairs) ID() ID               { return 657 }
+func (EndStoneBrickStairs) ID() ID               { return 686 }
 func (StoneStairs) Name() string                 { return "minecraft:stone_stairs" }
-func (StoneStairs) ID() ID                       { return 658 }
+func (StoneStairs) ID() ID                       { return 687 }
 func (SmoothSandstoneStairs) Name() string       { return "minecraft:smooth_sandstone_stairs" }
-func (SmoothSandstoneStairs) ID() ID             { return 659 }
+func (SmoothSandstoneStairs) ID() ID             { return 688 }
 func (SmoothQuartzStairs) Name() string          { return "minecraft:smooth_quartz_stairs" }
-func (SmoothQuartzStairs) ID() ID                { return 660 }
+func (SmoothQuartzStairs) ID() ID                { return 689 }
 func (GraniteStairs) Name() string               { return "minecraft:granite_stairs" }
-func (GraniteStairs) ID() ID                     { return 661 }
+func (GraniteStairs) ID() ID                     { return 690 }
 func (AndesiteStairs) Name() string              { return "minecraft:andesite_stairs" }
-func (AndesiteStairs) ID() ID                    { return 662 }
+func (AndesiteStairs) ID() ID                    { return 691 }
 func (RedNetherBrickStairs) Name() string        { return "minecraft:red_nether_brick_stairs" }
-func (RedNetherBrickStairs) ID() ID              { return 663 }
+func (RedNetherBrickStairs) ID() ID              { return 692 }
 func (PolishedAndesiteStairs) Name() string      { return "minecraft:polished_andesite_stairs" }
-func (PolishedAndesiteStairs) ID() ID            { return 664 }
+func (PolishedAndesiteStairs) ID() ID            { return 693 }
 func (DioriteStairs) Name() string               { return "minecraft:diorite_stairs" }
-func (DioriteStairs) ID() ID                     { return 665 }
+func (DioriteStairs) ID() ID                     { return 694 }
 func (CobbledDeepslateStairs) Name() string      { return "minecraft:cobbled_deepslate_stairs" }
-func (CobbledDeepslateStairs) ID() ID            { return 666 }
+func (CobbledDeepslateStairs) ID() ID            { return 695 }
 func (PolishedDeepslateStairs) Name() string     { return "minecraft:polished_deepslate_stairs" }
-func (PolishedDeepslateStairs) ID() ID           { return 667 }
+func (PolishedDeepslateStairs) ID() ID           { return 696 }
 func (DeepslateBrickStairs) Name() string        { return "minecraft:deepslate_brick_stairs" }
-func (DeepslateBrickStairs) ID() ID              { return 668 }
+func (DeepslateBrickStairs) ID() ID              { return 697 }
 func (DeepslateTileStairs) Name() string         { return "minecraft:deepslate_tile_stairs" }
-func (DeepslateTileStairs) ID() ID               { return 669 }
+func (DeepslateTileStairs) ID() ID               { return 698 }
 func (PolishedGraniteSlab) Name() string         { return "minecraft:polished_granite_slab" }
-func (PolishedGraniteSlab) ID() ID               { return 670 }
+func (PolishedGraniteSlab) ID() ID               { return 699 }
 func (SmoothRedSandstoneSlab) Name() string      { return "minecraft:smooth_red_sandstone_slab" }
-func (SmoothRedSandstoneSlab) ID() ID            { return 671 }
+func (SmoothRedSandstoneSlab) ID() ID            { return 700 }
 func (MossyStoneBrickSlab) Name() string         { return "minecraft:mossy_stone_brick_slab" }
-func (MossyStoneBrickSlab) ID() ID               { return 672 }
+func (MossyStoneBrickSlab) ID() ID               { return 701 }
 func (PolishedDioriteSlab) Name() string         { return "minecraft:polished_diorite_slab" }
-func (PolishedDioriteSlab) ID() ID               { return 673 }
+func (PolishedDioriteSlab) ID() ID               { return 702 }
 func (MossyCobblestoneSlab) Name() string        { return "minecraft:mossy_cobblestone_slab" }
-func (MossyCobblestoneSlab) ID() ID              { return 674 }
+func (MossyCobblestoneSlab) ID() ID              { return 703 }
 func (EndStoneBrickSlab) Name() string           { return "minecraft:end_stone_brick_slab" }
-func (EndStoneBrickSlab) ID() ID                 { return 675 }
+func (EndStoneBrickSlab) ID() ID                 { return 704 }
 func (SmoothSandstoneSlab) Name() string         { return "minecraft:smooth_sandstone_slab" }
-func (SmoothSandstoneSlab) ID() ID               { return 676 }
+func (SmoothSandstoneSlab) ID() ID               { return 705 }
 func (SmoothQuartzSlab) Name() string            { return "minecraft:smooth_quartz_slab" }
-func (SmoothQuartzSlab) ID() ID                  { return 677 }
+func (SmoothQuartzSlab) ID() ID                  { return 706 }
 func (GraniteSlab) Name() string                 { return "minecraft:granite_slab" }
-func (GraniteSlab) ID() ID                       { return 678 }
+func (GraniteSlab) ID() ID                       { return 707 }
 func (AndesiteSlab) Name() string                { return "minecraft:andesite_slab" }
-func (AndesiteSlab) ID() ID                      { return 679 }
+func (AndesiteSlab) ID() ID                      { return 708 }
 func (RedNetherBrickSlab) Name() string          { return "minecraft:red_nether_brick_slab" }
-func (RedNetherBrickSlab) ID() ID                { return 680 }
+func (RedNetherBrickSlab) ID() ID                { return 709 }
 func (PolishedAndesiteSlab) Name() string        { return "minecraft:polished_andesite_slab" }
-func (PolishedAndesiteSlab) ID() ID              { return 681 }
+func (PolishedAndesiteSlab) ID() ID              { return 710 }
 func (DioriteSlab) Name() string                 { return "minecraft:diorite_slab" }
-func (DioriteSlab) ID() ID                       { return 682 }
+func (DioriteSlab) ID() ID                       { return 711 }
 func (CobbledDeepslateSlab) Name() string        { return "minecraft:cobbled_deepslate_slab" }
-func (CobbledDeepslateSlab) ID() ID              { return 683 }
+func (CobbledDeepslateSlab) ID() ID              { return 712 }
 func (PolishedDeepslateSlab) Name() string       { return "minecraft:polished_deepslate_slab" }
-func (PolishedDeepslateSlab) ID() ID             { return 684 }
+func (PolishedDeepslateSlab) ID() ID             { return 713 }
 func (DeepslateBrickSlab) Name() string          { return "minecraft:deepslate_brick_slab" }
-func (DeepslateBrickSlab) ID() ID                { return 685 }
+func (DeepslateBrickSlab) ID() ID                { return 714 }
 func (DeepslateTileSlab) Name() string           { return "minecraft:deepslate_tile_slab" }
-func (DeepslateTileSlab) ID() ID                 { return 686 }
+func (DeepslateTileSlab) ID() ID                 { return 715 }
 func (Scaffolding) Name() string                 { return "minecraft:scaffolding" }
-func (Scaffolding) ID() ID                       { return 687 }
+func (Scaffolding) ID() ID                       { return 716 }
 func (Redstone) Name() string                    { return "minecraft:redstone" }
-func (Redstone) ID() ID                          { return 688 }
+func (Redstone) ID() ID                          { return 717 }
 func (RedstoneTorch) Name() string               { return "minecraft:redstone_torch" }
-func (RedstoneTorch) ID() ID                     { return 689 }
+func (RedstoneTorch) ID() ID                     { return 718 }
 func (RedstoneBlock) Name() string               { return "minecraft:redstone_block" }
-func (RedstoneBlock) ID() ID                     { return 690 }
+func (RedstoneBlock) ID() ID                     { return 719 }
 func (Repeater) Name() string                    { return "minecraft:repeater" }
-func (Repeater) ID() ID                          { return 691 }
+func (Repeater) ID() ID                          { return 720 }
 func (Comparator) Name() string                  { return "minecraft:comparator" }
-func (Comparator) ID() ID                        { return 692 }
+func (Comparator) ID() ID                        { return 721 }
 func (Piston) Name() string                      { return "minecraft:piston" }
-func (Piston) ID() ID                            { return 693 }
+func (Piston) ID() ID                            { return 722 }
 func (StickyPiston) Name() string                { return "minecraft:sticky_piston" }
-func (StickyPiston) ID() ID                      { return 694 }
+func (StickyPiston) ID() ID                      { return 723 }
 func (SlimeBlock) Name() string                  { return "minecraft:slime_block" }
-func (SlimeBlock) ID() ID                        { return 695 }
+func (SlimeBlock) ID() ID                        { return 724 }
 func (HoneyBlock) Name() string                  { return "minecraft:honey_block" }
-func (HoneyBlock) ID() ID                        { return 696 }
+func (HoneyBlock) ID() ID                        { return 725 }
 func (Observer) Name() string                    { return "minecraft:observer" }
-func (Observer) ID() ID                          { return 697 }
+func (Observer) ID() ID                          { return 726 }
 func (Hopper) Name() string                      { return "minecraft:hopper" }
-func (Hopper) ID() ID                            { return 698 }
+func (Hopper) ID() ID                            { return 727 }
 func (Dispenser) Name() string                   { return "minecraft:dispenser" }
-func (Dispenser) ID() ID                         { return 699 }
+func (Dispenser) ID() ID                         { return 728 }
 func (Dropper) Name() string                     { return "minecraft:dropper" }
-func (Dropper) ID() ID                           { return 700 }
+func (Dropper) ID() ID                           { return 729 }
 func (Lectern) Name() string                     { return "minecraft:lectern" }
-func (Lectern) ID() ID                           { return 701 }
+func (Lectern) ID() ID                           { return 730 }
 func (Target) Name() string                      { return "minecraft:target" }
-func (Target) ID() ID                            { return 702 }
+func (Target) ID() ID                            { return 731 }
 func (Lever) Name() string                       { return "minecraft:lever" }
-func (Lever) ID() ID                             { return 703 }
+func (Lever) ID() ID                             { return 732 }
 func (LightningRod) Name() string                { return "minecraft:lightning_rod" }
-func (LightningRod) ID() ID                      { return 704 }
+func (LightningRod) ID() ID                      { return 733 }
+func (ExposedLightningRod) Name() string         { return "minecraft:exposed_lightning_rod" }
+func (ExposedLightningRod) ID() ID               { return 734 }
+func (WeatheredLightningRod) Name() string       { return "minecraft:weathered_lightning_rod" }
+func (WeatheredLightningRod) ID() ID             { return 735 }
+func (OxidizedLightningRod) Name() string        { return "minecraft:oxidized_lightning_rod" }
+func (OxidizedLightningRod) ID() ID              { return 736 }
+func (WaxedLightningRod) Name() string           { return "minecraft:waxed_lightning_rod" }
+func (WaxedLightningRod) ID() ID                 { return 737 }
+func (WaxedExposedLightningRod) Name() string    { return "minecraft:waxed_exposed_lightning_rod" }
+func (WaxedExposedLightningRod) ID() ID          { return 738 }
+func (WaxedWeatheredLightningRod) Name() string  { return "minecraft:waxed_weathered_lightning_rod" }
+func (WaxedWeatheredLightningRod) ID() ID        { return 739 }
+func (WaxedOxidizedLightningRod) Name() string   { return "minecraft:waxed_oxidized_lightning_rod" }
+func (WaxedOxidizedLightningRod) ID() ID         { return 740 }
 func (DaylightDetector) Name() string            { return "minecraft:daylight_detector" }
-func (DaylightDetector) ID() ID                  { return 705 }
+func (DaylightDetector) ID() ID                  { return 741 }
 func (SculkSensor) Name() string                 { return "minecraft:sculk_sensor" }
-func (SculkSensor) ID() ID                       { return 706 }
+func (SculkSensor) ID() ID                       { return 742 }
 func (CalibratedSculkSensor) Name() string       { return "minecraft:calibrated_sculk_sensor" }
-func (CalibratedSculkSensor) ID() ID             { return 707 }
+func (CalibratedSculkSensor) ID() ID             { return 743 }
 func (TripwireHook) Name() string                { return "minecraft:tripwire_hook" }
-func (TripwireHook) ID() ID                      { return 708 }
+func (TripwireHook) ID() ID                      { return 744 }
 func (TrappedChest) Name() string                { return "minecraft:trapped_chest" }
-func (TrappedChest) ID() ID                      { return 709 }
+func (TrappedChest) ID() ID                      { return 745 }
 func (Tnt) Name() string                         { return "minecraft:tnt" }
-func (Tnt) ID() ID                               { return 710 }
+func (Tnt) ID() ID                               { return 746 }
 func (RedstoneLamp) Name() string                { return "minecraft:redstone_lamp" }
-func (RedstoneLamp) ID() ID                      { return 711 }
+func (RedstoneLamp) ID() ID                      { return 747 }
 func (NoteBlock) Name() string                   { return "minecraft:note_block" }
-func (NoteBlock) ID() ID                         { return 712 }
+func (NoteBlock) ID() ID                         { return 748 }
 func (StoneButton) Name() string                 { return "minecraft:stone_button" }
-func (StoneButton) ID() ID                       { return 713 }
+func (StoneButton) ID() ID                       { return 749 }
 func (PolishedBlackstoneButton) Name() string    { return "minecraft:polished_blackstone_button" }
-func (PolishedBlackstoneButton) ID() ID          { return 714 }
+func (PolishedBlackstoneButton) ID() ID          { return 750 }
 func (OakButton) Name() string                   { return "minecraft:oak_button" }
-func (OakButton) ID() ID                         { return 715 }
+func (OakButton) ID() ID                         { return 751 }
 func (SpruceButton) Name() string                { return "minecraft:spruce_button" }
-func (SpruceButton) ID() ID                      { return 716 }
+func (SpruceButton) ID() ID                      { return 752 }
 func (BirchButton) Name() string                 { return "minecraft:birch_button" }
-func (BirchButton) ID() ID                       { return 717 }
+func (BirchButton) ID() ID                       { return 753 }
 func (JungleButton) Name() string                { return "minecraft:jungle_button" }
-func (JungleButton) ID() ID                      { return 718 }
+func (JungleButton) ID() ID                      { return 754 }
 func (AcaciaButton) Name() string                { return "minecraft:acacia_button" }
-func (AcaciaButton) ID() ID                      { return 719 }
+func (AcaciaButton) ID() ID                      { return 755 }
 func (CherryButton) Name() string                { return "minecraft:cherry_button" }
-func (CherryButton) ID() ID                      { return 720 }
+func (CherryButton) ID() ID                      { return 756 }
 func (DarkOakButton) Name() string               { return "minecraft:dark_oak_button" }
-func (DarkOakButton) ID() ID                     { return 721 }
+func (DarkOakButton) ID() ID                     { return 757 }
 func (PaleOakButton) Name() string               { return "minecraft:pale_oak_button" }
-func (PaleOakButton) ID() ID                     { return 722 }
+func (PaleOakButton) ID() ID                     { return 758 }
 func (MangroveButton) Name() string              { return "minecraft:mangrove_button" }
-func (MangroveButton) ID() ID                    { return 723 }
+func (MangroveButton) ID() ID                    { return 759 }
 func (BambooButton) Name() string                { return "minecraft:bamboo_button" }
-func (BambooButton) ID() ID                      { return 724 }
+func (BambooButton) ID() ID                      { return 760 }
 func (CrimsonButton) Name() string               { return "minecraft:crimson_button" }
-func (CrimsonButton) ID() ID                     { return 725 }
+func (CrimsonButton) ID() ID                     { return 761 }
 func (WarpedButton) Name() string                { return "minecraft:warped_button" }
-func (WarpedButton) ID() ID                      { return 726 }
+func (WarpedButton) ID() ID                      { return 762 }
 func (StonePressurePlate) Name() string          { return "minecraft:stone_pressure_plate" }
-func (StonePressurePlate) ID() ID                { return 727 }
+func (StonePressurePlate) ID() ID                { return 763 }
 func (PolishedBlackstonePressurePlate) Name() string {
 	return "minecraft:polished_blackstone_pressure_plate"
 }
-func (PolishedBlackstonePressurePlate) ID() ID    { return 728 }
+func (PolishedBlackstonePressurePlate) ID() ID    { return 764 }
 func (LightWeightedPressurePlate) Name() string   { return "minecraft:light_weighted_pressure_plate" }
-func (LightWeightedPressurePlate) ID() ID         { return 729 }
+func (LightWeightedPressurePlate) ID() ID         { return 765 }
 func (HeavyWeightedPressurePlate) Name() string   { return "minecraft:heavy_weighted_pressure_plate" }
-func (HeavyWeightedPressurePlate) ID() ID         { return 730 }
+func (HeavyWeightedPressurePlate) ID() ID         { return 766 }
 func (OakPressurePlate) Name() string             { return "minecraft:oak_pressure_plate" }
-func (OakPressurePlate) ID() ID                   { return 731 }
+func (OakPressurePlate) ID() ID                   { return 767 }
 func (SprucePressurePlate) Name() string          { return "minecraft:spruce_pressure_plate" }
-func (SprucePressurePlate) ID() ID                { return 732 }
+func (SprucePressurePlate) ID() ID                { return 768 }
 func (BirchPressurePlate) Name() string           { return "minecraft:birch_pressure_plate" }
-func (BirchPressurePlate) ID() ID                 { return 733 }
+func (BirchPressurePlate) ID() ID                 { return 769 }
 func (JunglePressurePlate) Name() string          { return "minecraft:jungle_pressure_plate" }
-func (JunglePressurePlate) ID() ID                { return 734 }
+func (JunglePressurePlate) ID() ID                { return 770 }
 func (AcaciaPressurePlate) Name() string          { return "minecraft:acacia_pressure_plate" }
-func (AcaciaPressurePlate) ID() ID                { return 735 }
+func (AcaciaPressurePlate) ID() ID                { return 771 }
 func (CherryPressurePlate) Name() string          { return "minecraft:cherry_pressure_plate" }
-func (CherryPressurePlate) ID() ID                { return 736 }
+func (CherryPressurePlate) ID() ID                { return 772 }
 func (DarkOakPressurePlate) Name() string         { return "minecraft:dark_oak_pressure_plate" }
-func (DarkOakPressurePlate) ID() ID               { return 737 }
+func (DarkOakPressurePlate) ID() ID               { return 773 }
 func (PaleOakPressurePlate) Name() string         { return "minecraft:pale_oak_pressure_plate" }
-func (PaleOakPressurePlate) ID() ID               { return 738 }
+func (PaleOakPressurePlate) ID() ID               { return 774 }
 func (MangrovePressurePlate) Name() string        { return "minecraft:mangrove_pressure_plate" }
-func (MangrovePressurePlate) ID() ID              { return 739 }
+func (MangrovePressurePlate) ID() ID              { return 775 }
 func (BambooPressurePlate) Name() string          { return "minecraft:bamboo_pressure_plate" }
-func (BambooPressurePlate) ID() ID                { return 740 }
+func (BambooPressurePlate) ID() ID                { return 776 }
 func (CrimsonPressurePlate) Name() string         { return "minecraft:crimson_pressure_plate" }
-func (CrimsonPressurePlate) ID() ID               { return 741 }
+func (CrimsonPressurePlate) ID() ID               { return 777 }
 func (WarpedPressurePlate) Name() string          { return "minecraft:warped_pressure_plate" }
-func (WarpedPressurePlate) ID() ID                { return 742 }
+func (WarpedPressurePlate) ID() ID                { return 778 }
 func (IronDoor) Name() string                     { return "minecraft:iron_door" }
-func (IronDoor) ID() ID                           { return 743 }
+func (IronDoor) ID() ID                           { return 779 }
 func (OakDoor) Name() string                      { return "minecraft:oak_door" }
-func (OakDoor) ID() ID                            { return 744 }
+func (OakDoor) ID() ID                            { return 780 }
 func (SpruceDoor) Name() string                   { return "minecraft:spruce_door" }
-func (SpruceDoor) ID() ID                         { return 745 }
+func (SpruceDoor) ID() ID                         { return 781 }
 func (BirchDoor) Name() string                    { return "minecraft:birch_door" }
-func (BirchDoor) ID() ID                          { return 746 }
+func (BirchDoor) ID() ID                          { return 782 }
 func (JungleDoor) Name() string                   { return "minecraft:jungle_door" }
-func (JungleDoor) ID() ID                         { return 747 }
+func (JungleDoor) ID() ID                         { return 783 }
 func (AcaciaDoor) Name() string                   { return "minecraft:acacia_door" }
-func (AcaciaDoor) ID() ID                         { return 748 }
+func (AcaciaDoor) ID() ID                         { return 784 }
 func (CherryDoor) Name() string                   { return "minecraft:cherry_door" }
-func (CherryDoor) ID() ID                         { return 749 }
+func (CherryDoor) ID() ID                         { return 785 }
 func (DarkOakDoor) Name() string                  { return "minecraft:dark_oak_door" }
-func (DarkOakDoor) ID() ID                        { return 750 }
+func (DarkOakDoor) ID() ID                        { return 786 }
 func (PaleOakDoor) Name() string                  { return "minecraft:pale_oak_door" }
-func (PaleOakDoor) ID() ID                        { return 751 }
+func (PaleOakDoor) ID() ID                        { return 787 }
 func (MangroveDoor) Name() string                 { return "minecraft:mangrove_door" }
-func (MangroveDoor) ID() ID                       { return 752 }
+func (MangroveDoor) ID() ID                       { return 788 }
 func (BambooDoor) Name() string                   { return "minecraft:bamboo_door" }
-func (BambooDoor) ID() ID                         { return 753 }
+func (BambooDoor) ID() ID                         { return 789 }
 func (CrimsonDoor) Name() string                  { return "minecraft:crimson_door" }
-func (CrimsonDoor) ID() ID                        { return 754 }
+func (CrimsonDoor) ID() ID                        { return 790 }
 func (WarpedDoor) Name() string                   { return "minecraft:warped_door" }
-func (WarpedDoor) ID() ID                         { return 755 }
+func (WarpedDoor) ID() ID                         { return 791 }
 func (CopperDoor) Name() string                   { return "minecraft:copper_door" }
-func (CopperDoor) ID() ID                         { return 756 }
+func (CopperDoor) ID() ID                         { return 792 }
 func (ExposedCopperDoor) Name() string            { return "minecraft:exposed_copper_door" }
-func (ExposedCopperDoor) ID() ID                  { return 757 }
+func (ExposedCopperDoor) ID() ID                  { return 793 }
 func (WeatheredCopperDoor) Name() string          { return "minecraft:weathered_copper_door" }
-func (WeatheredCopperDoor) ID() ID                { return 758 }
+func (WeatheredCopperDoor) ID() ID                { return 794 }
 func (OxidizedCopperDoor) Name() string           { return "minecraft:oxidized_copper_door" }
-func (OxidizedCopperDoor) ID() ID                 { return 759 }
+func (OxidizedCopperDoor) ID() ID                 { return 795 }
 func (WaxedCopperDoor) Name() string              { return "minecraft:waxed_copper_door" }
-func (WaxedCopperDoor) ID() ID                    { return 760 }
+func (WaxedCopperDoor) ID() ID                    { return 796 }
 func (WaxedExposedCopperDoor) Name() string       { return "minecraft:waxed_exposed_copper_door" }
-func (WaxedExposedCopperDoor) ID() ID             { return 761 }
+func (WaxedExposedCopperDoor) ID() ID             { return 797 }
 func (WaxedWeatheredCopperDoor) Name() string     { return "minecraft:waxed_weathered_copper_door" }
-func (WaxedWeatheredCopperDoor) ID() ID           { return 762 }
+func (WaxedWeatheredCopperDoor) ID() ID           { return 798 }
 func (WaxedOxidizedCopperDoor) Name() string      { return "minecraft:waxed_oxidized_copper_door" }
-func (WaxedOxidizedCopperDoor) ID() ID            { return 763 }
+func (WaxedOxidizedCopperDoor) ID() ID            { return 799 }
 func (IronTrapdoor) Name() string                 { return "minecraft:iron_trapdoor" }
-func (IronTrapdoor) ID() ID                       { return 764 }
+func (IronTrapdoor) ID() ID                       { return 800 }
 func (OakTrapdoor) Name() string                  { return "minecraft:oak_trapdoor" }
-func (OakTrapdoor) ID() ID                        { return 765 }
+func (OakTrapdoor) ID() ID                        { return 801 }
 func (SpruceTrapdoor) Name() string               { return "minecraft:spruce_trapdoor" }
-func (SpruceTrapdoor) ID() ID                     { return 766 }
+func (SpruceTrapdoor) ID() ID                     { return 802 }
 func (BirchTrapdoor) Name() string                { return "minecraft:birch_trapdoor" }
-func (BirchTrapdoor) ID() ID                      { return 767 }
+func (BirchTrapdoor) ID() ID                      { return 803 }
 func (JungleTrapdoor) Name() string               { return "minecraft:jungle_trapdoor" }
-func (JungleTrapdoor) ID() ID                     { return 768 }
+func (JungleTrapdoor) ID() ID                     { return 804 }
 func (AcaciaTrapdoor) Name() string               { return "minecraft:acacia_trapdoor" }
-func (AcaciaTrapdoor) ID() ID                     { return 769 }
+func (AcaciaTrapdoor) ID() ID                     { return 805 }
 func (CherryTrapdoor) Name() string               { return "minecraft:cherry_trapdoor" }
-func (CherryTrapdoor) ID() ID                     { return 770 }
+func (CherryTrapdoor) ID() ID                     { return 806 }
 func (DarkOakTrapdoor) Name() string              { return "minecraft:dark_oak_trapdoor" }
-func (DarkOakTrapdoor) ID() ID                    { return 771 }
+func (DarkOakTrapdoor) ID() ID                    { return 807 }
 func (PaleOakTrapdoor) Name() string              { return "minecraft:pale_oak_trapdoor" }
-func (PaleOakTrapdoor) ID() ID                    { return 772 }
+func (PaleOakTrapdoor) ID() ID                    { return 808 }
 func (MangroveTrapdoor) Name() string             { return "minecraft:mangrove_trapdoor" }
-func (MangroveTrapdoor) ID() ID                   { return 773 }
+func (MangroveTrapdoor) ID() ID                   { return 809 }
 func (BambooTrapdoor) Name() string               { return "minecraft:bamboo_trapdoor" }
-func (BambooTrapdoor) ID() ID                     { return 774 }
+func (BambooTrapdoor) ID() ID                     { return 810 }
 func (CrimsonTrapdoor) Name() string              { return "minecraft:crimson_trapdoor" }
-func (CrimsonTrapdoor) ID() ID                    { return 775 }
+func (CrimsonTrapdoor) ID() ID                    { return 811 }
 func (WarpedTrapdoor) Name() string               { return "minecraft:warped_trapdoor" }
-func (WarpedTrapdoor) ID() ID                     { return 776 }
+func (WarpedTrapdoor) ID() ID                     { return 812 }
 func (CopperTrapdoor) Name() string               { return "minecraft:copper_trapdoor" }
-func (CopperTrapdoor) ID() ID                     { return 777 }
+func (CopperTrapdoor) ID() ID                     { return 813 }
 func (ExposedCopperTrapdoor) Name() string        { return "minecraft:exposed_copper_trapdoor" }
-func (ExposedCopperTrapdoor) ID() ID              { return 778 }
+func (ExposedCopperTrapdoor) ID() ID              { return 814 }
 func (WeatheredCopperTrapdoor) Name() string      { return "minecraft:weathered_copper_trapdoor" }
-func (WeatheredCopperTrapdoor) ID() ID            { return 779 }
+func (WeatheredCopperTrapdoor) ID() ID            { return 815 }
 func (OxidizedCopperTrapdoor) Name() string       { return "minecraft:oxidized_copper_trapdoor" }
-func (OxidizedCopperTrapdoor) ID() ID             { return 780 }
+func (OxidizedCopperTrapdoor) ID() ID             { return 816 }
 func (WaxedCopperTrapdoor) Name() string          { return "minecraft:waxed_copper_trapdoor" }
-func (WaxedCopperTrapdoor) ID() ID                { return 781 }
+func (WaxedCopperTrapdoor) ID() ID                { return 817 }
 func (WaxedExposedCopperTrapdoor) Name() string   { return "minecraft:waxed_exposed_copper_trapdoor" }
-func (WaxedExposedCopperTrapdoor) ID() ID         { return 782 }
+func (WaxedExposedCopperTrapdoor) ID() ID         { return 818 }
 func (WaxedWeatheredCopperTrapdoor) Name() string { return "minecraft:waxed_weathered_copper_trapdoor" }
-func (WaxedWeatheredCopperTrapdoor) ID() ID       { return 783 }
+func (WaxedWeatheredCopperTrapdoor) ID() ID       { return 819 }
 func (WaxedOxidizedCopperTrapdoor) Name() string  { return "minecraft:waxed_oxidized_copper_trapdoor" }
-func (WaxedOxidizedCopperTrapdoor) ID() ID        { return 784 }
+func (WaxedOxidizedCopperTrapdoor) ID() ID        { return 820 }
 func (OakFenceGate) Name() string                 { return "minecraft:oak_fence_gate" }
-func (OakFenceGate) ID() ID                       { return 785 }
+func (OakFenceGate) ID() ID                       { return 821 }
 func (SpruceFenceGate) Name() string              { return "minecraft:spruce_fence_gate" }
-func (SpruceFenceGate) ID() ID                    { return 786 }
+func (SpruceFenceGate) ID() ID                    { return 822 }
 func (BirchFenceGate) Name() string               { return "minecraft:birch_fence_gate" }
-func (BirchFenceGate) ID() ID                     { return 787 }
+func (BirchFenceGate) ID() ID                     { return 823 }
 func (JungleFenceGate) Name() string              { return "minecraft:jungle_fence_gate" }
-func (JungleFenceGate) ID() ID                    { return 788 }
+func (JungleFenceGate) ID() ID                    { return 824 }
 func (AcaciaFenceGate) Name() string              { return "minecraft:acacia_fence_gate" }
-func (AcaciaFenceGate) ID() ID                    { return 789 }
+func (AcaciaFenceGate) ID() ID                    { return 825 }
 func (CherryFenceGate) Name() string              { return "minecraft:cherry_fence_gate" }
-func (CherryFenceGate) ID() ID                    { return 790 }
+func (CherryFenceGate) ID() ID                    { return 826 }
 func (DarkOakFenceGate) Name() string             { return "minecraft:dark_oak_fence_gate" }
-func (DarkOakFenceGate) ID() ID                   { return 791 }
+func (DarkOakFenceGate) ID() ID                   { return 827 }
 func (PaleOakFenceGate) Name() string             { return "minecraft:pale_oak_fence_gate" }
-func (PaleOakFenceGate) ID() ID                   { return 792 }
+func (PaleOakFenceGate) ID() ID                   { return 828 }
 func (MangroveFenceGate) Name() string            { return "minecraft:mangrove_fence_gate" }
-func (MangroveFenceGate) ID() ID                  { return 793 }
+func (MangroveFenceGate) ID() ID                  { return 829 }
 func (BambooFenceGate) Name() string              { return "minecraft:bamboo_fence_gate" }
-func (BambooFenceGate) ID() ID                    { return 794 }
+func (BambooFenceGate) ID() ID                    { return 830 }
 func (CrimsonFenceGate) Name() string             { return "minecraft:crimson_fence_gate" }
-func (CrimsonFenceGate) ID() ID                   { return 795 }
+func (CrimsonFenceGate) ID() ID                   { return 831 }
 func (WarpedFenceGate) Name() string              { return "minecraft:warped_fence_gate" }
-func (WarpedFenceGate) ID() ID                    { return 796 }
+func (WarpedFenceGate) ID() ID                    { return 832 }
 func (PoweredRail) Name() string                  { return "minecraft:powered_rail" }
-func (PoweredRail) ID() ID                        { return 797 }
+func (PoweredRail) ID() ID                        { return 833 }
 func (DetectorRail) Name() string                 { return "minecraft:detector_rail" }
-func (DetectorRail) ID() ID                       { return 798 }
+func (DetectorRail) ID() ID                       { return 834 }
 func (Rail) Name() string                         { return "minecraft:rail" }
-func (Rail) ID() ID                               { return 799 }
+func (Rail) ID() ID                               { return 835 }
 func (ActivatorRail) Name() string                { return "minecraft:activator_rail" }
-func (ActivatorRail) ID() ID                      { return 800 }
+func (ActivatorRail) ID() ID                      { return 836 }
 func (Saddle) Name() string                       { return "minecraft:saddle" }
-func (Saddle) ID() ID                             { return 801 }
+func (Saddle) ID() ID                             { return 837 }
 func (WhiteHarness) Name() string                 { return "minecraft:white_harness" }
-func (WhiteHarness) ID() ID                       { return 802 }
+func (WhiteHarness) ID() ID                       { return 838 }
 func (OrangeHarness) Name() string                { return "minecraft:orange_harness" }
-func (OrangeHarness) ID() ID                      { return 803 }
+func (OrangeHarness) ID() ID                      { return 839 }
 func (MagentaHarness) Name() string               { return "minecraft:magenta_harness" }
-func (MagentaHarness) ID() ID                     { return 804 }
+func (MagentaHarness) ID() ID                     { return 840 }
 func (LightBlueHarness) Name() string             { return "minecraft:light_blue_harness" }
-func (LightBlueHarness) ID() ID                   { return 805 }
+func (LightBlueHarness) ID() ID                   { return 841 }
 func (YellowHarness) Name() string                { return "minecraft:yellow_harness" }
-func (YellowHarness) ID() ID                      { return 806 }
+func (YellowHarness) ID() ID                      { return 842 }
 func (LimeHarness) Name() string                  { return "minecraft:lime_harness" }
-func (LimeHarness) ID() ID                        { return 807 }
+func (LimeHarness) ID() ID                        { return 843 }
 func (PinkHarness) Name() string                  { return "minecraft:pink_harness" }
-func (PinkHarness) ID() ID                        { return 808 }
+func (PinkHarness) ID() ID                        { return 844 }
 func (GrayHarness) Name() string                  { return "minecraft:gray_harness" }
-func (GrayHarness) ID() ID                        { return 809 }
+func (GrayHarness) ID() ID                        { return 845 }
 func (LightGrayHarness) Name() string             { return "minecraft:light_gray_harness" }
-func (LightGrayHarness) ID() ID                   { return 810 }
+func (LightGrayHarness) ID() ID                   { return 846 }
 func (CyanHarness) Name() string                  { return "minecraft:cyan_harness" }
-func (CyanHarness) ID() ID                        { return 811 }
+func (CyanHarness) ID() ID                        { return 847 }
 func (PurpleHarness) Name() string                { return "minecraft:purple_harness" }
-func (PurpleHarness) ID() ID                      { return 812 }
+func (PurpleHarness) ID() ID                      { return 848 }
 func (BlueHarness) Name() string                  { return "minecraft:blue_harness" }
-func (BlueHarness) ID() ID                        { return 813 }
+func (BlueHarness) ID() ID                        { return 849 }
 func (BrownHarness) Name() string                 { return "minecraft:brown_harness" }
-func (BrownHarness) ID() ID                       { return 814 }
+func (BrownHarness) ID() ID                       { return 850 }
 func (GreenHarness) Name() string                 { return "minecraft:green_harness" }
-func (GreenHarness) ID() ID                       { return 815 }
+func (GreenHarness) ID() ID                       { return 851 }
 func (RedHarness) Name() string                   { return "minecraft:red_harness" }
-func (RedHarness) ID() ID                         { return 816 }
+func (RedHarness) ID() ID                         { return 852 }
 func (BlackHarness) Name() string                 { return "minecraft:black_harness" }
-func (BlackHarness) ID() ID                       { return 817 }
+func (BlackHarness) ID() ID                       { return 853 }
 func (Minecart) Name() string                     { return "minecraft:minecart" }
-func (Minecart) ID() ID                           { return 818 }
+func (Minecart) ID() ID                           { return 854 }
 func (ChestMinecart) Name() string                { return "minecraft:chest_minecart" }
-func (ChestMinecart) ID() ID                      { return 819 }
+func (ChestMinecart) ID() ID                      { return 855 }
 func (FurnaceMinecart) Name() string              { return "minecraft:furnace_minecart" }
-func (FurnaceMinecart) ID() ID                    { return 820 }
+func (FurnaceMinecart) ID() ID                    { return 856 }
 func (TntMinecart) Name() string                  { return "minecraft:tnt_minecart" }
-func (TntMinecart) ID() ID                        { return 821 }
+func (TntMinecart) ID() ID                        { return 857 }
 func (HopperMinecart) Name() string               { return "minecraft:hopper_minecart" }
-func (HopperMinecart) ID() ID                     { return 822 }
+func (HopperMinecart) ID() ID                     { return 858 }
 func (CarrotOnAStick) Name() string               { return "minecraft:carrot_on_a_stick" }
-func (CarrotOnAStick) ID() ID                     { return 823 }
+func (CarrotOnAStick) ID() ID                     { return 859 }
 func (WarpedFungusOnAStick) Name() string         { return "minecraft:warped_fungus_on_a_stick" }
-func (WarpedFungusOnAStick) ID() ID               { return 824 }
+func (WarpedFungusOnAStick) ID() ID               { return 860 }
 func (PhantomMembrane) Name() string              { return "minecraft:phantom_membrane" }
-func (PhantomMembrane) ID() ID                    { return 825 }
+func (PhantomMembrane) ID() ID                    { return 861 }
 func (Elytra) Name() string                       { return "minecraft:elytra" }
-func (Elytra) ID() ID                             { return 826 }
+func (Elytra) ID() ID                             { return 862 }
 func (OakBoat) Name() string                      { return "minecraft:oak_boat" }
-func (OakBoat) ID() ID                            { return 827 }
+func (OakBoat) ID() ID                            { return 863 }
 func (OakChestBoat) Name() string                 { return "minecraft:oak_chest_boat" }
-func (OakChestBoat) ID() ID                       { return 828 }
+func (OakChestBoat) ID() ID                       { return 864 }
 func (SpruceBoat) Name() string                   { return "minecraft:spruce_boat" }
-func (SpruceBoat) ID() ID                         { return 829 }
+func (SpruceBoat) ID() ID                         { return 865 }
 func (SpruceChestBoat) Name() string              { return "minecraft:spruce_chest_boat" }
-func (SpruceChestBoat) ID() ID                    { return 830 }
+func (SpruceChestBoat) ID() ID                    { return 866 }
 func (BirchBoat) Name() string                    { return "minecraft:birch_boat" }
-func (BirchBoat) ID() ID                          { return 831 }
+func (BirchBoat) ID() ID                          { return 867 }
 func (BirchChestBoat) Name() string               { return "minecraft:birch_chest_boat" }
-func (BirchChestBoat) ID() ID                     { return 832 }
+func (BirchChestBoat) ID() ID                     { return 868 }
 func (JungleBoat) Name() string                   { return "minecraft:jungle_boat" }
-func (JungleBoat) ID() ID                         { return 833 }
+func (JungleBoat) ID() ID                         { return 869 }
 func (JungleChestBoat) Name() string              { return "minecraft:jungle_chest_boat" }
-func (JungleChestBoat) ID() ID                    { return 834 }
+func (JungleChestBoat) ID() ID                    { return 870 }
 func (AcaciaBoat) Name() string                   { return "minecraft:acacia_boat" }
-func (AcaciaBoat) ID() ID                         { return 835 }
+func (AcaciaBoat) ID() ID                         { return 871 }
 func (AcaciaChestBoat) Name() string              { return "minecraft:acacia_chest_boat" }
-func (AcaciaChestBoat) ID() ID                    { return 836 }
+func (AcaciaChestBoat) ID() ID                    { return 872 }
 func (CherryBoat) Name() string                   { return "minecraft:cherry_boat" }
-func (CherryBoat) ID() ID                         { return 837 }
+func (CherryBoat) ID() ID                         { return 873 }
 func (CherryChestBoat) Name() string              { return "minecraft:cherry_chest_boat" }
-func (CherryChestBoat) ID() ID                    { return 838 }
+func (CherryChestBoat) ID() ID                    { return 874 }
 func (DarkOakBoat) Name() string                  { return "minecraft:dark_oak_boat" }
-func (DarkOakBoat) ID() ID                        { return 839 }
+func (DarkOakBoat) ID() ID                        { return 875 }
 func (DarkOakChestBoat) Name() string             { return "minecraft:dark_oak_chest_boat" }
-func (DarkOakChestBoat) ID() ID                   { return 840 }
+func (DarkOakChestBoat) ID() ID                   { return 876 }
 func (PaleOakBoat) Name() string                  { return "minecraft:pale_oak_boat" }
-func (PaleOakBoat) ID() ID                        { return 841 }
+func (PaleOakBoat) ID() ID                        { return 877 }
 func (PaleOakChestBoat) Name() string             { return "minecraft:pale_oak_chest_boat" }
-func (PaleOakChestBoat) ID() ID                   { return 842 }
+func (PaleOakChestBoat) ID() ID                   { return 878 }
 func (MangroveBoat) Name() string                 { return "minecraft:mangrove_boat" }
-func (MangroveBoat) ID() ID                       { return 843 }
+func (MangroveBoat) ID() ID                       { return 879 }
 func (MangroveChestBoat) Name() string            { return "minecraft:mangrove_chest_boat" }
-func (MangroveChestBoat) ID() ID                  { return 844 }
+func (MangroveChestBoat) ID() ID                  { return 880 }
 func (BambooRaft) Name() string                   { return "minecraft:bamboo_raft" }
-func (BambooRaft) ID() ID                         { return 845 }
+func (BambooRaft) ID() ID                         { return 881 }
 func (BambooChestRaft) Name() string              { return "minecraft:bamboo_chest_raft" }
-func (BambooChestRaft) ID() ID                    { return 846 }
+func (BambooChestRaft) ID() ID                    { return 882 }
 func (StructureBlock) Name() string               { return "minecraft:structure_block" }
-func (StructureBlock) ID() ID                     { return 847 }
+func (StructureBlock) ID() ID                     { return 883 }
 func (Jigsaw) Name() string                       { return "minecraft:jigsaw" }
-func (Jigsaw) ID() ID                             { return 848 }
+func (Jigsaw) ID() ID                             { return 884 }
 func (TestBlock) Name() string                    { return "minecraft:test_block" }
-func (TestBlock) ID() ID                          { return 849 }
+func (TestBlock) ID() ID                          { return 885 }
 func (TestInstanceBlock) Name() string            { return "minecraft:test_instance_block" }
-func (TestInstanceBlock) ID() ID                  { return 850 }
+func (TestInstanceBlock) ID() ID                  { return 886 }
 func (TurtleHelmet) Name() string                 { return "minecraft:turtle_helmet" }
-func (TurtleHelmet) ID() ID                       { return 851 }
+func (TurtleHelmet) ID() ID                       { return 887 }
 func (TurtleScute) Name() string                  { return "minecraft:turtle_scute" }
-func (TurtleScute) ID() ID                        { return 852 }
+func (TurtleScute) ID() ID                        { return 888 }
 func (ArmadilloScute) Name() string               { return "minecraft:armadillo_scute" }
-func (ArmadilloScute) ID() ID                     { return 853 }
+func (ArmadilloScute) ID() ID                     { return 889 }
 func (WolfArmor) Name() string                    { return "minecraft:wolf_armor" }
-func (WolfArmor) ID() ID                          { return 854 }
+func (WolfArmor) ID() ID                          { return 890 }
 func (FlintAndSteel) Name() string                { return "minecraft:flint_and_steel" }
-func (FlintAndSteel) ID() ID                      { return 855 }
+func (FlintAndSteel) ID() ID                      { return 891 }
 func (Bowl) Name() string                         { return "minecraft:bowl" }
-func (Bowl) ID() ID                               { return 856 }
+func (Bowl) ID() ID                               { return 892 }
 func (Apple) Name() string                        { return "minecraft:apple" }
-func (Apple) ID() ID                              { return 857 }
+func (Apple) ID() ID                              { return 893 }
 func (Bow) Name() string                          { return "minecraft:bow" }
-func (Bow) ID() ID                                { return 858 }
+func (Bow) ID() ID                                { return 894 }
 func (Arrow) Name() string                        { return "minecraft:arrow" }
-func (Arrow) ID() ID                              { return 859 }
+func (Arrow) ID() ID                              { return 895 }
 func (Coal) Name() string                         { return "minecraft:coal" }
-func (Coal) ID() ID                               { return 860 }
+func (Coal) ID() ID                               { return 896 }
 func (Charcoal) Name() string                     { return "minecraft:charcoal" }
-func (Charcoal) ID() ID                           { return 861 }
+func (Charcoal) ID() ID                           { return 897 }
 func (Diamond) Name() string                      { return "minecraft:diamond" }
-func (Diamond) ID() ID                            { return 862 }
+func (Diamond) ID() ID                            { return 898 }
 func (Emerald) Name() string                      { return "minecraft:emerald" }
-func (Emerald) ID() ID                            { return 863 }
+func (Emerald) ID() ID                            { return 899 }
 func (LapisLazuli) Name() string                  { return "minecraft:lapis_lazuli" }
-func (LapisLazuli) ID() ID                        { return 864 }
+func (LapisLazuli) ID() ID                        { return 900 }
 func (Quartz) Name() string                       { return "minecraft:quartz" }
-func (Quartz) ID() ID                             { return 865 }
+func (Quartz) ID() ID                             { return 901 }
 func (AmethystShard) Name() string                { return "minecraft:amethyst_shard" }
-func (AmethystShard) ID() ID                      { return 866 }
+func (AmethystShard) ID() ID                      { return 902 }
 func (RawIron) Name() string                      { return "minecraft:raw_iron" }
-func (RawIron) ID() ID                            { return 867 }
+func (RawIron) ID() ID                            { return 903 }
 func (IronIngot) Name() string                    { return "minecraft:iron_ingot" }
-func (IronIngot) ID() ID                          { return 868 }
+func (IronIngot) ID() ID                          { return 904 }
 func (RawCopper) Name() string                    { return "minecraft:raw_copper" }
-func (RawCopper) ID() ID                          { return 869 }
+func (RawCopper) ID() ID                          { return 905 }
 func (CopperIngot) Name() string                  { return "minecraft:copper_ingot" }
-func (CopperIngot) ID() ID                        { return 870 }
+func (CopperIngot) ID() ID                        { return 906 }
 func (RawGold) Name() string                      { return "minecraft:raw_gold" }
-func (RawGold) ID() ID                            { return 871 }
+func (RawGold) ID() ID                            { return 907 }
 func (GoldIngot) Name() string                    { return "minecraft:gold_ingot" }
-func (GoldIngot) ID() ID                          { return 872 }
+func (GoldIngot) ID() ID                          { return 908 }
 func (NetheriteIngot) Name() string               { return "minecraft:netherite_ingot" }
-func (NetheriteIngot) ID() ID                     { return 873 }
+func (NetheriteIngot) ID() ID                     { return 909 }
 func (NetheriteScrap) Name() string               { return "minecraft:netherite_scrap" }
-func (NetheriteScrap) ID() ID                     { return 874 }
+func (NetheriteScrap) ID() ID                     { return 910 }
 func (WoodenSword) Name() string                  { return "minecraft:wooden_sword" }
-func (WoodenSword) ID() ID                        { return 875 }
+func (WoodenSword) ID() ID                        { return 911 }
 func (WoodenShovel) Name() string                 { return "minecraft:wooden_shovel" }
-func (WoodenShovel) ID() ID                       { return 876 }
+func (WoodenShovel) ID() ID                       { return 912 }
 func (WoodenPickaxe) Name() string                { return "minecraft:wooden_pickaxe" }
-func (WoodenPickaxe) ID() ID                      { return 877 }
+func (WoodenPickaxe) ID() ID                      { return 913 }
 func (WoodenAxe) Name() string                    { return "minecraft:wooden_axe" }
-func (WoodenAxe) ID() ID                          { return 878 }
+func (WoodenAxe) ID() ID                          { return 914 }
 func (WoodenHoe) Name() string                    { return "minecraft:wooden_hoe" }
-func (WoodenHoe) ID() ID                          { return 879 }
+func (WoodenHoe) ID() ID                          { return 915 }
+func (CopperSword) Name() string                  { return "minecraft:copper_sword" }
+func (CopperSword) ID() ID                        { return 916 }
+func (CopperShovel) Name() string                 { return "minecraft:copper_shovel" }
+func (CopperShovel) ID() ID                       { return 917 }
+func (CopperPickaxe) Name() string                { return "minecraft:copper_pickaxe" }
+func (CopperPickaxe) ID() ID                      { return 918 }
+func (CopperAxe) Name() string                    { return "minecraft:copper_axe" }
+func (CopperAxe) ID() ID                          { return 919 }
+func (CopperHoe) Name() string                    { return "minecraft:copper_hoe" }
+func (CopperHoe) ID() ID                          { return 920 }
 func (StoneSword) Name() string                   { return "minecraft:stone_sword" }
-func (StoneSword) ID() ID                         { return 880 }
+func (StoneSword) ID() ID                         { return 921 }
 func (StoneShovel) Name() string                  { return "minecraft:stone_shovel" }
-func (StoneShovel) ID() ID                        { return 881 }
+func (StoneShovel) ID() ID                        { return 922 }
 func (StonePickaxe) Name() string                 { return "minecraft:stone_pickaxe" }
-func (StonePickaxe) ID() ID                       { return 882 }
+func (StonePickaxe) ID() ID                       { return 923 }
 func (StoneAxe) Name() string                     { return "minecraft:stone_axe" }
-func (StoneAxe) ID() ID                           { return 883 }
+func (StoneAxe) ID() ID                           { return 924 }
 func (StoneHoe) Name() string                     { return "minecraft:stone_hoe" }
-func (StoneHoe) ID() ID                           { return 884 }
+func (StoneHoe) ID() ID                           { return 925 }
 func (GoldenSword) Name() string                  { return "minecraft:golden_sword" }
-func (GoldenSword) ID() ID                        { return 885 }
+func (GoldenSword) ID() ID                        { return 926 }
 func (GoldenShovel) Name() string                 { return "minecraft:golden_shovel" }
-func (GoldenShovel) ID() ID                       { return 886 }
+func (GoldenShovel) ID() ID                       { return 927 }
 func (GoldenPickaxe) Name() string                { return "minecraft:golden_pickaxe" }
-func (GoldenPickaxe) ID() ID                      { return 887 }
+func (GoldenPickaxe) ID() ID                      { return 928 }
 func (GoldenAxe) Name() string                    { return "minecraft:golden_axe" }
-func (GoldenAxe) ID() ID                          { return 888 }
+func (GoldenAxe) ID() ID                          { return 929 }
 func (GoldenHoe) Name() string                    { return "minecraft:golden_hoe" }
-func (GoldenHoe) ID() ID                          { return 889 }
+func (GoldenHoe) ID() ID                          { return 930 }
 func (IronSword) Name() string                    { return "minecraft:iron_sword" }
-func (IronSword) ID() ID                          { return 890 }
+func (IronSword) ID() ID                          { return 931 }
 func (IronShovel) Name() string                   { return "minecraft:iron_shovel" }
-func (IronShovel) ID() ID                         { return 891 }
+func (IronShovel) ID() ID                         { return 932 }
 func (IronPickaxe) Name() string                  { return "minecraft:iron_pickaxe" }
-func (IronPickaxe) ID() ID                        { return 892 }
+func (IronPickaxe) ID() ID                        { return 933 }
 func (IronAxe) Name() string                      { return "minecraft:iron_axe" }
-func (IronAxe) ID() ID                            { return 893 }
+func (IronAxe) ID() ID                            { return 934 }
 func (IronHoe) Name() string                      { return "minecraft:iron_hoe" }
-func (IronHoe) ID() ID                            { return 894 }
+func (IronHoe) ID() ID                            { return 935 }
 func (DiamondSword) Name() string                 { return "minecraft:diamond_sword" }
-func (DiamondSword) ID() ID                       { return 895 }
+func (DiamondSword) ID() ID                       { return 936 }
 func (DiamondShovel) Name() string                { return "minecraft:diamond_shovel" }
-func (DiamondShovel) ID() ID                      { return 896 }
+func (DiamondShovel) ID() ID                      { return 937 }
 func (DiamondPickaxe) Name() string               { return "minecraft:diamond_pickaxe" }
-func (DiamondPickaxe) ID() ID                     { return 897 }
+func (DiamondPickaxe) ID() ID                     { return 938 }
 func (DiamondAxe) Name() string                   { return "minecraft:diamond_axe" }
-func (DiamondAxe) ID() ID                         { return 898 }
+func (DiamondAxe) ID() ID                         { return 939 }
 func (DiamondHoe) Name() string                   { return "minecraft:diamond_hoe" }
-func (DiamondHoe) ID() ID                         { return 899 }
+func (DiamondHoe) ID() ID                         { return 940 }
 func (NetheriteSword) Name() string               { return "minecraft:netherite_sword" }
-func (NetheriteSword) ID() ID                     { return 900 }
+func (NetheriteSword) ID() ID                     { return 941 }
 func (NetheriteShovel) Name() string              { return "minecraft:netherite_shovel" }
-func (NetheriteShovel) ID() ID                    { return 901 }
+func (NetheriteShovel) ID() ID                    { return 942 }
 func (NetheritePickaxe) Name() string             { return "minecraft:netherite_pickaxe" }
-func (NetheritePickaxe) ID() ID                   { return 902 }
+func (NetheritePickaxe) ID() ID                   { return 943 }
 func (NetheriteAxe) Name() string                 { return "minecraft:netherite_axe" }
-func (NetheriteAxe) ID() ID                       { return 903 }
+func (NetheriteAxe) ID() ID                       { return 944 }
 func (NetheriteHoe) Name() string                 { return "minecraft:netherite_hoe" }
-func (NetheriteHoe) ID() ID                       { return 904 }
+func (NetheriteHoe) ID() ID                       { return 945 }
 func (Stick) Name() string                        { return "minecraft:stick" }
-func (Stick) ID() ID                              { return 905 }
+func (Stick) ID() ID                              { return 946 }
 func (MushroomStew) Name() string                 { return "minecraft:mushroom_stew" }
-func (MushroomStew) ID() ID                       { return 906 }
+func (MushroomStew) ID() ID                       { return 947 }
 func (String) Name() string                       { return "minecraft:string" }
-func (String) ID() ID                             { return 907 }
+func (String) ID() ID                             { return 948 }
 func (Feather) Name() string                      { return "minecraft:feather" }
-func (Feather) ID() ID                            { return 908 }
+func (Feather) ID() ID                            { return 949 }
 func (Gunpowder) Name() string                    { return "minecraft:gunpowder" }
-func (Gunpowder) ID() ID                          { return 909 }
+func (Gunpowder) ID() ID                          { return 950 }
 func (WheatSeeds) Name() string                   { return "minecraft:wheat_seeds" }
-func (WheatSeeds) ID() ID                         { return 910 }
+func (WheatSeeds) ID() ID                         { return 951 }
 func (Wheat) Name() string                        { return "minecraft:wheat" }
-func (Wheat) ID() ID                              { return 911 }
+func (Wheat) ID() ID                              { return 952 }
 func (Bread) Name() string                        { return "minecraft:bread" }
-func (Bread) ID() ID                              { return 912 }
+func (Bread) ID() ID                              { return 953 }
 func (LeatherHelmet) Name() string                { return "minecraft:leather_helmet" }
-func (LeatherHelmet) ID() ID                      { return 913 }
+func (LeatherHelmet) ID() ID                      { return 954 }
 func (LeatherChestplate) Name() string            { return "minecraft:leather_chestplate" }
-func (LeatherChestplate) ID() ID                  { return 914 }
+func (LeatherChestplate) ID() ID                  { return 955 }
 func (LeatherLeggings) Name() string              { return "minecraft:leather_leggings" }
-func (LeatherLeggings) ID() ID                    { return 915 }
+func (LeatherLeggings) ID() ID                    { return 956 }
 func (LeatherBoots) Name() string                 { return "minecraft:leather_boots" }
-func (LeatherBoots) ID() ID                       { return 916 }
+func (LeatherBoots) ID() ID                       { return 957 }
+func (CopperHelmet) Name() string                 { return "minecraft:copper_helmet" }
+func (CopperHelmet) ID() ID                       { return 958 }
+func (CopperChestplate) Name() string             { return "minecraft:copper_chestplate" }
+func (CopperChestplate) ID() ID                   { return 959 }
+func (CopperLeggings) Name() string               { return "minecraft:copper_leggings" }
+func (CopperLeggings) ID() ID                     { return 960 }
+func (CopperBoots) Name() string                  { return "minecraft:copper_boots" }
+func (CopperBoots) ID() ID                        { return 961 }
 func (ChainmailHelmet) Name() string              { return "minecraft:chainmail_helmet" }
-func (ChainmailHelmet) ID() ID                    { return 917 }
+func (ChainmailHelmet) ID() ID                    { return 962 }
 func (ChainmailChestplate) Name() string          { return "minecraft:chainmail_chestplate" }
-func (ChainmailChestplate) ID() ID                { return 918 }
+func (ChainmailChestplate) ID() ID                { return 963 }
 func (ChainmailLeggings) Name() string            { return "minecraft:chainmail_leggings" }
-func (ChainmailLeggings) ID() ID                  { return 919 }
+func (ChainmailLeggings) ID() ID                  { return 964 }
 func (ChainmailBoots) Name() string               { return "minecraft:chainmail_boots" }
-func (ChainmailBoots) ID() ID                     { return 920 }
+func (ChainmailBoots) ID() ID                     { return 965 }
 func (IronHelmet) Name() string                   { return "minecraft:iron_helmet" }
-func (IronHelmet) ID() ID                         { return 921 }
+func (IronHelmet) ID() ID                         { return 966 }
 func (IronChestplate) Name() string               { return "minecraft:iron_chestplate" }
-func (IronChestplate) ID() ID                     { return 922 }
+func (IronChestplate) ID() ID                     { return 967 }
 func (IronLeggings) Name() string                 { return "minecraft:iron_leggings" }
-func (IronLeggings) ID() ID                       { return 923 }
+func (IronLeggings) ID() ID                       { return 968 }
 func (IronBoots) Name() string                    { return "minecraft:iron_boots" }
-func (IronBoots) ID() ID                          { return 924 }
+func (IronBoots) ID() ID                          { return 969 }
 func (DiamondHelmet) Name() string                { return "minecraft:diamond_helmet" }
-func (DiamondHelmet) ID() ID                      { return 925 }
+func (DiamondHelmet) ID() ID                      { return 970 }
 func (DiamondChestplate) Name() string            { return "minecraft:diamond_chestplate" }
-func (DiamondChestplate) ID() ID                  { return 926 }
+func (DiamondChestplate) ID() ID                  { return 971 }
 func (DiamondLeggings) Name() string              { return "minecraft:diamond_leggings" }
-func (DiamondLeggings) ID() ID                    { return 927 }
+func (DiamondLeggings) ID() ID                    { return 972 }
 func (DiamondBoots) Name() string                 { return "minecraft:diamond_boots" }
-func (DiamondBoots) ID() ID                       { return 928 }
+func (DiamondBoots) ID() ID                       { return 973 }
 func (GoldenHelmet) Name() string                 { return "minecraft:golden_helmet" }
-func (GoldenHelmet) ID() ID                       { return 929 }
+func (GoldenHelmet) ID() ID                       { return 974 }
 func (GoldenChestplate) Name() string             { return "minecraft:golden_chestplate" }
-func (GoldenChestplate) ID() ID                   { return 930 }
+func (GoldenChestplate) ID() ID                   { return 975 }
 func (GoldenLeggings) Name() string               { return "minecraft:golden_leggings" }
-func (GoldenLeggings) ID() ID                     { return 931 }
+func (GoldenLeggings) ID() ID                     { return 976 }
 func (GoldenBoots) Name() string                  { return "minecraft:golden_boots" }
-func (GoldenBoots) ID() ID                        { return 932 }
+func (GoldenBoots) ID() ID                        { return 977 }
 func (NetheriteHelmet) Name() string              { return "minecraft:netherite_helmet" }
-func (NetheriteHelmet) ID() ID                    { return 933 }
+func (NetheriteHelmet) ID() ID                    { return 978 }
 func (NetheriteChestplate) Name() string          { return "minecraft:netherite_chestplate" }
-func (NetheriteChestplate) ID() ID                { return 934 }
+func (NetheriteChestplate) ID() ID                { return 979 }
 func (NetheriteLeggings) Name() string            { return "minecraft:netherite_leggings" }
-func (NetheriteLeggings) ID() ID                  { return 935 }
+func (NetheriteLeggings) ID() ID                  { return 980 }
 func (NetheriteBoots) Name() string               { return "minecraft:netherite_boots" }
-func (NetheriteBoots) ID() ID                     { return 936 }
+func (NetheriteBoots) ID() ID                     { return 981 }
 func (Flint) Name() string                        { return "minecraft:flint" }
-func (Flint) ID() ID                              { return 937 }
+func (Flint) ID() ID                              { return 982 }
 func (Porkchop) Name() string                     { return "minecraft:porkchop" }
-func (Porkchop) ID() ID                           { return 938 }
+func (Porkchop) ID() ID                           { return 983 }
 func (CookedPorkchop) Name() string               { return "minecraft:cooked_porkchop" }
-func (CookedPorkchop) ID() ID                     { return 939 }
+func (CookedPorkchop) ID() ID                     { return 984 }
 func (Painting) Name() string                     { return "minecraft:painting" }
-func (Painting) ID() ID                           { return 940 }
+func (Painting) ID() ID                           { return 985 }
 func (GoldenApple) Name() string                  { return "minecraft:golden_apple" }
-func (GoldenApple) ID() ID                        { return 941 }
+func (GoldenApple) ID() ID                        { return 986 }
 func (EnchantedGoldenApple) Name() string         { return "minecraft:enchanted_golden_apple" }
-func (EnchantedGoldenApple) ID() ID               { return 942 }
+func (EnchantedGoldenApple) ID() ID               { return 987 }
 func (OakSign) Name() string                      { return "minecraft:oak_sign" }
-func (OakSign) ID() ID                            { return 943 }
+func (OakSign) ID() ID                            { return 988 }
 func (SpruceSign) Name() string                   { return "minecraft:spruce_sign" }
-func (SpruceSign) ID() ID                         { return 944 }
+func (SpruceSign) ID() ID                         { return 989 }
 func (BirchSign) Name() string                    { return "minecraft:birch_sign" }
-func (BirchSign) ID() ID                          { return 945 }
+func (BirchSign) ID() ID                          { return 990 }
 func (JungleSign) Name() string                   { return "minecraft:jungle_sign" }
-func (JungleSign) ID() ID                         { return 946 }
+func (JungleSign) ID() ID                         { return 991 }
 func (AcaciaSign) Name() string                   { return "minecraft:acacia_sign" }
-func (AcaciaSign) ID() ID                         { return 947 }
+func (AcaciaSign) ID() ID                         { return 992 }
 func (CherrySign) Name() string                   { return "minecraft:cherry_sign" }
-func (CherrySign) ID() ID                         { return 948 }
+func (CherrySign) ID() ID                         { return 993 }
 func (DarkOakSign) Name() string                  { return "minecraft:dark_oak_sign" }
-func (DarkOakSign) ID() ID                        { return 949 }
+func (DarkOakSign) ID() ID                        { return 994 }
 func (PaleOakSign) Name() string                  { return "minecraft:pale_oak_sign" }
-func (PaleOakSign) ID() ID                        { return 950 }
+func (PaleOakSign) ID() ID                        { return 995 }
 func (MangroveSign) Name() string                 { return "minecraft:mangrove_sign" }
-func (MangroveSign) ID() ID                       { return 951 }
+func (MangroveSign) ID() ID                       { return 996 }
 func (BambooSign) Name() string                   { return "minecraft:bamboo_sign" }
-func (BambooSign) ID() ID                         { return 952 }
+func (BambooSign) ID() ID                         { return 997 }
 func (CrimsonSign) Name() string                  { return "minecraft:crimson_sign" }
-func (CrimsonSign) ID() ID                        { return 953 }
+func (CrimsonSign) ID() ID                        { return 998 }
 func (WarpedSign) Name() string                   { return "minecraft:warped_sign" }
-func (WarpedSign) ID() ID                         { return 954 }
+func (WarpedSign) ID() ID                         { return 999 }
 func (OakHangingSign) Name() string               { return "minecraft:oak_hanging_sign" }
-func (OakHangingSign) ID() ID                     { return 955 }
+func (OakHangingSign) ID() ID                     { return 1000 }
 func (SpruceHangingSign) Name() string            { return "minecraft:spruce_hanging_sign" }
-func (SpruceHangingSign) ID() ID                  { return 956 }
+func (SpruceHangingSign) ID() ID                  { return 1001 }
 func (BirchHangingSign) Name() string             { return "minecraft:birch_hanging_sign" }
-func (BirchHangingSign) ID() ID                   { return 957 }
+func (BirchHangingSign) ID() ID                   { return 1002 }
 func (JungleHangingSign) Name() string            { return "minecraft:jungle_hanging_sign" }
-func (JungleHangingSign) ID() ID                  { return 958 }
+func (JungleHangingSign) ID() ID                  { return 1003 }
 func (AcaciaHangingSign) Name() string            { return "minecraft:acacia_hanging_sign" }
-func (AcaciaHangingSign) ID() ID                  { return 959 }
+func (AcaciaHangingSign) ID() ID                  { return 1004 }
 func (CherryHangingSign) Name() string            { return "minecraft:cherry_hanging_sign" }
-func (CherryHangingSign) ID() ID                  { return 960 }
+func (CherryHangingSign) ID() ID                  { return 1005 }
 func (DarkOakHangingSign) Name() string           { return "minecraft:dark_oak_hanging_sign" }
-func (DarkOakHangingSign) ID() ID                 { return 961 }
+func (DarkOakHangingSign) ID() ID                 { return 1006 }
 func (PaleOakHangingSign) Name() string           { return "minecraft:pale_oak_hanging_sign" }
-func (PaleOakHangingSign) ID() ID                 { return 962 }
+func (PaleOakHangingSign) ID() ID                 { return 1007 }
 func (MangroveHangingSign) Name() string          { return "minecraft:mangrove_hanging_sign" }
-func (MangroveHangingSign) ID() ID                { return 963 }
+func (MangroveHangingSign) ID() ID                { return 1008 }
 func (BambooHangingSign) Name() string            { return "minecraft:bamboo_hanging_sign" }
-func (BambooHangingSign) ID() ID                  { return 964 }
+func (BambooHangingSign) ID() ID                  { return 1009 }
 func (CrimsonHangingSign) Name() string           { return "minecraft:crimson_hanging_sign" }
-func (CrimsonHangingSign) ID() ID                 { return 965 }
+func (CrimsonHangingSign) ID() ID                 { return 1010 }
 func (WarpedHangingSign) Name() string            { return "minecraft:warped_hanging_sign" }
-func (WarpedHangingSign) ID() ID                  { return 966 }
+func (WarpedHangingSign) ID() ID                  { return 1011 }
 func (Bucket) Name() string                       { return "minecraft:bucket" }
-func (Bucket) ID() ID                             { return 967 }
+func (Bucket) ID() ID                             { return 1012 }
 func (WaterBucket) Name() string                  { return "minecraft:water_bucket" }
-func (WaterBucket) ID() ID                        { return 968 }
+func (WaterBucket) ID() ID                        { return 1013 }
 func (LavaBucket) Name() string                   { return "minecraft:lava_bucket" }
-func (LavaBucket) ID() ID                         { return 969 }
+func (LavaBucket) ID() ID                         { return 1014 }
 func (PowderSnowBucket) Name() string             { return "minecraft:powder_snow_bucket" }
-func (PowderSnowBucket) ID() ID                   { return 970 }
+func (PowderSnowBucket) ID() ID                   { return 1015 }
 func (Snowball) Name() string                     { return "minecraft:snowball" }
-func (Snowball) ID() ID                           { return 971 }
+func (Snowball) ID() ID                           { return 1016 }
 func (Leather) Name() string                      { return "minecraft:leather" }
-func (Leather) ID() ID                            { return 972 }
+func (Leather) ID() ID                            { return 1017 }
 func (MilkBucket) Name() string                   { return "minecraft:milk_bucket" }
-func (MilkBucket) ID() ID                         { return 973 }
+func (MilkBucket) ID() ID                         { return 1018 }
 func (PufferfishBucket) Name() string             { return "minecraft:pufferfish_bucket" }
-func (PufferfishBucket) ID() ID                   { return 974 }
+func (PufferfishBucket) ID() ID                   { return 1019 }
 func (SalmonBucket) Name() string                 { return "minecraft:salmon_bucket" }
-func (SalmonBucket) ID() ID                       { return 975 }
+func (SalmonBucket) ID() ID                       { return 1020 }
 func (CodBucket) Name() string                    { return "minecraft:cod_bucket" }
-func (CodBucket) ID() ID                          { return 976 }
+func (CodBucket) ID() ID                          { return 1021 }
 func (TropicalFishBucket) Name() string           { return "minecraft:tropical_fish_bucket" }
-func (TropicalFishBucket) ID() ID                 { return 977 }
+func (TropicalFishBucket) ID() ID                 { return 1022 }
 func (AxolotlBucket) Name() string                { return "minecraft:axolotl_bucket" }
-func (AxolotlBucket) ID() ID                      { return 978 }
+func (AxolotlBucket) ID() ID                      { return 1023 }
 func (TadpoleBucket) Name() string                { return "minecraft:tadpole_bucket" }
-func (TadpoleBucket) ID() ID                      { return 979 }
+func (TadpoleBucket) ID() ID                      { return 1024 }
 func (Brick) Name() string                        { return "minecraft:brick" }
-func (Brick) ID() ID                              { return 980 }
+func (Brick) ID() ID                              { return 1025 }
 func (ClayBall) Name() string                     { return "minecraft:clay_ball" }
-func (ClayBall) ID() ID                           { return 981 }
+func (ClayBall) ID() ID                           { return 1026 }
 func (DriedKelpBlock) Name() string               { return "minecraft:dried_kelp_block" }
-func (DriedKelpBlock) ID() ID                     { return 982 }
+func (DriedKelpBlock) ID() ID                     { return 1027 }
 func (Paper) Name() string                        { return "minecraft:paper" }
-func (Paper) ID() ID                              { return 983 }
+func (Paper) ID() ID                              { return 1028 }
 func (Book) Name() string                         { return "minecraft:book" }
-func (Book) ID() ID                               { return 984 }
+func (Book) ID() ID                               { return 1029 }
 func (SlimeBall) Name() string                    { return "minecraft:slime_ball" }
-func (SlimeBall) ID() ID                          { return 985 }
+func (SlimeBall) ID() ID                          { return 1030 }
 func (Egg) Name() string                          { return "minecraft:egg" }
-func (Egg) ID() ID                                { return 986 }
+func (Egg) ID() ID                                { return 1031 }
 func (BlueEgg) Name() string                      { return "minecraft:blue_egg" }
-func (BlueEgg) ID() ID                            { return 987 }
+func (BlueEgg) ID() ID                            { return 1032 }
 func (BrownEgg) Name() string                     { return "minecraft:brown_egg" }
-func (BrownEgg) ID() ID                           { return 988 }
+func (BrownEgg) ID() ID                           { return 1033 }
 func (Compass) Name() string                      { return "minecraft:compass" }
-func (Compass) ID() ID                            { return 989 }
+func (Compass) ID() ID                            { return 1034 }
 func (RecoveryCompass) Name() string              { return "minecraft:recovery_compass" }
-func (RecoveryCompass) ID() ID                    { return 990 }
+func (RecoveryCompass) ID() ID                    { return 1035 }
 func (Bundle) Name() string                       { return "minecraft:bundle" }
-func (Bundle) ID() ID                             { return 991 }
+func (Bundle) ID() ID                             { return 1036 }
 func (WhiteBundle) Name() string                  { return "minecraft:white_bundle" }
-func (WhiteBundle) ID() ID                        { return 992 }
+func (WhiteBundle) ID() ID                        { return 1037 }
 func (OrangeBundle) Name() string                 { return "minecraft:orange_bundle" }
-func (OrangeBundle) ID() ID                       { return 993 }
+func (OrangeBundle) ID() ID                       { return 1038 }
 func (MagentaBundle) Name() string                { return "minecraft:magenta_bundle" }
-func (MagentaBundle) ID() ID                      { return 994 }
+func (MagentaBundle) ID() ID                      { return 1039 }
 func (LightBlueBundle) Name() string              { return "minecraft:light_blue_bundle" }
-func (LightBlueBundle) ID() ID                    { return 995 }
+func (LightBlueBundle) ID() ID                    { return 1040 }
 func (YellowBundle) Name() string                 { return "minecraft:yellow_bundle" }
-func (YellowBundle) ID() ID                       { return 996 }
+func (YellowBundle) ID() ID                       { return 1041 }
 func (LimeBundle) Name() string                   { return "minecraft:lime_bundle" }
-func (LimeBundle) ID() ID                         { return 997 }
+func (LimeBundle) ID() ID                         { return 1042 }
 func (PinkBundle) Name() string                   { return "minecraft:pink_bundle" }
-func (PinkBundle) ID() ID                         { return 998 }
+func (PinkBundle) ID() ID                         { return 1043 }
 func (GrayBundle) Name() string                   { return "minecraft:gray_bundle" }
-func (GrayBundle) ID() ID                         { return 999 }
+func (GrayBundle) ID() ID                         { return 1044 }
 func (LightGrayBundle) Name() string              { return "minecraft:light_gray_bundle" }
-func (LightGrayBundle) ID() ID                    { return 1000 }
+func (LightGrayBundle) ID() ID                    { return 1045 }
 func (CyanBundle) Name() string                   { return "minecraft:cyan_bundle" }
-func (CyanBundle) ID() ID                         { return 1001 }
+func (CyanBundle) ID() ID                         { return 1046 }
 func (PurpleBundle) Name() string                 { return "minecraft:purple_bundle" }
-func (PurpleBundle) ID() ID                       { return 1002 }
+func (PurpleBundle) ID() ID                       { return 1047 }
 func (BlueBundle) Name() string                   { return "minecraft:blue_bundle" }
-func (BlueBundle) ID() ID                         { return 1003 }
+func (BlueBundle) ID() ID                         { return 1048 }
 func (BrownBundle) Name() string                  { return "minecraft:brown_bundle" }
-func (BrownBundle) ID() ID                        { return 1004 }
+func (BrownBundle) ID() ID                        { return 1049 }
 func (GreenBundle) Name() string                  { return "minecraft:green_bundle" }
-func (GreenBundle) ID() ID                        { return 1005 }
+func (GreenBundle) ID() ID                        { return 1050 }
 func (RedBundle) Name() string                    { return "minecraft:red_bundle" }
-func (RedBundle) ID() ID                          { return 1006 }
+func (RedBundle) ID() ID                          { return 1051 }
 func (BlackBundle) Name() string                  { return "minecraft:black_bundle" }
-func (BlackBundle) ID() ID                        { return 1007 }
+func (BlackBundle) ID() ID                        { return 1052 }
 func (FishingRod) Name() string                   { return "minecraft:fishing_rod" }
-func (FishingRod) ID() ID                         { return 1008 }
+func (FishingRod) ID() ID                         { return 1053 }
 func (Clock) Name() string                        { return "minecraft:clock" }
-func (Clock) ID() ID                              { return 1009 }
+func (Clock) ID() ID                              { return 1054 }
 func (Spyglass) Name() string                     { return "minecraft:spyglass" }
-func (Spyglass) ID() ID                           { return 1010 }
+func (Spyglass) ID() ID                           { return 1055 }
 func (GlowstoneDust) Name() string                { return "minecraft:glowstone_dust" }
-func (GlowstoneDust) ID() ID                      { return 1011 }
+func (GlowstoneDust) ID() ID                      { return 1056 }
 func (Cod) Name() string                          { return "minecraft:cod" }
-func (Cod) ID() ID                                { return 1012 }
+func (Cod) ID() ID                                { return 1057 }
 func (Salmon) Name() string                       { return "minecraft:salmon" }
-func (Salmon) ID() ID                             { return 1013 }
+func (Salmon) ID() ID                             { return 1058 }
 func (TropicalFish) Name() string                 { return "minecraft:tropical_fish" }
-func (TropicalFish) ID() ID                       { return 1014 }
+func (TropicalFish) ID() ID                       { return 1059 }
 func (Pufferfish) Name() string                   { return "minecraft:pufferfish" }
-func (Pufferfish) ID() ID                         { return 1015 }
+func (Pufferfish) ID() ID                         { return 1060 }
 func (CookedCod) Name() string                    { return "minecraft:cooked_cod" }
-func (CookedCod) ID() ID                          { return 1016 }
+func (CookedCod) ID() ID                          { return 1061 }
 func (CookedSalmon) Name() string                 { return "minecraft:cooked_salmon" }
-func (CookedSalmon) ID() ID                       { return 1017 }
+func (CookedSalmon) ID() ID                       { return 1062 }
 func (InkSac) Name() string                       { return "minecraft:ink_sac" }
-func (InkSac) ID() ID                             { return 1018 }
+func (InkSac) ID() ID                             { return 1063 }
 func (GlowInkSac) Name() string                   { return "minecraft:glow_ink_sac" }
-func (GlowInkSac) ID() ID                         { return 1019 }
+func (GlowInkSac) ID() ID                         { return 1064 }
 func (CocoaBeans) Name() string                   { return "minecraft:cocoa_beans" }
-func (CocoaBeans) ID() ID                         { return 1020 }
+func (CocoaBeans) ID() ID                         { return 1065 }
 func (WhiteDye) Name() string                     { return "minecraft:white_dye" }
-func (WhiteDye) ID() ID                           { return 1021 }
+func (WhiteDye) ID() ID                           { return 1066 }
 func (OrangeDye) Name() string                    { return "minecraft:orange_dye" }
-func (OrangeDye) ID() ID                          { return 1022 }
+func (OrangeDye) ID() ID                          { return 1067 }
 func (MagentaDye) Name() string                   { return "minecraft:magenta_dye" }
-func (MagentaDye) ID() ID                         { return 1023 }
+func (MagentaDye) ID() ID                         { return 1068 }
 func (LightBlueDye) Name() string                 { return "minecraft:light_blue_dye" }
-func (LightBlueDye) ID() ID                       { return 1024 }
+func (LightBlueDye) ID() ID                       { return 1069 }
 func (YellowDye) Name() string                    { return "minecraft:yellow_dye" }
-func (YellowDye) ID() ID                          { return 1025 }
+func (YellowDye) ID() ID                          { return 1070 }
 func (LimeDye) Name() string                      { return "minecraft:lime_dye" }
-func (LimeDye) ID() ID                            { return 1026 }
+func (LimeDye) ID() ID                            { return 1071 }
 func (PinkDye) Name() string                      { return "minecraft:pink_dye" }
-func (PinkDye) ID() ID                            { return 1027 }
+func (PinkDye) ID() ID                            { return 1072 }
 func (GrayDye) Name() string                      { return "minecraft:gray_dye" }
-func (GrayDye) ID() ID                            { return 1028 }
+func (GrayDye) ID() ID                            { return 1073 }
 func (LightGrayDye) Name() string                 { return "minecraft:light_gray_dye" }
-func (LightGrayDye) ID() ID                       { return 1029 }
+func (LightGrayDye) ID() ID                       { return 1074 }
 func (CyanDye) Name() string                      { return "minecraft:cyan_dye" }
-func (CyanDye) ID() ID                            { return 1030 }
+func (CyanDye) ID() ID                            { return 1075 }
 func (PurpleDye) Name() string                    { return "minecraft:purple_dye" }
-func (PurpleDye) ID() ID                          { return 1031 }
+func (PurpleDye) ID() ID                          { return 1076 }
 func (BlueDye) Name() string                      { return "minecraft:blue_dye" }
-func (BlueDye) ID() ID                            { return 1032 }
+func (BlueDye) ID() ID                            { return 1077 }
 func (BrownDye) Name() string                     { return "minecraft:brown_dye" }
-func (BrownDye) ID() ID                           { return 1033 }
+func (BrownDye) ID() ID                           { return 1078 }
 func (GreenDye) Name() string                     { return "minecraft:green_dye" }
-func (GreenDye) ID() ID                           { return 1034 }
+func (GreenDye) ID() ID                           { return 1079 }
 func (RedDye) Name() string                       { return "minecraft:red_dye" }
-func (RedDye) ID() ID                             { return 1035 }
+func (RedDye) ID() ID                             { return 1080 }
 func (BlackDye) Name() string                     { return "minecraft:black_dye" }
-func (BlackDye) ID() ID                           { return 1036 }
+func (BlackDye) ID() ID                           { return 1081 }
 func (BoneMeal) Name() string                     { return "minecraft:bone_meal" }
-func (BoneMeal) ID() ID                           { return 1037 }
+func (BoneMeal) ID() ID                           { return 1082 }
 func (Bone) Name() string                         { return "minecraft:bone" }
-func (Bone) ID() ID                               { return 1038 }
+func (Bone) ID() ID                               { return 1083 }
 func (Sugar) Name() string                        { return "minecraft:sugar" }
-func (Sugar) ID() ID                              { return 1039 }
+func (Sugar) ID() ID                              { return 1084 }
 func (Cake) Name() string                         { return "minecraft:cake" }
-func (Cake) ID() ID                               { return 1040 }
+func (Cake) ID() ID                               { return 1085 }
 func (WhiteBed) Name() string                     { return "minecraft:white_bed" }
-func (WhiteBed) ID() ID                           { return 1041 }
+func (WhiteBed) ID() ID                           { return 1086 }
 func (OrangeBed) Name() string                    { return "minecraft:orange_bed" }
-func (OrangeBed) ID() ID                          { return 1042 }
+func (OrangeBed) ID() ID                          { return 1087 }
 func (MagentaBed) Name() string                   { return "minecraft:magenta_bed" }
-func (MagentaBed) ID() ID                         { return 1043 }
+func (MagentaBed) ID() ID                         { return 1088 }
 func (LightBlueBed) Name() string                 { return "minecraft:light_blue_bed" }
-func (LightBlueBed) ID() ID                       { return 1044 }
+func (LightBlueBed) ID() ID                       { return 1089 }
 func (YellowBed) Name() string                    { return "minecraft:yellow_bed" }
-func (YellowBed) ID() ID                          { return 1045 }
+func (YellowBed) ID() ID                          { return 1090 }
 func (LimeBed) Name() string                      { return "minecraft:lime_bed" }
-func (LimeBed) ID() ID                            { return 1046 }
+func (LimeBed) ID() ID                            { return 1091 }
 func (PinkBed) Name() string                      { return "minecraft:pink_bed" }
-func (PinkBed) ID() ID                            { return 1047 }
+func (PinkBed) ID() ID                            { return 1092 }
 func (GrayBed) Name() string                      { return "minecraft:gray_bed" }
-func (GrayBed) ID() ID                            { return 1048 }
+func (GrayBed) ID() ID                            { return 1093 }
 func (LightGrayBed) Name() string                 { return "minecraft:light_gray_bed" }
-func (LightGrayBed) ID() ID                       { return 1049 }
+func (LightGrayBed) ID() ID                       { return 1094 }
 func (CyanBed) Name() string                      { return "minecraft:cyan_bed" }
-func (CyanBed) ID() ID                            { return 1050 }
+func (CyanBed) ID() ID                            { return 1095 }
 func (PurpleBed) Name() string                    { return "minecraft:purple_bed" }
-func (PurpleBed) ID() ID                          { return 1051 }
+func (PurpleBed) ID() ID                          { return 1096 }
 func (BlueBed) Name() string                      { return "minecraft:blue_bed" }
-func (BlueBed) ID() ID                            { return 1052 }
+func (BlueBed) ID() ID                            { return 1097 }
 func (BrownBed) Name() string                     { return "minecraft:brown_bed" }
-func (BrownBed) ID() ID                           { return 1053 }
+func (BrownBed) ID() ID                           { return 1098 }
 func (GreenBed) Name() string                     { return "minecraft:green_bed" }
-func (GreenBed) ID() ID                           { return 1054 }
+func (GreenBed) ID() ID                           { return 1099 }
 func (RedBed) Name() string                       { return "minecraft:red_bed" }
-func (RedBed) ID() ID                             { return 1055 }
+func (RedBed) ID() ID                             { return 1100 }
 func (BlackBed) Name() string                     { return "minecraft:black_bed" }
-func (BlackBed) ID() ID                           { return 1056 }
+func (BlackBed) ID() ID                           { return 1101 }
 func (Cookie) Name() string                       { return "minecraft:cookie" }
-func (Cookie) ID() ID                             { return 1057 }
+func (Cookie) ID() ID                             { return 1102 }
 func (Crafter) Name() string                      { return "minecraft:crafter" }
-func (Crafter) ID() ID                            { return 1058 }
+func (Crafter) ID() ID                            { return 1103 }
 func (FilledMap) Name() string                    { return "minecraft:filled_map" }
-func (FilledMap) ID() ID                          { return 1059 }
+func (FilledMap) ID() ID                          { return 1104 }
 func (Shears) Name() string                       { return "minecraft:shears" }
-func (Shears) ID() ID                             { return 1060 }
+func (Shears) ID() ID                             { return 1105 }
 func (MelonSlice) Name() string                   { return "minecraft:melon_slice" }
-func (MelonSlice) ID() ID                         { return 1061 }
+func (MelonSlice) ID() ID                         { return 1106 }
 func (DriedKelp) Name() string                    { return "minecraft:dried_kelp" }
-func (DriedKelp) ID() ID                          { return 1062 }
+func (DriedKelp) ID() ID                          { return 1107 }
 func (PumpkinSeeds) Name() string                 { return "minecraft:pumpkin_seeds" }
-func (PumpkinSeeds) ID() ID                       { return 1063 }
+func (PumpkinSeeds) ID() ID                       { return 1108 }
 func (MelonSeeds) Name() string                   { return "minecraft:melon_seeds" }
-func (MelonSeeds) ID() ID                         { return 1064 }
+func (MelonSeeds) ID() ID                         { return 1109 }
 func (Beef) Name() string                         { return "minecraft:beef" }
-func (Beef) ID() ID                               { return 1065 }
+func (Beef) ID() ID                               { return 1110 }
 func (CookedBeef) Name() string                   { return "minecraft:cooked_beef" }
-func (CookedBeef) ID() ID                         { return 1066 }
+func (CookedBeef) ID() ID                         { return 1111 }
 func (Chicken) Name() string                      { return "minecraft:chicken" }
-func (Chicken) ID() ID                            { return 1067 }
+func (Chicken) ID() ID                            { return 1112 }
 func (CookedChicken) Name() string                { return "minecraft:cooked_chicken" }
-func (CookedChicken) ID() ID                      { return 1068 }
+func (CookedChicken) ID() ID                      { return 1113 }
 func (RottenFlesh) Name() string                  { return "minecraft:rotten_flesh" }
-func (RottenFlesh) ID() ID                        { return 1069 }
+func (RottenFlesh) ID() ID                        { return 1114 }
 func (EnderPearl) Name() string                   { return "minecraft:ender_pearl" }
-func (EnderPearl) ID() ID                         { return 1070 }
+func (EnderPearl) ID() ID                         { return 1115 }
 func (BlazeRod) Name() string                     { return "minecraft:blaze_rod" }
-func (BlazeRod) ID() ID                           { return 1071 }
+func (BlazeRod) ID() ID                           { return 1116 }
 func (GhastTear) Name() string                    { return "minecraft:ghast_tear" }
-func (GhastTear) ID() ID                          { return 1072 }
+func (GhastTear) ID() ID                          { return 1117 }
 func (GoldNugget) Name() string                   { return "minecraft:gold_nugget" }
-func (GoldNugget) ID() ID                         { return 1073 }
+func (GoldNugget) ID() ID                         { return 1118 }
 func (NetherWart) Name() string                   { return "minecraft:nether_wart" }
-func (NetherWart) ID() ID                         { return 1074 }
+func (NetherWart) ID() ID                         { return 1119 }
 func (GlassBottle) Name() string                  { return "minecraft:glass_bottle" }
-func (GlassBottle) ID() ID                        { return 1075 }
+func (GlassBottle) ID() ID                        { return 1120 }
 func (Potion) Name() string                       { return "minecraft:potion" }
-func (Potion) ID() ID                             { return 1076 }
+func (Potion) ID() ID                             { return 1121 }
 func (SpiderEye) Name() string                    { return "minecraft:spider_eye" }
-func (SpiderEye) ID() ID                          { return 1077 }
+func (SpiderEye) ID() ID                          { return 1122 }
 func (FermentedSpiderEye) Name() string           { return "minecraft:fermented_spider_eye" }
-func (FermentedSpiderEye) ID() ID                 { return 1078 }
+func (FermentedSpiderEye) ID() ID                 { return 1123 }
 func (BlazePowder) Name() string                  { return "minecraft:blaze_powder" }
-func (BlazePowder) ID() ID                        { return 1079 }
+func (BlazePowder) ID() ID                        { return 1124 }
 func (MagmaCream) Name() string                   { return "minecraft:magma_cream" }
-func (MagmaCream) ID() ID                         { return 1080 }
+func (MagmaCream) ID() ID                         { return 1125 }
 func (BrewingStand) Name() string                 { return "minecraft:brewing_stand" }
-func (BrewingStand) ID() ID                       { return 1081 }
+func (BrewingStand) ID() ID                       { return 1126 }
 func (Cauldron) Name() string                     { return "minecraft:cauldron" }
-func (Cauldron) ID() ID                           { return 1082 }
+func (Cauldron) ID() ID                           { return 1127 }
 func (EnderEye) Name() string                     { return "minecraft:ender_eye" }
-func (EnderEye) ID() ID                           { return 1083 }
+func (EnderEye) ID() ID                           { return 1128 }
 func (GlisteringMelonSlice) Name() string         { return "minecraft:glistering_melon_slice" }
-func (GlisteringMelonSlice) ID() ID               { return 1084 }
+func (GlisteringMelonSlice) ID() ID               { return 1129 }
 func (ArmadilloSpawnEgg) Name() string            { return "minecraft:armadillo_spawn_egg" }
-func (ArmadilloSpawnEgg) ID() ID                  { return 1085 }
+func (ArmadilloSpawnEgg) ID() ID                  { return 1130 }
 func (AllaySpawnEgg) Name() string                { return "minecraft:allay_spawn_egg" }
-func (AllaySpawnEgg) ID() ID                      { return 1086 }
+func (AllaySpawnEgg) ID() ID                      { return 1131 }
 func (AxolotlSpawnEgg) Name() string              { return "minecraft:axolotl_spawn_egg" }
-func (AxolotlSpawnEgg) ID() ID                    { return 1087 }
+func (AxolotlSpawnEgg) ID() ID                    { return 1132 }
 func (BatSpawnEgg) Name() string                  { return "minecraft:bat_spawn_egg" }
-func (BatSpawnEgg) ID() ID                        { return 1088 }
+func (BatSpawnEgg) ID() ID                        { return 1133 }
 func (BeeSpawnEgg) Name() string                  { return "minecraft:bee_spawn_egg" }
-func (BeeSpawnEgg) ID() ID                        { return 1089 }
+func (BeeSpawnEgg) ID() ID                        { return 1134 }
 func (BlazeSpawnEgg) Name() string                { return "minecraft:blaze_spawn_egg" }
-func (BlazeSpawnEgg) ID() ID                      { return 1090 }
+func (BlazeSpawnEgg) ID() ID                      { return 1135 }
 func (BoggedSpawnEgg) Name() string               { return "minecraft:bogged_spawn_egg" }
-func (BoggedSpawnEgg) ID() ID                     { return 1091 }
+func (BoggedSpawnEgg) ID() ID                     { return 1136 }
 func (BreezeSpawnEgg) Name() string               { return "minecraft:breeze_spawn_egg" }
-func (BreezeSpawnEgg) ID() ID                     { return 1092 }
+func (BreezeSpawnEgg) ID() ID                     { return 1137 }
 func (CatSpawnEgg) Name() string                  { return "minecraft:cat_spawn_egg" }
-func (CatSpawnEgg) ID() ID                        { return 1093 }
+func (CatSpawnEgg) ID() ID                        { return 1138 }
 func (CamelSpawnEgg) Name() string                { return "minecraft:camel_spawn_egg" }
-func (CamelSpawnEgg) ID() ID                      { return 1094 }
+func (CamelSpawnEgg) ID() ID                      { return 1139 }
 func (CaveSpiderSpawnEgg) Name() string           { return "minecraft:cave_spider_spawn_egg" }
-func (CaveSpiderSpawnEgg) ID() ID                 { return 1095 }
+func (CaveSpiderSpawnEgg) ID() ID                 { return 1140 }
 func (ChickenSpawnEgg) Name() string              { return "minecraft:chicken_spawn_egg" }
-func (ChickenSpawnEgg) ID() ID                    { return 1096 }
+func (ChickenSpawnEgg) ID() ID                    { return 1141 }
 func (CodSpawnEgg) Name() string                  { return "minecraft:cod_spawn_egg" }
-func (CodSpawnEgg) ID() ID                        { return 1097 }
+func (CodSpawnEgg) ID() ID                        { return 1142 }
+func (CopperGolemSpawnEgg) Name() string          { return "minecraft:copper_golem_spawn_egg" }
+func (CopperGolemSpawnEgg) ID() ID                { return 1143 }
 func (CowSpawnEgg) Name() string                  { return "minecraft:cow_spawn_egg" }
-func (CowSpawnEgg) ID() ID                        { return 1098 }
+func (CowSpawnEgg) ID() ID                        { return 1144 }
 func (CreeperSpawnEgg) Name() string              { return "minecraft:creeper_spawn_egg" }
-func (CreeperSpawnEgg) ID() ID                    { return 1099 }
+func (CreeperSpawnEgg) ID() ID                    { return 1145 }
 func (DolphinSpawnEgg) Name() string              { return "minecraft:dolphin_spawn_egg" }
-func (DolphinSpawnEgg) ID() ID                    { return 1100 }
+func (DolphinSpawnEgg) ID() ID                    { return 1146 }
 func (DonkeySpawnEgg) Name() string               { return "minecraft:donkey_spawn_egg" }
-func (DonkeySpawnEgg) ID() ID                     { return 1101 }
+func (DonkeySpawnEgg) ID() ID                     { return 1147 }
 func (DrownedSpawnEgg) Name() string              { return "minecraft:drowned_spawn_egg" }
-func (DrownedSpawnEgg) ID() ID                    { return 1102 }
+func (DrownedSpawnEgg) ID() ID                    { return 1148 }
 func (ElderGuardianSpawnEgg) Name() string        { return "minecraft:elder_guardian_spawn_egg" }
-func (ElderGuardianSpawnEgg) ID() ID              { return 1103 }
+func (ElderGuardianSpawnEgg) ID() ID              { return 1149 }
 func (EnderDragonSpawnEgg) Name() string          { return "minecraft:ender_dragon_spawn_egg" }
-func (EnderDragonSpawnEgg) ID() ID                { return 1104 }
+func (EnderDragonSpawnEgg) ID() ID                { return 1150 }
 func (EndermanSpawnEgg) Name() string             { return "minecraft:enderman_spawn_egg" }
-func (EndermanSpawnEgg) ID() ID                   { return 1105 }
+func (EndermanSpawnEgg) ID() ID                   { return 1151 }
 func (EndermiteSpawnEgg) Name() string            { return "minecraft:endermite_spawn_egg" }
-func (EndermiteSpawnEgg) ID() ID                  { return 1106 }
+func (EndermiteSpawnEgg) ID() ID                  { return 1152 }
 func (EvokerSpawnEgg) Name() string               { return "minecraft:evoker_spawn_egg" }
-func (EvokerSpawnEgg) ID() ID                     { return 1107 }
+func (EvokerSpawnEgg) ID() ID                     { return 1153 }
 func (FoxSpawnEgg) Name() string                  { return "minecraft:fox_spawn_egg" }
-func (FoxSpawnEgg) ID() ID                        { return 1108 }
+func (FoxSpawnEgg) ID() ID                        { return 1154 }
 func (FrogSpawnEgg) Name() string                 { return "minecraft:frog_spawn_egg" }
-func (FrogSpawnEgg) ID() ID                       { return 1109 }
+func (FrogSpawnEgg) ID() ID                       { return 1155 }
 func (GhastSpawnEgg) Name() string                { return "minecraft:ghast_spawn_egg" }
-func (GhastSpawnEgg) ID() ID                      { return 1110 }
+func (GhastSpawnEgg) ID() ID                      { return 1156 }
 func (HappyGhastSpawnEgg) Name() string           { return "minecraft:happy_ghast_spawn_egg" }
-func (HappyGhastSpawnEgg) ID() ID                 { return 1111 }
+func (HappyGhastSpawnEgg) ID() ID                 { return 1157 }
 func (GlowSquidSpawnEgg) Name() string            { return "minecraft:glow_squid_spawn_egg" }
-func (GlowSquidSpawnEgg) ID() ID                  { return 1112 }
+func (GlowSquidSpawnEgg) ID() ID                  { return 1158 }
 func (GoatSpawnEgg) Name() string                 { return "minecraft:goat_spawn_egg" }
-func (GoatSpawnEgg) ID() ID                       { return 1113 }
+func (GoatSpawnEgg) ID() ID                       { return 1159 }
 func (GuardianSpawnEgg) Name() string             { return "minecraft:guardian_spawn_egg" }
-func (GuardianSpawnEgg) ID() ID                   { return 1114 }
+func (GuardianSpawnEgg) ID() ID                   { return 1160 }
 func (HoglinSpawnEgg) Name() string               { return "minecraft:hoglin_spawn_egg" }
-func (HoglinSpawnEgg) ID() ID                     { return 1115 }
+func (HoglinSpawnEgg) ID() ID                     { return 1161 }
 func (HorseSpawnEgg) Name() string                { return "minecraft:horse_spawn_egg" }
-func (HorseSpawnEgg) ID() ID                      { return 1116 }
+func (HorseSpawnEgg) ID() ID                      { return 1162 }
 func (HuskSpawnEgg) Name() string                 { return "minecraft:husk_spawn_egg" }
-func (HuskSpawnEgg) ID() ID                       { return 1117 }
+func (HuskSpawnEgg) ID() ID                       { return 1163 }
 func (IronGolemSpawnEgg) Name() string            { return "minecraft:iron_golem_spawn_egg" }
-func (IronGolemSpawnEgg) ID() ID                  { return 1118 }
+func (IronGolemSpawnEgg) ID() ID                  { return 1164 }
 func (LlamaSpawnEgg) Name() string                { return "minecraft:llama_spawn_egg" }
-func (LlamaSpawnEgg) ID() ID                      { return 1119 }
+func (LlamaSpawnEgg) ID() ID                      { return 1165 }
 func (MagmaCubeSpawnEgg) Name() string            { return "minecraft:magma_cube_spawn_egg" }
-func (MagmaCubeSpawnEgg) ID() ID                  { return 1120 }
+func (MagmaCubeSpawnEgg) ID() ID                  { return 1166 }
 func (MooshroomSpawnEgg) Name() string            { return "minecraft:mooshroom_spawn_egg" }
-func (MooshroomSpawnEgg) ID() ID                  { return 1121 }
+func (MooshroomSpawnEgg) ID() ID                  { return 1167 }
 func (MuleSpawnEgg) Name() string                 { return "minecraft:mule_spawn_egg" }
-func (MuleSpawnEgg) ID() ID                       { return 1122 }
+func (MuleSpawnEgg) ID() ID                       { return 1168 }
 func (OcelotSpawnEgg) Name() string               { return "minecraft:ocelot_spawn_egg" }
-func (OcelotSpawnEgg) ID() ID                     { return 1123 }
+func (OcelotSpawnEgg) ID() ID                     { return 1169 }
 func (PandaSpawnEgg) Name() string                { return "minecraft:panda_spawn_egg" }
-func (PandaSpawnEgg) ID() ID                      { return 1124 }
+func (PandaSpawnEgg) ID() ID                      { return 1170 }
 func (ParrotSpawnEgg) Name() string               { return "minecraft:parrot_spawn_egg" }
-func (ParrotSpawnEgg) ID() ID                     { return 1125 }
+func (ParrotSpawnEgg) ID() ID                     { return 1171 }
 func (PhantomSpawnEgg) Name() string              { return "minecraft:phantom_spawn_egg" }
-func (PhantomSpawnEgg) ID() ID                    { return 1126 }
+func (PhantomSpawnEgg) ID() ID                    { return 1172 }
 func (PigSpawnEgg) Name() string                  { return "minecraft:pig_spawn_egg" }
-func (PigSpawnEgg) ID() ID                        { return 1127 }
+func (PigSpawnEgg) ID() ID                        { return 1173 }
 func (PiglinSpawnEgg) Name() string               { return "minecraft:piglin_spawn_egg" }
-func (PiglinSpawnEgg) ID() ID                     { return 1128 }
+func (PiglinSpawnEgg) ID() ID                     { return 1174 }
 func (PiglinBruteSpawnEgg) Name() string          { return "minecraft:piglin_brute_spawn_egg" }
-func (PiglinBruteSpawnEgg) ID() ID                { return 1129 }
+func (PiglinBruteSpawnEgg) ID() ID                { return 1175 }
 func (PillagerSpawnEgg) Name() string             { return "minecraft:pillager_spawn_egg" }
-func (PillagerSpawnEgg) ID() ID                   { return 1130 }
+func (PillagerSpawnEgg) ID() ID                   { return 1176 }
 func (PolarBearSpawnEgg) Name() string            { return "minecraft:polar_bear_spawn_egg" }
-func (PolarBearSpawnEgg) ID() ID                  { return 1131 }
+func (PolarBearSpawnEgg) ID() ID                  { return 1177 }
 func (PufferfishSpawnEgg) Name() string           { return "minecraft:pufferfish_spawn_egg" }
-func (PufferfishSpawnEgg) ID() ID                 { return 1132 }
+func (PufferfishSpawnEgg) ID() ID                 { return 1178 }
 func (RabbitSpawnEgg) Name() string               { return "minecraft:rabbit_spawn_egg" }
-func (RabbitSpawnEgg) ID() ID                     { return 1133 }
+func (RabbitSpawnEgg) ID() ID                     { return 1179 }
 func (RavagerSpawnEgg) Name() string              { return "minecraft:ravager_spawn_egg" }
-func (RavagerSpawnEgg) ID() ID                    { return 1134 }
+func (RavagerSpawnEgg) ID() ID                    { return 1180 }
 func (SalmonSpawnEgg) Name() string               { return "minecraft:salmon_spawn_egg" }
-func (SalmonSpawnEgg) ID() ID                     { return 1135 }
+func (SalmonSpawnEgg) ID() ID                     { return 1181 }
 func (SheepSpawnEgg) Name() string                { return "minecraft:sheep_spawn_egg" }
-func (SheepSpawnEgg) ID() ID                      { return 1136 }
+func (SheepSpawnEgg) ID() ID                      { return 1182 }
 func (ShulkerSpawnEgg) Name() string              { return "minecraft:shulker_spawn_egg" }
-func (ShulkerSpawnEgg) ID() ID                    { return 1137 }
+func (ShulkerSpawnEgg) ID() ID                    { return 1183 }
 func (SilverfishSpawnEgg) Name() string           { return "minecraft:silverfish_spawn_egg" }
-func (SilverfishSpawnEgg) ID() ID                 { return 1138 }
+func (SilverfishSpawnEgg) ID() ID                 { return 1184 }
 func (SkeletonSpawnEgg) Name() string             { return "minecraft:skeleton_spawn_egg" }
-func (SkeletonSpawnEgg) ID() ID                   { return 1139 }
+func (SkeletonSpawnEgg) ID() ID                   { return 1185 }
 func (SkeletonHorseSpawnEgg) Name() string        { return "minecraft:skeleton_horse_spawn_egg" }
-func (SkeletonHorseSpawnEgg) ID() ID              { return 1140 }
+func (SkeletonHorseSpawnEgg) ID() ID              { return 1186 }
 func (SlimeSpawnEgg) Name() string                { return "minecraft:slime_spawn_egg" }
-func (SlimeSpawnEgg) ID() ID                      { return 1141 }
+func (SlimeSpawnEgg) ID() ID                      { return 1187 }
 func (SnifferSpawnEgg) Name() string              { return "minecraft:sniffer_spawn_egg" }
-func (SnifferSpawnEgg) ID() ID                    { return 1142 }
+func (SnifferSpawnEgg) ID() ID                    { return 1188 }
 func (SnowGolemSpawnEgg) Name() string            { return "minecraft:snow_golem_spawn_egg" }
-func (SnowGolemSpawnEgg) ID() ID                  { return 1143 }
+func (SnowGolemSpawnEgg) ID() ID                  { return 1189 }
 func (SpiderSpawnEgg) Name() string               { return "minecraft:spider_spawn_egg" }
-func (SpiderSpawnEgg) ID() ID                     { return 1144 }
+func (SpiderSpawnEgg) ID() ID                     { return 1190 }
 func (SquidSpawnEgg) Name() string                { return "minecraft:squid_spawn_egg" }
-func (SquidSpawnEgg) ID() ID                      { return 1145 }
+func (SquidSpawnEgg) ID() ID                      { return 1191 }
 func (StraySpawnEgg) Name() string                { return "minecraft:stray_spawn_egg" }
-func (StraySpawnEgg) ID() ID                      { return 1146 }
+func (StraySpawnEgg) ID() ID                      { return 1192 }
 func (StriderSpawnEgg) Name() string              { return "minecraft:strider_spawn_egg" }
-func (StriderSpawnEgg) ID() ID                    { return 1147 }
+func (StriderSpawnEgg) ID() ID                    { return 1193 }
 func (TadpoleSpawnEgg) Name() string              { return "minecraft:tadpole_spawn_egg" }
-func (TadpoleSpawnEgg) ID() ID                    { return 1148 }
+func (TadpoleSpawnEgg) ID() ID                    { return 1194 }
 func (TraderLlamaSpawnEgg) Name() string          { return "minecraft:trader_llama_spawn_egg" }
-func (TraderLlamaSpawnEgg) ID() ID                { return 1149 }
+func (TraderLlamaSpawnEgg) ID() ID                { return 1195 }
 func (TropicalFishSpawnEgg) Name() string         { return "minecraft:tropical_fish_spawn_egg" }
-func (TropicalFishSpawnEgg) ID() ID               { return 1150 }
+func (TropicalFishSpawnEgg) ID() ID               { return 1196 }
 func (TurtleSpawnEgg) Name() string               { return "minecraft:turtle_spawn_egg" }
-func (TurtleSpawnEgg) ID() ID                     { return 1151 }
+func (TurtleSpawnEgg) ID() ID                     { return 1197 }
 func (VexSpawnEgg) Name() string                  { return "minecraft:vex_spawn_egg" }
-func (VexSpawnEgg) ID() ID                        { return 1152 }
+func (VexSpawnEgg) ID() ID                        { return 1198 }
 func (VillagerSpawnEgg) Name() string             { return "minecraft:villager_spawn_egg" }
-func (VillagerSpawnEgg) ID() ID                   { return 1153 }
+func (VillagerSpawnEgg) ID() ID                   { return 1199 }
 func (VindicatorSpawnEgg) Name() string           { return "minecraft:vindicator_spawn_egg" }
-func (VindicatorSpawnEgg) ID() ID                 { return 1154 }
+func (VindicatorSpawnEgg) ID() ID                 { return 1200 }
 func (WanderingTraderSpawnEgg) Name() string      { return "minecraft:wandering_trader_spawn_egg" }
-func (WanderingTraderSpawnEgg) ID() ID            { return 1155 }
+func (WanderingTraderSpawnEgg) ID() ID            { return 1201 }
 func (WardenSpawnEgg) Name() string               { return "minecraft:warden_spawn_egg" }
-func (WardenSpawnEgg) ID() ID                     { return 1156 }
+func (WardenSpawnEgg) ID() ID                     { return 1202 }
 func (WitchSpawnEgg) Name() string                { return "minecraft:witch_spawn_egg" }
-func (WitchSpawnEgg) ID() ID                      { return 1157 }
+func (WitchSpawnEgg) ID() ID                      { return 1203 }
 func (WitherSpawnEgg) Name() string               { return "minecraft:wither_spawn_egg" }
-func (WitherSpawnEgg) ID() ID                     { return 1158 }
+func (WitherSpawnEgg) ID() ID                     { return 1204 }
 func (WitherSkeletonSpawnEgg) Name() string       { return "minecraft:wither_skeleton_spawn_egg" }
-func (WitherSkeletonSpawnEgg) ID() ID             { return 1159 }
+func (WitherSkeletonSpawnEgg) ID() ID             { return 1205 }
 func (WolfSpawnEgg) Name() string                 { return "minecraft:wolf_spawn_egg" }
-func (WolfSpawnEgg) ID() ID                       { return 1160 }
+func (WolfSpawnEgg) ID() ID                       { return 1206 }
 func (ZoglinSpawnEgg) Name() string               { return "minecraft:zoglin_spawn_egg" }
-func (ZoglinSpawnEgg) ID() ID                     { return 1161 }
+func (ZoglinSpawnEgg) ID() ID                     { return 1207 }
 func (CreakingSpawnEgg) Name() string             { return "minecraft:creaking_spawn_egg" }
-func (CreakingSpawnEgg) ID() ID                   { return 1162 }
+func (CreakingSpawnEgg) ID() ID                   { return 1208 }
 func (ZombieSpawnEgg) Name() string               { return "minecraft:zombie_spawn_egg" }
-func (ZombieSpawnEgg) ID() ID                     { return 1163 }
+func (ZombieSpawnEgg) ID() ID                     { return 1209 }
 func (ZombieHorseSpawnEgg) Name() string          { return "minecraft:zombie_horse_spawn_egg" }
-func (ZombieHorseSpawnEgg) ID() ID                { return 1164 }
+func (ZombieHorseSpawnEgg) ID() ID                { return 1210 }
 func (ZombieVillagerSpawnEgg) Name() string       { return "minecraft:zombie_villager_spawn_egg" }
-func (ZombieVillagerSpawnEgg) ID() ID             { return 1165 }
+func (ZombieVillagerSpawnEgg) ID() ID             { return 1211 }
 func (ZombifiedPiglinSpawnEgg) Name() string      { return "minecraft:zombified_piglin_spawn_egg" }
-func (ZombifiedPiglinSpawnEgg) ID() ID            { return 1166 }
+func (ZombifiedPiglinSpawnEgg) ID() ID            { return 1212 }
 func (ExperienceBottle) Name() string             { return "minecraft:experience_bottle" }
-func (ExperienceBottle) ID() ID                   { return 1167 }
+func (ExperienceBottle) ID() ID                   { return 1213 }
 func (FireCharge) Name() string                   { return "minecraft:fire_charge" }
-func (FireCharge) ID() ID                         { return 1168 }
+func (FireCharge) ID() ID                         { return 1214 }
 func (WindCharge) Name() string                   { return "minecraft:wind_charge" }
-func (WindCharge) ID() ID                         { return 1169 }
+func (WindCharge) ID() ID                         { return 1215 }
 func (WritableBook) Name() string                 { return "minecraft:writable_book" }
-func (WritableBook) ID() ID                       { return 1170 }
+func (WritableBook) ID() ID                       { return 1216 }
 func (WrittenBook) Name() string                  { return "minecraft:written_book" }
-func (WrittenBook) ID() ID                        { return 1171 }
+func (WrittenBook) ID() ID                        { return 1217 }
 func (BreezeRod) Name() string                    { return "minecraft:breeze_rod" }
-func (BreezeRod) ID() ID                          { return 1172 }
+func (BreezeRod) ID() ID                          { return 1218 }
 func (Mace) Name() string                         { return "minecraft:mace" }
-func (Mace) ID() ID                               { return 1173 }
+func (Mace) ID() ID                               { return 1219 }
 func (ItemFrame) Name() string                    { return "minecraft:item_frame" }
-func (ItemFrame) ID() ID                          { return 1174 }
+func (ItemFrame) ID() ID                          { return 1220 }
 func (GlowItemFrame) Name() string                { return "minecraft:glow_item_frame" }
-func (GlowItemFrame) ID() ID                      { return 1175 }
+func (GlowItemFrame) ID() ID                      { return 1221 }
 func (FlowerPot) Name() string                    { return "minecraft:flower_pot" }
-func (FlowerPot) ID() ID                          { return 1176 }
+func (FlowerPot) ID() ID                          { return 1222 }
 func (Carrot) Name() string                       { return "minecraft:carrot" }
-func (Carrot) ID() ID                             { return 1177 }
+func (Carrot) ID() ID                             { return 1223 }
 func (Potato) Name() string                       { return "minecraft:potato" }
-func (Potato) ID() ID                             { return 1178 }
+func (Potato) ID() ID                             { return 1224 }
 func (BakedPotato) Name() string                  { return "minecraft:baked_potato" }
-func (BakedPotato) ID() ID                        { return 1179 }
+func (BakedPotato) ID() ID                        { return 1225 }
 func (PoisonousPotato) Name() string              { return "minecraft:poisonous_potato" }
-func (PoisonousPotato) ID() ID                    { return 1180 }
+func (PoisonousPotato) ID() ID                    { return 1226 }
 func (Map) Name() string                          { return "minecraft:map" }
-func (Map) ID() ID                                { return 1181 }
+func (Map) ID() ID                                { return 1227 }
 func (GoldenCarrot) Name() string                 { return "minecraft:golden_carrot" }
-func (GoldenCarrot) ID() ID                       { return 1182 }
+func (GoldenCarrot) ID() ID                       { return 1228 }
 func (SkeletonSkull) Name() string                { return "minecraft:skeleton_skull" }
-func (SkeletonSkull) ID() ID                      { return 1183 }
+func (SkeletonSkull) ID() ID                      { return 1229 }
 func (WitherSkeletonSkull) Name() string          { return "minecraft:wither_skeleton_skull" }
-func (WitherSkeletonSkull) ID() ID                { return 1184 }
+func (WitherSkeletonSkull) ID() ID                { return 1230 }
 func (PlayerHead) Name() string                   { return "minecraft:player_head" }
-func (PlayerHead) ID() ID                         { return 1185 }
+func (PlayerHead) ID() ID                         { return 1231 }
 func (ZombieHead) Name() string                   { return "minecraft:zombie_head" }
-func (ZombieHead) ID() ID                         { return 1186 }
+func (ZombieHead) ID() ID                         { return 1232 }
 func (CreeperHead) Name() string                  { return "minecraft:creeper_head" }
-func (CreeperHead) ID() ID                        { return 1187 }
+func (CreeperHead) ID() ID                        { return 1233 }
 func (DragonHead) Name() string                   { return "minecraft:dragon_head" }
-func (DragonHead) ID() ID                         { return 1188 }
+func (DragonHead) ID() ID                         { return 1234 }
 func (PiglinHead) Name() string                   { return "minecraft:piglin_head" }
-func (PiglinHead) ID() ID                         { return 1189 }
+func (PiglinHead) ID() ID                         { return 1235 }
 func (NetherStar) Name() string                   { return "minecraft:nether_star" }
-func (NetherStar) ID() ID                         { return 1190 }
+func (NetherStar) ID() ID                         { return 1236 }
 func (PumpkinPie) Name() string                   { return "minecraft:pumpkin_pie" }
-func (PumpkinPie) ID() ID                         { return 1191 }
+func (PumpkinPie) ID() ID                         { return 1237 }
 func (FireworkRocket) Name() string               { return "minecraft:firework_rocket" }
-func (FireworkRocket) ID() ID                     { return 1192 }
+func (FireworkRocket) ID() ID                     { return 1238 }
 func (FireworkStar) Name() string                 { return "minecraft:firework_star" }
-func (FireworkStar) ID() ID                       { return 1193 }
+func (FireworkStar) ID() ID                       { return 1239 }
 func (EnchantedBook) Name() string                { return "minecraft:enchanted_book" }
-func (EnchantedBook) ID() ID                      { return 1194 }
+func (EnchantedBook) ID() ID                      { return 1240 }
 func (NetherBrick) Name() string                  { return "minecraft:nether_brick" }
-func (NetherBrick) ID() ID                        { return 1195 }
+func (NetherBrick) ID() ID                        { return 1241 }
 func (ResinBrick) Name() string                   { return "minecraft:resin_brick" }
-func (ResinBrick) ID() ID                         { return 1196 }
+func (ResinBrick) ID() ID                         { return 1242 }
 func (PrismarineShard) Name() string              { return "minecraft:prismarine_shard" }
-func (PrismarineShard) ID() ID                    { return 1197 }
+func (PrismarineShard) ID() ID                    { return 1243 }
 func (PrismarineCrystals) Name() string           { return "minecraft:prismarine_crystals" }
-func (PrismarineCrystals) ID() ID                 { return 1198 }
+func (PrismarineCrystals) ID() ID                 { return 1244 }
 func (Rabbit) Name() string                       { return "minecraft:rabbit" }
-func (Rabbit) ID() ID                             { return 1199 }
+func (Rabbit) ID() ID                             { return 1245 }
 func (CookedRabbit) Name() string                 { return "minecraft:cooked_rabbit" }
-func (CookedRabbit) ID() ID                       { return 1200 }
+func (CookedRabbit) ID() ID                       { return 1246 }
 func (RabbitStew) Name() string                   { return "minecraft:rabbit_stew" }
-func (RabbitStew) ID() ID                         { return 1201 }
+func (RabbitStew) ID() ID                         { return 1247 }
 func (RabbitFoot) Name() string                   { return "minecraft:rabbit_foot" }
-func (RabbitFoot) ID() ID                         { return 1202 }
+func (RabbitFoot) ID() ID                         { return 1248 }
 func (RabbitHide) Name() string                   { return "minecraft:rabbit_hide" }
-func (RabbitHide) ID() ID                         { return 1203 }
+func (RabbitHide) ID() ID                         { return 1249 }
 func (ArmorStand) Name() string                   { return "minecraft:armor_stand" }
-func (ArmorStand) ID() ID                         { return 1204 }
+func (ArmorStand) ID() ID                         { return 1250 }
+func (CopperHorseArmor) Name() string             { return "minecraft:copper_horse_armor" }
+func (CopperHorseArmor) ID() ID                   { return 1251 }
 func (IronHorseArmor) Name() string               { return "minecraft:iron_horse_armor" }
-func (IronHorseArmor) ID() ID                     { return 1205 }
+func (IronHorseArmor) ID() ID                     { return 1252 }
 func (GoldenHorseArmor) Name() string             { return "minecraft:golden_horse_armor" }
-func (GoldenHorseArmor) ID() ID                   { return 1206 }
+func (GoldenHorseArmor) ID() ID                   { return 1253 }
 func (DiamondHorseArmor) Name() string            { return "minecraft:diamond_horse_armor" }
-func (DiamondHorseArmor) ID() ID                  { return 1207 }
+func (DiamondHorseArmor) ID() ID                  { return 1254 }
 func (LeatherHorseArmor) Name() string            { return "minecraft:leather_horse_armor" }
-func (LeatherHorseArmor) ID() ID                  { return 1208 }
+func (LeatherHorseArmor) ID() ID                  { return 1255 }
 func (Lead) Name() string                         { return "minecraft:lead" }
-func (Lead) ID() ID                               { return 1209 }
+func (Lead) ID() ID                               { return 1256 }
 func (NameTag) Name() string                      { return "minecraft:name_tag" }
-func (NameTag) ID() ID                            { return 1210 }
+func (NameTag) ID() ID                            { return 1257 }
 func (CommandBlockMinecart) Name() string         { return "minecraft:command_block_minecart" }
-func (CommandBlockMinecart) ID() ID               { return 1211 }
+func (CommandBlockMinecart) ID() ID               { return 1258 }
 func (Mutton) Name() string                       { return "minecraft:mutton" }
-func (Mutton) ID() ID                             { return 1212 }
+func (Mutton) ID() ID                             { return 1259 }
 func (CookedMutton) Name() string                 { return "minecraft:cooked_mutton" }
-func (CookedMutton) ID() ID                       { return 1213 }
+func (CookedMutton) ID() ID                       { return 1260 }
 func (WhiteBanner) Name() string                  { return "minecraft:white_banner" }
-func (WhiteBanner) ID() ID                        { return 1214 }
+func (WhiteBanner) ID() ID                        { return 1261 }
 func (OrangeBanner) Name() string                 { return "minecraft:orange_banner" }
-func (OrangeBanner) ID() ID                       { return 1215 }
+func (OrangeBanner) ID() ID                       { return 1262 }
 func (MagentaBanner) Name() string                { return "minecraft:magenta_banner" }
-func (MagentaBanner) ID() ID                      { return 1216 }
+func (MagentaBanner) ID() ID                      { return 1263 }
 func (LightBlueBanner) Name() string              { return "minecraft:light_blue_banner" }
-func (LightBlueBanner) ID() ID                    { return 1217 }
+func (LightBlueBanner) ID() ID                    { return 1264 }
 func (YellowBanner) Name() string                 { return "minecraft:yellow_banner" }
-func (YellowBanner) ID() ID                       { return 1218 }
+func (YellowBanner) ID() ID                       { return 1265 }
 func (LimeBanner) Name() string                   { return "minecraft:lime_banner" }
-func (LimeBanner) ID() ID                         { return 1219 }
+func (LimeBanner) ID() ID                         { return 1266 }
 func (PinkBanner) Name() string                   { return "minecraft:pink_banner" }
-func (PinkBanner) ID() ID                         { return 1220 }
+func (PinkBanner) ID() ID                         { return 1267 }
 func (GrayBanner) Name() string                   { return "minecraft:gray_banner" }
-func (GrayBanner) ID() ID                         { return 1221 }
+func (GrayBanner) ID() ID                         { return 1268 }
 func (LightGrayBanner) Name() string              { return "minecraft:light_gray_banner" }
-func (LightGrayBanner) ID() ID                    { return 1222 }
+func (LightGrayBanner) ID() ID                    { return 1269 }
 func (CyanBanner) Name() string                   { return "minecraft:cyan_banner" }
-func (CyanBanner) ID() ID                         { return 1223 }
+func (CyanBanner) ID() ID                         { return 1270 }
 func (PurpleBanner) Name() string                 { return "minecraft:purple_banner" }
-func (PurpleBanner) ID() ID                       { return 1224 }
+func (PurpleBanner) ID() ID                       { return 1271 }
 func (BlueBanner) Name() string                   { return "minecraft:blue_banner" }
-func (BlueBanner) ID() ID                         { return 1225 }
+func (BlueBanner) ID() ID                         { return 1272 }
 func (BrownBanner) Name() string                  { return "minecraft:brown_banner" }
-func (BrownBanner) ID() ID                        { return 1226 }
+func (BrownBanner) ID() ID                        { return 1273 }
 func (GreenBanner) Name() string                  { return "minecraft:green_banner" }
-func (GreenBanner) ID() ID                        { return 1227 }
+func (GreenBanner) ID() ID                        { return 1274 }
 func (RedBanner) Name() string                    { return "minecraft:red_banner" }
-func (RedBanner) ID() ID                          { return 1228 }
+func (RedBanner) ID() ID                          { return 1275 }
 func (BlackBanner) Name() string                  { return "minecraft:black_banner" }
-func (BlackBanner) ID() ID                        { return 1229 }
+func (BlackBanner) ID() ID                        { return 1276 }
 func (EndCrystal) Name() string                   { return "minecraft:end_crystal" }
-func (EndCrystal) ID() ID                         { return 1230 }
+func (EndCrystal) ID() ID                         { return 1277 }
 func (ChorusFruit) Name() string                  { return "minecraft:chorus_fruit" }
-func (ChorusFruit) ID() ID                        { return 1231 }
+func (ChorusFruit) ID() ID                        { return 1278 }
 func (PoppedChorusFruit) Name() string            { return "minecraft:popped_chorus_fruit" }
-func (PoppedChorusFruit) ID() ID                  { return 1232 }
+func (PoppedChorusFruit) ID() ID                  { return 1279 }
 func (TorchflowerSeeds) Name() string             { return "minecraft:torchflower_seeds" }
-func (TorchflowerSeeds) ID() ID                   { return 1233 }
+func (TorchflowerSeeds) ID() ID                   { return 1280 }
 func (PitcherPod) Name() string                   { return "minecraft:pitcher_pod" }
-func (PitcherPod) ID() ID                         { return 1234 }
+func (PitcherPod) ID() ID                         { return 1281 }
 func (Beetroot) Name() string                     { return "minecraft:beetroot" }
-func (Beetroot) ID() ID                           { return 1235 }
+func (Beetroot) ID() ID                           { return 1282 }
 func (BeetrootSeeds) Name() string                { return "minecraft:beetroot_seeds" }
-func (BeetrootSeeds) ID() ID                      { return 1236 }
+func (BeetrootSeeds) ID() ID                      { return 1283 }
 func (BeetrootSoup) Name() string                 { return "minecraft:beetroot_soup" }
-func (BeetrootSoup) ID() ID                       { return 1237 }
+func (BeetrootSoup) ID() ID                       { return 1284 }
 func (DragonBreath) Name() string                 { return "minecraft:dragon_breath" }
-func (DragonBreath) ID() ID                       { return 1238 }
+func (DragonBreath) ID() ID                       { return 1285 }
 func (SplashPotion) Name() string                 { return "minecraft:splash_potion" }
-func (SplashPotion) ID() ID                       { return 1239 }
+func (SplashPotion) ID() ID                       { return 1286 }
 func (SpectralArrow) Name() string                { return "minecraft:spectral_arrow" }
-func (SpectralArrow) ID() ID                      { return 1240 }
+func (SpectralArrow) ID() ID                      { return 1287 }
 func (TippedArrow) Name() string                  { return "minecraft:tipped_arrow" }
-func (TippedArrow) ID() ID                        { return 1241 }
+func (TippedArrow) ID() ID                        { return 1288 }
 func (LingeringPotion) Name() string              { return "minecraft:lingering_potion" }
-func (LingeringPotion) ID() ID                    { return 1242 }
+func (LingeringPotion) ID() ID                    { return 1289 }
 func (Shield) Name() string                       { return "minecraft:shield" }
-func (Shield) ID() ID                             { return 1243 }
+func (Shield) ID() ID                             { return 1290 }
 func (TotemOfUndying) Name() string               { return "minecraft:totem_of_undying" }
-func (TotemOfUndying) ID() ID                     { return 1244 }
+func (TotemOfUndying) ID() ID                     { return 1291 }
 func (ShulkerShell) Name() string                 { return "minecraft:shulker_shell" }
-func (ShulkerShell) ID() ID                       { return 1245 }
+func (ShulkerShell) ID() ID                       { return 1292 }
 func (IronNugget) Name() string                   { return "minecraft:iron_nugget" }
-func (IronNugget) ID() ID                         { return 1246 }
+func (IronNugget) ID() ID                         { return 1293 }
+func (CopperNugget) Name() string                 { return "minecraft:copper_nugget" }
+func (CopperNugget) ID() ID                       { return 1294 }
 func (KnowledgeBook) Name() string                { return "minecraft:knowledge_book" }
-func (KnowledgeBook) ID() ID                      { return 1247 }
+func (KnowledgeBook) ID() ID                      { return 1295 }
 func (DebugStick) Name() string                   { return "minecraft:debug_stick" }
-func (DebugStick) ID() ID                         { return 1248 }
+func (DebugStick) ID() ID                         { return 1296 }
 func (MusicDisc13) Name() string                  { return "minecraft:music_disc_13" }
-func (MusicDisc13) ID() ID                        { return 1249 }
+func (MusicDisc13) ID() ID                        { return 1297 }
 func (MusicDiscCat) Name() string                 { return "minecraft:music_disc_cat" }
-func (MusicDiscCat) ID() ID                       { return 1250 }
+func (MusicDiscCat) ID() ID                       { return 1298 }
 func (MusicDiscBlocks) Name() string              { return "minecraft:music_disc_blocks" }
-func (MusicDiscBlocks) ID() ID                    { return 1251 }
+func (MusicDiscBlocks) ID() ID                    { return 1299 }
 func (MusicDiscChirp) Name() string               { return "minecraft:music_disc_chirp" }
-func (MusicDiscChirp) ID() ID                     { return 1252 }
+func (MusicDiscChirp) ID() ID                     { return 1300 }
 func (MusicDiscCreator) Name() string             { return "minecraft:music_disc_creator" }
-func (MusicDiscCreator) ID() ID                   { return 1253 }
+func (MusicDiscCreator) ID() ID                   { return 1301 }
 func (MusicDiscCreatorMusicBox) Name() string     { return "minecraft:music_disc_creator_music_box" }
-func (MusicDiscCreatorMusicBox) ID() ID           { return 1254 }
+func (MusicDiscCreatorMusicBox) ID() ID           { return 1302 }
 func (MusicDiscFar) Name() string                 { return "minecraft:music_disc_far" }
-func (MusicDiscFar) ID() ID                       { return 1255 }
+func (MusicDiscFar) ID() ID                       { return 1303 }
 func (MusicDiscLavaChicken) Name() string         { return "minecraft:music_disc_lava_chicken" }
-func (MusicDiscLavaChicken) ID() ID               { return 1256 }
+func (MusicDiscLavaChicken) ID() ID               { return 1304 }
 func (MusicDiscMall) Name() string                { return "minecraft:music_disc_mall" }
-func (MusicDiscMall) ID() ID                      { return 1257 }
+func (MusicDiscMall) ID() ID                      { return 1305 }
 func (MusicDiscMellohi) Name() string             { return "minecraft:music_disc_mellohi" }
-func (MusicDiscMellohi) ID() ID                   { return 1258 }
+func (MusicDiscMellohi) ID() ID                   { return 1306 }
 func (MusicDiscStal) Name() string                { return "minecraft:music_disc_stal" }
-func (MusicDiscStal) ID() ID                      { return 1259 }
+func (MusicDiscStal) ID() ID                      { return 1307 }
 func (MusicDiscStrad) Name() string               { return "minecraft:music_disc_strad" }
-func (MusicDiscStrad) ID() ID                     { return 1260 }
+func (MusicDiscStrad) ID() ID                     { return 1308 }
 func (MusicDiscWard) Name() string                { return "minecraft:music_disc_ward" }
-func (MusicDiscWard) ID() ID                      { return 1261 }
+func (MusicDiscWard) ID() ID                      { return 1309 }
 func (MusicDisc11) Name() string                  { return "minecraft:music_disc_11" }
-func (MusicDisc11) ID() ID                        { return 1262 }
+func (MusicDisc11) ID() ID                        { return 1310 }
 func (MusicDiscWait) Name() string                { return "minecraft:music_disc_wait" }
-func (MusicDiscWait) ID() ID                      { return 1263 }
+func (MusicDiscWait) ID() ID                      { return 1311 }
 func (MusicDiscOtherside) Name() string           { return "minecraft:music_disc_otherside" }
-func (MusicDiscOtherside) ID() ID                 { return 1264 }
+func (MusicDiscOtherside) ID() ID                 { return 1312 }
 func (MusicDiscRelic) Name() string               { return "minecraft:music_disc_relic" }
-func (MusicDiscRelic) ID() ID                     { return 1265 }
+func (MusicDiscRelic) ID() ID                     { return 1313 }
 func (MusicDisc5) Name() string                   { return "minecraft:music_disc_5" }
-func (MusicDisc5) ID() ID                         { return 1266 }
+func (MusicDisc5) ID() ID                         { return 1314 }
 func (MusicDiscPigstep) Name() string             { return "minecraft:music_disc_pigstep" }
-func (MusicDiscPigstep) ID() ID                   { return 1267 }
+func (MusicDiscPigstep) ID() ID                   { return 1315 }
 func (MusicDiscPrecipice) Name() string           { return "minecraft:music_disc_precipice" }
-func (MusicDiscPrecipice) ID() ID                 { return 1268 }
+func (MusicDiscPrecipice) ID() ID                 { return 1316 }
 func (MusicDiscTears) Name() string               { return "minecraft:music_disc_tears" }
-func (MusicDiscTears) ID() ID                     { return 1269 }
+func (MusicDiscTears) ID() ID                     { return 1317 }
 func (DiscFragment5) Name() string                { return "minecraft:disc_fragment_5" }
-func (DiscFragment5) ID() ID                      { return 1270 }
+func (DiscFragment5) ID() ID                      { return 1318 }
 func (Trident) Name() string                      { return "minecraft:trident" }
-func (Trident) ID() ID                            { return 1271 }
+func (Trident) ID() ID                            { return 1319 }
 func (NautilusShell) Name() string                { return "minecraft:nautilus_shell" }
-func (NautilusShell) ID() ID                      { return 1272 }
+func (NautilusShell) ID() ID                      { return 1320 }
 func (HeartOfTheSea) Name() string                { return "minecraft:heart_of_the_sea" }
-func (HeartOfTheSea) ID() ID                      { return 1273 }
+func (HeartOfTheSea) ID() ID                      { return 1321 }
 func (Crossbow) Name() string                     { return "minecraft:crossbow" }
-func (Crossbow) ID() ID                           { return 1274 }
+func (Crossbow) ID() ID                           { return 1322 }
 func (SuspiciousStew) Name() string               { return "minecraft:suspicious_stew" }
-func (SuspiciousStew) ID() ID                     { return 1275 }
+func (SuspiciousStew) ID() ID                     { return 1323 }
 func (Loom) Name() string                         { return "minecraft:loom" }
-func (Loom) ID() ID                               { return 1276 }
+func (Loom) ID() ID                               { return 1324 }
 func (FlowerBannerPattern) Name() string          { return "minecraft:flower_banner_pattern" }
-func (FlowerBannerPattern) ID() ID                { return 1277 }
+func (FlowerBannerPattern) ID() ID                { return 1325 }
 func (CreeperBannerPattern) Name() string         { return "minecraft:creeper_banner_pattern" }
-func (CreeperBannerPattern) ID() ID               { return 1278 }
+func (CreeperBannerPattern) ID() ID               { return 1326 }
 func (SkullBannerPattern) Name() string           { return "minecraft:skull_banner_pattern" }
-func (SkullBannerPattern) ID() ID                 { return 1279 }
+func (SkullBannerPattern) ID() ID                 { return 1327 }
 func (MojangBannerPattern) Name() string          { return "minecraft:mojang_banner_pattern" }
-func (MojangBannerPattern) ID() ID                { return 1280 }
+func (MojangBannerPattern) ID() ID                { return 1328 }
 func (GlobeBannerPattern) Name() string           { return "minecraft:globe_banner_pattern" }
-func (GlobeBannerPattern) ID() ID                 { return 1281 }
+func (GlobeBannerPattern) ID() ID                 { return 1329 }
 func (PiglinBannerPattern) Name() string          { return "minecraft:piglin_banner_pattern" }
-func (PiglinBannerPattern) ID() ID                { return 1282 }
+func (PiglinBannerPattern) ID() ID                { return 1330 }
 func (FlowBannerPattern) Name() string            { return "minecraft:flow_banner_pattern" }
-func (FlowBannerPattern) ID() ID                  { return 1283 }
+func (FlowBannerPattern) ID() ID                  { return 1331 }
 func (GusterBannerPattern) Name() string          { return "minecraft:guster_banner_pattern" }
-func (GusterBannerPattern) ID() ID                { return 1284 }
+func (GusterBannerPattern) ID() ID                { return 1332 }
 func (FieldMasonedBannerPattern) Name() string    { return "minecraft:field_masoned_banner_pattern" }
-func (FieldMasonedBannerPattern) ID() ID          { return 1285 }
+func (FieldMasonedBannerPattern) ID() ID          { return 1333 }
 func (BordureIndentedBannerPattern) Name() string { return "minecraft:bordure_indented_banner_pattern" }
-func (BordureIndentedBannerPattern) ID() ID       { return 1286 }
+func (BordureIndentedBannerPattern) ID() ID       { return 1334 }
 func (GoatHorn) Name() string                     { return "minecraft:goat_horn" }
-func (GoatHorn) ID() ID                           { return 1287 }
+func (GoatHorn) ID() ID                           { return 1335 }
 func (Composter) Name() string                    { return "minecraft:composter" }
-func (Composter) ID() ID                          { return 1288 }
+func (Composter) ID() ID                          { return 1336 }
 func (Barrel) Name() string                       { return "minecraft:barrel" }
-func (Barrel) ID() ID                             { return 1289 }
+func (Barrel) ID() ID                             { return 1337 }
 func (Smoker) Name() string                       { return "minecraft:smoker" }
-func (Smoker) ID() ID                             { return 1290 }
+func (Smoker) ID() ID                             { return 1338 }
 func (BlastFurnace) Name() string                 { return "minecraft:blast_furnace" }
-func (BlastFurnace) ID() ID                       { return 1291 }
+func (BlastFurnace) ID() ID                       { return 1339 }
 func (CartographyTable) Name() string             { return "minecraft:cartography_table" }
-func (CartographyTable) ID() ID                   { return 1292 }
+func (CartographyTable) ID() ID                   { return 1340 }
 func (FletchingTable) Name() string               { return "minecraft:fletching_table" }
-func (FletchingTable) ID() ID                     { return 1293 }
+func (FletchingTable) ID() ID                     { return 1341 }
 func (Grindstone) Name() string                   { return "minecraft:grindstone" }
-func (Grindstone) ID() ID                         { return 1294 }
+func (Grindstone) ID() ID                         { return 1342 }
 func (SmithingTable) Name() string                { return "minecraft:smithing_table" }
-func (SmithingTable) ID() ID                      { return 1295 }
+func (SmithingTable) ID() ID                      { return 1343 }
 func (Stonecutter) Name() string                  { return "minecraft:stonecutter" }
-func (Stonecutter) ID() ID                        { return 1296 }
+func (Stonecutter) ID() ID                        { return 1344 }
 func (Bell) Name() string                         { return "minecraft:bell" }
-func (Bell) ID() ID                               { return 1297 }
+func (Bell) ID() ID                               { return 1345 }
 func (Lantern) Name() string                      { return "minecraft:lantern" }
-func (Lantern) ID() ID                            { return 1298 }
+func (Lantern) ID() ID                            { return 1346 }
 func (SoulLantern) Name() string                  { return "minecraft:soul_lantern" }
-func (SoulLantern) ID() ID                        { return 1299 }
+func (SoulLantern) ID() ID                        { return 1347 }
+func (CopperLantern) Name() string                { return "minecraft:copper_lantern" }
+func (CopperLantern) ID() ID                      { return 1348 }
+func (ExposedCopperLantern) Name() string         { return "minecraft:exposed_copper_lantern" }
+func (ExposedCopperLantern) ID() ID               { return 1349 }
+func (WeatheredCopperLantern) Name() string       { return "minecraft:weathered_copper_lantern" }
+func (WeatheredCopperLantern) ID() ID             { return 1350 }
+func (OxidizedCopperLantern) Name() string        { return "minecraft:oxidized_copper_lantern" }
+func (OxidizedCopperLantern) ID() ID              { return 1351 }
+func (WaxedCopperLantern) Name() string           { return "minecraft:waxed_copper_lantern" }
+func (WaxedCopperLantern) ID() ID                 { return 1352 }
+func (WaxedExposedCopperLantern) Name() string    { return "minecraft:waxed_exposed_copper_lantern" }
+func (WaxedExposedCopperLantern) ID() ID          { return 1353 }
+func (WaxedWeatheredCopperLantern) Name() string  { return "minecraft:waxed_weathered_copper_lantern" }
+func (WaxedWeatheredCopperLantern) ID() ID        { return 1354 }
+func (WaxedOxidizedCopperLantern) Name() string   { return "minecraft:waxed_oxidized_copper_lantern" }
+func (WaxedOxidizedCopperLantern) ID() ID         { return 1355 }
 func (SweetBerries) Name() string                 { return "minecraft:sweet_berries" }
-func (SweetBerries) ID() ID                       { return 1300 }
+func (SweetBerries) ID() ID                       { return 1356 }
 func (GlowBerries) Name() string                  { return "minecraft:glow_berries" }
-func (GlowBerries) ID() ID                        { return 1301 }
+func (GlowBerries) ID() ID                        { return 1357 }
 func (Campfire) Name() string                     { return "minecraft:campfire" }
-func (Campfire) ID() ID                           { return 1302 }
+func (Campfire) ID() ID                           { return 1358 }
 func (SoulCampfire) Name() string                 { return "minecraft:soul_campfire" }
-func (SoulCampfire) ID() ID                       { return 1303 }
+func (SoulCampfire) ID() ID                       { return 1359 }
 func (Shroomlight) Name() string                  { return "minecraft:shroomlight" }
-func (Shroomlight) ID() ID                        { return 1304 }
+func (Shroomlight) ID() ID                        { return 1360 }
 func (Honeycomb) Name() string                    { return "minecraft:honeycomb" }
-func (Honeycomb) ID() ID                          { return 1305 }
+func (Honeycomb) ID() ID                          { return 1361 }
 func (BeeNest) Name() string                      { return "minecraft:bee_nest" }
-func (BeeNest) ID() ID                            { return 1306 }
+func (BeeNest) ID() ID                            { return 1362 }
 func (Beehive) Name() string                      { return "minecraft:beehive" }
-func (Beehive) ID() ID                            { return 1307 }
+func (Beehive) ID() ID                            { return 1363 }
 func (HoneyBottle) Name() string                  { return "minecraft:honey_bottle" }
-func (HoneyBottle) ID() ID                        { return 1308 }
+func (HoneyBottle) ID() ID                        { return 1364 }
 func (HoneycombBlock) Name() string               { return "minecraft:honeycomb_block" }
-func (HoneycombBlock) ID() ID                     { return 1309 }
+func (HoneycombBlock) ID() ID                     { return 1365 }
 func (Lodestone) Name() string                    { return "minecraft:lodestone" }
-func (Lodestone) ID() ID                          { return 1310 }
+func (Lodestone) ID() ID                          { return 1366 }
 func (CryingObsidian) Name() string               { return "minecraft:crying_obsidian" }
-func (CryingObsidian) ID() ID                     { return 1311 }
+func (CryingObsidian) ID() ID                     { return 1367 }
 func (Blackstone) Name() string                   { return "minecraft:blackstone" }
-func (Blackstone) ID() ID                         { return 1312 }
+func (Blackstone) ID() ID                         { return 1368 }
 func (BlackstoneSlab) Name() string               { return "minecraft:blackstone_slab" }
-func (BlackstoneSlab) ID() ID                     { return 1313 }
+func (BlackstoneSlab) ID() ID                     { return 1369 }
 func (BlackstoneStairs) Name() string             { return "minecraft:blackstone_stairs" }
-func (BlackstoneStairs) ID() ID                   { return 1314 }
+func (BlackstoneStairs) ID() ID                   { return 1370 }
 func (GildedBlackstone) Name() string             { return "minecraft:gilded_blackstone" }
-func (GildedBlackstone) ID() ID                   { return 1315 }
+func (GildedBlackstone) ID() ID                   { return 1371 }
 func (PolishedBlackstone) Name() string           { return "minecraft:polished_blackstone" }
-func (PolishedBlackstone) ID() ID                 { return 1316 }
+func (PolishedBlackstone) ID() ID                 { return 1372 }
 func (PolishedBlackstoneSlab) Name() string       { return "minecraft:polished_blackstone_slab" }
-func (PolishedBlackstoneSlab) ID() ID             { return 1317 }
+func (PolishedBlackstoneSlab) ID() ID             { return 1373 }
 func (PolishedBlackstoneStairs) Name() string     { return "minecraft:polished_blackstone_stairs" }
-func (PolishedBlackstoneStairs) ID() ID           { return 1318 }
+func (PolishedBlackstoneStairs) ID() ID           { return 1374 }
 func (ChiseledPolishedBlackstone) Name() string   { return "minecraft:chiseled_polished_blackstone" }
-func (ChiseledPolishedBlackstone) ID() ID         { return 1319 }
+func (ChiseledPolishedBlackstone) ID() ID         { return 1375 }
 func (PolishedBlackstoneBricks) Name() string     { return "minecraft:polished_blackstone_bricks" }
-func (PolishedBlackstoneBricks) ID() ID           { return 1320 }
+func (PolishedBlackstoneBricks) ID() ID           { return 1376 }
 func (PolishedBlackstoneBrickSlab) Name() string  { return "minecraft:polished_blackstone_brick_slab" }
-func (PolishedBlackstoneBrickSlab) ID() ID        { return 1321 }
+func (PolishedBlackstoneBrickSlab) ID() ID        { return 1377 }
 func (PolishedBlackstoneBrickStairs) Name() string {
 	return "minecraft:polished_blackstone_brick_stairs"
 }
-func (PolishedBlackstoneBrickStairs) ID() ID { return 1322 }
+func (PolishedBlackstoneBrickStairs) ID() ID { return 1378 }
 func (CrackedPolishedBlackstoneBricks) Name() string {
 	return "minecraft:cracked_polished_blackstone_bricks"
 }
-func (CrackedPolishedBlackstoneBricks) ID() ID { return 1323 }
+func (CrackedPolishedBlackstoneBricks) ID() ID { return 1379 }
 func (RespawnAnchor) Name() string             { return "minecraft:respawn_anchor" }
-func (RespawnAnchor) ID() ID                   { return 1324 }
+func (RespawnAnchor) ID() ID                   { return 1380 }
 func (Candle) Name() string                    { return "minecraft:candle" }
-func (Candle) ID() ID                          { return 1325 }
+func (Candle) ID() ID                          { return 1381 }
 func (WhiteCandle) Name() string               { return "minecraft:white_candle" }
-func (WhiteCandle) ID() ID                     { return 1326 }
+func (WhiteCandle) ID() ID                     { return 1382 }
 func (OrangeCandle) Name() string              { return "minecraft:orange_candle" }
-func (OrangeCandle) ID() ID                    { return 1327 }
+func (OrangeCandle) ID() ID                    { return 1383 }
 func (MagentaCandle) Name() string             { return "minecraft:magenta_candle" }
-func (MagentaCandle) ID() ID                   { return 1328 }
+func (MagentaCandle) ID() ID                   { return 1384 }
 func (LightBlueCandle) Name() string           { return "minecraft:light_blue_candle" }
-func (LightBlueCandle) ID() ID                 { return 1329 }
+func (LightBlueCandle) ID() ID                 { return 1385 }
 func (YellowCandle) Name() string              { return "minecraft:yellow_candle" }
-func (YellowCandle) ID() ID                    { return 1330 }
+func (YellowCandle) ID() ID                    { return 1386 }
 func (LimeCandle) Name() string                { return "minecraft:lime_candle" }
-func (LimeCandle) ID() ID                      { return 1331 }
+func (LimeCandle) ID() ID                      { return 1387 }
 func (PinkCandle) Name() string                { return "minecraft:pink_candle" }
-func (PinkCandle) ID() ID                      { return 1332 }
+func (PinkCandle) ID() ID                      { return 1388 }
 func (GrayCandle) Name() string                { return "minecraft:gray_candle" }
-func (GrayCandle) ID() ID                      { return 1333 }
+func (GrayCandle) ID() ID                      { return 1389 }
 func (LightGrayCandle) Name() string           { return "minecraft:light_gray_candle" }
-func (LightGrayCandle) ID() ID                 { return 1334 }
+func (LightGrayCandle) ID() ID                 { return 1390 }
 func (CyanCandle) Name() string                { return "minecraft:cyan_candle" }
-func (CyanCandle) ID() ID                      { return 1335 }
+func (CyanCandle) ID() ID                      { return 1391 }
 func (PurpleCandle) Name() string              { return "minecraft:purple_candle" }
-func (PurpleCandle) ID() ID                    { return 1336 }
+func (PurpleCandle) ID() ID                    { return 1392 }
 func (BlueCandle) Name() string                { return "minecraft:blue_candle" }
-func (BlueCandle) ID() ID                      { return 1337 }
+func (BlueCandle) ID() ID                      { return 1393 }
 func (BrownCandle) Name() string               { return "minecraft:brown_candle" }
-func (BrownCandle) ID() ID                     { return 1338 }
+func (BrownCandle) ID() ID                     { return 1394 }
 func (GreenCandle) Name() string               { return "minecraft:green_candle" }
-func (GreenCandle) ID() ID                     { return 1339 }
+func (GreenCandle) ID() ID                     { return 1395 }
 func (RedCandle) Name() string                 { return "minecraft:red_candle" }
-func (RedCandle) ID() ID                       { return 1340 }
+func (RedCandle) ID() ID                       { return 1396 }
 func (BlackCandle) Name() string               { return "minecraft:black_candle" }
-func (BlackCandle) ID() ID                     { return 1341 }
+func (BlackCandle) ID() ID                     { return 1397 }
 func (SmallAmethystBud) Name() string          { return "minecraft:small_amethyst_bud" }
-func (SmallAmethystBud) ID() ID                { return 1342 }
+func (SmallAmethystBud) ID() ID                { return 1398 }
 func (MediumAmethystBud) Name() string         { return "minecraft:medium_amethyst_bud" }
-func (MediumAmethystBud) ID() ID               { return 1343 }
+func (MediumAmethystBud) ID() ID               { return 1399 }
 func (LargeAmethystBud) Name() string          { return "minecraft:large_amethyst_bud" }
-func (LargeAmethystBud) ID() ID                { return 1344 }
+func (LargeAmethystBud) ID() ID                { return 1400 }
 func (AmethystCluster) Name() string           { return "minecraft:amethyst_cluster" }
-func (AmethystCluster) ID() ID                 { return 1345 }
+func (AmethystCluster) ID() ID                 { return 1401 }
 func (PointedDripstone) Name() string          { return "minecraft:pointed_dripstone" }
-func (PointedDripstone) ID() ID                { return 1346 }
+func (PointedDripstone) ID() ID                { return 1402 }
 func (OchreFroglight) Name() string            { return "minecraft:ochre_froglight" }
-func (OchreFroglight) ID() ID                  { return 1347 }
+func (OchreFroglight) ID() ID                  { return 1403 }
 func (VerdantFroglight) Name() string          { return "minecraft:verdant_froglight" }
-func (VerdantFroglight) ID() ID                { return 1348 }
+func (VerdantFroglight) ID() ID                { return 1404 }
 func (PearlescentFroglight) Name() string      { return "minecraft:pearlescent_froglight" }
-func (PearlescentFroglight) ID() ID            { return 1349 }
+func (PearlescentFroglight) ID() ID            { return 1405 }
 func (Frogspawn) Name() string                 { return "minecraft:frogspawn" }
-func (Frogspawn) ID() ID                       { return 1350 }
+func (Frogspawn) ID() ID                       { return 1406 }
 func (EchoShard) Name() string                 { return "minecraft:echo_shard" }
-func (EchoShard) ID() ID                       { return 1351 }
+func (EchoShard) ID() ID                       { return 1407 }
 func (Brush) Name() string                     { return "minecraft:brush" }
-func (Brush) ID() ID                           { return 1352 }
+func (Brush) ID() ID                           { return 1408 }
 func (NetheriteUpgradeSmithingTemplate) Name() string {
 	return "minecraft:netherite_upgrade_smithing_template"
 }
-func (NetheriteUpgradeSmithingTemplate) ID() ID { return 1353 }
+func (NetheriteUpgradeSmithingTemplate) ID() ID { return 1409 }
 func (SentryArmorTrimSmithingTemplate) Name() string {
 	return "minecraft:sentry_armor_trim_smithing_template"
 }
-func (SentryArmorTrimSmithingTemplate) ID() ID { return 1354 }
+func (SentryArmorTrimSmithingTemplate) ID() ID { return 1410 }
 func (DuneArmorTrimSmithingTemplate) Name() string {
 	return "minecraft:dune_armor_trim_smithing_template"
 }
-func (DuneArmorTrimSmithingTemplate) ID() ID { return 1355 }
+func (DuneArmorTrimSmithingTemplate) ID() ID { return 1411 }
 func (CoastArmorTrimSmithingTemplate) Name() string {
 	return "minecraft:coast_armor_trim_smithing_template"
 }
-func (CoastArmorTrimSmithingTemplate) ID() ID { return 1356 }
+func (CoastArmorTrimSmithingTemplate) ID() ID { return 1412 }
 func (WildArmorTrimSmithingTemplate) Name() string {
 	return "minecraft:wild_armor_trim_smithing_template"
 }
-func (WildArmorTrimSmithingTemplate) ID() ID { return 1357 }
+func (WildArmorTrimSmithingTemplate) ID() ID { return 1413 }
 func (WardArmorTrimSmithingTemplate) Name() string {
 	return "minecraft:ward_armor_trim_smithing_template"
 }
-func (WardArmorTrimSmithingTemplate) ID() ID { return 1358 }
+func (WardArmorTrimSmithingTemplate) ID() ID { return 1414 }
 func (EyeArmorTrimSmithingTemplate) Name() string {
 	return "minecraft:eye_armor_trim_smithing_template"
 }
-func (EyeArmorTrimSmithingTemplate) ID() ID { return 1359 }
+func (EyeArmorTrimSmithingTemplate) ID() ID { return 1415 }
 func (VexArmorTrimSmithingTemplate) Name() string {
 	return "minecraft:vex_armor_trim_smithing_template"
 }
-func (VexArmorTrimSmithingTemplate) ID() ID { return 1360 }
+func (VexArmorTrimSmithingTemplate) ID() ID { return 1416 }
 func (TideArmorTrimSmithingTemplate) Name() string {
 	return "minecraft:tide_armor_trim_smithing_template"
 }
-func (TideArmorTrimSmithingTemplate) ID() ID { return 1361 }
+func (TideArmorTrimSmithingTemplate) ID() ID { return 1417 }
 func (SnoutArmorTrimSmithingTemplate) Name() string {
 	return "minecraft:snout_armor_trim_smithing_template"
 }
-func (SnoutArmorTrimSmithingTemplate) ID() ID { return 1362 }
+func (SnoutArmorTrimSmithingTemplate) ID() ID { return 1418 }
 func (RibArmorTrimSmithingTemplate) Name() string {
 	return "minecraft:rib_armor_trim_smithing_template"
 }
-func (RibArmorTrimSmithingTemplate) ID() ID { return 1363 }
+func (RibArmorTrimSmithingTemplate) ID() ID { return 1419 }
 func (SpireArmorTrimSmithingTemplate) Name() string {
 	return "minecraft:spire_armor_trim_smithing_template"
 }
-func (SpireArmorTrimSmithingTemplate) ID() ID { return 1364 }
+func (SpireArmorTrimSmithingTemplate) ID() ID { return 1420 }
 func (WayfinderArmorTrimSmithingTemplate) Name() string {
 	return "minecraft:wayfinder_armor_trim_smithing_template"
 }
-func (WayfinderArmorTrimSmithingTemplate) ID() ID { return 1365 }
+func (WayfinderArmorTrimSmithingTemplate) ID() ID { return 1421 }
 func (ShaperArmorTrimSmithingTemplate) Name() string {
 	return "minecraft:shaper_armor_trim_smithing_template"
 }
-func (ShaperArmorTrimSmithingTemplate) ID() ID { return 1366 }
+func (ShaperArmorTrimSmithingTemplate) ID() ID { return 1422 }
 func (SilenceArmorTrimSmithingTemplate) Name() string {
 	return "minecraft:silence_armor_trim_smithing_template"
 }
-func (SilenceArmorTrimSmithingTemplate) ID() ID { return 1367 }
+func (SilenceArmorTrimSmithingTemplate) ID() ID { return 1423 }
 func (RaiserArmorTrimSmithingTemplate) Name() string {
 	return "minecraft:raiser_armor_trim_smithing_template"
 }
-func (RaiserArmorTrimSmithingTemplate) ID() ID { return 1368 }
+func (RaiserArmorTrimSmithingTemplate) ID() ID { return 1424 }
 func (HostArmorTrimSmithingTemplate) Name() string {
 	return "minecraft:host_armor_trim_smithing_template"
 }
-func (HostArmorTrimSmithingTemplate) ID() ID { return 1369 }
+func (HostArmorTrimSmithingTemplate) ID() ID { return 1425 }
 func (FlowArmorTrimSmithingTemplate) Name() string {
 	return "minecraft:flow_armor_trim_smithing_template"
 }
-func (FlowArmorTrimSmithingTemplate) ID() ID { return 1370 }
+func (FlowArmorTrimSmithingTemplate) ID() ID { return 1426 }
 func (BoltArmorTrimSmithingTemplate) Name() string {
 	return "minecraft:bolt_armor_trim_smithing_template"
 }
-func (BoltArmorTrimSmithingTemplate) ID() ID   { return 1371 }
-func (AnglerPotterySherd) Name() string        { return "minecraft:angler_pottery_sherd" }
-func (AnglerPotterySherd) ID() ID              { return 1372 }
-func (ArcherPotterySherd) Name() string        { return "minecraft:archer_pottery_sherd" }
-func (ArcherPotterySherd) ID() ID              { return 1373 }
-func (ArmsUpPotterySherd) Name() string        { return "minecraft:arms_up_pottery_sherd" }
-func (ArmsUpPotterySherd) ID() ID              { return 1374 }
-func (BladePotterySherd) Name() string         { return "minecraft:blade_pottery_sherd" }
-func (BladePotterySherd) ID() ID               { return 1375 }
-func (BrewerPotterySherd) Name() string        { return "minecraft:brewer_pottery_sherd" }
-func (BrewerPotterySherd) ID() ID              { return 1376 }
-func (BurnPotterySherd) Name() string          { return "minecraft:burn_pottery_sherd" }
-func (BurnPotterySherd) ID() ID                { return 1377 }
-func (DangerPotterySherd) Name() string        { return "minecraft:danger_pottery_sherd" }
-func (DangerPotterySherd) ID() ID              { return 1378 }
-func (ExplorerPotterySherd) Name() string      { return "minecraft:explorer_pottery_sherd" }
-func (ExplorerPotterySherd) ID() ID            { return 1379 }
-func (FlowPotterySherd) Name() string          { return "minecraft:flow_pottery_sherd" }
-func (FlowPotterySherd) ID() ID                { return 1380 }
-func (FriendPotterySherd) Name() string        { return "minecraft:friend_pottery_sherd" }
-func (FriendPotterySherd) ID() ID              { return 1381 }
-func (GusterPotterySherd) Name() string        { return "minecraft:guster_pottery_sherd" }
-func (GusterPotterySherd) ID() ID              { return 1382 }
-func (HeartPotterySherd) Name() string         { return "minecraft:heart_pottery_sherd" }
-func (HeartPotterySherd) ID() ID               { return 1383 }
-func (HeartbreakPotterySherd) Name() string    { return "minecraft:heartbreak_pottery_sherd" }
-func (HeartbreakPotterySherd) ID() ID          { return 1384 }
-func (HowlPotterySherd) Name() string          { return "minecraft:howl_pottery_sherd" }
-func (HowlPotterySherd) ID() ID                { return 1385 }
-func (MinerPotterySherd) Name() string         { return "minecraft:miner_pottery_sherd" }
-func (MinerPotterySherd) ID() ID               { return 1386 }
-func (MournerPotterySherd) Name() string       { return "minecraft:mourner_pottery_sherd" }
-func (MournerPotterySherd) ID() ID             { return 1387 }
-func (PlentyPotterySherd) Name() string        { return "minecraft:plenty_pottery_sherd" }
-func (PlentyPotterySherd) ID() ID              { return 1388 }
-func (PrizePotterySherd) Name() string         { return "minecraft:prize_pottery_sherd" }
-func (PrizePotterySherd) ID() ID               { return 1389 }
-func (ScrapePotterySherd) Name() string        { return "minecraft:scrape_pottery_sherd" }
-func (ScrapePotterySherd) ID() ID              { return 1390 }
-func (SheafPotterySherd) Name() string         { return "minecraft:sheaf_pottery_sherd" }
-func (SheafPotterySherd) ID() ID               { return 1391 }
-func (ShelterPotterySherd) Name() string       { return "minecraft:shelter_pottery_sherd" }
-func (ShelterPotterySherd) ID() ID             { return 1392 }
-func (SkullPotterySherd) Name() string         { return "minecraft:skull_pottery_sherd" }
-func (SkullPotterySherd) ID() ID               { return 1393 }
-func (SnortPotterySherd) Name() string         { return "minecraft:snort_pottery_sherd" }
-func (SnortPotterySherd) ID() ID               { return 1394 }
-func (CopperGrate) Name() string               { return "minecraft:copper_grate" }
-func (CopperGrate) ID() ID                     { return 1395 }
-func (ExposedCopperGrate) Name() string        { return "minecraft:exposed_copper_grate" }
-func (ExposedCopperGrate) ID() ID              { return 1396 }
-func (WeatheredCopperGrate) Name() string      { return "minecraft:weathered_copper_grate" }
-func (WeatheredCopperGrate) ID() ID            { return 1397 }
-func (OxidizedCopperGrate) Name() string       { return "minecraft:oxidized_copper_grate" }
-func (OxidizedCopperGrate) ID() ID             { return 1398 }
-func (WaxedCopperGrate) Name() string          { return "minecraft:waxed_copper_grate" }
-func (WaxedCopperGrate) ID() ID                { return 1399 }
-func (WaxedExposedCopperGrate) Name() string   { return "minecraft:waxed_exposed_copper_grate" }
-func (WaxedExposedCopperGrate) ID() ID         { return 1400 }
-func (WaxedWeatheredCopperGrate) Name() string { return "minecraft:waxed_weathered_copper_grate" }
-func (WaxedWeatheredCopperGrate) ID() ID       { return 1401 }
-func (WaxedOxidizedCopperGrate) Name() string  { return "minecraft:waxed_oxidized_copper_grate" }
-func (WaxedOxidizedCopperGrate) ID() ID        { return 1402 }
-func (CopperBulb) Name() string                { return "minecraft:copper_bulb" }
-func (CopperBulb) ID() ID                      { return 1403 }
-func (ExposedCopperBulb) Name() string         { return "minecraft:exposed_copper_bulb" }
-func (ExposedCopperBulb) ID() ID               { return 1404 }
-func (WeatheredCopperBulb) Name() string       { return "minecraft:weathered_copper_bulb" }
-func (WeatheredCopperBulb) ID() ID             { return 1405 }
-func (OxidizedCopperBulb) Name() string        { return "minecraft:oxidized_copper_bulb" }
-func (OxidizedCopperBulb) ID() ID              { return 1406 }
-func (WaxedCopperBulb) Name() string           { return "minecraft:waxed_copper_bulb" }
-func (WaxedCopperBulb) ID() ID                 { return 1407 }
-func (WaxedExposedCopperBulb) Name() string    { return "minecraft:waxed_exposed_copper_bulb" }
-func (WaxedExposedCopperBulb) ID() ID          { return 1408 }
-func (WaxedWeatheredCopperBulb) Name() string  { return "minecraft:waxed_weathered_copper_bulb" }
-func (WaxedWeatheredCopperBulb) ID() ID        { return 1409 }
-func (WaxedOxidizedCopperBulb) Name() string   { return "minecraft:waxed_oxidized_copper_bulb" }
-func (WaxedOxidizedCopperBulb) ID() ID         { return 1410 }
-func (TrialSpawner) Name() string              { return "minecraft:trial_spawner" }
-func (TrialSpawner) ID() ID                    { return 1411 }
-func (TrialKey) Name() string                  { return "minecraft:trial_key" }
-func (TrialKey) ID() ID                        { return 1412 }
-func (OminousTrialKey) Name() string           { return "minecraft:ominous_trial_key" }
-func (OminousTrialKey) ID() ID                 { return 1413 }
-func (Vault) Name() string                     { return "minecraft:vault" }
-func (Vault) ID() ID                           { return 1414 }
-func (OminousBottle) Name() string             { return "minecraft:ominous_bottle" }
-func (OminousBottle) ID() ID                   { return 1415 }
+func (BoltArmorTrimSmithingTemplate) ID() ID    { return 1427 }
+func (AnglerPotterySherd) Name() string         { return "minecraft:angler_pottery_sherd" }
+func (AnglerPotterySherd) ID() ID               { return 1428 }
+func (ArcherPotterySherd) Name() string         { return "minecraft:archer_pottery_sherd" }
+func (ArcherPotterySherd) ID() ID               { return 1429 }
+func (ArmsUpPotterySherd) Name() string         { return "minecraft:arms_up_pottery_sherd" }
+func (ArmsUpPotterySherd) ID() ID               { return 1430 }
+func (BladePotterySherd) Name() string          { return "minecraft:blade_pottery_sherd" }
+func (BladePotterySherd) ID() ID                { return 1431 }
+func (BrewerPotterySherd) Name() string         { return "minecraft:brewer_pottery_sherd" }
+func (BrewerPotterySherd) ID() ID               { return 1432 }
+func (BurnPotterySherd) Name() string           { return "minecraft:burn_pottery_sherd" }
+func (BurnPotterySherd) ID() ID                 { return 1433 }
+func (DangerPotterySherd) Name() string         { return "minecraft:danger_pottery_sherd" }
+func (DangerPotterySherd) ID() ID               { return 1434 }
+func (ExplorerPotterySherd) Name() string       { return "minecraft:explorer_pottery_sherd" }
+func (ExplorerPotterySherd) ID() ID             { return 1435 }
+func (FlowPotterySherd) Name() string           { return "minecraft:flow_pottery_sherd" }
+func (FlowPotterySherd) ID() ID                 { return 1436 }
+func (FriendPotterySherd) Name() string         { return "minecraft:friend_pottery_sherd" }
+func (FriendPotterySherd) ID() ID               { return 1437 }
+func (GusterPotterySherd) Name() string         { return "minecraft:guster_pottery_sherd" }
+func (GusterPotterySherd) ID() ID               { return 1438 }
+func (HeartPotterySherd) Name() string          { return "minecraft:heart_pottery_sherd" }
+func (HeartPotterySherd) ID() ID                { return 1439 }
+func (HeartbreakPotterySherd) Name() string     { return "minecraft:heartbreak_pottery_sherd" }
+func (HeartbreakPotterySherd) ID() ID           { return 1440 }
+func (HowlPotterySherd) Name() string           { return "minecraft:howl_pottery_sherd" }
+func (HowlPotterySherd) ID() ID                 { return 1441 }
+func (MinerPotterySherd) Name() string          { return "minecraft:miner_pottery_sherd" }
+func (MinerPotterySherd) ID() ID                { return 1442 }
+func (MournerPotterySherd) Name() string        { return "minecraft:mourner_pottery_sherd" }
+func (MournerPotterySherd) ID() ID              { return 1443 }
+func (PlentyPotterySherd) Name() string         { return "minecraft:plenty_pottery_sherd" }
+func (PlentyPotterySherd) ID() ID               { return 1444 }
+func (PrizePotterySherd) Name() string          { return "minecraft:prize_pottery_sherd" }
+func (PrizePotterySherd) ID() ID                { return 1445 }
+func (ScrapePotterySherd) Name() string         { return "minecraft:scrape_pottery_sherd" }
+func (ScrapePotterySherd) ID() ID               { return 1446 }
+func (SheafPotterySherd) Name() string          { return "minecraft:sheaf_pottery_sherd" }
+func (SheafPotterySherd) ID() ID                { return 1447 }
+func (ShelterPotterySherd) Name() string        { return "minecraft:shelter_pottery_sherd" }
+func (ShelterPotterySherd) ID() ID              { return 1448 }
+func (SkullPotterySherd) Name() string          { return "minecraft:skull_pottery_sherd" }
+func (SkullPotterySherd) ID() ID                { return 1449 }
+func (SnortPotterySherd) Name() string          { return "minecraft:snort_pottery_sherd" }
+func (SnortPotterySherd) ID() ID                { return 1450 }
+func (CopperGrate) Name() string                { return "minecraft:copper_grate" }
+func (CopperGrate) ID() ID                      { return 1451 }
+func (ExposedCopperGrate) Name() string         { return "minecraft:exposed_copper_grate" }
+func (ExposedCopperGrate) ID() ID               { return 1452 }
+func (WeatheredCopperGrate) Name() string       { return "minecraft:weathered_copper_grate" }
+func (WeatheredCopperGrate) ID() ID             { return 1453 }
+func (OxidizedCopperGrate) Name() string        { return "minecraft:oxidized_copper_grate" }
+func (OxidizedCopperGrate) ID() ID              { return 1454 }
+func (WaxedCopperGrate) Name() string           { return "minecraft:waxed_copper_grate" }
+func (WaxedCopperGrate) ID() ID                 { return 1455 }
+func (WaxedExposedCopperGrate) Name() string    { return "minecraft:waxed_exposed_copper_grate" }
+func (WaxedExposedCopperGrate) ID() ID          { return 1456 }
+func (WaxedWeatheredCopperGrate) Name() string  { return "minecraft:waxed_weathered_copper_grate" }
+func (WaxedWeatheredCopperGrate) ID() ID        { return 1457 }
+func (WaxedOxidizedCopperGrate) Name() string   { return "minecraft:waxed_oxidized_copper_grate" }
+func (WaxedOxidizedCopperGrate) ID() ID         { return 1458 }
+func (CopperBulb) Name() string                 { return "minecraft:copper_bulb" }
+func (CopperBulb) ID() ID                       { return 1459 }
+func (ExposedCopperBulb) Name() string          { return "minecraft:exposed_copper_bulb" }
+func (ExposedCopperBulb) ID() ID                { return 1460 }
+func (WeatheredCopperBulb) Name() string        { return "minecraft:weathered_copper_bulb" }
+func (WeatheredCopperBulb) ID() ID              { return 1461 }
+func (OxidizedCopperBulb) Name() string         { return "minecraft:oxidized_copper_bulb" }
+func (OxidizedCopperBulb) ID() ID               { return 1462 }
+func (WaxedCopperBulb) Name() string            { return "minecraft:waxed_copper_bulb" }
+func (WaxedCopperBulb) ID() ID                  { return 1463 }
+func (WaxedExposedCopperBulb) Name() string     { return "minecraft:waxed_exposed_copper_bulb" }
+func (WaxedExposedCopperBulb) ID() ID           { return 1464 }
+func (WaxedWeatheredCopperBulb) Name() string   { return "minecraft:waxed_weathered_copper_bulb" }
+func (WaxedWeatheredCopperBulb) ID() ID         { return 1465 }
+func (WaxedOxidizedCopperBulb) Name() string    { return "minecraft:waxed_oxidized_copper_bulb" }
+func (WaxedOxidizedCopperBulb) ID() ID          { return 1466 }
+func (CopperChest) Name() string                { return "minecraft:copper_chest" }
+func (CopperChest) ID() ID                      { return 1467 }
+func (ExposedCopperChest) Name() string         { return "minecraft:exposed_copper_chest" }
+func (ExposedCopperChest) ID() ID               { return 1468 }
+func (WeatheredCopperChest) Name() string       { return "minecraft:weathered_copper_chest" }
+func (WeatheredCopperChest) ID() ID             { return 1469 }
+func (OxidizedCopperChest) Name() string        { return "minecraft:oxidized_copper_chest" }
+func (OxidizedCopperChest) ID() ID              { return 1470 }
+func (WaxedCopperChest) Name() string           { return "minecraft:waxed_copper_chest" }
+func (WaxedCopperChest) ID() ID                 { return 1471 }
+func (WaxedExposedCopperChest) Name() string    { return "minecraft:waxed_exposed_copper_chest" }
+func (WaxedExposedCopperChest) ID() ID          { return 1472 }
+func (WaxedWeatheredCopperChest) Name() string  { return "minecraft:waxed_weathered_copper_chest" }
+func (WaxedWeatheredCopperChest) ID() ID        { return 1473 }
+func (WaxedOxidizedCopperChest) Name() string   { return "minecraft:waxed_oxidized_copper_chest" }
+func (WaxedOxidizedCopperChest) ID() ID         { return 1474 }
+func (CopperGolemStatue) Name() string          { return "minecraft:copper_golem_statue" }
+func (CopperGolemStatue) ID() ID                { return 1475 }
+func (ExposedCopperGolemStatue) Name() string   { return "minecraft:exposed_copper_golem_statue" }
+func (ExposedCopperGolemStatue) ID() ID         { return 1476 }
+func (WeatheredCopperGolemStatue) Name() string { return "minecraft:weathered_copper_golem_statue" }
+func (WeatheredCopperGolemStatue) ID() ID       { return 1477 }
+func (OxidizedCopperGolemStatue) Name() string  { return "minecraft:oxidized_copper_golem_statue" }
+func (OxidizedCopperGolemStatue) ID() ID        { return 1478 }
+func (WaxedCopperGolemStatue) Name() string     { return "minecraft:waxed_copper_golem_statue" }
+func (WaxedCopperGolemStatue) ID() ID           { return 1479 }
+func (WaxedExposedCopperGolemStatue) Name() string {
+	return "minecraft:waxed_exposed_copper_golem_statue"
+}
+func (WaxedExposedCopperGolemStatue) ID() ID { return 1480 }
+func (WaxedWeatheredCopperGolemStatue) Name() string {
+	return "minecraft:waxed_weathered_copper_golem_statue"
+}
+func (WaxedWeatheredCopperGolemStatue) ID() ID { return 1481 }
+func (WaxedOxidizedCopperGolemStatue) Name() string {
+	return "minecraft:waxed_oxidized_copper_golem_statue"
+}
+func (WaxedOxidizedCopperGolemStatue) ID() ID { return 1482 }
+func (TrialSpawner) Name() string             { return "minecraft:trial_spawner" }
+func (TrialSpawner) ID() ID                   { return 1483 }
+func (TrialKey) Name() string                 { return "minecraft:trial_key" }
+func (TrialKey) ID() ID                       { return 1484 }
+func (OminousTrialKey) Name() string          { return "minecraft:ominous_trial_key" }
+func (OminousTrialKey) ID() ID                { return 1485 }
+func (Vault) Name() string                    { return "minecraft:vault" }
+func (Vault) ID() ID                          { return 1486 }
+func (OminousBottle) Name() string            { return "minecraft:ominous_bottle" }
+func (OminousBottle) ID() ID                  { return 1487 }
 func (Stone) Block() block.Block {
 	return block.FromID["minecraft:stone"]
 }
@@ -5217,6 +5439,42 @@ func (SmoothStone) Block() block.Block {
 func (Bricks) Block() block.Block {
 	return block.FromID["minecraft:bricks"]
 }
+func (AcaciaShelf) Block() block.Block {
+	return block.FromID["minecraft:acacia_shelf"]
+}
+func (BambooShelf) Block() block.Block {
+	return block.FromID["minecraft:bamboo_shelf"]
+}
+func (BirchShelf) Block() block.Block {
+	return block.FromID["minecraft:birch_shelf"]
+}
+func (CherryShelf) Block() block.Block {
+	return block.FromID["minecraft:cherry_shelf"]
+}
+func (CrimsonShelf) Block() block.Block {
+	return block.FromID["minecraft:crimson_shelf"]
+}
+func (DarkOakShelf) Block() block.Block {
+	return block.FromID["minecraft:dark_oak_shelf"]
+}
+func (JungleShelf) Block() block.Block {
+	return block.FromID["minecraft:jungle_shelf"]
+}
+func (MangroveShelf) Block() block.Block {
+	return block.FromID["minecraft:mangrove_shelf"]
+}
+func (OakShelf) Block() block.Block {
+	return block.FromID["minecraft:oak_shelf"]
+}
+func (PaleOakShelf) Block() block.Block {
+	return block.FromID["minecraft:pale_oak_shelf"]
+}
+func (SpruceShelf) Block() block.Block {
+	return block.FromID["minecraft:spruce_shelf"]
+}
+func (WarpedShelf) Block() block.Block {
+	return block.FromID["minecraft:warped_shelf"]
+}
 func (Bookshelf) Block() block.Block {
 	return block.FromID["minecraft:bookshelf"]
 }
@@ -5364,6 +5622,9 @@ func (SmoothBasalt) Block() block.Block {
 func (SoulTorch) Block() block.Block {
 	return block.FromID["minecraft:soul_torch"]
 }
+func (CopperTorch) Block() block.Block {
+	return block.FromID["minecraft:copper_torch"]
+}
 func (Glowstone) Block() block.Block {
 	return block.FromID["minecraft:glowstone"]
 }
@@ -5436,8 +5697,56 @@ func (MushroomStem) Block() block.Block {
 func (IronBars) Block() block.Block {
 	return block.FromID["minecraft:iron_bars"]
 }
-func (Chain) Block() block.Block {
-	return block.FromID["minecraft:chain"]
+func (CopperBars) Block() block.Block {
+	return block.FromID["minecraft:copper_bars"]
+}
+func (ExposedCopperBars) Block() block.Block {
+	return block.FromID["minecraft:exposed_copper_bars"]
+}
+func (WeatheredCopperBars) Block() block.Block {
+	return block.FromID["minecraft:weathered_copper_bars"]
+}
+func (OxidizedCopperBars) Block() block.Block {
+	return block.FromID["minecraft:oxidized_copper_bars"]
+}
+func (WaxedCopperBars) Block() block.Block {
+	return block.FromID["minecraft:waxed_copper_bars"]
+}
+func (WaxedExposedCopperBars) Block() block.Block {
+	return block.FromID["minecraft:waxed_exposed_copper_bars"]
+}
+func (WaxedWeatheredCopperBars) Block() block.Block {
+	return block.FromID["minecraft:waxed_weathered_copper_bars"]
+}
+func (WaxedOxidizedCopperBars) Block() block.Block {
+	return block.FromID["minecraft:waxed_oxidized_copper_bars"]
+}
+func (IronChain) Block() block.Block {
+	return block.FromID["minecraft:iron_chain"]
+}
+func (CopperChain) Block() block.Block {
+	return block.FromID["minecraft:copper_chain"]
+}
+func (ExposedCopperChain) Block() block.Block {
+	return block.FromID["minecraft:exposed_copper_chain"]
+}
+func (WeatheredCopperChain) Block() block.Block {
+	return block.FromID["minecraft:weathered_copper_chain"]
+}
+func (OxidizedCopperChain) Block() block.Block {
+	return block.FromID["minecraft:oxidized_copper_chain"]
+}
+func (WaxedCopperChain) Block() block.Block {
+	return block.FromID["minecraft:waxed_copper_chain"]
+}
+func (WaxedExposedCopperChain) Block() block.Block {
+	return block.FromID["minecraft:waxed_exposed_copper_chain"]
+}
+func (WaxedWeatheredCopperChain) Block() block.Block {
+	return block.FromID["minecraft:waxed_weathered_copper_chain"]
+}
+func (WaxedOxidizedCopperChain) Block() block.Block {
+	return block.FromID["minecraft:waxed_oxidized_copper_chain"]
 }
 func (GlassPane) Block() block.Block {
 	return block.FromID["minecraft:glass_pane"]
@@ -6417,6 +6726,27 @@ func (Lever) Block() block.Block {
 func (LightningRod) Block() block.Block {
 	return block.FromID["minecraft:lightning_rod"]
 }
+func (ExposedLightningRod) Block() block.Block {
+	return block.FromID["minecraft:exposed_lightning_rod"]
+}
+func (WeatheredLightningRod) Block() block.Block {
+	return block.FromID["minecraft:weathered_lightning_rod"]
+}
+func (OxidizedLightningRod) Block() block.Block {
+	return block.FromID["minecraft:oxidized_lightning_rod"]
+}
+func (WaxedLightningRod) Block() block.Block {
+	return block.FromID["minecraft:waxed_lightning_rod"]
+}
+func (WaxedExposedLightningRod) Block() block.Block {
+	return block.FromID["minecraft:waxed_exposed_lightning_rod"]
+}
+func (WaxedWeatheredLightningRod) Block() block.Block {
+	return block.FromID["minecraft:waxed_weathered_lightning_rod"]
+}
+func (WaxedOxidizedLightningRod) Block() block.Block {
+	return block.FromID["minecraft:waxed_oxidized_lightning_rod"]
+}
 func (DaylightDetector) Block() block.Block {
 	return block.FromID["minecraft:daylight_detector"]
 }
@@ -6999,6 +7329,30 @@ func (Lantern) Block() block.Block {
 func (SoulLantern) Block() block.Block {
 	return block.FromID["minecraft:soul_lantern"]
 }
+func (CopperLantern) Block() block.Block {
+	return block.FromID["minecraft:copper_lantern"]
+}
+func (ExposedCopperLantern) Block() block.Block {
+	return block.FromID["minecraft:exposed_copper_lantern"]
+}
+func (WeatheredCopperLantern) Block() block.Block {
+	return block.FromID["minecraft:weathered_copper_lantern"]
+}
+func (OxidizedCopperLantern) Block() block.Block {
+	return block.FromID["minecraft:oxidized_copper_lantern"]
+}
+func (WaxedCopperLantern) Block() block.Block {
+	return block.FromID["minecraft:waxed_copper_lantern"]
+}
+func (WaxedExposedCopperLantern) Block() block.Block {
+	return block.FromID["minecraft:waxed_exposed_copper_lantern"]
+}
+func (WaxedWeatheredCopperLantern) Block() block.Block {
+	return block.FromID["minecraft:waxed_weathered_copper_lantern"]
+}
+func (WaxedOxidizedCopperLantern) Block() block.Block {
+	return block.FromID["minecraft:waxed_oxidized_copper_lantern"]
+}
 func (SweetBerries) Block() block.Block {
 	return block.FromID["minecraft:sweet_berry_bush"]
 }
@@ -7193,6 +7547,54 @@ func (WaxedWeatheredCopperBulb) Block() block.Block {
 }
 func (WaxedOxidizedCopperBulb) Block() block.Block {
 	return block.FromID["minecraft:waxed_oxidized_copper_bulb"]
+}
+func (CopperChest) Block() block.Block {
+	return block.FromID["minecraft:copper_chest"]
+}
+func (ExposedCopperChest) Block() block.Block {
+	return block.FromID["minecraft:exposed_copper_chest"]
+}
+func (WeatheredCopperChest) Block() block.Block {
+	return block.FromID["minecraft:weathered_copper_chest"]
+}
+func (OxidizedCopperChest) Block() block.Block {
+	return block.FromID["minecraft:oxidized_copper_chest"]
+}
+func (WaxedCopperChest) Block() block.Block {
+	return block.FromID["minecraft:waxed_copper_chest"]
+}
+func (WaxedExposedCopperChest) Block() block.Block {
+	return block.FromID["minecraft:waxed_exposed_copper_chest"]
+}
+func (WaxedWeatheredCopperChest) Block() block.Block {
+	return block.FromID["minecraft:waxed_weathered_copper_chest"]
+}
+func (WaxedOxidizedCopperChest) Block() block.Block {
+	return block.FromID["minecraft:waxed_oxidized_copper_chest"]
+}
+func (CopperGolemStatue) Block() block.Block {
+	return block.FromID["minecraft:copper_golem_statue"]
+}
+func (ExposedCopperGolemStatue) Block() block.Block {
+	return block.FromID["minecraft:exposed_copper_golem_statue"]
+}
+func (WeatheredCopperGolemStatue) Block() block.Block {
+	return block.FromID["minecraft:weathered_copper_golem_statue"]
+}
+func (OxidizedCopperGolemStatue) Block() block.Block {
+	return block.FromID["minecraft:oxidized_copper_golem_statue"]
+}
+func (WaxedCopperGolemStatue) Block() block.Block {
+	return block.FromID["minecraft:waxed_copper_golem_statue"]
+}
+func (WaxedExposedCopperGolemStatue) Block() block.Block {
+	return block.FromID["minecraft:waxed_exposed_copper_golem_statue"]
+}
+func (WaxedWeatheredCopperGolemStatue) Block() block.Block {
+	return block.FromID["minecraft:waxed_weathered_copper_golem_statue"]
+}
+func (WaxedOxidizedCopperGolemStatue) Block() block.Block {
+	return block.FromID["minecraft:waxed_oxidized_copper_golem_statue"]
 }
 func (TrialSpawner) Block() block.Block {
 	return block.FromID["minecraft:trial_spawner"]
@@ -7507,6 +7909,18 @@ var FromID = map[string]Item{
 	"minecraft:smooth_sandstone":                       SmoothSandstone{},
 	"minecraft:smooth_stone":                           SmoothStone{},
 	"minecraft:bricks":                                 Bricks{},
+	"minecraft:acacia_shelf":                           AcaciaShelf{},
+	"minecraft:bamboo_shelf":                           BambooShelf{},
+	"minecraft:birch_shelf":                            BirchShelf{},
+	"minecraft:cherry_shelf":                           CherryShelf{},
+	"minecraft:crimson_shelf":                          CrimsonShelf{},
+	"minecraft:dark_oak_shelf":                         DarkOakShelf{},
+	"minecraft:jungle_shelf":                           JungleShelf{},
+	"minecraft:mangrove_shelf":                         MangroveShelf{},
+	"minecraft:oak_shelf":                              OakShelf{},
+	"minecraft:pale_oak_shelf":                         PaleOakShelf{},
+	"minecraft:spruce_shelf":                           SpruceShelf{},
+	"minecraft:warped_shelf":                           WarpedShelf{},
 	"minecraft:bookshelf":                              Bookshelf{},
 	"minecraft:chiseled_bookshelf":                     ChiseledBookshelf{},
 	"minecraft:decorated_pot":                          DecoratedPot{},
@@ -7556,6 +7970,7 @@ var FromID = map[string]Item{
 	"minecraft:polished_basalt":                        PolishedBasalt{},
 	"minecraft:smooth_basalt":                          SmoothBasalt{},
 	"minecraft:soul_torch":                             SoulTorch{},
+	"minecraft:copper_torch":                           CopperTorch{},
 	"minecraft:glowstone":                              Glowstone{},
 	"minecraft:infested_stone":                         InfestedStone{},
 	"minecraft:infested_cobblestone":                   InfestedCobblestone{},
@@ -7580,7 +7995,23 @@ var FromID = map[string]Item{
 	"minecraft:red_mushroom_block":                     RedMushroomBlock{},
 	"minecraft:mushroom_stem":                          MushroomStem{},
 	"minecraft:iron_bars":                              IronBars{},
-	"minecraft:chain":                                  Chain{},
+	"minecraft:copper_bars":                            CopperBars{},
+	"minecraft:exposed_copper_bars":                    ExposedCopperBars{},
+	"minecraft:weathered_copper_bars":                  WeatheredCopperBars{},
+	"minecraft:oxidized_copper_bars":                   OxidizedCopperBars{},
+	"minecraft:waxed_copper_bars":                      WaxedCopperBars{},
+	"minecraft:waxed_exposed_copper_bars":              WaxedExposedCopperBars{},
+	"minecraft:waxed_weathered_copper_bars":            WaxedWeatheredCopperBars{},
+	"minecraft:waxed_oxidized_copper_bars":             WaxedOxidizedCopperBars{},
+	"minecraft:iron_chain":                             IronChain{},
+	"minecraft:copper_chain":                           CopperChain{},
+	"minecraft:exposed_copper_chain":                   ExposedCopperChain{},
+	"minecraft:weathered_copper_chain":                 WeatheredCopperChain{},
+	"minecraft:oxidized_copper_chain":                  OxidizedCopperChain{},
+	"minecraft:waxed_copper_chain":                     WaxedCopperChain{},
+	"minecraft:waxed_exposed_copper_chain":             WaxedExposedCopperChain{},
+	"minecraft:waxed_weathered_copper_chain":           WaxedWeatheredCopperChain{},
+	"minecraft:waxed_oxidized_copper_chain":            WaxedOxidizedCopperChain{},
 	"minecraft:glass_pane":                             GlassPane{},
 	"minecraft:melon":                                  Melon{},
 	"minecraft:vine":                                   Vine{},
@@ -7907,6 +8338,13 @@ var FromID = map[string]Item{
 	"minecraft:target":                                 Target{},
 	"minecraft:lever":                                  Lever{},
 	"minecraft:lightning_rod":                          LightningRod{},
+	"minecraft:exposed_lightning_rod":                  ExposedLightningRod{},
+	"minecraft:weathered_lightning_rod":                WeatheredLightningRod{},
+	"minecraft:oxidized_lightning_rod":                 OxidizedLightningRod{},
+	"minecraft:waxed_lightning_rod":                    WaxedLightningRod{},
+	"minecraft:waxed_exposed_lightning_rod":            WaxedExposedLightningRod{},
+	"minecraft:waxed_weathered_lightning_rod":          WaxedWeatheredLightningRod{},
+	"minecraft:waxed_oxidized_lightning_rod":           WaxedOxidizedLightningRod{},
 	"minecraft:daylight_detector":                      DaylightDetector{},
 	"minecraft:sculk_sensor":                           SculkSensor{},
 	"minecraft:calibrated_sculk_sensor":                CalibratedSculkSensor{},
@@ -8082,6 +8520,11 @@ var FromID = map[string]Item{
 	"minecraft:wooden_pickaxe":                         WoodenPickaxe{},
 	"minecraft:wooden_axe":                             WoodenAxe{},
 	"minecraft:wooden_hoe":                             WoodenHoe{},
+	"minecraft:copper_sword":                           CopperSword{},
+	"minecraft:copper_shovel":                          CopperShovel{},
+	"minecraft:copper_pickaxe":                         CopperPickaxe{},
+	"minecraft:copper_axe":                             CopperAxe{},
+	"minecraft:copper_hoe":                             CopperHoe{},
 	"minecraft:stone_sword":                            StoneSword{},
 	"minecraft:stone_shovel":                           StoneShovel{},
 	"minecraft:stone_pickaxe":                          StonePickaxe{},
@@ -8119,6 +8562,10 @@ var FromID = map[string]Item{
 	"minecraft:leather_chestplate":                     LeatherChestplate{},
 	"minecraft:leather_leggings":                       LeatherLeggings{},
 	"minecraft:leather_boots":                          LeatherBoots{},
+	"minecraft:copper_helmet":                          CopperHelmet{},
+	"minecraft:copper_chestplate":                      CopperChestplate{},
+	"minecraft:copper_leggings":                        CopperLeggings{},
+	"minecraft:copper_boots":                           CopperBoots{},
 	"minecraft:chainmail_helmet":                       ChainmailHelmet{},
 	"minecraft:chainmail_chestplate":                   ChainmailChestplate{},
 	"minecraft:chainmail_leggings":                     ChainmailLeggings{},
@@ -8300,6 +8747,7 @@ var FromID = map[string]Item{
 	"minecraft:cave_spider_spawn_egg":                  CaveSpiderSpawnEgg{},
 	"minecraft:chicken_spawn_egg":                      ChickenSpawnEgg{},
 	"minecraft:cod_spawn_egg":                          CodSpawnEgg{},
+	"minecraft:copper_golem_spawn_egg":                 CopperGolemSpawnEgg{},
 	"minecraft:cow_spawn_egg":                          CowSpawnEgg{},
 	"minecraft:creeper_spawn_egg":                      CreeperSpawnEgg{},
 	"minecraft:dolphin_spawn_egg":                      DolphinSpawnEgg{},
@@ -8407,6 +8855,7 @@ var FromID = map[string]Item{
 	"minecraft:rabbit_foot":                            RabbitFoot{},
 	"minecraft:rabbit_hide":                            RabbitHide{},
 	"minecraft:armor_stand":                            ArmorStand{},
+	"minecraft:copper_horse_armor":                     CopperHorseArmor{},
 	"minecraft:iron_horse_armor":                       IronHorseArmor{},
 	"minecraft:golden_horse_armor":                     GoldenHorseArmor{},
 	"minecraft:diamond_horse_armor":                    DiamondHorseArmor{},
@@ -8449,6 +8898,7 @@ var FromID = map[string]Item{
 	"minecraft:totem_of_undying":                       TotemOfUndying{},
 	"minecraft:shulker_shell":                          ShulkerShell{},
 	"minecraft:iron_nugget":                            IronNugget{},
+	"minecraft:copper_nugget":                          CopperNugget{},
 	"minecraft:knowledge_book":                         KnowledgeBook{},
 	"minecraft:debug_stick":                            DebugStick{},
 	"minecraft:music_disc_13":                          MusicDisc13{},
@@ -8502,6 +8952,14 @@ var FromID = map[string]Item{
 	"minecraft:bell":                                   Bell{},
 	"minecraft:lantern":                                Lantern{},
 	"minecraft:soul_lantern":                           SoulLantern{},
+	"minecraft:copper_lantern":                         CopperLantern{},
+	"minecraft:exposed_copper_lantern":                 ExposedCopperLantern{},
+	"minecraft:weathered_copper_lantern":               WeatheredCopperLantern{},
+	"minecraft:oxidized_copper_lantern":                OxidizedCopperLantern{},
+	"minecraft:waxed_copper_lantern":                   WaxedCopperLantern{},
+	"minecraft:waxed_exposed_copper_lantern":           WaxedExposedCopperLantern{},
+	"minecraft:waxed_weathered_copper_lantern":         WaxedWeatheredCopperLantern{},
+	"minecraft:waxed_oxidized_copper_lantern":          WaxedOxidizedCopperLantern{},
 	"minecraft:sweet_berries":                          SweetBerries{},
 	"minecraft:glow_berries":                           GlowBerries{},
 	"minecraft:campfire":                               Campfire{},
@@ -8613,6 +9071,22 @@ var FromID = map[string]Item{
 	"minecraft:waxed_exposed_copper_bulb":              WaxedExposedCopperBulb{},
 	"minecraft:waxed_weathered_copper_bulb":            WaxedWeatheredCopperBulb{},
 	"minecraft:waxed_oxidized_copper_bulb":             WaxedOxidizedCopperBulb{},
+	"minecraft:copper_chest":                           CopperChest{},
+	"minecraft:exposed_copper_chest":                   ExposedCopperChest{},
+	"minecraft:weathered_copper_chest":                 WeatheredCopperChest{},
+	"minecraft:oxidized_copper_chest":                  OxidizedCopperChest{},
+	"minecraft:waxed_copper_chest":                     WaxedCopperChest{},
+	"minecraft:waxed_exposed_copper_chest":             WaxedExposedCopperChest{},
+	"minecraft:waxed_weathered_copper_chest":           WaxedWeatheredCopperChest{},
+	"minecraft:waxed_oxidized_copper_chest":            WaxedOxidizedCopperChest{},
+	"minecraft:copper_golem_statue":                    CopperGolemStatue{},
+	"minecraft:exposed_copper_golem_statue":            ExposedCopperGolemStatue{},
+	"minecraft:weathered_copper_golem_statue":          WeatheredCopperGolemStatue{},
+	"minecraft:oxidized_copper_golem_statue":           OxidizedCopperGolemStatue{},
+	"minecraft:waxed_copper_golem_statue":              WaxedCopperGolemStatue{},
+	"minecraft:waxed_exposed_copper_golem_statue":      WaxedExposedCopperGolemStatue{},
+	"minecraft:waxed_weathered_copper_golem_statue":    WaxedWeatheredCopperGolemStatue{},
+	"minecraft:waxed_oxidized_copper_golem_statue":     WaxedOxidizedCopperGolemStatue{},
 	"minecraft:trial_spawner":                          TrialSpawner{},
 	"minecraft:trial_key":                              TrialKey{},
 	"minecraft:ominous_trial_key":                      OminousTrialKey{},
@@ -8926,1115 +9400,1187 @@ var ToID = map[ID]Item{
 	302:  SmoothSandstone{},
 	303:  SmoothStone{},
 	304:  Bricks{},
-	305:  Bookshelf{},
-	306:  ChiseledBookshelf{},
-	307:  DecoratedPot{},
-	308:  MossyCobblestone{},
-	309:  Obsidian{},
-	310:  Torch{},
-	311:  EndRod{},
-	312:  ChorusPlant{},
-	313:  ChorusFlower{},
-	314:  PurpurBlock{},
-	315:  PurpurPillar{},
-	316:  PurpurStairs{},
-	317:  Spawner{},
-	318:  CreakingHeart{},
-	319:  Chest{},
-	320:  CraftingTable{},
-	321:  Farmland{},
-	322:  Furnace{},
-	323:  Ladder{},
-	324:  CobblestoneStairs{},
-	325:  Snow{},
-	326:  Ice{},
-	327:  SnowBlock{},
-	328:  Cactus{},
-	329:  CactusFlower{},
-	330:  Clay{},
-	331:  Jukebox{},
-	332:  OakFence{},
-	333:  SpruceFence{},
-	334:  BirchFence{},
-	335:  JungleFence{},
-	336:  AcaciaFence{},
-	337:  CherryFence{},
-	338:  DarkOakFence{},
-	339:  PaleOakFence{},
-	340:  MangroveFence{},
-	341:  BambooFence{},
-	342:  CrimsonFence{},
-	343:  WarpedFence{},
-	344:  Pumpkin{},
-	345:  CarvedPumpkin{},
-	346:  JackOLantern{},
-	347:  Netherrack{},
-	348:  SoulSand{},
-	349:  SoulSoil{},
-	350:  Basalt{},
-	351:  PolishedBasalt{},
-	352:  SmoothBasalt{},
-	353:  SoulTorch{},
-	354:  Glowstone{},
-	355:  InfestedStone{},
-	356:  InfestedCobblestone{},
-	357:  InfestedStoneBricks{},
-	358:  InfestedMossyStoneBricks{},
-	359:  InfestedCrackedStoneBricks{},
-	360:  InfestedChiseledStoneBricks{},
-	361:  InfestedDeepslate{},
-	362:  StoneBricks{},
-	363:  MossyStoneBricks{},
-	364:  CrackedStoneBricks{},
-	365:  ChiseledStoneBricks{},
-	366:  PackedMud{},
-	367:  MudBricks{},
-	368:  DeepslateBricks{},
-	369:  CrackedDeepslateBricks{},
-	370:  DeepslateTiles{},
-	371:  CrackedDeepslateTiles{},
-	372:  ChiseledDeepslate{},
-	373:  ReinforcedDeepslate{},
-	374:  BrownMushroomBlock{},
-	375:  RedMushroomBlock{},
-	376:  MushroomStem{},
-	377:  IronBars{},
-	378:  Chain{},
-	379:  GlassPane{},
-	380:  Melon{},
-	381:  Vine{},
-	382:  GlowLichen{},
-	383:  ResinClump{},
-	384:  ResinBlock{},
-	385:  ResinBricks{},
-	386:  ResinBrickStairs{},
-	387:  ResinBrickSlab{},
-	388:  ResinBrickWall{},
-	389:  ChiseledResinBricks{},
-	390:  BrickStairs{},
-	391:  StoneBrickStairs{},
-	392:  MudBrickStairs{},
-	393:  Mycelium{},
-	394:  LilyPad{},
-	395:  NetherBricks{},
-	396:  CrackedNetherBricks{},
-	397:  ChiseledNetherBricks{},
-	398:  NetherBrickFence{},
-	399:  NetherBrickStairs{},
-	400:  Sculk{},
-	401:  SculkVein{},
-	402:  SculkCatalyst{},
-	403:  SculkShrieker{},
-	404:  EnchantingTable{},
-	405:  EndPortalFrame{},
-	406:  EndStone{},
-	407:  EndStoneBricks{},
-	408:  DragonEgg{},
-	409:  SandstoneStairs{},
-	410:  EnderChest{},
-	411:  EmeraldBlock{},
-	412:  OakStairs{},
-	413:  SpruceStairs{},
-	414:  BirchStairs{},
-	415:  JungleStairs{},
-	416:  AcaciaStairs{},
-	417:  CherryStairs{},
-	418:  DarkOakStairs{},
-	419:  PaleOakStairs{},
-	420:  MangroveStairs{},
-	421:  BambooStairs{},
-	422:  BambooMosaicStairs{},
-	423:  CrimsonStairs{},
-	424:  WarpedStairs{},
-	425:  CommandBlock{},
-	426:  Beacon{},
-	427:  CobblestoneWall{},
-	428:  MossyCobblestoneWall{},
-	429:  BrickWall{},
-	430:  PrismarineWall{},
-	431:  RedSandstoneWall{},
-	432:  MossyStoneBrickWall{},
-	433:  GraniteWall{},
-	434:  StoneBrickWall{},
-	435:  MudBrickWall{},
-	436:  NetherBrickWall{},
-	437:  AndesiteWall{},
-	438:  RedNetherBrickWall{},
-	439:  SandstoneWall{},
-	440:  EndStoneBrickWall{},
-	441:  DioriteWall{},
-	442:  BlackstoneWall{},
-	443:  PolishedBlackstoneWall{},
-	444:  PolishedBlackstoneBrickWall{},
-	445:  CobbledDeepslateWall{},
-	446:  PolishedDeepslateWall{},
-	447:  DeepslateBrickWall{},
-	448:  DeepslateTileWall{},
-	449:  Anvil{},
-	450:  ChippedAnvil{},
-	451:  DamagedAnvil{},
-	452:  ChiseledQuartzBlock{},
-	453:  QuartzBlock{},
-	454:  QuartzBricks{},
-	455:  QuartzPillar{},
-	456:  QuartzStairs{},
-	457:  WhiteTerracotta{},
-	458:  OrangeTerracotta{},
-	459:  MagentaTerracotta{},
-	460:  LightBlueTerracotta{},
-	461:  YellowTerracotta{},
-	462:  LimeTerracotta{},
-	463:  PinkTerracotta{},
-	464:  GrayTerracotta{},
-	465:  LightGrayTerracotta{},
-	466:  CyanTerracotta{},
-	467:  PurpleTerracotta{},
-	468:  BlueTerracotta{},
-	469:  BrownTerracotta{},
-	470:  GreenTerracotta{},
-	471:  RedTerracotta{},
-	472:  BlackTerracotta{},
-	473:  Barrier{},
-	474:  Light{},
-	475:  HayBlock{},
-	476:  WhiteCarpet{},
-	477:  OrangeCarpet{},
-	478:  MagentaCarpet{},
-	479:  LightBlueCarpet{},
-	480:  YellowCarpet{},
-	481:  LimeCarpet{},
-	482:  PinkCarpet{},
-	483:  GrayCarpet{},
-	484:  LightGrayCarpet{},
-	485:  CyanCarpet{},
-	486:  PurpleCarpet{},
-	487:  BlueCarpet{},
-	488:  BrownCarpet{},
-	489:  GreenCarpet{},
-	490:  RedCarpet{},
-	491:  BlackCarpet{},
-	492:  Terracotta{},
-	493:  PackedIce{},
-	494:  DirtPath{},
-	495:  Sunflower{},
-	496:  Lilac{},
-	497:  RoseBush{},
-	498:  Peony{},
-	499:  TallGrass{},
-	500:  LargeFern{},
-	501:  WhiteStainedGlass{},
-	502:  OrangeStainedGlass{},
-	503:  MagentaStainedGlass{},
-	504:  LightBlueStainedGlass{},
-	505:  YellowStainedGlass{},
-	506:  LimeStainedGlass{},
-	507:  PinkStainedGlass{},
-	508:  GrayStainedGlass{},
-	509:  LightGrayStainedGlass{},
-	510:  CyanStainedGlass{},
-	511:  PurpleStainedGlass{},
-	512:  BlueStainedGlass{},
-	513:  BrownStainedGlass{},
-	514:  GreenStainedGlass{},
-	515:  RedStainedGlass{},
-	516:  BlackStainedGlass{},
-	517:  WhiteStainedGlassPane{},
-	518:  OrangeStainedGlassPane{},
-	519:  MagentaStainedGlassPane{},
-	520:  LightBlueStainedGlassPane{},
-	521:  YellowStainedGlassPane{},
-	522:  LimeStainedGlassPane{},
-	523:  PinkStainedGlassPane{},
-	524:  GrayStainedGlassPane{},
-	525:  LightGrayStainedGlassPane{},
-	526:  CyanStainedGlassPane{},
-	527:  PurpleStainedGlassPane{},
-	528:  BlueStainedGlassPane{},
-	529:  BrownStainedGlassPane{},
-	530:  GreenStainedGlassPane{},
-	531:  RedStainedGlassPane{},
-	532:  BlackStainedGlassPane{},
-	533:  Prismarine{},
-	534:  PrismarineBricks{},
-	535:  DarkPrismarine{},
-	536:  PrismarineStairs{},
-	537:  PrismarineBrickStairs{},
-	538:  DarkPrismarineStairs{},
-	539:  SeaLantern{},
-	540:  RedSandstone{},
-	541:  ChiseledRedSandstone{},
-	542:  CutRedSandstone{},
-	543:  RedSandstoneStairs{},
-	544:  RepeatingCommandBlock{},
-	545:  ChainCommandBlock{},
-	546:  MagmaBlock{},
-	547:  NetherWartBlock{},
-	548:  WarpedWartBlock{},
-	549:  RedNetherBricks{},
-	550:  BoneBlock{},
-	551:  StructureVoid{},
-	552:  ShulkerBox{},
-	553:  WhiteShulkerBox{},
-	554:  OrangeShulkerBox{},
-	555:  MagentaShulkerBox{},
-	556:  LightBlueShulkerBox{},
-	557:  YellowShulkerBox{},
-	558:  LimeShulkerBox{},
-	559:  PinkShulkerBox{},
-	560:  GrayShulkerBox{},
-	561:  LightGrayShulkerBox{},
-	562:  CyanShulkerBox{},
-	563:  PurpleShulkerBox{},
-	564:  BlueShulkerBox{},
-	565:  BrownShulkerBox{},
-	566:  GreenShulkerBox{},
-	567:  RedShulkerBox{},
-	568:  BlackShulkerBox{},
-	569:  WhiteGlazedTerracotta{},
-	570:  OrangeGlazedTerracotta{},
-	571:  MagentaGlazedTerracotta{},
-	572:  LightBlueGlazedTerracotta{},
-	573:  YellowGlazedTerracotta{},
-	574:  LimeGlazedTerracotta{},
-	575:  PinkGlazedTerracotta{},
-	576:  GrayGlazedTerracotta{},
-	577:  LightGrayGlazedTerracotta{},
-	578:  CyanGlazedTerracotta{},
-	579:  PurpleGlazedTerracotta{},
-	580:  BlueGlazedTerracotta{},
-	581:  BrownGlazedTerracotta{},
-	582:  GreenGlazedTerracotta{},
-	583:  RedGlazedTerracotta{},
-	584:  BlackGlazedTerracotta{},
-	585:  WhiteConcrete{},
-	586:  OrangeConcrete{},
-	587:  MagentaConcrete{},
-	588:  LightBlueConcrete{},
-	589:  YellowConcrete{},
-	590:  LimeConcrete{},
-	591:  PinkConcrete{},
-	592:  GrayConcrete{},
-	593:  LightGrayConcrete{},
-	594:  CyanConcrete{},
-	595:  PurpleConcrete{},
-	596:  BlueConcrete{},
-	597:  BrownConcrete{},
-	598:  GreenConcrete{},
-	599:  RedConcrete{},
-	600:  BlackConcrete{},
-	601:  WhiteConcretePowder{},
-	602:  OrangeConcretePowder{},
-	603:  MagentaConcretePowder{},
-	604:  LightBlueConcretePowder{},
-	605:  YellowConcretePowder{},
-	606:  LimeConcretePowder{},
-	607:  PinkConcretePowder{},
-	608:  GrayConcretePowder{},
-	609:  LightGrayConcretePowder{},
-	610:  CyanConcretePowder{},
-	611:  PurpleConcretePowder{},
-	612:  BlueConcretePowder{},
-	613:  BrownConcretePowder{},
-	614:  GreenConcretePowder{},
-	615:  RedConcretePowder{},
-	616:  BlackConcretePowder{},
-	617:  TurtleEgg{},
-	618:  SnifferEgg{},
-	619:  DriedGhast{},
-	620:  DeadTubeCoralBlock{},
-	621:  DeadBrainCoralBlock{},
-	622:  DeadBubbleCoralBlock{},
-	623:  DeadFireCoralBlock{},
-	624:  DeadHornCoralBlock{},
-	625:  TubeCoralBlock{},
-	626:  BrainCoralBlock{},
-	627:  BubbleCoralBlock{},
-	628:  FireCoralBlock{},
-	629:  HornCoralBlock{},
-	630:  TubeCoral{},
-	631:  BrainCoral{},
-	632:  BubbleCoral{},
-	633:  FireCoral{},
-	634:  HornCoral{},
-	635:  DeadBrainCoral{},
-	636:  DeadBubbleCoral{},
-	637:  DeadFireCoral{},
-	638:  DeadHornCoral{},
-	639:  DeadTubeCoral{},
-	640:  TubeCoralFan{},
-	641:  BrainCoralFan{},
-	642:  BubbleCoralFan{},
-	643:  FireCoralFan{},
-	644:  HornCoralFan{},
-	645:  DeadTubeCoralFan{},
-	646:  DeadBrainCoralFan{},
-	647:  DeadBubbleCoralFan{},
-	648:  DeadFireCoralFan{},
-	649:  DeadHornCoralFan{},
-	650:  BlueIce{},
-	651:  Conduit{},
-	652:  PolishedGraniteStairs{},
-	653:  SmoothRedSandstoneStairs{},
-	654:  MossyStoneBrickStairs{},
-	655:  PolishedDioriteStairs{},
-	656:  MossyCobblestoneStairs{},
-	657:  EndStoneBrickStairs{},
-	658:  StoneStairs{},
-	659:  SmoothSandstoneStairs{},
-	660:  SmoothQuartzStairs{},
-	661:  GraniteStairs{},
-	662:  AndesiteStairs{},
-	663:  RedNetherBrickStairs{},
-	664:  PolishedAndesiteStairs{},
-	665:  DioriteStairs{},
-	666:  CobbledDeepslateStairs{},
-	667:  PolishedDeepslateStairs{},
-	668:  DeepslateBrickStairs{},
-	669:  DeepslateTileStairs{},
-	670:  PolishedGraniteSlab{},
-	671:  SmoothRedSandstoneSlab{},
-	672:  MossyStoneBrickSlab{},
-	673:  PolishedDioriteSlab{},
-	674:  MossyCobblestoneSlab{},
-	675:  EndStoneBrickSlab{},
-	676:  SmoothSandstoneSlab{},
-	677:  SmoothQuartzSlab{},
-	678:  GraniteSlab{},
-	679:  AndesiteSlab{},
-	680:  RedNetherBrickSlab{},
-	681:  PolishedAndesiteSlab{},
-	682:  DioriteSlab{},
-	683:  CobbledDeepslateSlab{},
-	684:  PolishedDeepslateSlab{},
-	685:  DeepslateBrickSlab{},
-	686:  DeepslateTileSlab{},
-	687:  Scaffolding{},
-	688:  Redstone{},
-	689:  RedstoneTorch{},
-	690:  RedstoneBlock{},
-	691:  Repeater{},
-	692:  Comparator{},
-	693:  Piston{},
-	694:  StickyPiston{},
-	695:  SlimeBlock{},
-	696:  HoneyBlock{},
-	697:  Observer{},
-	698:  Hopper{},
-	699:  Dispenser{},
-	700:  Dropper{},
-	701:  Lectern{},
-	702:  Target{},
-	703:  Lever{},
-	704:  LightningRod{},
-	705:  DaylightDetector{},
-	706:  SculkSensor{},
-	707:  CalibratedSculkSensor{},
-	708:  TripwireHook{},
-	709:  TrappedChest{},
-	710:  Tnt{},
-	711:  RedstoneLamp{},
-	712:  NoteBlock{},
-	713:  StoneButton{},
-	714:  PolishedBlackstoneButton{},
-	715:  OakButton{},
-	716:  SpruceButton{},
-	717:  BirchButton{},
-	718:  JungleButton{},
-	719:  AcaciaButton{},
-	720:  CherryButton{},
-	721:  DarkOakButton{},
-	722:  PaleOakButton{},
-	723:  MangroveButton{},
-	724:  BambooButton{},
-	725:  CrimsonButton{},
-	726:  WarpedButton{},
-	727:  StonePressurePlate{},
-	728:  PolishedBlackstonePressurePlate{},
-	729:  LightWeightedPressurePlate{},
-	730:  HeavyWeightedPressurePlate{},
-	731:  OakPressurePlate{},
-	732:  SprucePressurePlate{},
-	733:  BirchPressurePlate{},
-	734:  JunglePressurePlate{},
-	735:  AcaciaPressurePlate{},
-	736:  CherryPressurePlate{},
-	737:  DarkOakPressurePlate{},
-	738:  PaleOakPressurePlate{},
-	739:  MangrovePressurePlate{},
-	740:  BambooPressurePlate{},
-	741:  CrimsonPressurePlate{},
-	742:  WarpedPressurePlate{},
-	743:  IronDoor{},
-	744:  OakDoor{},
-	745:  SpruceDoor{},
-	746:  BirchDoor{},
-	747:  JungleDoor{},
-	748:  AcaciaDoor{},
-	749:  CherryDoor{},
-	750:  DarkOakDoor{},
-	751:  PaleOakDoor{},
-	752:  MangroveDoor{},
-	753:  BambooDoor{},
-	754:  CrimsonDoor{},
-	755:  WarpedDoor{},
-	756:  CopperDoor{},
-	757:  ExposedCopperDoor{},
-	758:  WeatheredCopperDoor{},
-	759:  OxidizedCopperDoor{},
-	760:  WaxedCopperDoor{},
-	761:  WaxedExposedCopperDoor{},
-	762:  WaxedWeatheredCopperDoor{},
-	763:  WaxedOxidizedCopperDoor{},
-	764:  IronTrapdoor{},
-	765:  OakTrapdoor{},
-	766:  SpruceTrapdoor{},
-	767:  BirchTrapdoor{},
-	768:  JungleTrapdoor{},
-	769:  AcaciaTrapdoor{},
-	770:  CherryTrapdoor{},
-	771:  DarkOakTrapdoor{},
-	772:  PaleOakTrapdoor{},
-	773:  MangroveTrapdoor{},
-	774:  BambooTrapdoor{},
-	775:  CrimsonTrapdoor{},
-	776:  WarpedTrapdoor{},
-	777:  CopperTrapdoor{},
-	778:  ExposedCopperTrapdoor{},
-	779:  WeatheredCopperTrapdoor{},
-	780:  OxidizedCopperTrapdoor{},
-	781:  WaxedCopperTrapdoor{},
-	782:  WaxedExposedCopperTrapdoor{},
-	783:  WaxedWeatheredCopperTrapdoor{},
-	784:  WaxedOxidizedCopperTrapdoor{},
-	785:  OakFenceGate{},
-	786:  SpruceFenceGate{},
-	787:  BirchFenceGate{},
-	788:  JungleFenceGate{},
-	789:  AcaciaFenceGate{},
-	790:  CherryFenceGate{},
-	791:  DarkOakFenceGate{},
-	792:  PaleOakFenceGate{},
-	793:  MangroveFenceGate{},
-	794:  BambooFenceGate{},
-	795:  CrimsonFenceGate{},
-	796:  WarpedFenceGate{},
-	797:  PoweredRail{},
-	798:  DetectorRail{},
-	799:  Rail{},
-	800:  ActivatorRail{},
-	801:  Saddle{},
-	802:  WhiteHarness{},
-	803:  OrangeHarness{},
-	804:  MagentaHarness{},
-	805:  LightBlueHarness{},
-	806:  YellowHarness{},
-	807:  LimeHarness{},
-	808:  PinkHarness{},
-	809:  GrayHarness{},
-	810:  LightGrayHarness{},
-	811:  CyanHarness{},
-	812:  PurpleHarness{},
-	813:  BlueHarness{},
-	814:  BrownHarness{},
-	815:  GreenHarness{},
-	816:  RedHarness{},
-	817:  BlackHarness{},
-	818:  Minecart{},
-	819:  ChestMinecart{},
-	820:  FurnaceMinecart{},
-	821:  TntMinecart{},
-	822:  HopperMinecart{},
-	823:  CarrotOnAStick{},
-	824:  WarpedFungusOnAStick{},
-	825:  PhantomMembrane{},
-	826:  Elytra{},
-	827:  OakBoat{},
-	828:  OakChestBoat{},
-	829:  SpruceBoat{},
-	830:  SpruceChestBoat{},
-	831:  BirchBoat{},
-	832:  BirchChestBoat{},
-	833:  JungleBoat{},
-	834:  JungleChestBoat{},
-	835:  AcaciaBoat{},
-	836:  AcaciaChestBoat{},
-	837:  CherryBoat{},
-	838:  CherryChestBoat{},
-	839:  DarkOakBoat{},
-	840:  DarkOakChestBoat{},
-	841:  PaleOakBoat{},
-	842:  PaleOakChestBoat{},
-	843:  MangroveBoat{},
-	844:  MangroveChestBoat{},
-	845:  BambooRaft{},
-	846:  BambooChestRaft{},
-	847:  StructureBlock{},
-	848:  Jigsaw{},
-	849:  TestBlock{},
-	850:  TestInstanceBlock{},
-	851:  TurtleHelmet{},
-	852:  TurtleScute{},
-	853:  ArmadilloScute{},
-	854:  WolfArmor{},
-	855:  FlintAndSteel{},
-	856:  Bowl{},
-	857:  Apple{},
-	858:  Bow{},
-	859:  Arrow{},
-	860:  Coal{},
-	861:  Charcoal{},
-	862:  Diamond{},
-	863:  Emerald{},
-	864:  LapisLazuli{},
-	865:  Quartz{},
-	866:  AmethystShard{},
-	867:  RawIron{},
-	868:  IronIngot{},
-	869:  RawCopper{},
-	870:  CopperIngot{},
-	871:  RawGold{},
-	872:  GoldIngot{},
-	873:  NetheriteIngot{},
-	874:  NetheriteScrap{},
-	875:  WoodenSword{},
-	876:  WoodenShovel{},
-	877:  WoodenPickaxe{},
-	878:  WoodenAxe{},
-	879:  WoodenHoe{},
-	880:  StoneSword{},
-	881:  StoneShovel{},
-	882:  StonePickaxe{},
-	883:  StoneAxe{},
-	884:  StoneHoe{},
-	885:  GoldenSword{},
-	886:  GoldenShovel{},
-	887:  GoldenPickaxe{},
-	888:  GoldenAxe{},
-	889:  GoldenHoe{},
-	890:  IronSword{},
-	891:  IronShovel{},
-	892:  IronPickaxe{},
-	893:  IronAxe{},
-	894:  IronHoe{},
-	895:  DiamondSword{},
-	896:  DiamondShovel{},
-	897:  DiamondPickaxe{},
-	898:  DiamondAxe{},
-	899:  DiamondHoe{},
-	900:  NetheriteSword{},
-	901:  NetheriteShovel{},
-	902:  NetheritePickaxe{},
-	903:  NetheriteAxe{},
-	904:  NetheriteHoe{},
-	905:  Stick{},
-	906:  MushroomStew{},
-	907:  String{},
-	908:  Feather{},
-	909:  Gunpowder{},
-	910:  WheatSeeds{},
-	911:  Wheat{},
-	912:  Bread{},
-	913:  LeatherHelmet{},
-	914:  LeatherChestplate{},
-	915:  LeatherLeggings{},
-	916:  LeatherBoots{},
-	917:  ChainmailHelmet{},
-	918:  ChainmailChestplate{},
-	919:  ChainmailLeggings{},
-	920:  ChainmailBoots{},
-	921:  IronHelmet{},
-	922:  IronChestplate{},
-	923:  IronLeggings{},
-	924:  IronBoots{},
-	925:  DiamondHelmet{},
-	926:  DiamondChestplate{},
-	927:  DiamondLeggings{},
-	928:  DiamondBoots{},
-	929:  GoldenHelmet{},
-	930:  GoldenChestplate{},
-	931:  GoldenLeggings{},
-	932:  GoldenBoots{},
-	933:  NetheriteHelmet{},
-	934:  NetheriteChestplate{},
-	935:  NetheriteLeggings{},
-	936:  NetheriteBoots{},
-	937:  Flint{},
-	938:  Porkchop{},
-	939:  CookedPorkchop{},
-	940:  Painting{},
-	941:  GoldenApple{},
-	942:  EnchantedGoldenApple{},
-	943:  OakSign{},
-	944:  SpruceSign{},
-	945:  BirchSign{},
-	946:  JungleSign{},
-	947:  AcaciaSign{},
-	948:  CherrySign{},
-	949:  DarkOakSign{},
-	950:  PaleOakSign{},
-	951:  MangroveSign{},
-	952:  BambooSign{},
-	953:  CrimsonSign{},
-	954:  WarpedSign{},
-	955:  OakHangingSign{},
-	956:  SpruceHangingSign{},
-	957:  BirchHangingSign{},
-	958:  JungleHangingSign{},
-	959:  AcaciaHangingSign{},
-	960:  CherryHangingSign{},
-	961:  DarkOakHangingSign{},
-	962:  PaleOakHangingSign{},
-	963:  MangroveHangingSign{},
-	964:  BambooHangingSign{},
-	965:  CrimsonHangingSign{},
-	966:  WarpedHangingSign{},
-	967:  Bucket{},
-	968:  WaterBucket{},
-	969:  LavaBucket{},
-	970:  PowderSnowBucket{},
-	971:  Snowball{},
-	972:  Leather{},
-	973:  MilkBucket{},
-	974:  PufferfishBucket{},
-	975:  SalmonBucket{},
-	976:  CodBucket{},
-	977:  TropicalFishBucket{},
-	978:  AxolotlBucket{},
-	979:  TadpoleBucket{},
-	980:  Brick{},
-	981:  ClayBall{},
-	982:  DriedKelpBlock{},
-	983:  Paper{},
-	984:  Book{},
-	985:  SlimeBall{},
-	986:  Egg{},
-	987:  BlueEgg{},
-	988:  BrownEgg{},
-	989:  Compass{},
-	990:  RecoveryCompass{},
-	991:  Bundle{},
-	992:  WhiteBundle{},
-	993:  OrangeBundle{},
-	994:  MagentaBundle{},
-	995:  LightBlueBundle{},
-	996:  YellowBundle{},
-	997:  LimeBundle{},
-	998:  PinkBundle{},
-	999:  GrayBundle{},
-	1000: LightGrayBundle{},
-	1001: CyanBundle{},
-	1002: PurpleBundle{},
-	1003: BlueBundle{},
-	1004: BrownBundle{},
-	1005: GreenBundle{},
-	1006: RedBundle{},
-	1007: BlackBundle{},
-	1008: FishingRod{},
-	1009: Clock{},
-	1010: Spyglass{},
-	1011: GlowstoneDust{},
-	1012: Cod{},
-	1013: Salmon{},
-	1014: TropicalFish{},
-	1015: Pufferfish{},
-	1016: CookedCod{},
-	1017: CookedSalmon{},
-	1018: InkSac{},
-	1019: GlowInkSac{},
-	1020: CocoaBeans{},
-	1021: WhiteDye{},
-	1022: OrangeDye{},
-	1023: MagentaDye{},
-	1024: LightBlueDye{},
-	1025: YellowDye{},
-	1026: LimeDye{},
-	1027: PinkDye{},
-	1028: GrayDye{},
-	1029: LightGrayDye{},
-	1030: CyanDye{},
-	1031: PurpleDye{},
-	1032: BlueDye{},
-	1033: BrownDye{},
-	1034: GreenDye{},
-	1035: RedDye{},
-	1036: BlackDye{},
-	1037: BoneMeal{},
-	1038: Bone{},
-	1039: Sugar{},
-	1040: Cake{},
-	1041: WhiteBed{},
-	1042: OrangeBed{},
-	1043: MagentaBed{},
-	1044: LightBlueBed{},
-	1045: YellowBed{},
-	1046: LimeBed{},
-	1047: PinkBed{},
-	1048: GrayBed{},
-	1049: LightGrayBed{},
-	1050: CyanBed{},
-	1051: PurpleBed{},
-	1052: BlueBed{},
-	1053: BrownBed{},
-	1054: GreenBed{},
-	1055: RedBed{},
-	1056: BlackBed{},
-	1057: Cookie{},
-	1058: Crafter{},
-	1059: FilledMap{},
-	1060: Shears{},
-	1061: MelonSlice{},
-	1062: DriedKelp{},
-	1063: PumpkinSeeds{},
-	1064: MelonSeeds{},
-	1065: Beef{},
-	1066: CookedBeef{},
-	1067: Chicken{},
-	1068: CookedChicken{},
-	1069: RottenFlesh{},
-	1070: EnderPearl{},
-	1071: BlazeRod{},
-	1072: GhastTear{},
-	1073: GoldNugget{},
-	1074: NetherWart{},
-	1075: GlassBottle{},
-	1076: Potion{},
-	1077: SpiderEye{},
-	1078: FermentedSpiderEye{},
-	1079: BlazePowder{},
-	1080: MagmaCream{},
-	1081: BrewingStand{},
-	1082: Cauldron{},
-	1083: EnderEye{},
-	1084: GlisteringMelonSlice{},
-	1085: ArmadilloSpawnEgg{},
-	1086: AllaySpawnEgg{},
-	1087: AxolotlSpawnEgg{},
-	1088: BatSpawnEgg{},
-	1089: BeeSpawnEgg{},
-	1090: BlazeSpawnEgg{},
-	1091: BoggedSpawnEgg{},
-	1092: BreezeSpawnEgg{},
-	1093: CatSpawnEgg{},
-	1094: CamelSpawnEgg{},
-	1095: CaveSpiderSpawnEgg{},
-	1096: ChickenSpawnEgg{},
-	1097: CodSpawnEgg{},
-	1098: CowSpawnEgg{},
-	1099: CreeperSpawnEgg{},
-	1100: DolphinSpawnEgg{},
-	1101: DonkeySpawnEgg{},
-	1102: DrownedSpawnEgg{},
-	1103: ElderGuardianSpawnEgg{},
-	1104: EnderDragonSpawnEgg{},
-	1105: EndermanSpawnEgg{},
-	1106: EndermiteSpawnEgg{},
-	1107: EvokerSpawnEgg{},
-	1108: FoxSpawnEgg{},
-	1109: FrogSpawnEgg{},
-	1110: GhastSpawnEgg{},
-	1111: HappyGhastSpawnEgg{},
-	1112: GlowSquidSpawnEgg{},
-	1113: GoatSpawnEgg{},
-	1114: GuardianSpawnEgg{},
-	1115: HoglinSpawnEgg{},
-	1116: HorseSpawnEgg{},
-	1117: HuskSpawnEgg{},
-	1118: IronGolemSpawnEgg{},
-	1119: LlamaSpawnEgg{},
-	1120: MagmaCubeSpawnEgg{},
-	1121: MooshroomSpawnEgg{},
-	1122: MuleSpawnEgg{},
-	1123: OcelotSpawnEgg{},
-	1124: PandaSpawnEgg{},
-	1125: ParrotSpawnEgg{},
-	1126: PhantomSpawnEgg{},
-	1127: PigSpawnEgg{},
-	1128: PiglinSpawnEgg{},
-	1129: PiglinBruteSpawnEgg{},
-	1130: PillagerSpawnEgg{},
-	1131: PolarBearSpawnEgg{},
-	1132: PufferfishSpawnEgg{},
-	1133: RabbitSpawnEgg{},
-	1134: RavagerSpawnEgg{},
-	1135: SalmonSpawnEgg{},
-	1136: SheepSpawnEgg{},
-	1137: ShulkerSpawnEgg{},
-	1138: SilverfishSpawnEgg{},
-	1139: SkeletonSpawnEgg{},
-	1140: SkeletonHorseSpawnEgg{},
-	1141: SlimeSpawnEgg{},
-	1142: SnifferSpawnEgg{},
-	1143: SnowGolemSpawnEgg{},
-	1144: SpiderSpawnEgg{},
-	1145: SquidSpawnEgg{},
-	1146: StraySpawnEgg{},
-	1147: StriderSpawnEgg{},
-	1148: TadpoleSpawnEgg{},
-	1149: TraderLlamaSpawnEgg{},
-	1150: TropicalFishSpawnEgg{},
-	1151: TurtleSpawnEgg{},
-	1152: VexSpawnEgg{},
-	1153: VillagerSpawnEgg{},
-	1154: VindicatorSpawnEgg{},
-	1155: WanderingTraderSpawnEgg{},
-	1156: WardenSpawnEgg{},
-	1157: WitchSpawnEgg{},
-	1158: WitherSpawnEgg{},
-	1159: WitherSkeletonSpawnEgg{},
-	1160: WolfSpawnEgg{},
-	1161: ZoglinSpawnEgg{},
-	1162: CreakingSpawnEgg{},
-	1163: ZombieSpawnEgg{},
-	1164: ZombieHorseSpawnEgg{},
-	1165: ZombieVillagerSpawnEgg{},
-	1166: ZombifiedPiglinSpawnEgg{},
-	1167: ExperienceBottle{},
-	1168: FireCharge{},
-	1169: WindCharge{},
-	1170: WritableBook{},
-	1171: WrittenBook{},
-	1172: BreezeRod{},
-	1173: Mace{},
-	1174: ItemFrame{},
-	1175: GlowItemFrame{},
-	1176: FlowerPot{},
-	1177: Carrot{},
-	1178: Potato{},
-	1179: BakedPotato{},
-	1180: PoisonousPotato{},
-	1181: Map{},
-	1182: GoldenCarrot{},
-	1183: SkeletonSkull{},
-	1184: WitherSkeletonSkull{},
-	1185: PlayerHead{},
-	1186: ZombieHead{},
-	1187: CreeperHead{},
-	1188: DragonHead{},
-	1189: PiglinHead{},
-	1190: NetherStar{},
-	1191: PumpkinPie{},
-	1192: FireworkRocket{},
-	1193: FireworkStar{},
-	1194: EnchantedBook{},
-	1195: NetherBrick{},
-	1196: ResinBrick{},
-	1197: PrismarineShard{},
-	1198: PrismarineCrystals{},
-	1199: Rabbit{},
-	1200: CookedRabbit{},
-	1201: RabbitStew{},
-	1202: RabbitFoot{},
-	1203: RabbitHide{},
-	1204: ArmorStand{},
-	1205: IronHorseArmor{},
-	1206: GoldenHorseArmor{},
-	1207: DiamondHorseArmor{},
-	1208: LeatherHorseArmor{},
-	1209: Lead{},
-	1210: NameTag{},
-	1211: CommandBlockMinecart{},
-	1212: Mutton{},
-	1213: CookedMutton{},
-	1214: WhiteBanner{},
-	1215: OrangeBanner{},
-	1216: MagentaBanner{},
-	1217: LightBlueBanner{},
-	1218: YellowBanner{},
-	1219: LimeBanner{},
-	1220: PinkBanner{},
-	1221: GrayBanner{},
-	1222: LightGrayBanner{},
-	1223: CyanBanner{},
-	1224: PurpleBanner{},
-	1225: BlueBanner{},
-	1226: BrownBanner{},
-	1227: GreenBanner{},
-	1228: RedBanner{},
-	1229: BlackBanner{},
-	1230: EndCrystal{},
-	1231: ChorusFruit{},
-	1232: PoppedChorusFruit{},
-	1233: TorchflowerSeeds{},
-	1234: PitcherPod{},
-	1235: Beetroot{},
-	1236: BeetrootSeeds{},
-	1237: BeetrootSoup{},
-	1238: DragonBreath{},
-	1239: SplashPotion{},
-	1240: SpectralArrow{},
-	1241: TippedArrow{},
-	1242: LingeringPotion{},
-	1243: Shield{},
-	1244: TotemOfUndying{},
-	1245: ShulkerShell{},
-	1246: IronNugget{},
-	1247: KnowledgeBook{},
-	1248: DebugStick{},
-	1249: MusicDisc13{},
-	1250: MusicDiscCat{},
-	1251: MusicDiscBlocks{},
-	1252: MusicDiscChirp{},
-	1253: MusicDiscCreator{},
-	1254: MusicDiscCreatorMusicBox{},
-	1255: MusicDiscFar{},
-	1256: MusicDiscLavaChicken{},
-	1257: MusicDiscMall{},
-	1258: MusicDiscMellohi{},
-	1259: MusicDiscStal{},
-	1260: MusicDiscStrad{},
-	1261: MusicDiscWard{},
-	1262: MusicDisc11{},
-	1263: MusicDiscWait{},
-	1264: MusicDiscOtherside{},
-	1265: MusicDiscRelic{},
-	1266: MusicDisc5{},
-	1267: MusicDiscPigstep{},
-	1268: MusicDiscPrecipice{},
-	1269: MusicDiscTears{},
-	1270: DiscFragment5{},
-	1271: Trident{},
-	1272: NautilusShell{},
-	1273: HeartOfTheSea{},
-	1274: Crossbow{},
-	1275: SuspiciousStew{},
-	1276: Loom{},
-	1277: FlowerBannerPattern{},
-	1278: CreeperBannerPattern{},
-	1279: SkullBannerPattern{},
-	1280: MojangBannerPattern{},
-	1281: GlobeBannerPattern{},
-	1282: PiglinBannerPattern{},
-	1283: FlowBannerPattern{},
-	1284: GusterBannerPattern{},
-	1285: FieldMasonedBannerPattern{},
-	1286: BordureIndentedBannerPattern{},
-	1287: GoatHorn{},
-	1288: Composter{},
-	1289: Barrel{},
-	1290: Smoker{},
-	1291: BlastFurnace{},
-	1292: CartographyTable{},
-	1293: FletchingTable{},
-	1294: Grindstone{},
-	1295: SmithingTable{},
-	1296: Stonecutter{},
-	1297: Bell{},
-	1298: Lantern{},
-	1299: SoulLantern{},
-	1300: SweetBerries{},
-	1301: GlowBerries{},
-	1302: Campfire{},
-	1303: SoulCampfire{},
-	1304: Shroomlight{},
-	1305: Honeycomb{},
-	1306: BeeNest{},
-	1307: Beehive{},
-	1308: HoneyBottle{},
-	1309: HoneycombBlock{},
-	1310: Lodestone{},
-	1311: CryingObsidian{},
-	1312: Blackstone{},
-	1313: BlackstoneSlab{},
-	1314: BlackstoneStairs{},
-	1315: GildedBlackstone{},
-	1316: PolishedBlackstone{},
-	1317: PolishedBlackstoneSlab{},
-	1318: PolishedBlackstoneStairs{},
-	1319: ChiseledPolishedBlackstone{},
-	1320: PolishedBlackstoneBricks{},
-	1321: PolishedBlackstoneBrickSlab{},
-	1322: PolishedBlackstoneBrickStairs{},
-	1323: CrackedPolishedBlackstoneBricks{},
-	1324: RespawnAnchor{},
-	1325: Candle{},
-	1326: WhiteCandle{},
-	1327: OrangeCandle{},
-	1328: MagentaCandle{},
-	1329: LightBlueCandle{},
-	1330: YellowCandle{},
-	1331: LimeCandle{},
-	1332: PinkCandle{},
-	1333: GrayCandle{},
-	1334: LightGrayCandle{},
-	1335: CyanCandle{},
-	1336: PurpleCandle{},
-	1337: BlueCandle{},
-	1338: BrownCandle{},
-	1339: GreenCandle{},
-	1340: RedCandle{},
-	1341: BlackCandle{},
-	1342: SmallAmethystBud{},
-	1343: MediumAmethystBud{},
-	1344: LargeAmethystBud{},
-	1345: AmethystCluster{},
-	1346: PointedDripstone{},
-	1347: OchreFroglight{},
-	1348: VerdantFroglight{},
-	1349: PearlescentFroglight{},
-	1350: Frogspawn{},
-	1351: EchoShard{},
-	1352: Brush{},
-	1353: NetheriteUpgradeSmithingTemplate{},
-	1354: SentryArmorTrimSmithingTemplate{},
-	1355: DuneArmorTrimSmithingTemplate{},
-	1356: CoastArmorTrimSmithingTemplate{},
-	1357: WildArmorTrimSmithingTemplate{},
-	1358: WardArmorTrimSmithingTemplate{},
-	1359: EyeArmorTrimSmithingTemplate{},
-	1360: VexArmorTrimSmithingTemplate{},
-	1361: TideArmorTrimSmithingTemplate{},
-	1362: SnoutArmorTrimSmithingTemplate{},
-	1363: RibArmorTrimSmithingTemplate{},
-	1364: SpireArmorTrimSmithingTemplate{},
-	1365: WayfinderArmorTrimSmithingTemplate{},
-	1366: ShaperArmorTrimSmithingTemplate{},
-	1367: SilenceArmorTrimSmithingTemplate{},
-	1368: RaiserArmorTrimSmithingTemplate{},
-	1369: HostArmorTrimSmithingTemplate{},
-	1370: FlowArmorTrimSmithingTemplate{},
-	1371: BoltArmorTrimSmithingTemplate{},
-	1372: AnglerPotterySherd{},
-	1373: ArcherPotterySherd{},
-	1374: ArmsUpPotterySherd{},
-	1375: BladePotterySherd{},
-	1376: BrewerPotterySherd{},
-	1377: BurnPotterySherd{},
-	1378: DangerPotterySherd{},
-	1379: ExplorerPotterySherd{},
-	1380: FlowPotterySherd{},
-	1381: FriendPotterySherd{},
-	1382: GusterPotterySherd{},
-	1383: HeartPotterySherd{},
-	1384: HeartbreakPotterySherd{},
-	1385: HowlPotterySherd{},
-	1386: MinerPotterySherd{},
-	1387: MournerPotterySherd{},
-	1388: PlentyPotterySherd{},
-	1389: PrizePotterySherd{},
-	1390: ScrapePotterySherd{},
-	1391: SheafPotterySherd{},
-	1392: ShelterPotterySherd{},
-	1393: SkullPotterySherd{},
-	1394: SnortPotterySherd{},
-	1395: CopperGrate{},
-	1396: ExposedCopperGrate{},
-	1397: WeatheredCopperGrate{},
-	1398: OxidizedCopperGrate{},
-	1399: WaxedCopperGrate{},
-	1400: WaxedExposedCopperGrate{},
-	1401: WaxedWeatheredCopperGrate{},
-	1402: WaxedOxidizedCopperGrate{},
-	1403: CopperBulb{},
-	1404: ExposedCopperBulb{},
-	1405: WeatheredCopperBulb{},
-	1406: OxidizedCopperBulb{},
-	1407: WaxedCopperBulb{},
-	1408: WaxedExposedCopperBulb{},
-	1409: WaxedWeatheredCopperBulb{},
-	1410: WaxedOxidizedCopperBulb{},
-	1411: TrialSpawner{},
-	1412: TrialKey{},
-	1413: OminousTrialKey{},
-	1414: Vault{},
-	1415: OminousBottle{},
+	305:  AcaciaShelf{},
+	306:  BambooShelf{},
+	307:  BirchShelf{},
+	308:  CherryShelf{},
+	309:  CrimsonShelf{},
+	310:  DarkOakShelf{},
+	311:  JungleShelf{},
+	312:  MangroveShelf{},
+	313:  OakShelf{},
+	314:  PaleOakShelf{},
+	315:  SpruceShelf{},
+	316:  WarpedShelf{},
+	317:  Bookshelf{},
+	318:  ChiseledBookshelf{},
+	319:  DecoratedPot{},
+	320:  MossyCobblestone{},
+	321:  Obsidian{},
+	322:  Torch{},
+	323:  EndRod{},
+	324:  ChorusPlant{},
+	325:  ChorusFlower{},
+	326:  PurpurBlock{},
+	327:  PurpurPillar{},
+	328:  PurpurStairs{},
+	329:  Spawner{},
+	330:  CreakingHeart{},
+	331:  Chest{},
+	332:  CraftingTable{},
+	333:  Farmland{},
+	334:  Furnace{},
+	335:  Ladder{},
+	336:  CobblestoneStairs{},
+	337:  Snow{},
+	338:  Ice{},
+	339:  SnowBlock{},
+	340:  Cactus{},
+	341:  CactusFlower{},
+	342:  Clay{},
+	343:  Jukebox{},
+	344:  OakFence{},
+	345:  SpruceFence{},
+	346:  BirchFence{},
+	347:  JungleFence{},
+	348:  AcaciaFence{},
+	349:  CherryFence{},
+	350:  DarkOakFence{},
+	351:  PaleOakFence{},
+	352:  MangroveFence{},
+	353:  BambooFence{},
+	354:  CrimsonFence{},
+	355:  WarpedFence{},
+	356:  Pumpkin{},
+	357:  CarvedPumpkin{},
+	358:  JackOLantern{},
+	359:  Netherrack{},
+	360:  SoulSand{},
+	361:  SoulSoil{},
+	362:  Basalt{},
+	363:  PolishedBasalt{},
+	364:  SmoothBasalt{},
+	365:  SoulTorch{},
+	366:  CopperTorch{},
+	367:  Glowstone{},
+	368:  InfestedStone{},
+	369:  InfestedCobblestone{},
+	370:  InfestedStoneBricks{},
+	371:  InfestedMossyStoneBricks{},
+	372:  InfestedCrackedStoneBricks{},
+	373:  InfestedChiseledStoneBricks{},
+	374:  InfestedDeepslate{},
+	375:  StoneBricks{},
+	376:  MossyStoneBricks{},
+	377:  CrackedStoneBricks{},
+	378:  ChiseledStoneBricks{},
+	379:  PackedMud{},
+	380:  MudBricks{},
+	381:  DeepslateBricks{},
+	382:  CrackedDeepslateBricks{},
+	383:  DeepslateTiles{},
+	384:  CrackedDeepslateTiles{},
+	385:  ChiseledDeepslate{},
+	386:  ReinforcedDeepslate{},
+	387:  BrownMushroomBlock{},
+	388:  RedMushroomBlock{},
+	389:  MushroomStem{},
+	390:  IronBars{},
+	391:  CopperBars{},
+	392:  ExposedCopperBars{},
+	393:  WeatheredCopperBars{},
+	394:  OxidizedCopperBars{},
+	395:  WaxedCopperBars{},
+	396:  WaxedExposedCopperBars{},
+	397:  WaxedWeatheredCopperBars{},
+	398:  WaxedOxidizedCopperBars{},
+	399:  IronChain{},
+	400:  CopperChain{},
+	401:  ExposedCopperChain{},
+	402:  WeatheredCopperChain{},
+	403:  OxidizedCopperChain{},
+	404:  WaxedCopperChain{},
+	405:  WaxedExposedCopperChain{},
+	406:  WaxedWeatheredCopperChain{},
+	407:  WaxedOxidizedCopperChain{},
+	408:  GlassPane{},
+	409:  Melon{},
+	410:  Vine{},
+	411:  GlowLichen{},
+	412:  ResinClump{},
+	413:  ResinBlock{},
+	414:  ResinBricks{},
+	415:  ResinBrickStairs{},
+	416:  ResinBrickSlab{},
+	417:  ResinBrickWall{},
+	418:  ChiseledResinBricks{},
+	419:  BrickStairs{},
+	420:  StoneBrickStairs{},
+	421:  MudBrickStairs{},
+	422:  Mycelium{},
+	423:  LilyPad{},
+	424:  NetherBricks{},
+	425:  CrackedNetherBricks{},
+	426:  ChiseledNetherBricks{},
+	427:  NetherBrickFence{},
+	428:  NetherBrickStairs{},
+	429:  Sculk{},
+	430:  SculkVein{},
+	431:  SculkCatalyst{},
+	432:  SculkShrieker{},
+	433:  EnchantingTable{},
+	434:  EndPortalFrame{},
+	435:  EndStone{},
+	436:  EndStoneBricks{},
+	437:  DragonEgg{},
+	438:  SandstoneStairs{},
+	439:  EnderChest{},
+	440:  EmeraldBlock{},
+	441:  OakStairs{},
+	442:  SpruceStairs{},
+	443:  BirchStairs{},
+	444:  JungleStairs{},
+	445:  AcaciaStairs{},
+	446:  CherryStairs{},
+	447:  DarkOakStairs{},
+	448:  PaleOakStairs{},
+	449:  MangroveStairs{},
+	450:  BambooStairs{},
+	451:  BambooMosaicStairs{},
+	452:  CrimsonStairs{},
+	453:  WarpedStairs{},
+	454:  CommandBlock{},
+	455:  Beacon{},
+	456:  CobblestoneWall{},
+	457:  MossyCobblestoneWall{},
+	458:  BrickWall{},
+	459:  PrismarineWall{},
+	460:  RedSandstoneWall{},
+	461:  MossyStoneBrickWall{},
+	462:  GraniteWall{},
+	463:  StoneBrickWall{},
+	464:  MudBrickWall{},
+	465:  NetherBrickWall{},
+	466:  AndesiteWall{},
+	467:  RedNetherBrickWall{},
+	468:  SandstoneWall{},
+	469:  EndStoneBrickWall{},
+	470:  DioriteWall{},
+	471:  BlackstoneWall{},
+	472:  PolishedBlackstoneWall{},
+	473:  PolishedBlackstoneBrickWall{},
+	474:  CobbledDeepslateWall{},
+	475:  PolishedDeepslateWall{},
+	476:  DeepslateBrickWall{},
+	477:  DeepslateTileWall{},
+	478:  Anvil{},
+	479:  ChippedAnvil{},
+	480:  DamagedAnvil{},
+	481:  ChiseledQuartzBlock{},
+	482:  QuartzBlock{},
+	483:  QuartzBricks{},
+	484:  QuartzPillar{},
+	485:  QuartzStairs{},
+	486:  WhiteTerracotta{},
+	487:  OrangeTerracotta{},
+	488:  MagentaTerracotta{},
+	489:  LightBlueTerracotta{},
+	490:  YellowTerracotta{},
+	491:  LimeTerracotta{},
+	492:  PinkTerracotta{},
+	493:  GrayTerracotta{},
+	494:  LightGrayTerracotta{},
+	495:  CyanTerracotta{},
+	496:  PurpleTerracotta{},
+	497:  BlueTerracotta{},
+	498:  BrownTerracotta{},
+	499:  GreenTerracotta{},
+	500:  RedTerracotta{},
+	501:  BlackTerracotta{},
+	502:  Barrier{},
+	503:  Light{},
+	504:  HayBlock{},
+	505:  WhiteCarpet{},
+	506:  OrangeCarpet{},
+	507:  MagentaCarpet{},
+	508:  LightBlueCarpet{},
+	509:  YellowCarpet{},
+	510:  LimeCarpet{},
+	511:  PinkCarpet{},
+	512:  GrayCarpet{},
+	513:  LightGrayCarpet{},
+	514:  CyanCarpet{},
+	515:  PurpleCarpet{},
+	516:  BlueCarpet{},
+	517:  BrownCarpet{},
+	518:  GreenCarpet{},
+	519:  RedCarpet{},
+	520:  BlackCarpet{},
+	521:  Terracotta{},
+	522:  PackedIce{},
+	523:  DirtPath{},
+	524:  Sunflower{},
+	525:  Lilac{},
+	526:  RoseBush{},
+	527:  Peony{},
+	528:  TallGrass{},
+	529:  LargeFern{},
+	530:  WhiteStainedGlass{},
+	531:  OrangeStainedGlass{},
+	532:  MagentaStainedGlass{},
+	533:  LightBlueStainedGlass{},
+	534:  YellowStainedGlass{},
+	535:  LimeStainedGlass{},
+	536:  PinkStainedGlass{},
+	537:  GrayStainedGlass{},
+	538:  LightGrayStainedGlass{},
+	539:  CyanStainedGlass{},
+	540:  PurpleStainedGlass{},
+	541:  BlueStainedGlass{},
+	542:  BrownStainedGlass{},
+	543:  GreenStainedGlass{},
+	544:  RedStainedGlass{},
+	545:  BlackStainedGlass{},
+	546:  WhiteStainedGlassPane{},
+	547:  OrangeStainedGlassPane{},
+	548:  MagentaStainedGlassPane{},
+	549:  LightBlueStainedGlassPane{},
+	550:  YellowStainedGlassPane{},
+	551:  LimeStainedGlassPane{},
+	552:  PinkStainedGlassPane{},
+	553:  GrayStainedGlassPane{},
+	554:  LightGrayStainedGlassPane{},
+	555:  CyanStainedGlassPane{},
+	556:  PurpleStainedGlassPane{},
+	557:  BlueStainedGlassPane{},
+	558:  BrownStainedGlassPane{},
+	559:  GreenStainedGlassPane{},
+	560:  RedStainedGlassPane{},
+	561:  BlackStainedGlassPane{},
+	562:  Prismarine{},
+	563:  PrismarineBricks{},
+	564:  DarkPrismarine{},
+	565:  PrismarineStairs{},
+	566:  PrismarineBrickStairs{},
+	567:  DarkPrismarineStairs{},
+	568:  SeaLantern{},
+	569:  RedSandstone{},
+	570:  ChiseledRedSandstone{},
+	571:  CutRedSandstone{},
+	572:  RedSandstoneStairs{},
+	573:  RepeatingCommandBlock{},
+	574:  ChainCommandBlock{},
+	575:  MagmaBlock{},
+	576:  NetherWartBlock{},
+	577:  WarpedWartBlock{},
+	578:  RedNetherBricks{},
+	579:  BoneBlock{},
+	580:  StructureVoid{},
+	581:  ShulkerBox{},
+	582:  WhiteShulkerBox{},
+	583:  OrangeShulkerBox{},
+	584:  MagentaShulkerBox{},
+	585:  LightBlueShulkerBox{},
+	586:  YellowShulkerBox{},
+	587:  LimeShulkerBox{},
+	588:  PinkShulkerBox{},
+	589:  GrayShulkerBox{},
+	590:  LightGrayShulkerBox{},
+	591:  CyanShulkerBox{},
+	592:  PurpleShulkerBox{},
+	593:  BlueShulkerBox{},
+	594:  BrownShulkerBox{},
+	595:  GreenShulkerBox{},
+	596:  RedShulkerBox{},
+	597:  BlackShulkerBox{},
+	598:  WhiteGlazedTerracotta{},
+	599:  OrangeGlazedTerracotta{},
+	600:  MagentaGlazedTerracotta{},
+	601:  LightBlueGlazedTerracotta{},
+	602:  YellowGlazedTerracotta{},
+	603:  LimeGlazedTerracotta{},
+	604:  PinkGlazedTerracotta{},
+	605:  GrayGlazedTerracotta{},
+	606:  LightGrayGlazedTerracotta{},
+	607:  CyanGlazedTerracotta{},
+	608:  PurpleGlazedTerracotta{},
+	609:  BlueGlazedTerracotta{},
+	610:  BrownGlazedTerracotta{},
+	611:  GreenGlazedTerracotta{},
+	612:  RedGlazedTerracotta{},
+	613:  BlackGlazedTerracotta{},
+	614:  WhiteConcrete{},
+	615:  OrangeConcrete{},
+	616:  MagentaConcrete{},
+	617:  LightBlueConcrete{},
+	618:  YellowConcrete{},
+	619:  LimeConcrete{},
+	620:  PinkConcrete{},
+	621:  GrayConcrete{},
+	622:  LightGrayConcrete{},
+	623:  CyanConcrete{},
+	624:  PurpleConcrete{},
+	625:  BlueConcrete{},
+	626:  BrownConcrete{},
+	627:  GreenConcrete{},
+	628:  RedConcrete{},
+	629:  BlackConcrete{},
+	630:  WhiteConcretePowder{},
+	631:  OrangeConcretePowder{},
+	632:  MagentaConcretePowder{},
+	633:  LightBlueConcretePowder{},
+	634:  YellowConcretePowder{},
+	635:  LimeConcretePowder{},
+	636:  PinkConcretePowder{},
+	637:  GrayConcretePowder{},
+	638:  LightGrayConcretePowder{},
+	639:  CyanConcretePowder{},
+	640:  PurpleConcretePowder{},
+	641:  BlueConcretePowder{},
+	642:  BrownConcretePowder{},
+	643:  GreenConcretePowder{},
+	644:  RedConcretePowder{},
+	645:  BlackConcretePowder{},
+	646:  TurtleEgg{},
+	647:  SnifferEgg{},
+	648:  DriedGhast{},
+	649:  DeadTubeCoralBlock{},
+	650:  DeadBrainCoralBlock{},
+	651:  DeadBubbleCoralBlock{},
+	652:  DeadFireCoralBlock{},
+	653:  DeadHornCoralBlock{},
+	654:  TubeCoralBlock{},
+	655:  BrainCoralBlock{},
+	656:  BubbleCoralBlock{},
+	657:  FireCoralBlock{},
+	658:  HornCoralBlock{},
+	659:  TubeCoral{},
+	660:  BrainCoral{},
+	661:  BubbleCoral{},
+	662:  FireCoral{},
+	663:  HornCoral{},
+	664:  DeadBrainCoral{},
+	665:  DeadBubbleCoral{},
+	666:  DeadFireCoral{},
+	667:  DeadHornCoral{},
+	668:  DeadTubeCoral{},
+	669:  TubeCoralFan{},
+	670:  BrainCoralFan{},
+	671:  BubbleCoralFan{},
+	672:  FireCoralFan{},
+	673:  HornCoralFan{},
+	674:  DeadTubeCoralFan{},
+	675:  DeadBrainCoralFan{},
+	676:  DeadBubbleCoralFan{},
+	677:  DeadFireCoralFan{},
+	678:  DeadHornCoralFan{},
+	679:  BlueIce{},
+	680:  Conduit{},
+	681:  PolishedGraniteStairs{},
+	682:  SmoothRedSandstoneStairs{},
+	683:  MossyStoneBrickStairs{},
+	684:  PolishedDioriteStairs{},
+	685:  MossyCobblestoneStairs{},
+	686:  EndStoneBrickStairs{},
+	687:  StoneStairs{},
+	688:  SmoothSandstoneStairs{},
+	689:  SmoothQuartzStairs{},
+	690:  GraniteStairs{},
+	691:  AndesiteStairs{},
+	692:  RedNetherBrickStairs{},
+	693:  PolishedAndesiteStairs{},
+	694:  DioriteStairs{},
+	695:  CobbledDeepslateStairs{},
+	696:  PolishedDeepslateStairs{},
+	697:  DeepslateBrickStairs{},
+	698:  DeepslateTileStairs{},
+	699:  PolishedGraniteSlab{},
+	700:  SmoothRedSandstoneSlab{},
+	701:  MossyStoneBrickSlab{},
+	702:  PolishedDioriteSlab{},
+	703:  MossyCobblestoneSlab{},
+	704:  EndStoneBrickSlab{},
+	705:  SmoothSandstoneSlab{},
+	706:  SmoothQuartzSlab{},
+	707:  GraniteSlab{},
+	708:  AndesiteSlab{},
+	709:  RedNetherBrickSlab{},
+	710:  PolishedAndesiteSlab{},
+	711:  DioriteSlab{},
+	712:  CobbledDeepslateSlab{},
+	713:  PolishedDeepslateSlab{},
+	714:  DeepslateBrickSlab{},
+	715:  DeepslateTileSlab{},
+	716:  Scaffolding{},
+	717:  Redstone{},
+	718:  RedstoneTorch{},
+	719:  RedstoneBlock{},
+	720:  Repeater{},
+	721:  Comparator{},
+	722:  Piston{},
+	723:  StickyPiston{},
+	724:  SlimeBlock{},
+	725:  HoneyBlock{},
+	726:  Observer{},
+	727:  Hopper{},
+	728:  Dispenser{},
+	729:  Dropper{},
+	730:  Lectern{},
+	731:  Target{},
+	732:  Lever{},
+	733:  LightningRod{},
+	734:  ExposedLightningRod{},
+	735:  WeatheredLightningRod{},
+	736:  OxidizedLightningRod{},
+	737:  WaxedLightningRod{},
+	738:  WaxedExposedLightningRod{},
+	739:  WaxedWeatheredLightningRod{},
+	740:  WaxedOxidizedLightningRod{},
+	741:  DaylightDetector{},
+	742:  SculkSensor{},
+	743:  CalibratedSculkSensor{},
+	744:  TripwireHook{},
+	745:  TrappedChest{},
+	746:  Tnt{},
+	747:  RedstoneLamp{},
+	748:  NoteBlock{},
+	749:  StoneButton{},
+	750:  PolishedBlackstoneButton{},
+	751:  OakButton{},
+	752:  SpruceButton{},
+	753:  BirchButton{},
+	754:  JungleButton{},
+	755:  AcaciaButton{},
+	756:  CherryButton{},
+	757:  DarkOakButton{},
+	758:  PaleOakButton{},
+	759:  MangroveButton{},
+	760:  BambooButton{},
+	761:  CrimsonButton{},
+	762:  WarpedButton{},
+	763:  StonePressurePlate{},
+	764:  PolishedBlackstonePressurePlate{},
+	765:  LightWeightedPressurePlate{},
+	766:  HeavyWeightedPressurePlate{},
+	767:  OakPressurePlate{},
+	768:  SprucePressurePlate{},
+	769:  BirchPressurePlate{},
+	770:  JunglePressurePlate{},
+	771:  AcaciaPressurePlate{},
+	772:  CherryPressurePlate{},
+	773:  DarkOakPressurePlate{},
+	774:  PaleOakPressurePlate{},
+	775:  MangrovePressurePlate{},
+	776:  BambooPressurePlate{},
+	777:  CrimsonPressurePlate{},
+	778:  WarpedPressurePlate{},
+	779:  IronDoor{},
+	780:  OakDoor{},
+	781:  SpruceDoor{},
+	782:  BirchDoor{},
+	783:  JungleDoor{},
+	784:  AcaciaDoor{},
+	785:  CherryDoor{},
+	786:  DarkOakDoor{},
+	787:  PaleOakDoor{},
+	788:  MangroveDoor{},
+	789:  BambooDoor{},
+	790:  CrimsonDoor{},
+	791:  WarpedDoor{},
+	792:  CopperDoor{},
+	793:  ExposedCopperDoor{},
+	794:  WeatheredCopperDoor{},
+	795:  OxidizedCopperDoor{},
+	796:  WaxedCopperDoor{},
+	797:  WaxedExposedCopperDoor{},
+	798:  WaxedWeatheredCopperDoor{},
+	799:  WaxedOxidizedCopperDoor{},
+	800:  IronTrapdoor{},
+	801:  OakTrapdoor{},
+	802:  SpruceTrapdoor{},
+	803:  BirchTrapdoor{},
+	804:  JungleTrapdoor{},
+	805:  AcaciaTrapdoor{},
+	806:  CherryTrapdoor{},
+	807:  DarkOakTrapdoor{},
+	808:  PaleOakTrapdoor{},
+	809:  MangroveTrapdoor{},
+	810:  BambooTrapdoor{},
+	811:  CrimsonTrapdoor{},
+	812:  WarpedTrapdoor{},
+	813:  CopperTrapdoor{},
+	814:  ExposedCopperTrapdoor{},
+	815:  WeatheredCopperTrapdoor{},
+	816:  OxidizedCopperTrapdoor{},
+	817:  WaxedCopperTrapdoor{},
+	818:  WaxedExposedCopperTrapdoor{},
+	819:  WaxedWeatheredCopperTrapdoor{},
+	820:  WaxedOxidizedCopperTrapdoor{},
+	821:  OakFenceGate{},
+	822:  SpruceFenceGate{},
+	823:  BirchFenceGate{},
+	824:  JungleFenceGate{},
+	825:  AcaciaFenceGate{},
+	826:  CherryFenceGate{},
+	827:  DarkOakFenceGate{},
+	828:  PaleOakFenceGate{},
+	829:  MangroveFenceGate{},
+	830:  BambooFenceGate{},
+	831:  CrimsonFenceGate{},
+	832:  WarpedFenceGate{},
+	833:  PoweredRail{},
+	834:  DetectorRail{},
+	835:  Rail{},
+	836:  ActivatorRail{},
+	837:  Saddle{},
+	838:  WhiteHarness{},
+	839:  OrangeHarness{},
+	840:  MagentaHarness{},
+	841:  LightBlueHarness{},
+	842:  YellowHarness{},
+	843:  LimeHarness{},
+	844:  PinkHarness{},
+	845:  GrayHarness{},
+	846:  LightGrayHarness{},
+	847:  CyanHarness{},
+	848:  PurpleHarness{},
+	849:  BlueHarness{},
+	850:  BrownHarness{},
+	851:  GreenHarness{},
+	852:  RedHarness{},
+	853:  BlackHarness{},
+	854:  Minecart{},
+	855:  ChestMinecart{},
+	856:  FurnaceMinecart{},
+	857:  TntMinecart{},
+	858:  HopperMinecart{},
+	859:  CarrotOnAStick{},
+	860:  WarpedFungusOnAStick{},
+	861:  PhantomMembrane{},
+	862:  Elytra{},
+	863:  OakBoat{},
+	864:  OakChestBoat{},
+	865:  SpruceBoat{},
+	866:  SpruceChestBoat{},
+	867:  BirchBoat{},
+	868:  BirchChestBoat{},
+	869:  JungleBoat{},
+	870:  JungleChestBoat{},
+	871:  AcaciaBoat{},
+	872:  AcaciaChestBoat{},
+	873:  CherryBoat{},
+	874:  CherryChestBoat{},
+	875:  DarkOakBoat{},
+	876:  DarkOakChestBoat{},
+	877:  PaleOakBoat{},
+	878:  PaleOakChestBoat{},
+	879:  MangroveBoat{},
+	880:  MangroveChestBoat{},
+	881:  BambooRaft{},
+	882:  BambooChestRaft{},
+	883:  StructureBlock{},
+	884:  Jigsaw{},
+	885:  TestBlock{},
+	886:  TestInstanceBlock{},
+	887:  TurtleHelmet{},
+	888:  TurtleScute{},
+	889:  ArmadilloScute{},
+	890:  WolfArmor{},
+	891:  FlintAndSteel{},
+	892:  Bowl{},
+	893:  Apple{},
+	894:  Bow{},
+	895:  Arrow{},
+	896:  Coal{},
+	897:  Charcoal{},
+	898:  Diamond{},
+	899:  Emerald{},
+	900:  LapisLazuli{},
+	901:  Quartz{},
+	902:  AmethystShard{},
+	903:  RawIron{},
+	904:  IronIngot{},
+	905:  RawCopper{},
+	906:  CopperIngot{},
+	907:  RawGold{},
+	908:  GoldIngot{},
+	909:  NetheriteIngot{},
+	910:  NetheriteScrap{},
+	911:  WoodenSword{},
+	912:  WoodenShovel{},
+	913:  WoodenPickaxe{},
+	914:  WoodenAxe{},
+	915:  WoodenHoe{},
+	916:  CopperSword{},
+	917:  CopperShovel{},
+	918:  CopperPickaxe{},
+	919:  CopperAxe{},
+	920:  CopperHoe{},
+	921:  StoneSword{},
+	922:  StoneShovel{},
+	923:  StonePickaxe{},
+	924:  StoneAxe{},
+	925:  StoneHoe{},
+	926:  GoldenSword{},
+	927:  GoldenShovel{},
+	928:  GoldenPickaxe{},
+	929:  GoldenAxe{},
+	930:  GoldenHoe{},
+	931:  IronSword{},
+	932:  IronShovel{},
+	933:  IronPickaxe{},
+	934:  IronAxe{},
+	935:  IronHoe{},
+	936:  DiamondSword{},
+	937:  DiamondShovel{},
+	938:  DiamondPickaxe{},
+	939:  DiamondAxe{},
+	940:  DiamondHoe{},
+	941:  NetheriteSword{},
+	942:  NetheriteShovel{},
+	943:  NetheritePickaxe{},
+	944:  NetheriteAxe{},
+	945:  NetheriteHoe{},
+	946:  Stick{},
+	947:  MushroomStew{},
+	948:  String{},
+	949:  Feather{},
+	950:  Gunpowder{},
+	951:  WheatSeeds{},
+	952:  Wheat{},
+	953:  Bread{},
+	954:  LeatherHelmet{},
+	955:  LeatherChestplate{},
+	956:  LeatherLeggings{},
+	957:  LeatherBoots{},
+	958:  CopperHelmet{},
+	959:  CopperChestplate{},
+	960:  CopperLeggings{},
+	961:  CopperBoots{},
+	962:  ChainmailHelmet{},
+	963:  ChainmailChestplate{},
+	964:  ChainmailLeggings{},
+	965:  ChainmailBoots{},
+	966:  IronHelmet{},
+	967:  IronChestplate{},
+	968:  IronLeggings{},
+	969:  IronBoots{},
+	970:  DiamondHelmet{},
+	971:  DiamondChestplate{},
+	972:  DiamondLeggings{},
+	973:  DiamondBoots{},
+	974:  GoldenHelmet{},
+	975:  GoldenChestplate{},
+	976:  GoldenLeggings{},
+	977:  GoldenBoots{},
+	978:  NetheriteHelmet{},
+	979:  NetheriteChestplate{},
+	980:  NetheriteLeggings{},
+	981:  NetheriteBoots{},
+	982:  Flint{},
+	983:  Porkchop{},
+	984:  CookedPorkchop{},
+	985:  Painting{},
+	986:  GoldenApple{},
+	987:  EnchantedGoldenApple{},
+	988:  OakSign{},
+	989:  SpruceSign{},
+	990:  BirchSign{},
+	991:  JungleSign{},
+	992:  AcaciaSign{},
+	993:  CherrySign{},
+	994:  DarkOakSign{},
+	995:  PaleOakSign{},
+	996:  MangroveSign{},
+	997:  BambooSign{},
+	998:  CrimsonSign{},
+	999:  WarpedSign{},
+	1000: OakHangingSign{},
+	1001: SpruceHangingSign{},
+	1002: BirchHangingSign{},
+	1003: JungleHangingSign{},
+	1004: AcaciaHangingSign{},
+	1005: CherryHangingSign{},
+	1006: DarkOakHangingSign{},
+	1007: PaleOakHangingSign{},
+	1008: MangroveHangingSign{},
+	1009: BambooHangingSign{},
+	1010: CrimsonHangingSign{},
+	1011: WarpedHangingSign{},
+	1012: Bucket{},
+	1013: WaterBucket{},
+	1014: LavaBucket{},
+	1015: PowderSnowBucket{},
+	1016: Snowball{},
+	1017: Leather{},
+	1018: MilkBucket{},
+	1019: PufferfishBucket{},
+	1020: SalmonBucket{},
+	1021: CodBucket{},
+	1022: TropicalFishBucket{},
+	1023: AxolotlBucket{},
+	1024: TadpoleBucket{},
+	1025: Brick{},
+	1026: ClayBall{},
+	1027: DriedKelpBlock{},
+	1028: Paper{},
+	1029: Book{},
+	1030: SlimeBall{},
+	1031: Egg{},
+	1032: BlueEgg{},
+	1033: BrownEgg{},
+	1034: Compass{},
+	1035: RecoveryCompass{},
+	1036: Bundle{},
+	1037: WhiteBundle{},
+	1038: OrangeBundle{},
+	1039: MagentaBundle{},
+	1040: LightBlueBundle{},
+	1041: YellowBundle{},
+	1042: LimeBundle{},
+	1043: PinkBundle{},
+	1044: GrayBundle{},
+	1045: LightGrayBundle{},
+	1046: CyanBundle{},
+	1047: PurpleBundle{},
+	1048: BlueBundle{},
+	1049: BrownBundle{},
+	1050: GreenBundle{},
+	1051: RedBundle{},
+	1052: BlackBundle{},
+	1053: FishingRod{},
+	1054: Clock{},
+	1055: Spyglass{},
+	1056: GlowstoneDust{},
+	1057: Cod{},
+	1058: Salmon{},
+	1059: TropicalFish{},
+	1060: Pufferfish{},
+	1061: CookedCod{},
+	1062: CookedSalmon{},
+	1063: InkSac{},
+	1064: GlowInkSac{},
+	1065: CocoaBeans{},
+	1066: WhiteDye{},
+	1067: OrangeDye{},
+	1068: MagentaDye{},
+	1069: LightBlueDye{},
+	1070: YellowDye{},
+	1071: LimeDye{},
+	1072: PinkDye{},
+	1073: GrayDye{},
+	1074: LightGrayDye{},
+	1075: CyanDye{},
+	1076: PurpleDye{},
+	1077: BlueDye{},
+	1078: BrownDye{},
+	1079: GreenDye{},
+	1080: RedDye{},
+	1081: BlackDye{},
+	1082: BoneMeal{},
+	1083: Bone{},
+	1084: Sugar{},
+	1085: Cake{},
+	1086: WhiteBed{},
+	1087: OrangeBed{},
+	1088: MagentaBed{},
+	1089: LightBlueBed{},
+	1090: YellowBed{},
+	1091: LimeBed{},
+	1092: PinkBed{},
+	1093: GrayBed{},
+	1094: LightGrayBed{},
+	1095: CyanBed{},
+	1096: PurpleBed{},
+	1097: BlueBed{},
+	1098: BrownBed{},
+	1099: GreenBed{},
+	1100: RedBed{},
+	1101: BlackBed{},
+	1102: Cookie{},
+	1103: Crafter{},
+	1104: FilledMap{},
+	1105: Shears{},
+	1106: MelonSlice{},
+	1107: DriedKelp{},
+	1108: PumpkinSeeds{},
+	1109: MelonSeeds{},
+	1110: Beef{},
+	1111: CookedBeef{},
+	1112: Chicken{},
+	1113: CookedChicken{},
+	1114: RottenFlesh{},
+	1115: EnderPearl{},
+	1116: BlazeRod{},
+	1117: GhastTear{},
+	1118: GoldNugget{},
+	1119: NetherWart{},
+	1120: GlassBottle{},
+	1121: Potion{},
+	1122: SpiderEye{},
+	1123: FermentedSpiderEye{},
+	1124: BlazePowder{},
+	1125: MagmaCream{},
+	1126: BrewingStand{},
+	1127: Cauldron{},
+	1128: EnderEye{},
+	1129: GlisteringMelonSlice{},
+	1130: ArmadilloSpawnEgg{},
+	1131: AllaySpawnEgg{},
+	1132: AxolotlSpawnEgg{},
+	1133: BatSpawnEgg{},
+	1134: BeeSpawnEgg{},
+	1135: BlazeSpawnEgg{},
+	1136: BoggedSpawnEgg{},
+	1137: BreezeSpawnEgg{},
+	1138: CatSpawnEgg{},
+	1139: CamelSpawnEgg{},
+	1140: CaveSpiderSpawnEgg{},
+	1141: ChickenSpawnEgg{},
+	1142: CodSpawnEgg{},
+	1143: CopperGolemSpawnEgg{},
+	1144: CowSpawnEgg{},
+	1145: CreeperSpawnEgg{},
+	1146: DolphinSpawnEgg{},
+	1147: DonkeySpawnEgg{},
+	1148: DrownedSpawnEgg{},
+	1149: ElderGuardianSpawnEgg{},
+	1150: EnderDragonSpawnEgg{},
+	1151: EndermanSpawnEgg{},
+	1152: EndermiteSpawnEgg{},
+	1153: EvokerSpawnEgg{},
+	1154: FoxSpawnEgg{},
+	1155: FrogSpawnEgg{},
+	1156: GhastSpawnEgg{},
+	1157: HappyGhastSpawnEgg{},
+	1158: GlowSquidSpawnEgg{},
+	1159: GoatSpawnEgg{},
+	1160: GuardianSpawnEgg{},
+	1161: HoglinSpawnEgg{},
+	1162: HorseSpawnEgg{},
+	1163: HuskSpawnEgg{},
+	1164: IronGolemSpawnEgg{},
+	1165: LlamaSpawnEgg{},
+	1166: MagmaCubeSpawnEgg{},
+	1167: MooshroomSpawnEgg{},
+	1168: MuleSpawnEgg{},
+	1169: OcelotSpawnEgg{},
+	1170: PandaSpawnEgg{},
+	1171: ParrotSpawnEgg{},
+	1172: PhantomSpawnEgg{},
+	1173: PigSpawnEgg{},
+	1174: PiglinSpawnEgg{},
+	1175: PiglinBruteSpawnEgg{},
+	1176: PillagerSpawnEgg{},
+	1177: PolarBearSpawnEgg{},
+	1178: PufferfishSpawnEgg{},
+	1179: RabbitSpawnEgg{},
+	1180: RavagerSpawnEgg{},
+	1181: SalmonSpawnEgg{},
+	1182: SheepSpawnEgg{},
+	1183: ShulkerSpawnEgg{},
+	1184: SilverfishSpawnEgg{},
+	1185: SkeletonSpawnEgg{},
+	1186: SkeletonHorseSpawnEgg{},
+	1187: SlimeSpawnEgg{},
+	1188: SnifferSpawnEgg{},
+	1189: SnowGolemSpawnEgg{},
+	1190: SpiderSpawnEgg{},
+	1191: SquidSpawnEgg{},
+	1192: StraySpawnEgg{},
+	1193: StriderSpawnEgg{},
+	1194: TadpoleSpawnEgg{},
+	1195: TraderLlamaSpawnEgg{},
+	1196: TropicalFishSpawnEgg{},
+	1197: TurtleSpawnEgg{},
+	1198: VexSpawnEgg{},
+	1199: VillagerSpawnEgg{},
+	1200: VindicatorSpawnEgg{},
+	1201: WanderingTraderSpawnEgg{},
+	1202: WardenSpawnEgg{},
+	1203: WitchSpawnEgg{},
+	1204: WitherSpawnEgg{},
+	1205: WitherSkeletonSpawnEgg{},
+	1206: WolfSpawnEgg{},
+	1207: ZoglinSpawnEgg{},
+	1208: CreakingSpawnEgg{},
+	1209: ZombieSpawnEgg{},
+	1210: ZombieHorseSpawnEgg{},
+	1211: ZombieVillagerSpawnEgg{},
+	1212: ZombifiedPiglinSpawnEgg{},
+	1213: ExperienceBottle{},
+	1214: FireCharge{},
+	1215: WindCharge{},
+	1216: WritableBook{},
+	1217: WrittenBook{},
+	1218: BreezeRod{},
+	1219: Mace{},
+	1220: ItemFrame{},
+	1221: GlowItemFrame{},
+	1222: FlowerPot{},
+	1223: Carrot{},
+	1224: Potato{},
+	1225: BakedPotato{},
+	1226: PoisonousPotato{},
+	1227: Map{},
+	1228: GoldenCarrot{},
+	1229: SkeletonSkull{},
+	1230: WitherSkeletonSkull{},
+	1231: PlayerHead{},
+	1232: ZombieHead{},
+	1233: CreeperHead{},
+	1234: DragonHead{},
+	1235: PiglinHead{},
+	1236: NetherStar{},
+	1237: PumpkinPie{},
+	1238: FireworkRocket{},
+	1239: FireworkStar{},
+	1240: EnchantedBook{},
+	1241: NetherBrick{},
+	1242: ResinBrick{},
+	1243: PrismarineShard{},
+	1244: PrismarineCrystals{},
+	1245: Rabbit{},
+	1246: CookedRabbit{},
+	1247: RabbitStew{},
+	1248: RabbitFoot{},
+	1249: RabbitHide{},
+	1250: ArmorStand{},
+	1251: CopperHorseArmor{},
+	1252: IronHorseArmor{},
+	1253: GoldenHorseArmor{},
+	1254: DiamondHorseArmor{},
+	1255: LeatherHorseArmor{},
+	1256: Lead{},
+	1257: NameTag{},
+	1258: CommandBlockMinecart{},
+	1259: Mutton{},
+	1260: CookedMutton{},
+	1261: WhiteBanner{},
+	1262: OrangeBanner{},
+	1263: MagentaBanner{},
+	1264: LightBlueBanner{},
+	1265: YellowBanner{},
+	1266: LimeBanner{},
+	1267: PinkBanner{},
+	1268: GrayBanner{},
+	1269: LightGrayBanner{},
+	1270: CyanBanner{},
+	1271: PurpleBanner{},
+	1272: BlueBanner{},
+	1273: BrownBanner{},
+	1274: GreenBanner{},
+	1275: RedBanner{},
+	1276: BlackBanner{},
+	1277: EndCrystal{},
+	1278: ChorusFruit{},
+	1279: PoppedChorusFruit{},
+	1280: TorchflowerSeeds{},
+	1281: PitcherPod{},
+	1282: Beetroot{},
+	1283: BeetrootSeeds{},
+	1284: BeetrootSoup{},
+	1285: DragonBreath{},
+	1286: SplashPotion{},
+	1287: SpectralArrow{},
+	1288: TippedArrow{},
+	1289: LingeringPotion{},
+	1290: Shield{},
+	1291: TotemOfUndying{},
+	1292: ShulkerShell{},
+	1293: IronNugget{},
+	1294: CopperNugget{},
+	1295: KnowledgeBook{},
+	1296: DebugStick{},
+	1297: MusicDisc13{},
+	1298: MusicDiscCat{},
+	1299: MusicDiscBlocks{},
+	1300: MusicDiscChirp{},
+	1301: MusicDiscCreator{},
+	1302: MusicDiscCreatorMusicBox{},
+	1303: MusicDiscFar{},
+	1304: MusicDiscLavaChicken{},
+	1305: MusicDiscMall{},
+	1306: MusicDiscMellohi{},
+	1307: MusicDiscStal{},
+	1308: MusicDiscStrad{},
+	1309: MusicDiscWard{},
+	1310: MusicDisc11{},
+	1311: MusicDiscWait{},
+	1312: MusicDiscOtherside{},
+	1313: MusicDiscRelic{},
+	1314: MusicDisc5{},
+	1315: MusicDiscPigstep{},
+	1316: MusicDiscPrecipice{},
+	1317: MusicDiscTears{},
+	1318: DiscFragment5{},
+	1319: Trident{},
+	1320: NautilusShell{},
+	1321: HeartOfTheSea{},
+	1322: Crossbow{},
+	1323: SuspiciousStew{},
+	1324: Loom{},
+	1325: FlowerBannerPattern{},
+	1326: CreeperBannerPattern{},
+	1327: SkullBannerPattern{},
+	1328: MojangBannerPattern{},
+	1329: GlobeBannerPattern{},
+	1330: PiglinBannerPattern{},
+	1331: FlowBannerPattern{},
+	1332: GusterBannerPattern{},
+	1333: FieldMasonedBannerPattern{},
+	1334: BordureIndentedBannerPattern{},
+	1335: GoatHorn{},
+	1336: Composter{},
+	1337: Barrel{},
+	1338: Smoker{},
+	1339: BlastFurnace{},
+	1340: CartographyTable{},
+	1341: FletchingTable{},
+	1342: Grindstone{},
+	1343: SmithingTable{},
+	1344: Stonecutter{},
+	1345: Bell{},
+	1346: Lantern{},
+	1347: SoulLantern{},
+	1348: CopperLantern{},
+	1349: ExposedCopperLantern{},
+	1350: WeatheredCopperLantern{},
+	1351: OxidizedCopperLantern{},
+	1352: WaxedCopperLantern{},
+	1353: WaxedExposedCopperLantern{},
+	1354: WaxedWeatheredCopperLantern{},
+	1355: WaxedOxidizedCopperLantern{},
+	1356: SweetBerries{},
+	1357: GlowBerries{},
+	1358: Campfire{},
+	1359: SoulCampfire{},
+	1360: Shroomlight{},
+	1361: Honeycomb{},
+	1362: BeeNest{},
+	1363: Beehive{},
+	1364: HoneyBottle{},
+	1365: HoneycombBlock{},
+	1366: Lodestone{},
+	1367: CryingObsidian{},
+	1368: Blackstone{},
+	1369: BlackstoneSlab{},
+	1370: BlackstoneStairs{},
+	1371: GildedBlackstone{},
+	1372: PolishedBlackstone{},
+	1373: PolishedBlackstoneSlab{},
+	1374: PolishedBlackstoneStairs{},
+	1375: ChiseledPolishedBlackstone{},
+	1376: PolishedBlackstoneBricks{},
+	1377: PolishedBlackstoneBrickSlab{},
+	1378: PolishedBlackstoneBrickStairs{},
+	1379: CrackedPolishedBlackstoneBricks{},
+	1380: RespawnAnchor{},
+	1381: Candle{},
+	1382: WhiteCandle{},
+	1383: OrangeCandle{},
+	1384: MagentaCandle{},
+	1385: LightBlueCandle{},
+	1386: YellowCandle{},
+	1387: LimeCandle{},
+	1388: PinkCandle{},
+	1389: GrayCandle{},
+	1390: LightGrayCandle{},
+	1391: CyanCandle{},
+	1392: PurpleCandle{},
+	1393: BlueCandle{},
+	1394: BrownCandle{},
+	1395: GreenCandle{},
+	1396: RedCandle{},
+	1397: BlackCandle{},
+	1398: SmallAmethystBud{},
+	1399: MediumAmethystBud{},
+	1400: LargeAmethystBud{},
+	1401: AmethystCluster{},
+	1402: PointedDripstone{},
+	1403: OchreFroglight{},
+	1404: VerdantFroglight{},
+	1405: PearlescentFroglight{},
+	1406: Frogspawn{},
+	1407: EchoShard{},
+	1408: Brush{},
+	1409: NetheriteUpgradeSmithingTemplate{},
+	1410: SentryArmorTrimSmithingTemplate{},
+	1411: DuneArmorTrimSmithingTemplate{},
+	1412: CoastArmorTrimSmithingTemplate{},
+	1413: WildArmorTrimSmithingTemplate{},
+	1414: WardArmorTrimSmithingTemplate{},
+	1415: EyeArmorTrimSmithingTemplate{},
+	1416: VexArmorTrimSmithingTemplate{},
+	1417: TideArmorTrimSmithingTemplate{},
+	1418: SnoutArmorTrimSmithingTemplate{},
+	1419: RibArmorTrimSmithingTemplate{},
+	1420: SpireArmorTrimSmithingTemplate{},
+	1421: WayfinderArmorTrimSmithingTemplate{},
+	1422: ShaperArmorTrimSmithingTemplate{},
+	1423: SilenceArmorTrimSmithingTemplate{},
+	1424: RaiserArmorTrimSmithingTemplate{},
+	1425: HostArmorTrimSmithingTemplate{},
+	1426: FlowArmorTrimSmithingTemplate{},
+	1427: BoltArmorTrimSmithingTemplate{},
+	1428: AnglerPotterySherd{},
+	1429: ArcherPotterySherd{},
+	1430: ArmsUpPotterySherd{},
+	1431: BladePotterySherd{},
+	1432: BrewerPotterySherd{},
+	1433: BurnPotterySherd{},
+	1434: DangerPotterySherd{},
+	1435: ExplorerPotterySherd{},
+	1436: FlowPotterySherd{},
+	1437: FriendPotterySherd{},
+	1438: GusterPotterySherd{},
+	1439: HeartPotterySherd{},
+	1440: HeartbreakPotterySherd{},
+	1441: HowlPotterySherd{},
+	1442: MinerPotterySherd{},
+	1443: MournerPotterySherd{},
+	1444: PlentyPotterySherd{},
+	1445: PrizePotterySherd{},
+	1446: ScrapePotterySherd{},
+	1447: SheafPotterySherd{},
+	1448: ShelterPotterySherd{},
+	1449: SkullPotterySherd{},
+	1450: SnortPotterySherd{},
+	1451: CopperGrate{},
+	1452: ExposedCopperGrate{},
+	1453: WeatheredCopperGrate{},
+	1454: OxidizedCopperGrate{},
+	1455: WaxedCopperGrate{},
+	1456: WaxedExposedCopperGrate{},
+	1457: WaxedWeatheredCopperGrate{},
+	1458: WaxedOxidizedCopperGrate{},
+	1459: CopperBulb{},
+	1460: ExposedCopperBulb{},
+	1461: WeatheredCopperBulb{},
+	1462: OxidizedCopperBulb{},
+	1463: WaxedCopperBulb{},
+	1464: WaxedExposedCopperBulb{},
+	1465: WaxedWeatheredCopperBulb{},
+	1466: WaxedOxidizedCopperBulb{},
+	1467: CopperChest{},
+	1468: ExposedCopperChest{},
+	1469: WeatheredCopperChest{},
+	1470: OxidizedCopperChest{},
+	1471: WaxedCopperChest{},
+	1472: WaxedExposedCopperChest{},
+	1473: WaxedWeatheredCopperChest{},
+	1474: WaxedOxidizedCopperChest{},
+	1475: CopperGolemStatue{},
+	1476: ExposedCopperGolemStatue{},
+	1477: WeatheredCopperGolemStatue{},
+	1478: OxidizedCopperGolemStatue{},
+	1479: WaxedCopperGolemStatue{},
+	1480: WaxedExposedCopperGolemStatue{},
+	1481: WaxedWeatheredCopperGolemStatue{},
+	1482: WaxedOxidizedCopperGolemStatue{},
+	1483: TrialSpawner{},
+	1484: TrialKey{},
+	1485: OminousTrialKey{},
+	1486: Vault{},
+	1487: OminousBottle{},
 }

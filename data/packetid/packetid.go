@@ -59,6 +59,7 @@ const (
 	ClientboundConfigServerLinks
 	ClientboundConfigClearDialog
 	ClientboundConfigShowDialog
+	ClientboundConfigCodeOfConduct
 )
 
 // Configuration Serverbound
@@ -72,6 +73,7 @@ const (
 	ServerboundConfigResourcePack
 	ServerboundConfigSelectKnownPacks
 	ServerboundConfigCustomClickAction
+	ServerboundConfigAcceptCodeOfConduct
 )
 
 // Game Clientbound
@@ -102,6 +104,10 @@ const (
 	ClientboundCustomChatCompletions
 	ClientboundCustomPayload
 	ClientboundDamageEvent
+	ClientboundDebugBlockValue
+	ClientboundDebugChunkValue
+	ClientboundDebugEntityValue
+	ClientboundDebugEvent
 	ClientboundDebugSample
 	ClientboundDeleteChat
 	ClientboundDisconnect
@@ -111,6 +117,7 @@ const (
 	ClientboundExplode
 	ClientboundForgetLevelChunk
 	ClientboundGameEvent
+	ClientboundGameTestHighlightPos
 	ClientboundHorseScreenOpen
 	ClientboundHurtAnimation
 	ClientboundInitializeBorder
@@ -237,7 +244,7 @@ const (
 	ServerboundContainerSlotStateChanged
 	ServerboundCookieResponse
 	ServerboundCustomPayload
-	ServerboundDebugSampleSubscription
+	ServerboundDebugSubscriptionRequest
 	ServerboundEditBook
 	ServerboundEntityTagQuery
 	ServerboundInteract
