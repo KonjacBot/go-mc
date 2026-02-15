@@ -118,7 +118,7 @@ const (
 	ClientboundForgetLevelChunk
 	ClientboundGameEvent
 	ClientboundGameTestHighlightPos
-	ClientboundHorseScreenOpen
+	ClientboundMountScreenOpen
 	ClientboundHurtAnimation
 	ClientboundInitializeBorder
 	ClientboundKeepAlive

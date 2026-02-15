@@ -110,15 +110,15 @@ func (f FurnaceEntity) IsValidBlock(block Block) bool {
 
 func (c ChestEntity) IsValidBlock(block Block) bool {
 	switch block.ID() {
-	case "minecraft:weathered_copper_chest",
-		"minecraft:chest",
-		"minecraft:waxed_exposed_copper_chest",
-		"minecraft:copper_chest",
-		"minecraft:exposed_copper_chest",
-		"minecraft:waxed_weathered_copper_chest",
+	case "minecraft:waxed_exposed_copper_chest",
+		"minecraft:weathered_copper_chest",
 		"minecraft:waxed_oxidized_copper_chest",
+		"minecraft:chest",
+		"minecraft:waxed_weathered_copper_chest",
 		"minecraft:oxidized_copper_chest",
-		"minecraft:waxed_copper_chest":
+		"minecraft:copper_chest",
+		"minecraft:waxed_copper_chest",
+		"minecraft:exposed_copper_chest":
 		return true
 	default:
 		return false
@@ -147,30 +147,30 @@ func (d DropperEntity) IsValidBlock(block Block) bool {
 
 func (s SignEntity) IsValidBlock(block Block) bool {
 	switch block.ID() {
-	case "minecraft:warped_sign",
-		"minecraft:mangrove_wall_sign",
-		"minecraft:warped_wall_sign",
-		"minecraft:birch_sign",
-		"minecraft:jungle_wall_sign",
-		"minecraft:acacia_sign",
-		"minecraft:birch_wall_sign",
-		"minecraft:pale_oak_wall_sign",
-		"minecraft:pale_oak_sign",
-		"minecraft:bamboo_sign",
-		"minecraft:oak_sign",
-		"minecraft:cherry_sign",
-		"minecraft:oak_wall_sign",
+	case "minecraft:dark_oak_wall_sign",
 		"minecraft:mangrove_sign",
 		"minecraft:crimson_wall_sign",
-		"minecraft:bamboo_wall_sign",
-		"minecraft:dark_oak_wall_sign",
-		"minecraft:jungle_sign",
 		"minecraft:crimson_sign",
-		"minecraft:dark_oak_sign",
-		"minecraft:spruce_wall_sign",
 		"minecraft:spruce_sign",
 		"minecraft:cherry_wall_sign",
-		"minecraft:acacia_wall_sign":
+		"minecraft:oak_sign",
+		"minecraft:bamboo_wall_sign",
+		"minecraft:cherry_sign",
+		"minecraft:jungle_wall_sign",
+		"minecraft:birch_wall_sign",
+		"minecraft:spruce_wall_sign",
+		"minecraft:dark_oak_sign",
+		"minecraft:birch_sign",
+		"minecraft:bamboo_sign",
+		"minecraft:acacia_sign",
+		"minecraft:oak_wall_sign",
+		"minecraft:warped_wall_sign",
+		"minecraft:pale_oak_sign",
+		"minecraft:jungle_sign",
+		"minecraft:pale_oak_wall_sign",
+		"minecraft:acacia_wall_sign",
+		"minecraft:warped_sign",
+		"minecraft:mangrove_wall_sign":
 		return true
 	default:
 		return false
@@ -179,30 +179,30 @@ func (s SignEntity) IsValidBlock(block Block) bool {
 
 func (h HangingSignEntity) IsValidBlock(block Block) bool {
 	switch block.ID() {
-	case "minecraft:warped_hanging_sign",
-		"minecraft:mangrove_wall_hanging_sign",
-		"minecraft:dark_oak_hanging_sign",
-		"minecraft:cherry_wall_hanging_sign",
-		"minecraft:dark_oak_wall_hanging_sign",
-		"minecraft:acacia_hanging_sign",
-		"minecraft:jungle_hanging_sign",
-		"minecraft:oak_hanging_sign",
-		"minecraft:mangrove_hanging_sign",
-		"minecraft:spruce_hanging_sign",
-		"minecraft:birch_wall_hanging_sign",
-		"minecraft:oak_wall_hanging_sign",
-		"minecraft:birch_hanging_sign",
-		"minecraft:crimson_hanging_sign",
-		"minecraft:pale_oak_wall_hanging_sign",
-		"minecraft:warped_wall_hanging_sign",
-		"minecraft:acacia_wall_hanging_sign",
-		"minecraft:crimson_wall_hanging_sign",
-		"minecraft:bamboo_hanging_sign",
+	case "minecraft:bamboo_hanging_sign",
+		"minecraft:warped_hanging_sign",
 		"minecraft:spruce_wall_hanging_sign",
-		"minecraft:pale_oak_hanging_sign",
+		"minecraft:dark_oak_hanging_sign",
 		"minecraft:bamboo_wall_hanging_sign",
+		"minecraft:crimson_wall_hanging_sign",
+		"minecraft:jungle_hanging_sign",
+		"minecraft:acacia_wall_hanging_sign",
+		"minecraft:oak_wall_hanging_sign",
+		"minecraft:cherry_hanging_sign",
+		"minecraft:birch_wall_hanging_sign",
+		"minecraft:pale_oak_wall_hanging_sign",
+		"minecraft:cherry_wall_hanging_sign",
+		"minecraft:pale_oak_hanging_sign",
+		"minecraft:acacia_hanging_sign",
+		"minecraft:spruce_hanging_sign",
+		"minecraft:oak_hanging_sign",
+		"minecraft:birch_hanging_sign",
+		"minecraft:mangrove_wall_hanging_sign",
 		"minecraft:jungle_wall_hanging_sign",
-		"minecraft:cherry_hanging_sign":
+		"minecraft:mangrove_hanging_sign",
+		"minecraft:crimson_hanging_sign",
+		"minecraft:warped_wall_hanging_sign",
+		"minecraft:dark_oak_wall_hanging_sign":
 		return true
 	default:
 		return false
@@ -239,20 +239,20 @@ func (b BeaconEntity) IsValidBlock(block Block) bool {
 
 func (s SkullEntity) IsValidBlock(block Block) bool {
 	switch block.ID() {
-	case "minecraft:player_head",
-		"minecraft:dragon_wall_head",
-		"minecraft:skeleton_wall_skull",
-		"minecraft:zombie_wall_head",
-		"minecraft:piglin_wall_head",
-		"minecraft:wither_skeleton_skull",
-		"minecraft:skeleton_skull",
-		"minecraft:piglin_head",
-		"minecraft:dragon_head",
-		"minecraft:zombie_head",
-		"minecraft:creeper_wall_head",
+	case "minecraft:piglin_wall_head",
 		"minecraft:player_wall_head",
+		"minecraft:zombie_wall_head",
+		"minecraft:wither_skeleton_wall_skull",
+		"minecraft:dragon_head",
 		"minecraft:creeper_head",
-		"minecraft:wither_skeleton_wall_skull":
+		"minecraft:player_head",
+		"minecraft:skeleton_wall_skull",
+		"minecraft:wither_skeleton_skull",
+		"minecraft:dragon_wall_head",
+		"minecraft:zombie_head",
+		"minecraft:piglin_head",
+		"minecraft:skeleton_skull",
+		"minecraft:creeper_wall_head":
 		return true
 	default:
 		return false
@@ -273,38 +273,38 @@ func (c ComparatorEntity) IsValidBlock(block Block) bool {
 
 func (b BannerEntity) IsValidBlock(block Block) bool {
 	switch block.ID() {
-	case "minecraft:brown_banner",
-		"minecraft:light_blue_wall_banner",
-		"minecraft:yellow_wall_banner",
-		"minecraft:cyan_wall_banner",
-		"minecraft:magenta_wall_banner",
-		"minecraft:red_banner",
-		"minecraft:red_wall_banner",
-		"minecraft:purple_wall_banner",
-		"minecraft:orange_banner",
-		"minecraft:yellow_banner",
-		"minecraft:brown_wall_banner",
-		"minecraft:lime_banner",
-		"minecraft:black_banner",
-		"minecraft:pink_banner",
-		"minecraft:orange_wall_banner",
-		"minecraft:magenta_banner",
-		"minecraft:light_blue_banner",
-		"minecraft:blue_banner",
-		"minecraft:black_wall_banner",
-		"minecraft:lime_wall_banner",
-		"minecraft:green_wall_banner",
-		"minecraft:pink_wall_banner",
-		"minecraft:blue_wall_banner",
+	case "minecraft:magenta_wall_banner",
+		"minecraft:brown_banner",
 		"minecraft:green_banner",
-		"minecraft:white_wall_banner",
-		"minecraft:gray_banner",
-		"minecraft:light_gray_wall_banner",
+		"minecraft:cyan_wall_banner",
+		"minecraft:lime_wall_banner",
+		"minecraft:black_wall_banner",
+		"minecraft:orange_wall_banner",
+		"minecraft:orange_banner",
 		"minecraft:gray_wall_banner",
+		"minecraft:brown_wall_banner",
+		"minecraft:green_wall_banner",
+		"minecraft:magenta_banner",
+		"minecraft:light_gray_wall_banner",
+		"minecraft:white_banner",
+		"minecraft:black_banner",
+		"minecraft:cyan_banner",
+		"minecraft:lime_banner",
+		"minecraft:light_blue_banner",
+		"minecraft:yellow_wall_banner",
 		"minecraft:purple_banner",
 		"minecraft:light_gray_banner",
-		"minecraft:white_banner",
-		"minecraft:cyan_banner":
+		"minecraft:light_blue_wall_banner",
+		"minecraft:yellow_banner",
+		"minecraft:purple_wall_banner",
+		"minecraft:pink_banner",
+		"minecraft:pink_wall_banner",
+		"minecraft:white_wall_banner",
+		"minecraft:gray_banner",
+		"minecraft:red_wall_banner",
+		"minecraft:blue_wall_banner",
+		"minecraft:red_banner",
+		"minecraft:blue_banner":
 		return true
 	default:
 		return false
@@ -321,9 +321,9 @@ func (e EndGatewayEntity) IsValidBlock(block Block) bool {
 
 func (c CommandBlockEntity) IsValidBlock(block Block) bool {
 	switch block.ID() {
-	case "minecraft:chain_command_block",
-		"minecraft:repeating_command_block",
-		"minecraft:command_block":
+	case "minecraft:repeating_command_block",
+		"minecraft:command_block",
+		"minecraft:chain_command_block":
 		return true
 	default:
 		return false
@@ -332,23 +332,23 @@ func (c CommandBlockEntity) IsValidBlock(block Block) bool {
 
 func (s ShulkerBoxEntity) IsValidBlock(block Block) bool {
 	switch block.ID() {
-	case "minecraft:light_gray_shulker_box",
+	case "minecraft:red_shulker_box",
 		"minecraft:blue_shulker_box",
+		"minecraft:light_gray_shulker_box",
 		"minecraft:light_blue_shulker_box",
-		"minecraft:cyan_shulker_box",
-		"minecraft:magenta_shulker_box",
-		"minecraft:orange_shulker_box",
-		"minecraft:gray_shulker_box",
-		"minecraft:brown_shulker_box",
-		"minecraft:pink_shulker_box",
-		"minecraft:red_shulker_box",
-		"minecraft:green_shulker_box",
-		"minecraft:black_shulker_box",
 		"minecraft:shulker_box",
-		"minecraft:purple_shulker_box",
+		"minecraft:gray_shulker_box",
 		"minecraft:white_shulker_box",
+		"minecraft:yellow_shulker_box",
+		"minecraft:brown_shulker_box",
 		"minecraft:lime_shulker_box",
-		"minecraft:yellow_shulker_box":
+		"minecraft:black_shulker_box",
+		"minecraft:cyan_shulker_box",
+		"minecraft:purple_shulker_box",
+		"minecraft:orange_shulker_box",
+		"minecraft:pink_shulker_box",
+		"minecraft:green_shulker_box",
+		"minecraft:magenta_shulker_box":
 		return true
 	default:
 		return false
@@ -357,22 +357,22 @@ func (s ShulkerBoxEntity) IsValidBlock(block Block) bool {
 
 func (b BedEntity) IsValidBlock(block Block) bool {
 	switch block.ID() {
-	case "minecraft:orange_bed",
-		"minecraft:blue_bed",
-		"minecraft:gray_bed",
-		"minecraft:magenta_bed",
-		"minecraft:brown_bed",
-		"minecraft:yellow_bed",
+	case "minecraft:magenta_bed",
 		"minecraft:pink_bed",
-		"minecraft:light_gray_bed",
-		"minecraft:light_blue_bed",
-		"minecraft:cyan_bed",
-		"minecraft:white_bed",
-		"minecraft:green_bed",
-		"minecraft:red_bed",
+		"minecraft:black_bed",
 		"minecraft:purple_bed",
-		"minecraft:lime_bed",
-		"minecraft:black_bed":
+		"minecraft:white_bed",
+		"minecraft:cyan_bed",
+		"minecraft:green_bed",
+		"minecraft:brown_bed",
+		"minecraft:orange_bed",
+		"minecraft:light_gray_bed",
+		"minecraft:red_bed",
+		"minecraft:gray_bed",
+		"minecraft:blue_bed",
+		"minecraft:yellow_bed",
+		"minecraft:light_blue_bed",
+		"minecraft:lime_bed":
 		return true
 	default:
 		return false
@@ -409,8 +409,8 @@ func (j JigsawEntity) IsValidBlock(block Block) bool {
 
 func (c CampfireEntity) IsValidBlock(block Block) bool {
 	switch block.ID() {
-	case "minecraft:soul_campfire",
-		"minecraft:campfire":
+	case "minecraft:campfire",
+		"minecraft:soul_campfire":
 		return true
 	default:
 		return false
@@ -449,18 +449,18 @@ func (c ChiseledBookshelfEntity) IsValidBlock(block Block) bool {
 
 func (s ShelfEntity) IsValidBlock(block Block) bool {
 	switch block.ID() {
-	case "minecraft:spruce_shelf",
-		"minecraft:bamboo_shelf",
-		"minecraft:warped_shelf",
-		"minecraft:acacia_shelf",
-		"minecraft:jungle_shelf",
-		"minecraft:birch_shelf",
-		"minecraft:crimson_shelf",
-		"minecraft:cherry_shelf",
-		"minecraft:oak_shelf",
-		"minecraft:mangrove_shelf",
+	case "minecraft:bamboo_shelf",
+		"minecraft:spruce_shelf",
+		"minecraft:pale_oak_shelf",
 		"minecraft:dark_oak_shelf",
-		"minecraft:pale_oak_shelf":
+		"minecraft:warped_shelf",
+		"minecraft:birch_shelf",
+		"minecraft:acacia_shelf",
+		"minecraft:crimson_shelf",
+		"minecraft:jungle_shelf",
+		"minecraft:mangrove_shelf",
+		"minecraft:cherry_shelf",
+		"minecraft:oak_shelf":
 		return true
 	default:
 		return false
@@ -469,8 +469,8 @@ func (s ShelfEntity) IsValidBlock(block Block) bool {
 
 func (b BrushableBlockEntity) IsValidBlock(block Block) bool {
 	switch block.ID() {
-	case "minecraft:suspicious_sand",
-		"minecraft:suspicious_gravel":
+	case "minecraft:suspicious_gravel",
+		"minecraft:suspicious_sand":
 		return true
 	default:
 		return false
@@ -503,14 +503,14 @@ func (t TestInstanceBlockEntity) IsValidBlock(block Block) bool {
 
 func (c CopperGolemStatueEntity) IsValidBlock(block Block) bool {
 	switch block.ID() {
-	case "minecraft:copper_golem_statue",
-		"minecraft:weathered_copper_golem_statue",
+	case "minecraft:waxed_copper_golem_statue",
 		"minecraft:waxed_exposed_copper_golem_statue",
 		"minecraft:exposed_copper_golem_statue",
-		"minecraft:oxidized_copper_golem_statue",
 		"minecraft:waxed_oxidized_copper_golem_statue",
-		"minecraft:waxed_copper_golem_statue",
-		"minecraft:waxed_weathered_copper_golem_statue":
+		"minecraft:copper_golem_statue",
+		"minecraft:waxed_weathered_copper_golem_statue",
+		"minecraft:oxidized_copper_golem_statue",
+		"minecraft:weathered_copper_golem_statue":
 		return true
 	default:
 		return false

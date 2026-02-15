@@ -23,6 +23,7 @@ type (
 	Breeze               struct{}
 	BreezeWindCharge     struct{}
 	Camel                struct{}
+	CamelHusk            struct{}
 	Cat                  struct{}
 	CaveSpider           struct{}
 	CherryBoat           struct{}
@@ -90,6 +91,7 @@ type (
 	Minecart             struct{}
 	Mooshroom            struct{}
 	Mule                 struct{}
+	Nautilus             struct{}
 	OakBoat              struct{}
 	OakChestBoat         struct{}
 	Ocelot               struct{}
@@ -98,6 +100,7 @@ type (
 	PaleOakBoat          struct{}
 	PaleOakChestBoat     struct{}
 	Panda                struct{}
+	Parched              struct{}
 	Parrot               struct{}
 	Phantom              struct{}
 	Pig                  struct{}
@@ -152,6 +155,7 @@ type (
 	Zoglin               struct{}
 	Zombie               struct{}
 	ZombieHorse          struct{}
+	ZombieNautilus       struct{}
 	ZombieVillager       struct{}
 	ZombifiedPiglin      struct{}
 	Player               struct{}
@@ -218,6 +222,9 @@ func (BreezeWindCharge) Height() float32     { return 0.312500 }
 func (Camel) ID() string                     { return "minecraft:camel" }
 func (Camel) Width() float32                 { return 1.700000 }
 func (Camel) Height() float32                { return 2.375000 }
+func (CamelHusk) ID() string                 { return "minecraft:camel_husk" }
+func (CamelHusk) Width() float32             { return 1.700000 }
+func (CamelHusk) Height() float32            { return 2.375000 }
 func (Cat) ID() string                       { return "minecraft:cat" }
 func (Cat) Width() float32                   { return 0.600000 }
 func (Cat) Height() float32                  { return 0.700000 }
@@ -419,6 +426,9 @@ func (Mooshroom) Height() float32            { return 1.400000 }
 func (Mule) ID() string                      { return "minecraft:mule" }
 func (Mule) Width() float32                  { return 1.396484 }
 func (Mule) Height() float32                 { return 1.600000 }
+func (Nautilus) ID() string                  { return "minecraft:nautilus" }
+func (Nautilus) Width() float32              { return 0.875000 }
+func (Nautilus) Height() float32             { return 0.950000 }
 func (OakBoat) ID() string                   { return "minecraft:oak_boat" }
 func (OakBoat) Width() float32               { return 1.375000 }
 func (OakBoat) Height() float32              { return 0.562500 }
@@ -443,6 +453,9 @@ func (PaleOakChestBoat) Height() float32     { return 0.562500 }
 func (Panda) ID() string                     { return "minecraft:panda" }
 func (Panda) Width() float32                 { return 1.300000 }
 func (Panda) Height() float32                { return 1.250000 }
+func (Parched) ID() string                   { return "minecraft:parched" }
+func (Parched) Width() float32               { return 0.600000 }
+func (Parched) Height() float32              { return 1.990000 }
 func (Parrot) ID() string                    { return "minecraft:parrot" }
 func (Parrot) Width() float32                { return 0.500000 }
 func (Parrot) Height() float32               { return 0.900000 }
@@ -605,6 +618,9 @@ func (Zombie) Height() float32               { return 1.950000 }
 func (ZombieHorse) ID() string               { return "minecraft:zombie_horse" }
 func (ZombieHorse) Width() float32           { return 1.396484 }
 func (ZombieHorse) Height() float32          { return 1.600000 }
+func (ZombieNautilus) ID() string            { return "minecraft:zombie_nautilus" }
+func (ZombieNautilus) Width() float32        { return 0.875000 }
+func (ZombieNautilus) Height() float32       { return 0.950000 }
 func (ZombieVillager) ID() string            { return "minecraft:zombie_villager" }
 func (ZombieVillager) Width() float32        { return 0.600000 }
 func (ZombieVillager) Height() float32       { return 1.950000 }
@@ -639,6 +655,7 @@ var FromID = map[string]Entity{
 	"minecraft:breeze":                 Breeze{},
 	"minecraft:breeze_wind_charge":     BreezeWindCharge{},
 	"minecraft:camel":                  Camel{},
+	"minecraft:camel_husk":             CamelHusk{},
 	"minecraft:cat":                    Cat{},
 	"minecraft:cave_spider":            CaveSpider{},
 	"minecraft:cherry_boat":            CherryBoat{},
@@ -706,6 +723,7 @@ var FromID = map[string]Entity{
 	"minecraft:minecart":               Minecart{},
 	"minecraft:mooshroom":              Mooshroom{},
 	"minecraft:mule":                   Mule{},
+	"minecraft:nautilus":               Nautilus{},
 	"minecraft:oak_boat":               OakBoat{},
 	"minecraft:oak_chest_boat":         OakChestBoat{},
 	"minecraft:ocelot":                 Ocelot{},
@@ -714,6 +732,7 @@ var FromID = map[string]Entity{
 	"minecraft:pale_oak_boat":          PaleOakBoat{},
 	"minecraft:pale_oak_chest_boat":    PaleOakChestBoat{},
 	"minecraft:panda":                  Panda{},
+	"minecraft:parched":                Parched{},
 	"minecraft:parrot":                 Parrot{},
 	"minecraft:phantom":                Phantom{},
 	"minecraft:pig":                    Pig{},
@@ -768,6 +787,7 @@ var FromID = map[string]Entity{
 	"minecraft:zoglin":                 Zoglin{},
 	"minecraft:zombie":                 Zombie{},
 	"minecraft:zombie_horse":           ZombieHorse{},
+	"minecraft:zombie_nautilus":        ZombieNautilus{},
 	"minecraft:zombie_villager":        ZombieVillager{},
 	"minecraft:zombified_piglin":       ZombifiedPiglin{},
 	"minecraft:player":                 Player{},
@@ -795,137 +815,141 @@ var ToID = map[ID]Entity{
 	17:  Breeze{},
 	18:  BreezeWindCharge{},
 	19:  Camel{},
-	20:  Cat{},
-	21:  CaveSpider{},
-	22:  CherryBoat{},
-	23:  CherryChestBoat{},
-	24:  ChestMinecart{},
-	25:  Chicken{},
-	26:  Cod{},
-	27:  CopperGolem{},
-	28:  CommandBlockMinecart{},
-	29:  Cow{},
-	30:  Creaking{},
-	31:  Creeper{},
-	32:  DarkOakBoat{},
-	33:  DarkOakChestBoat{},
-	34:  Dolphin{},
-	35:  Donkey{},
-	36:  DragonFireball{},
-	37:  Drowned{},
-	38:  Egg{},
-	39:  ElderGuardian{},
-	40:  Enderman{},
-	41:  Endermite{},
-	42:  EnderDragon{},
-	43:  EnderPearl{},
-	44:  EndCrystal{},
-	45:  Evoker{},
-	46:  EvokerFangs{},
-	47:  ExperienceBottle{},
-	48:  ExperienceOrb{},
-	49:  EyeOfEnder{},
-	50:  FallingBlock{},
-	51:  Fireball{},
-	52:  FireworkRocket{},
-	53:  Fox{},
-	54:  Frog{},
-	55:  FurnaceMinecart{},
-	56:  Ghast{},
-	57:  HappyGhast{},
-	58:  Giant{},
-	59:  GlowItemFrame{},
-	60:  GlowSquid{},
-	61:  Goat{},
-	62:  Guardian{},
-	63:  Hoglin{},
-	64:  HopperMinecart{},
-	65:  Horse{},
-	66:  Husk{},
-	67:  Illusioner{},
-	68:  Interaction{},
-	69:  IronGolem{},
-	70:  Item{},
-	71:  ItemDisplay{},
-	72:  ItemFrame{},
-	73:  JungleBoat{},
-	74:  JungleChestBoat{},
-	75:  LeashKnot{},
-	76:  LightningBolt{},
-	77:  Llama{},
-	78:  LlamaSpit{},
-	79:  MagmaCube{},
-	80:  MangroveBoat{},
-	81:  MangroveChestBoat{},
-	82:  Mannequin{},
-	83:  Marker{},
-	84:  Minecart{},
-	85:  Mooshroom{},
-	86:  Mule{},
-	87:  OakBoat{},
-	88:  OakChestBoat{},
-	89:  Ocelot{},
-	90:  OminousItemSpawner{},
-	91:  Painting{},
-	92:  PaleOakBoat{},
-	93:  PaleOakChestBoat{},
-	94:  Panda{},
-	95:  Parrot{},
-	96:  Phantom{},
-	97:  Pig{},
-	98:  Piglin{},
-	99:  PiglinBrute{},
-	100: Pillager{},
-	101: PolarBear{},
-	102: SplashPotion{},
-	103: LingeringPotion{},
-	104: Pufferfish{},
-	105: Rabbit{},
-	106: Ravager{},
-	107: Salmon{},
-	108: Sheep{},
-	109: Shulker{},
-	110: ShulkerBullet{},
-	111: Silverfish{},
-	112: Skeleton{},
-	113: SkeletonHorse{},
-	114: Slime{},
-	115: SmallFireball{},
-	116: Sniffer{},
-	117: Snowball{},
-	118: SnowGolem{},
-	119: SpawnerMinecart{},
-	120: SpectralArrow{},
-	121: Spider{},
-	122: SpruceBoat{},
-	123: SpruceChestBoat{},
-	124: Squid{},
-	125: Stray{},
-	126: Strider{},
-	127: Tadpole{},
-	128: TextDisplay{},
-	129: Tnt{},
-	130: TntMinecart{},
-	131: TraderLlama{},
-	132: Trident{},
-	133: TropicalFish{},
-	134: Turtle{},
-	135: Vex{},
-	136: Villager{},
-	137: Vindicator{},
-	138: WanderingTrader{},
-	139: Warden{},
-	140: WindCharge{},
-	141: Witch{},
-	142: Wither{},
-	143: WitherSkeleton{},
-	144: WitherSkull{},
-	145: Wolf{},
-	146: Zoglin{},
-	147: Zombie{},
-	148: ZombieHorse{},
-	149: ZombieVillager{},
-	150: ZombifiedPiglin{},
-	151: Player{},
-	152: FishingBobber{},
+	20:  CamelHusk{},
+	21:  Cat{},
+	22:  CaveSpider{},
+	23:  CherryBoat{},
+	24:  CherryChestBoat{},
+	25:  ChestMinecart{},
+	26:  Chicken{},
+	27:  Cod{},
+	28:  CopperGolem{},
+	29:  CommandBlockMinecart{},
+	30:  Cow{},
+	31:  Creaking{},
+	32:  Creeper{},
+	33:  DarkOakBoat{},
+	34:  DarkOakChestBoat{},
+	35:  Dolphin{},
+	36:  Donkey{},
+	37:  DragonFireball{},
+	38:  Drowned{},
+	39:  Egg{},
+	40:  ElderGuardian{},
+	41:  Enderman{},
+	42:  Endermite{},
+	43:  EnderDragon{},
+	44:  EnderPearl{},
+	45:  EndCrystal{},
+	46:  Evoker{},
+	47:  EvokerFangs{},
+	48:  ExperienceBottle{},
+	49:  ExperienceOrb{},
+	50:  EyeOfEnder{},
+	51:  FallingBlock{},
+	52:  Fireball{},
+	53:  FireworkRocket{},
+	54:  Fox{},
+	55:  Frog{},
+	56:  FurnaceMinecart{},
+	57:  Ghast{},
+	58:  HappyGhast{},
+	59:  Giant{},
+	60:  GlowItemFrame{},
+	61:  GlowSquid{},
+	62:  Goat{},
+	63:  Guardian{},
+	64:  Hoglin{},
+	65:  HopperMinecart{},
+	66:  Horse{},
+	67:  Husk{},
+	68:  Illusioner{},
+	69:  Interaction{},
+	70:  IronGolem{},
+	71:  Item{},
+	72:  ItemDisplay{},
+	73:  ItemFrame{},
+	74:  JungleBoat{},
+	75:  JungleChestBoat{},
+	76:  LeashKnot{},
+	77:  LightningBolt{},
+	78:  Llama{},
+	79:  LlamaSpit{},
+	80:  MagmaCube{},
+	81:  MangroveBoat{},
+	82:  MangroveChestBoat{},
+	83:  Mannequin{},
+	84:  Marker{},
+	85:  Minecart{},
+	86:  Mooshroom{},
+	87:  Mule{},
+	88:  Nautilus{},
+	89:  OakBoat{},
+	90:  OakChestBoat{},
+	91:  Ocelot{},
+	92:  OminousItemSpawner{},
+	93:  Painting{},
+	94:  PaleOakBoat{},
+	95:  PaleOakChestBoat{},
+	96:  Panda{},
+	97:  Parched{},
+	98:  Parrot{},
+	99:  Phantom{},
+	100: Pig{},
+	101: Piglin{},
+	102: PiglinBrute{},
+	103: Pillager{},
+	104: PolarBear{},
+	105: SplashPotion{},
+	106: LingeringPotion{},
+	107: Pufferfish{},
+	108: Rabbit{},
+	109: Ravager{},
+	110: Salmon{},
+	111: Sheep{},
+	112: Shulker{},
+	113: ShulkerBullet{},
+	114: Silverfish{},
+	115: Skeleton{},
+	116: SkeletonHorse{},
+	117: Slime{},
+	118: SmallFireball{},
+	119: Sniffer{},
+	120: Snowball{},
+	121: SnowGolem{},
+	122: SpawnerMinecart{},
+	123: SpectralArrow{},
+	124: Spider{},
+	125: SpruceBoat{},
+	126: SpruceChestBoat{},
+	127: Squid{},
+	128: Stray{},
+	129: Strider{},
+	130: Tadpole{},
+	131: TextDisplay{},
+	132: Tnt{},
+	133: TntMinecart{},
+	134: TraderLlama{},
+	135: Trident{},
+	136: TropicalFish{},
+	137: Turtle{},
+	138: Vex{},
+	139: Villager{},
+	140: Vindicator{},
+	141: WanderingTrader{},
+	142: Warden{},
+	143: WindCharge{},
+	144: Witch{},
+	145: Wither{},
+	146: WitherSkeleton{},
+	147: WitherSkull{},
+	148: Wolf{},
+	149: Zoglin{},
+	150: Zombie{},
+	151: ZombieHorse{},
+	152: ZombieNautilus{},
+	153: ZombieVillager{},
+	154: ZombifiedPiglin{},
+	155: Player{},
+	156: FishingBobber{},
 }
