@@ -285,6 +285,13 @@ func (h *HeightMap) ReadFrom(r io.Reader) (int64, error) {
 	return n, nil
 }
 
+func (h *HeightMap) WriteTo(w io.Writer) (int64, error) {
+	return pk.Tuple{
+		pk.VarInt(h.Type),
+		pk.Array(h.Data),
+	}.WriteTo(w)
+}
+
 func (c *Chunk) ReadFrom(r io.Reader) (int64, error) {
 	var (
 		heightmaps []HeightMap
@@ -337,6 +344,10 @@ func (h *HeightMaps) ReadFrom(r io.Reader) (int64, error) {
 		return n, err
 	}
 	return n, nil
+}
+
+func (h *HeightMaps) WriteTo(w io.Writer) (int64, error) {
+	return pk.Array(h).WriteTo(w)
 }
 
 type BlockEntity struct {
