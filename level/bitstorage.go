@@ -167,13 +167,7 @@ func (b *BitStorage) ReadFrom(r io.Reader) (n int64, err error) {
 }
 
 func (b *BitStorage) WriteTo(w io.Writer) (int64, error) {
-	if b == nil {
-		return pk.VarInt(0).WriteTo(w)
-	}
-	n, err := pk.VarInt(len(b.data)).WriteTo(w)
-	if err != nil {
-		return n, err
-	}
+	var n int64
 	for _, v := range b.data {
 		nn, err := pk.Long(v).WriteTo(w)
 		n += nn
