@@ -6,7 +6,7 @@ import (
 	"errors"
 	"time"
 
-	"git.konjactw.dev/falloutBot/go-mc/chat"
+	"github.com/KonjacBot/go-mc/chat"
 )
 
 // keepAliveInterval represents the interval when the server sends keep alive

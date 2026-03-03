@@ -10,8 +10,8 @@ import (
 	"strings"
 	"text/template"
 
-	"git.konjactw.dev/falloutBot/go-mc/internal/generateutils"
-	"git.konjactw.dev/falloutBot/go-mc/nbt"
+	"github.com/KonjacBot/go-mc/internal/generateutils"
+	"github.com/KonjacBot/go-mc/nbt"
 )
 
 //go:embed blockentities.go.tmpl

@@ -4,9 +4,9 @@ import (
 	"io"
 	"reflect"
 
-	"git.konjactw.dev/falloutBot/go-mc/chat"
-	"git.konjactw.dev/falloutBot/go-mc/nbt"
-	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
+	"github.com/KonjacBot/go-mc/chat"
+	"github.com/KonjacBot/go-mc/nbt"
+	pk "github.com/KonjacBot/go-mc/net/packet"
 )
 
 type Registries struct {

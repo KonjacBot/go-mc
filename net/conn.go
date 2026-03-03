@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"time"
 
-	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
+	pk "github.com/KonjacBot/go-mc/net/packet"
 )
 
 const DefaultPort = 25565

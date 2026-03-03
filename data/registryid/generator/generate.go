@@ -11,7 +11,7 @@ import (
 	"strings"
 	"text/template"
 
-	"git.konjactw.dev/falloutBot/go-mc/internal/generateutils"
+	"github.com/KonjacBot/go-mc/internal/generateutils"
 )
 
 type registry struct {

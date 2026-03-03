@@ -2,7 +2,7 @@
 
 package jbo_en
 
-import "git.konjactw.dev/falloutBot/go-mc/chat"
+import "github.com/KonjacBot/go-mc/chat"
 
 func init() { chat.SetLanguage(Map) }
 

@@ -4,9 +4,9 @@ import (
 	"io"
 	"strconv"
 
-	"git.konjactw.dev/falloutBot/go-mc/level/biome"
-	"git.konjactw.dev/falloutBot/go-mc/level/block"
-	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
+	"github.com/KonjacBot/go-mc/level/biome"
+	"github.com/KonjacBot/go-mc/level/block"
+	pk "github.com/KonjacBot/go-mc/net/packet"
 )
 
 type State interface {

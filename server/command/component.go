@@ -1,8 +1,8 @@
 package command
 
 import (
-	"git.konjactw.dev/falloutBot/go-mc/data/packetid"
-	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
+	"github.com/KonjacBot/go-mc/data/packetid"
+	pk "github.com/KonjacBot/go-mc/net/packet"
 )
 
 type Client interface {

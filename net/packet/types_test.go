@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"testing"
 
-	"git.konjactw.dev/falloutBot/go-mc/data/packetid"
-	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
+	"github.com/KonjacBot/go-mc/data/packetid"
+	pk "github.com/KonjacBot/go-mc/net/packet"
 )
 
 var VarInts = []pk.VarInt{0, 1, 2, 127, 128, 255, 25565, 2097151, 2147483647, -1, -2147483648}

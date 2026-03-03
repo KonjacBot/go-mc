@@ -4,7 +4,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"git.konjactw.dev/falloutBot/go-mc/save/region"
+	"github.com/KonjacBot/go-mc/save/region"
 )
 
 func TestColumn(t *testing.T) {

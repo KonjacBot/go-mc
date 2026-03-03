@@ -8,7 +8,7 @@ import (
 
 	"github.com/google/uuid"
 
-	"git.konjactw.dev/falloutBot/go-mc/nbt"
+	"github.com/KonjacBot/go-mc/nbt"
 )
 
 // A Field is both FieldEncoder and FieldDecoder

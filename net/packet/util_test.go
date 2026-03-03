@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
+	pk "github.com/KonjacBot/go-mc/net/packet"
 )
 
 func ExampleAry_WriteTo() {

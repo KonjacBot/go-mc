@@ -6,7 +6,7 @@ import (
 	"errors"
 	"io"
 
-	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
+	pk "github.com/KonjacBot/go-mc/net/packet"
 )
 
 // JsonMessage is Message, unless when it is going to be Json instead of NBT

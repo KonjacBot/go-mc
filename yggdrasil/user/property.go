@@ -5,7 +5,7 @@ import (
 
 	"github.com/google/uuid"
 
-	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
+	pk "github.com/KonjacBot/go-mc/net/packet"
 )
 
 type Property struct {

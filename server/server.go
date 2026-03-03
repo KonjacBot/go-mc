@@ -32,9 +32,9 @@ import (
 	"errors"
 	"log"
 
-	"git.konjactw.dev/falloutBot/go-mc/data/packetid"
-	"git.konjactw.dev/falloutBot/go-mc/net"
-	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
+	"github.com/KonjacBot/go-mc/data/packetid"
+	"github.com/KonjacBot/go-mc/net"
+	pk "github.com/KonjacBot/go-mc/net/packet"
 )
 
 const (

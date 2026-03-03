@@ -5,7 +5,7 @@ import (
 	_ "embed"
 	"testing"
 
-	"git.konjactw.dev/falloutBot/go-mc/nbt"
+	"github.com/KonjacBot/go-mc/nbt"
 )
 
 //go:embed bigTest_test.snbt

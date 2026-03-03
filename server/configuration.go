@@ -1,11 +1,11 @@
 package server
 
 import (
-	"git.konjactw.dev/falloutBot/go-mc/chat"
-	"git.konjactw.dev/falloutBot/go-mc/data/packetid"
-	"git.konjactw.dev/falloutBot/go-mc/net"
-	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
-	"git.konjactw.dev/falloutBot/go-mc/registry"
+	"github.com/KonjacBot/go-mc/chat"
+	"github.com/KonjacBot/go-mc/data/packetid"
+	"github.com/KonjacBot/go-mc/net"
+	pk "github.com/KonjacBot/go-mc/net/packet"
+	"github.com/KonjacBot/go-mc/registry"
 )
 
 type ConfigHandler interface {

@@ -7,7 +7,7 @@ import (
 	"errors"
 	"io"
 
-	"git.konjactw.dev/falloutBot/go-mc/nbt"
+	"github.com/KonjacBot/go-mc/nbt"
 )
 
 // Chunk is 16* chunk

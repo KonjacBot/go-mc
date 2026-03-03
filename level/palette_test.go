@@ -4,7 +4,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"git.konjactw.dev/falloutBot/go-mc/level/block"
+	"github.com/KonjacBot/go-mc/level/block"
 )
 
 func TestPaletteContainer_seq(t *testing.T) {

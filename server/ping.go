@@ -9,10 +9,10 @@ import (
 
 	"github.com/google/uuid"
 
-	"git.konjactw.dev/falloutBot/go-mc/chat"
-	"git.konjactw.dev/falloutBot/go-mc/data/packetid"
-	"git.konjactw.dev/falloutBot/go-mc/net"
-	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
+	"github.com/KonjacBot/go-mc/chat"
+	"github.com/KonjacBot/go-mc/data/packetid"
+	"github.com/KonjacBot/go-mc/net"
+	pk "github.com/KonjacBot/go-mc/net/packet"
 )
 
 // ListPingHandler collect server running status info

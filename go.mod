@@ -1,4 +1,4 @@
-module git.konjactw.dev/falloutBot/go-mc
+module github.com/KonjacBot/go-mc
 
 go 1.23.0
 

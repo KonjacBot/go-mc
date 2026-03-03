@@ -1,8 +1,8 @@
 package server
 
 import (
-	"git.konjactw.dev/falloutBot/go-mc/net"
-	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
+	"github.com/KonjacBot/go-mc/net"
+	pk "github.com/KonjacBot/go-mc/net/packet"
 )
 
 func (s *Server) handshake(conn *net.Conn) (protocol int32, intention int32, err error) {

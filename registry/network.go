@@ -5,7 +5,7 @@ import (
 	"io"
 	"strconv"
 
-	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
+	pk "github.com/KonjacBot/go-mc/net/packet"
 )
 
 func (reg *Registry[E]) ReadFrom(r io.Reader) (int64, error) {

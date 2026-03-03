@@ -3,7 +3,7 @@ package item
 import (
 	_ "embed"
 
-	"git.konjactw.dev/falloutBot/go-mc/level/block"
+	"github.com/KonjacBot/go-mc/level/block"
 )
 
 type Item interface {

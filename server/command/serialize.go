@@ -4,7 +4,7 @@ import (
 	"io"
 	"unsafe"
 
-	pk "git.konjactw.dev/falloutBot/go-mc/net/packet"
+	pk "github.com/KonjacBot/go-mc/net/packet"
 )
 
 const (

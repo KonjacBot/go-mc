@@ -3,7 +3,7 @@
 package item
 
 import (
-	"git.konjactw.dev/falloutBot/go-mc/level/block"
+	"github.com/KonjacBot/go-mc/level/block"
 )
 
 type (

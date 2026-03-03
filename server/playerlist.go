@@ -5,7 +5,7 @@ import (
 
 	"github.com/google/uuid"
 
-	"git.konjactw.dev/falloutBot/go-mc/chat"
+	"github.com/KonjacBot/go-mc/chat"
 )
 
 type PlayerListClient interface {
