@@ -52,9 +52,8 @@ type PlayerSample struct {
 }
 
 func (s *Server) acceptListPing(conn *net.Conn, clientProtocol int32) {
-	var p pk.Packet
 	for i := 0; i < 2; i++ { // Ping or List. Only allow check twice
-		err := conn.ReadPacket(&p)
+		p, err := conn.ReadPacket()
 		if err != nil {
 			return
 		}

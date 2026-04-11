@@ -218,9 +218,11 @@ func WrapConn(conn net.Conn) *Conn {
 // Close the connection
 func (c *Conn) Close() error { return c.Socket.Close() }
 
-// ReadPacket read a Packet from Conn.
-func (c *Conn) ReadPacket(p *pk.Packet) error {
-	return p.UnPack(c.Reader, c.threshold)
+// ReadPacket reads a Packet from Conn.
+func (c *Conn) ReadPacket() (pk.Packet, error) {
+	var p pk.Packet
+	err := p.UnPack(c.Reader, c.threshold)
+	return p, err
 }
 
 // WritePacket write a Packet to Conn.

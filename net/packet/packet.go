@@ -52,20 +52,12 @@ func (p *Packet) Pack(w io.Writer, threshold int) error {
 }
 
 func (p *Packet) packWithoutCompression(w io.Writer) error {
-	buffer := bufPool.Get().(*bytes.Buffer)
-	defer bufPool.Put(buffer)
-	buffer.Reset()
-
-	// Write Length to buffer
-	Length := VarInt(VarInt(p.ID).Len() + len(p.Data))
-	_, _ = Length.WriteTo(buffer)
-
-	// Write ID and Data to buffer
-	_, _ = VarInt(p.ID).WriteTo(buffer)
-	buffer.Write(p.Data)
-
-	// Write buffer to w
-	_, err := w.Write(buffer.Bytes())
+	frame := make([]byte, 0, sizeVarIntMust(p.ID)+len(p.Data)+MaxVarIntLen)
+	bodyLen := sizeVarIntMust(p.ID) + len(p.Data)
+	frame, _ = AppendVarInt(frame, int32(bodyLen))
+	frame, _ = AppendVarInt(frame, p.ID)
+	frame = append(frame, p.Data...)
+	_, err := w.Write(frame)
 	return err
 }
 
@@ -76,12 +68,14 @@ func (p *Packet) packWithCompression(w io.Writer, threshold int) error {
 
 	PacketID := VarInt(p.ID)
 	if len(p.Data) < threshold {
-		DataLength := VarInt(0) // uncompressed mark
-		PacketLength := VarInt(DataLength.Len() + PacketID.Len() + len(p.Data))
-		_, _ = PacketLength.WriteTo(buff)
-		_, _ = DataLength.WriteTo(buff)
-		_, _ = PacketID.WriteTo(buff)
-		_, _ = buff.Write(p.Data)
+		bodyLen := 1 + PacketID.Len() + len(p.Data)
+		frame := make([]byte, 0, MaxVarIntLen+bodyLen)
+		frame, _ = AppendVarInt(frame, int32(bodyLen))
+		frame, _ = AppendVarInt(frame, 0)
+		frame, _ = AppendVarInt(frame, p.ID)
+		frame = append(frame, p.Data...)
+		_, err := w.Write(frame)
+		return err
 	} else {
 		DataLength := VarInt(PacketID.Len() + len(p.Data))
 
@@ -106,7 +100,8 @@ func compressPacket(w io.Writer, packetID int32, data []byte) error {
 	defer zlibPool.Put(zw)
 	zw.Reset(w)
 
-	_, _ = VarInt(packetID).WriteTo(zw)
+	id, _ := AppendVarInt(nil, packetID)
+	_, _ = zw.Write(id)
 	if _, err := zw.Write(data); err != nil {
 		return err
 	}
