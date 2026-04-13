@@ -87,7 +87,8 @@ func encryptionRequest(conn *net.Conn, publicKey, verifyToken []byte) error {
 }
 
 func encryptionResponse(conn *net.Conn, serverKey *rsa.PrivateKey, verifyToken []byte) ([]byte, error) {
-	p, err := conn.ReadPacket()
+	var p pk.Packet
+	err := conn.ReadPacket(&p)
 	if err != nil {
 		return nil, err
 	}

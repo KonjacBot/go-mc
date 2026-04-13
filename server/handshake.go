@@ -12,7 +12,8 @@ func (s *Server) handshake(conn *net.Conn) (protocol int32, intention int32, err
 		ServerPort          pk.UnsignedShort // ignored
 	)
 	// receive handshake packet
-	p, err := conn.ReadPacket()
+	var p pk.Packet
+	err = conn.ReadPacket(&p)
 	if err != nil {
 		return 0, 0, err
 	}

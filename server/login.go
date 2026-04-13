@@ -91,7 +91,8 @@ func (d *MojangLoginHandler) getPrivateKey() (key *rsa.PrivateKey, err error) {
 // AcceptLogin implement LoginHandler for MojangLoginHandler
 func (d *MojangLoginHandler) AcceptLogin(conn *net.Conn, protocol int32) (name string, id uuid.UUID, profilePubKey *user.PublicKey, properties []user.Property, err error) {
 	// login start
-	p, err := conn.ReadPacket()
+	var p pk.Packet
+	err = conn.ReadPacket(&p)
 	if err != nil {
 		return
 	}
@@ -161,7 +162,7 @@ func (d *MojangLoginHandler) AcceptLogin(conn *net.Conn, protocol int32) (name s
 	}
 
 	// receive login ack
-	p, err = conn.ReadPacket()
+	err = conn.ReadPacket(&p)
 	if err == nil && packetid.ServerboundPacketID(p.ID) != packetid.ServerboundLoginLoginAcknowledged {
 		err = wrongPacketErr{expect: int32(packetid.ServerboundLoginLoginAcknowledged), get: p.ID}
 	}
