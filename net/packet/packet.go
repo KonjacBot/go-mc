@@ -5,6 +5,7 @@ import (
 	"compress/zlib"
 	"fmt"
 	"io"
+	"net"
 	"sync"
 )
 
@@ -52,20 +53,37 @@ func (p *Packet) Pack(w io.Writer, threshold int) error {
 }
 
 func (p *Packet) packWithoutCompression(w io.Writer) error {
-	buffer := bufPool.Get().(*bytes.Buffer)
-	defer bufPool.Put(buffer)
-	buffer.Reset()
+	var lenBuf [MaxVarIntLen]byte
+	var idBuf [MaxVarIntLen]byte
 
-	// Write Length to buffer
-	Length := VarInt(VarInt(p.ID).Len() + len(p.Data))
-	_, _ = Length.WriteTo(buffer)
+	idN := VarInt(p.ID).WriteToBytes(idBuf[:])
+	pktLen := VarInt(idN + len(p.Data))
+	lenN := pktLen.WriteToBytes(lenBuf[:])
 
-	// Write ID and Data to buffer
-	_, _ = VarInt(p.ID).WriteTo(buffer)
-	buffer.Write(p.Data)
+	if vw, ok := w.(interface{ Writev([][]byte) (int, error) }); ok {
+		_, err := vw.Writev([][]byte{
+			lenBuf[:lenN],
+			idBuf[:idN],
+			p.Data,
+		})
+		return err
+	}
 
-	// Write buffer to w
-	_, err := w.Write(buffer.Bytes())
+	if nw, ok := w.(*net.TCPConn); ok {
+		bufs := net.Buffers{lenBuf[:lenN], idBuf[:idN], p.Data}
+		_, err := bufs.WriteTo(nw)
+		return err
+	}
+
+	_, err := w.Write(lenBuf[:lenN])
+	if err != nil {
+		return err
+	}
+	_, err = w.Write(idBuf[:idN])
+	if err != nil {
+		return err
+	}
+	_, err = w.Write(p.Data)
 	return err
 }
 
@@ -85,7 +103,8 @@ func (p *Packet) packWithCompression(w io.Writer, threshold int) error {
 	} else {
 		DataLength := VarInt(PacketID.Len() + len(p.Data))
 
-		buff.Write(make([]byte, MaxVarIntLen)) // padding for Packet Length
+		var zeroPad [MaxVarIntLen]byte
+		buff.Write(zeroPad[:])
 		_, _ = DataLength.WriteTo(buff)
 		if err := compressPacket(buff, p.ID, p.Data); err != nil {
 			return err
@@ -153,63 +172,79 @@ func (p *Packet) unpackWithoutCompression(r io.Reader) error {
 }
 
 func (p *Packet) unpackWithCompression(r io.Reader, threshold int) error {
-	var PacketLength VarInt
-	_, err := PacketLength.ReadFrom(r)
+	var packetLength VarInt
+	_, err := packetLength.ReadFrom(r)
+	if err != nil {
+		return err
+	}
+	if packetLength < 0 || packetLength > MaxDataLength+MaxVarIntLen*2 {
+		return fmt.Errorf("compressed packet error: invalid packet length %d", packetLength)
+	}
+
+	lr := &io.LimitedReader{R: r, N: int64(packetLength)}
+
+	var dataLength VarInt
+	n2, err := dataLength.ReadFrom(lr)
 	if err != nil {
 		return err
 	}
 
-	buff := bufPool.Get().(*bytes.Buffer)
-	defer bufPool.Put(buff)
-	buff.Reset()
+	var payloadReader io.Reader = lr
+	var packetID VarInt
+	var payloadLen int
 
-	_, err = io.CopyN(buff, r, int64(PacketLength))
-	if err != nil {
-		return err
-	}
-	r = bytes.NewReader(buff.Bytes())
-
-	var DataLength VarInt
-	n2, err := DataLength.ReadFrom(r)
-	if err != nil {
-		return err
-	}
-
-	var PacketID VarInt
-	if DataLength != 0 {
-		if int(DataLength) < threshold {
-			return fmt.Errorf("compressed packet error: size of %d is below threshold of %d", DataLength, threshold)
+	if dataLength != 0 {
+		if int(dataLength) < threshold {
+			return fmt.Errorf("compressed packet error: size of %d is below threshold of %d", dataLength, threshold)
 		}
-		if DataLength > MaxDataLength {
-			return fmt.Errorf("compressed packet error: size of %d is larger than protocol maximum of %d", DataLength, MaxDataLength)
+		if dataLength > MaxDataLength {
+			return fmt.Errorf("compressed packet error: size of %d is larger than protocol maximum of %d", dataLength, MaxDataLength)
 		}
-		zr, err := zlib.NewReader(r)
+
+		zr, err := zlib.NewReader(lr)
 		if err != nil {
 			return err
 		}
 		defer zr.Close()
-		r = zr
-		n3, err := PacketID.ReadFrom(r)
+
+		payloadReader = zr
+
+		n3, err := packetID.ReadFrom(payloadReader)
 		if err != nil {
 			return err
 		}
-		DataLength -= VarInt(n3)
+
+		payloadLen = int(dataLength) - int(n3)
+		if payloadLen < 0 || payloadLen > MaxDataLength {
+			return fmt.Errorf("compressed packet error: invalid payload length %d", payloadLen)
+		}
 	} else {
-		n3, err := PacketID.ReadFrom(r)
+		n3, err := packetID.ReadFrom(payloadReader)
 		if err != nil {
 			return err
 		}
-		DataLength = VarInt(int64(PacketLength) - n2 - n3)
+
+		payloadLen = int(packetLength) - int(n2) - int(n3)
+		if payloadLen < 0 || payloadLen > MaxDataLength {
+			return fmt.Errorf("compressed packet error: invalid payload length %d", payloadLen)
+		}
 	}
-	if cap(p.Data) < int(DataLength) {
-		p.Data = make([]byte, DataLength)
+
+	if cap(p.Data) < payloadLen {
+		p.Data = make([]byte, payloadLen)
 	} else {
-		p.Data = p.Data[:DataLength]
+		p.Data = p.Data[:payloadLen]
 	}
-	p.ID = int32(PacketID)
-	_, err = io.ReadFull(r, p.Data)
+
+	p.ID = int32(packetID)
+	_, err = io.ReadFull(payloadReader, p.Data)
 	if err != nil {
 		return err
 	}
+
+	if lr.N != 0 && dataLength == 0 {
+		return fmt.Errorf("compressed packet error: %d unread bytes left in frame", lr.N)
+	}
+
 	return nil
 }

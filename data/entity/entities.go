@@ -133,6 +133,7 @@ type (
 	Squid                struct{}
 	Stray                struct{}
 	Strider              struct{}
+	SulfurCube           struct{}
 	Tadpole              struct{}
 	TextDisplay          struct{}
 	Tnt                  struct{}
@@ -196,8 +197,8 @@ func (Bat) ID() string                       { return "minecraft:bat" }
 func (Bat) Width() float32                   { return 0.500000 }
 func (Bat) Height() float32                  { return 0.900000 }
 func (Bee) ID() string                       { return "minecraft:bee" }
-func (Bee) Width() float32                   { return 0.700000 }
-func (Bee) Height() float32                  { return 0.600000 }
+func (Bee) Width() float32                   { return 0.550000 }
+func (Bee) Height() float32                  { return 0.500000 }
 func (BirchBoat) ID() string                 { return "minecraft:birch_boat" }
 func (BirchBoat) Width() float32             { return 1.375000 }
 func (BirchBoat) Height() float32            { return 0.562500 }
@@ -487,8 +488,8 @@ func (Pufferfish) ID() string                { return "minecraft:pufferfish" }
 func (Pufferfish) Width() float32            { return 0.700000 }
 func (Pufferfish) Height() float32           { return 0.700000 }
 func (Rabbit) ID() string                    { return "minecraft:rabbit" }
-func (Rabbit) Width() float32                { return 0.400000 }
-func (Rabbit) Height() float32               { return 0.500000 }
+func (Rabbit) Width() float32                { return 0.490000 }
+func (Rabbit) Height() float32               { return 0.600000 }
 func (Ravager) ID() string                   { return "minecraft:ravager" }
 func (Ravager) Width() float32               { return 1.950000 }
 func (Ravager) Height() float32              { return 2.200000 }
@@ -552,6 +553,9 @@ func (Stray) Height() float32                { return 1.990000 }
 func (Strider) ID() string                   { return "minecraft:strider" }
 func (Strider) Width() float32               { return 0.900000 }
 func (Strider) Height() float32              { return 1.700000 }
+func (SulfurCube) ID() string                { return "minecraft:sulfur_cube" }
+func (SulfurCube) Width() float32            { return 0.490000 }
+func (SulfurCube) Height() float32           { return 0.490000 }
 func (Tadpole) ID() string                   { return "minecraft:tadpole" }
 func (Tadpole) Width() float32               { return 0.400000 }
 func (Tadpole) Height() float32              { return 0.300000 }
@@ -765,6 +769,7 @@ var FromID = map[string]Entity{
 	"minecraft:squid":                  Squid{},
 	"minecraft:stray":                  Stray{},
 	"minecraft:strider":                Strider{},
+	"minecraft:sulfur_cube":            SulfurCube{},
 	"minecraft:tadpole":                Tadpole{},
 	"minecraft:text_display":           TextDisplay{},
 	"minecraft:tnt":                    Tnt{},
@@ -925,31 +930,32 @@ var ToID = map[ID]Entity{
 	127: Squid{},
 	128: Stray{},
 	129: Strider{},
-	130: Tadpole{},
-	131: TextDisplay{},
-	132: Tnt{},
-	133: TntMinecart{},
-	134: TraderLlama{},
-	135: Trident{},
-	136: TropicalFish{},
-	137: Turtle{},
-	138: Vex{},
-	139: Villager{},
-	140: Vindicator{},
-	141: WanderingTrader{},
-	142: Warden{},
-	143: WindCharge{},
-	144: Witch{},
-	145: Wither{},
-	146: WitherSkeleton{},
-	147: WitherSkull{},
-	148: Wolf{},
-	149: Zoglin{},
-	150: Zombie{},
-	151: ZombieHorse{},
-	152: ZombieNautilus{},
-	153: ZombieVillager{},
-	154: ZombifiedPiglin{},
-	155: Player{},
-	156: FishingBobber{},
+	130: SulfurCube{},
+	131: Tadpole{},
+	132: TextDisplay{},
+	133: Tnt{},
+	134: TntMinecart{},
+	135: TraderLlama{},
+	136: Trident{},
+	137: TropicalFish{},
+	138: Turtle{},
+	139: Vex{},
+	140: Villager{},
+	141: Vindicator{},
+	142: WanderingTrader{},
+	143: Warden{},
+	144: WindCharge{},
+	145: Witch{},
+	146: Wither{},
+	147: WitherSkeleton{},
+	148: WitherSkull{},
+	149: Wolf{},
+	150: Zoglin{},
+	151: Zombie{},
+	152: ZombieHorse{},
+	153: ZombieNautilus{},
+	154: ZombieVillager{},
+	155: ZombifiedPiglin{},
+	156: Player{},
+	157: FishingBobber{},
 }

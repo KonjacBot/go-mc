@@ -117,6 +117,7 @@ const (
 	ClientboundExplode
 	ClientboundForgetLevelChunk
 	ClientboundGameEvent
+	ClientboundGameRuleValues
 	ClientboundGameTestHighlightPos
 	ClientboundMountScreenOpen
 	ClientboundHurtAnimation
@@ -127,6 +128,7 @@ const (
 	ClientboundLevelParticles
 	ClientboundLightUpdate
 	ClientboundLogin
+	ClientboundLowDiskSpaceWarning
 	ClientboundMapItemData
 	ClientboundMerchantOffers
 	ClientboundMoveEntityPos
@@ -223,6 +225,7 @@ const (
 // Game Serverbound
 const (
 	ServerboundAcceptTeleportation ServerboundPacketID = iota
+	ServerboundAttack
 	ServerboundBlockEntityTagQuery
 	ServerboundBundleItemSelected
 	ServerboundChangeDifficulty
@@ -278,10 +281,12 @@ const (
 	ServerboundSetCommandBlock
 	ServerboundSetCommandMinecart
 	ServerboundSetCreativeModeSlot
+	ServerboundSetGameRule
 	ServerboundSetJigsawBlock
 	ServerboundSetStructureBlock
 	ServerboundSetTestBlock
 	ServerboundSignUpdate
+	ServerboundSpectatorAction
 	ServerboundSwing
 	ServerboundTeleportToEntity
 	ServerboundTestInstanceBlockAction
