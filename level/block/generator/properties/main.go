@@ -33,7 +33,8 @@ var EnumProperties = []EnumProperty{
 	{Name: "NoteBlockInstrument", Values: []string{
 		"harp", "basedrum", "snare", "hat", "bass", "flute", "bell",
 		"guitar", "chime", "xylophone", "iron_xylophone", "cow_bell",
-		"didgeridoo", "bit", "banjo", "pling", "zombie", "skeleton",
+		"didgeridoo", "bit", "banjo", "pling", "trumpet", "trumpet_exposed",
+		"trumpet_oxidized", "trumpet_weathered", "zombie", "skeleton",
 		"creeper", "dragon", "wither_skeleton", "piglin", "custom_head",
 	}},
 	{Name: "PistonType", Values: []string{"normal", "sticky"}},
