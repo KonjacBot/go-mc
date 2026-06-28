@@ -485,6 +485,10 @@ const (
 	NoteBlockInstrumentBit
 	NoteBlockInstrumentBanjo
 	NoteBlockInstrumentPling
+	NoteBlockInstrumentTrumpet
+	NoteBlockInstrumentTrumpetExposed
+	NoteBlockInstrumentTrumpetOxidized
+	NoteBlockInstrumentTrumpetWeathered
 	NoteBlockInstrumentZombie
 	NoteBlockInstrumentSkeleton
 	NoteBlockInstrumentCreeper
@@ -494,7 +498,7 @@ const (
 	NoteBlockInstrumentCustomHead
 )
 
-var strNoteBlockInstrument = [...]string{"harp", "basedrum", "snare", "hat", "bass", "flute", "bell", "guitar", "chime", "xylophone", "iron_xylophone", "cow_bell", "didgeridoo", "bit", "banjo", "pling", "zombie", "skeleton", "creeper", "dragon", "wither_skeleton", "piglin", "custom_head"}
+var strNoteBlockInstrument = [...]string{"harp", "basedrum", "snare", "hat", "bass", "flute", "bell", "guitar", "chime", "xylophone", "iron_xylophone", "cow_bell", "didgeridoo", "bit", "banjo", "pling", "trumpet", "trumpet_exposed", "trumpet_oxidized", "trumpet_weathered", "zombie", "skeleton", "creeper", "dragon", "wither_skeleton", "piglin", "custom_head"}
 
 func (n NoteBlockInstrument) String() string {
 	if int(n) < len(strNoteBlockInstrument) {
@@ -544,6 +548,14 @@ func (n *NoteBlockInstrument) UnmarshalText(text []byte) error {
 		*n = NoteBlockInstrumentBanjo
 	case "pling":
 		*n = NoteBlockInstrumentPling
+	case "trumpet":
+		*n = NoteBlockInstrumentTrumpet
+	case "trumpet_exposed":
+		*n = NoteBlockInstrumentTrumpetExposed
+	case "trumpet_oxidized":
+		*n = NoteBlockInstrumentTrumpetOxidized
+	case "trumpet_weathered":
+		*n = NoteBlockInstrumentTrumpetWeathered
 	case "zombie":
 		*n = NoteBlockInstrumentZombie
 	case "skeleton":
