@@ -1249,3 +1249,91 @@ func (c *CopperGolemStatueBlockPose) UnmarshalText(text []byte) error {
 	}
 	return nil
 }
+
+type SpeleothemThickness byte
+
+const (
+	SpeleothemThicknessTipMerge SpeleothemThickness = iota
+	SpeleothemThicknessTip
+	SpeleothemThicknessFrustum
+	SpeleothemThicknessMiddle
+	SpeleothemThicknessBase
+)
+
+var strSpeleothemThickness = [...]string{"tip_merge", "tip", "frustum", "middle", "base"}
+
+func (s SpeleothemThickness) String() string {
+	if int(s) < len(strSpeleothemThickness) {
+		return strSpeleothemThickness[s]
+	}
+	return "invalid SpeleothemThickness"
+}
+
+func (s SpeleothemThickness) MarshalText() (text []byte, err error) {
+	if int(s) < len(strSpeleothemThickness) {
+		return []byte(strSpeleothemThickness[s]), nil
+	}
+	return nil, errors.New("invalid SpeleothemThickness: " + strconv.Itoa(int(s)))
+}
+
+func (s *SpeleothemThickness) UnmarshalText(text []byte) error {
+	switch str := string(text); str {
+	case "tip_merge":
+		*s = SpeleothemThicknessTipMerge
+	case "tip":
+		*s = SpeleothemThicknessTip
+	case "frustum":
+		*s = SpeleothemThicknessFrustum
+	case "middle":
+		*s = SpeleothemThicknessMiddle
+	case "base":
+		*s = SpeleothemThicknessBase
+	default:
+		return errors.New("unknown SpeleothemThickness: " + str)
+	}
+	return nil
+}
+
+type PotentSulfurState byte
+
+const (
+	PotentSulfurStateDry PotentSulfurState = iota
+	PotentSulfurStateWet
+	PotentSulfurStateDormant
+	PotentSulfurStateErupting
+	PotentSulfurStateContinuous
+)
+
+var strPotentSulfurState = [...]string{"dry", "wet", "dormant", "erupting", "continuous"}
+
+func (p PotentSulfurState) String() string {
+	if int(p) < len(strPotentSulfurState) {
+		return strPotentSulfurState[p]
+	}
+	return "invalid PotentSulfurState"
+}
+
+func (p PotentSulfurState) MarshalText() (text []byte, err error) {
+	if int(p) < len(strPotentSulfurState) {
+		return []byte(strPotentSulfurState[p]), nil
+	}
+	return nil, errors.New("invalid PotentSulfurState: " + strconv.Itoa(int(p)))
+}
+
+func (p *PotentSulfurState) UnmarshalText(text []byte) error {
+	switch str := string(text); str {
+	case "dry":
+		*p = PotentSulfurStateDry
+	case "wet":
+		*p = PotentSulfurStateWet
+	case "dormant":
+		*p = PotentSulfurStateDormant
+	case "erupting":
+		*p = PotentSulfurStateErupting
+	case "continuous":
+		*p = PotentSulfurStateContinuous
+	default:
+		return errors.New("unknown PotentSulfurState: " + str)
+	}
+	return nil
+}

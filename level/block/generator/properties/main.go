@@ -70,6 +70,12 @@ var EnumProperties = []EnumProperty{
 	{Name: "CopperGolemStatueBlockPose", Values: []string{
 		"standing", "sitting", "running", "star",
 	}},
+	{Name: "SpeleothemThickness", Values: []string{
+		"tip_merge", "tip", "frustum", "middle", "base",
+	}},
+	{Name: "PotentSulfurState", Values: []string{
+		"dry", "wet", "dormant", "erupting", "continuous",
+	}},
 }
 
 //go:embed properties_enum.go.tmpl

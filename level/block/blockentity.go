@@ -57,6 +57,7 @@ type (
 	TestBlockEntity             struct{}
 	TestInstanceBlockEntity     struct{}
 	CopperGolemStatueEntity     struct{}
+	PotentSulfurEntity          struct{}
 )
 
 type EntityType int32
