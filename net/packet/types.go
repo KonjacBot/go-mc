@@ -563,6 +563,9 @@ func (b *ByteArray) ReadFrom(r io.Reader) (n int64, err error) {
 	if err != nil {
 		return n1, err
 	}
+	if Len < 0 {
+		return n1, errors.New("byte array length less than zero")
+	}
 	if cap(*b) < int(Len) {
 		*b = make(ByteArray, Len)
 	} else {

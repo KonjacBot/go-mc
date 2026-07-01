@@ -338,19 +338,77 @@ func (c *Chunk) PutData(data []byte) error {
 	return nil
 }
 
-type HeightMaps struct {
-	nbt.RawMessage
-}
+type HeightMaps []HeightMap
 
 func (h *HeightMaps) ReadFrom(r io.Reader) (int64, error) {
-	return pk.NBT(&h.RawMessage).ReadFrom(r)
+	var n int64
+	var size pk.VarInt
+	nn, err := size.ReadFrom(r)
+	n += nn
+	if err != nil {
+		return n, err
+	}
+	if size < 0 || size > 64 {
+		return n, fmt.Errorf("heightmaps: invalid size %d", size)
+	}
+	if cap(*h) < int(size) {
+		*h = make([]HeightMap, size)
+	} else {
+		*h = (*h)[:size]
+	}
+	for i := range *h {
+		var typ, dataLen pk.VarInt
+		nn, err = typ.ReadFrom(r)
+		n += nn
+		if err != nil {
+			return n, err
+		}
+		nn, err = dataLen.ReadFrom(r)
+		n += nn
+		if err != nil {
+			return n, err
+		}
+		if dataLen < 0 {
+			return n, fmt.Errorf("heightmaps: invalid data length %d", dataLen)
+		}
+		(*h)[i].Type = int32(typ)
+		(*h)[i].Data = make([]pk.Long, dataLen)
+		for j := range (*h)[i].Data {
+			nn, err = (*h)[i].Data[j].ReadFrom(r)
+			n += nn
+			if err != nil {
+				return n, err
+			}
+		}
+	}
+	return n, nil
 }
 
 func (h HeightMaps) WriteTo(w io.Writer) (int64, error) {
-	if h.Type == 0 {
-		h.RawMessage = nbt.RawMessage{Type: nbt.TagCompound, Data: []byte{nbt.TagEnd}}
+	n, err := pk.VarInt(len(h)).WriteTo(w)
+	if err != nil {
+		return n, err
 	}
-	return pk.NBT(h.RawMessage).WriteTo(w)
+	for _, heightmap := range h {
+		nn, err := pk.VarInt(heightmap.Type).WriteTo(w)
+		n += nn
+		if err != nil {
+			return n, err
+		}
+		nn, err = pk.VarInt(len(heightmap.Data)).WriteTo(w)
+		n += nn
+		if err != nil {
+			return n, err
+		}
+		for _, v := range heightmap.Data {
+			nn, err = v.WriteTo(w)
+			n += nn
+			if err != nil {
+				return n, err
+			}
+		}
+	}
+	return n, nil
 }
 
 type BlockEntity struct {

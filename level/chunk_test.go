@@ -3,19 +3,24 @@ package level
 import (
 	"bytes"
 	"testing"
-
-	"github.com/KonjacBot/go-mc/nbt"
 )
 
-func TestChunkReadFromUsesNetworkNBTHeightmaps(t *testing.T) {
+func TestChunkReadFromUses26_2HeightmapsCodec(t *testing.T) {
 	data := []byte{
-		nbt.TagCompound, nbt.TagEnd, // heightmaps
+		1, // heightmaps map size
+		0, // heightmap type
+		1, // long array length
+		0, 0, 0, 0, 0, 0, 0, 42,
 		0,                // chunk data
 		0,                // block entities
 		0, 0, 0, 0, 0, 0, // light masks and arrays
 	}
 
-	if _, err := EmptyChunk(0).ReadFrom(bytes.NewReader(data)); err != nil {
+	n, err := EmptyChunk(0).ReadFrom(bytes.NewReader(data))
+	if err != nil {
 		t.Fatal(err)
+	}
+	if n != int64(len(data)) {
+		t.Fatalf("read %d bytes, want %d", n, len(data))
 	}
 }
