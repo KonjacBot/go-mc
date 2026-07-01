@@ -1,6 +1,7 @@
 package level
 
 import (
+	"bytes"
 	"math/rand"
 	"testing"
 
@@ -32,6 +33,18 @@ func TestPaletteContainer_rand(t *testing.T) {
 		if v2 := container.Get(i); v != v2 {
 			t.Errorf("value not match: got %v, except: %v", v2, v)
 		}
+	}
+}
+
+func TestPaletteContainerReadRejectsEmptyLinearPalette(t *testing.T) {
+	var buf bytes.Buffer
+	buf.WriteByte(4)
+	buf.WriteByte(0)
+	buf.Write(make([]byte, calcBitStorageSize(4, 4096)*8))
+
+	container := NewStatesPaletteContainer(4096, 0)
+	if _, err := container.ReadFrom(&buf); err == nil {
+		t.Fatal("expected error for empty linear palette")
 	}
 }
 

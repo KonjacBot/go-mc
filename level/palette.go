@@ -1,6 +1,7 @@
 package level
 
 import (
+	"fmt"
 	"io"
 	"strconv"
 
@@ -308,6 +309,9 @@ func (l *linearPalette[T]) ReadFrom(r io.Reader) (n int64, err error) {
 	if n, err = size.ReadFrom(r); err != nil {
 		return
 	}
+	if size <= 0 || int(size) > 1<<l.bits {
+		return n, fmt.Errorf("linearPalette: invalid size %d", size)
+	}
 	if int(size) > cap(l.values) {
 		l.values = make([]T, size)
 	} else {
@@ -371,6 +375,9 @@ func (h *hashPalette[T]) ReadFrom(r io.Reader) (n int64, err error) {
 	var size, value pk.VarInt
 	if n, err = size.ReadFrom(r); err != nil {
 		return
+	}
+	if size <= 0 || int(size) > 1<<h.bits {
+		return n, fmt.Errorf("hashPalette: invalid size %d", size)
 	}
 	if int(size) > cap(h.values) {
 		h.values = make([]T, size)

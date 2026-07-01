@@ -294,13 +294,15 @@ func (h HeightMap) WriteTo(w io.Writer) (int64, error) {
 
 func (c *Chunk) ReadFrom(r io.Reader) (int64, error) {
 	var (
-		heightmaps []HeightMap
-		data       pk.ByteArray
+		data  pk.ByteArray
+		light LightData
 	)
 
 	n, err := pk.Tuple{
-		pk.Array(&heightmaps),
+		&c.HeightMaps,
 		&data,
+		pk.Array(&c.BlockEntity),
+		&light,
 	}.ReadFrom(r)
 	if err != nil {
 		return n, err
@@ -336,18 +338,19 @@ func (c *Chunk) PutData(data []byte) error {
 	return nil
 }
 
-type HeightMaps []HeightMap
+type HeightMaps struct {
+	nbt.RawMessage
+}
 
 func (h *HeightMaps) ReadFrom(r io.Reader) (int64, error) {
-	n, err := pk.Array(&h).ReadFrom(r)
-	if err != nil {
-		return n, err
-	}
-	return n, nil
+	return pk.NBT(&h.RawMessage).ReadFrom(r)
 }
 
 func (h HeightMaps) WriteTo(w io.Writer) (int64, error) {
-	return pk.Array(h).WriteTo(w)
+	if h.Type == 0 {
+		h.RawMessage = nbt.RawMessage{Type: nbt.TagCompound, Data: []byte{nbt.TagEnd}}
+	}
+	return pk.NBT(h.RawMessage).WriteTo(w)
 }
 
 type BlockEntity struct {
