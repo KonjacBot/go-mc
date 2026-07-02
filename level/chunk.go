@@ -450,6 +450,7 @@ func (b *BlockEntity) ReadFrom(r io.Reader) (n int64, err error) {
 
 type Section struct {
 	BlockCount int16
+	FluidCount int16
 	States     *PaletteContainer[BlocksState]
 	Biomes     *PaletteContainer[BiomesState]
 	// Half a byte per light value.
@@ -475,6 +476,7 @@ func (s *Section) SetBlock(i int, v BlocksState) {
 func (s *Section) WriteTo(w io.Writer) (int64, error) {
 	return pk.Tuple{
 		pk.Short(s.BlockCount),
+		pk.Short(s.FluidCount),
 		s.States,
 		s.Biomes,
 	}.WriteTo(w)
@@ -483,6 +485,7 @@ func (s *Section) WriteTo(w io.Writer) (int64, error) {
 func (s *Section) ReadFrom(r io.Reader) (int64, error) {
 	return pk.Tuple{
 		(*pk.Short)(&s.BlockCount),
+		(*pk.Short)(&s.FluidCount),
 		s.States,
 		s.Biomes,
 	}.ReadFrom(r)
