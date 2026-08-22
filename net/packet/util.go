@@ -69,12 +69,28 @@ func (a Ary[LEN]) ReadFrom(r io.Reader) (n int64, err error) {
 	if !array.CanAddr() {
 		panic(errors.New("the contents of the Ary are not addressable"))
 	}
-	if array.Cap() < int(Len) {
-		array.Set(reflect.MakeSlice(array.Type(), int(Len), int(Len)))
-	} else {
-		array.Slice(0, int(Len))
+	length := int64(Len)
+	elementSize := int64(array.Type().Elem().Size())
+	if elementSize < 1 {
+		elementSize = 1
 	}
-	for i := 0; i < int(Len); i++ {
+	maxElements := int64(MaxDataLength) / elementSize
+	if length > maxElements {
+		return n, fmt.Errorf(
+			"array length %d exceeds the in-memory protocol limit %d",
+			length,
+			maxElements,
+		)
+	}
+	if array.Cap() < int(length) {
+		array.Set(reflect.MakeSlice(array.Type(), int(length), int(length)))
+	} else {
+		if array.Len() > int(length) {
+			array.Slice(int(length), array.Len()).Clear()
+		}
+		array.Set(array.Slice(0, int(length)))
+	}
+	for i := 0; i < int(length); i++ {
 		elem := array.Index(i)
 		nn, err := elem.Addr().Interface().(FieldDecoder).ReadFrom(r)
 		n += nn
@@ -279,6 +295,7 @@ func (i IDSet) WriteTo(w io.Writer) (n int64, err error) {
 }
 
 func (i *IDSet) ReadFrom(r io.Reader) (n int64, err error) {
+	*i = IDSet{}
 	var v VarInt
 	n1, err := v.ReadFrom(r)
 	if err != nil {
@@ -297,7 +314,7 @@ func (i *IDSet) ReadFrom(r io.Reader) (n int64, err error) {
 			return n1 + n2, err
 		}
 		n1 += n2
-		i.IDs[j] = int32(n1)
+		i.IDs[j] = int32(d)
 	}
 	return n1, err
 }

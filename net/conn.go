@@ -5,6 +5,7 @@ import (
 	"context"
 	"crypto/cipher"
 	"errors"
+	"fmt"
 	"io"
 	"net"
 	"strconv"
@@ -226,6 +227,21 @@ func (c *Conn) ReadPacket(p *pk.Packet) error {
 // WritePacket write a Packet to Conn.
 func (c *Conn) WritePacket(p pk.Packet) error {
 	return p.Pack(c.Writer, c.threshold)
+}
+
+// WritePreparedPacket writes a packet prepared with this connection's current
+// compression threshold. The frame remains reusable and safe for concurrent
+// writes to different connections.
+func (c *Conn) WritePreparedPacket(p pk.PreparedPacket) error {
+	if p.Threshold() != c.threshold {
+		return fmt.Errorf(
+			"prepared packet threshold is %d, connection threshold is %d",
+			p.Threshold(),
+			c.threshold,
+		)
+	}
+	_, err := p.WriteTo(c.Writer)
+	return err
 }
 
 // SetCipher load the decode/encode stream to this Conn

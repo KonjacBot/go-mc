@@ -25,11 +25,24 @@ func (m Message) TagType() byte {
 }
 
 func (m Message) MarshalNBT(w io.Writer) error {
+	var encoded bytes.Buffer
+	encoder := nbt.NewEncoder(&encoded)
+	encoder.NetworkFormat(true)
+	var err error
 	if m.Translate != "" {
-		return nbt.NewEncoder(w).Encode(translateMsg(m), "")
+		err = encoder.Encode(translateMsg(m), "")
 	} else {
-		return nbt.NewEncoder(w).Encode(rawMsgStruct(m), "")
+		err = encoder.Encode(rawMsgStruct(m), "")
 	}
+	if err != nil {
+		return err
+	}
+	data := encoded.Bytes()
+	if len(data) == 0 || data[0] != m.TagType() {
+		return errors.New("chat message did not encode as an NBT compound")
+	}
+	_, err = w.Write(data[1:])
+	return err
 }
 
 func (m *Message) UnmarshalNBT(tagType byte, r nbt.DecoderReader) error {
@@ -54,19 +67,46 @@ func (m *Message) UnmarshalNBT(tagType byte, r nbt.DecoderReader) error {
 }
 
 func (t *TranslateArgs) UnmarshalNBT(tagType byte, r nbt.DecoderReader) error {
-	tagReader := bytes.NewReader([]byte{tagType})
+	tagPrefix := []byte{tagType}
+	var listType byte
+	if tagType == nbt.TagList {
+		var err error
+		listType, err = r.ReadByte()
+		if err != nil {
+			return err
+		}
+		tagPrefix = append(tagPrefix, listType)
+	}
+	tagReader := bytes.NewReader(tagPrefix)
 	decoder := nbt.NewDecoder(io.MultiReader(tagReader, r))
 	decoder.NetworkFormat(true) // TagType directlly followed the body
 
 	switch tagType {
 	case nbt.TagList:
-		var value []Message
+		// In 26.2, a translation argument can be a primitive (number, boolean,
+		// or string) or a component. NBT lists are homogeneous, so inspect the
+		// element type before deciding whether to decode the values as Message.
+		if listType == nbt.TagList || listType == nbt.TagCompound {
+			var value []Message
+			if _, err := decoder.Decode(&value); err != nil {
+				return err
+			}
+			for _, v := range value {
+				*t = append(*t, v)
+			}
+			return nil
+		}
+		switch listType {
+		case nbt.TagEnd, nbt.TagByte, nbt.TagShort, nbt.TagInt, nbt.TagLong, nbt.TagFloat, nbt.TagDouble, nbt.TagString:
+		default:
+			return errors.New("unknown translation arg list type: '" + strconv.FormatUint(uint64(listType), 16) + "'")
+		}
+
+		var value []any
 		if _, err := decoder.Decode(&value); err != nil {
 			return err
 		}
-		for _, v := range value {
-			*t = append(*t, v)
-		}
+		*t = append(*t, value...)
 		return nil
 	case nbt.TagByteArray:
 		var value []int8

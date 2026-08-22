@@ -208,6 +208,31 @@ func SetLanguage(trans map[string]string) {
 	translateMap = trans
 }
 
+func (m Message) translateArgs(messageString func(Message) string) []any {
+	args := make([]any, len(m.With))
+	for i, v := range m.With {
+		switch v := v.(type) {
+		case Message:
+			args[i] = messageString(v)
+		case *Message:
+			if v == nil {
+				args[i] = "null"
+			} else {
+				args[i] = messageString(*v)
+			}
+		case string:
+			args[i] = v
+		case nil:
+			args[i] = "null"
+		default:
+			// Minecraft 26.2 permits numbers and booleans as translation
+			// arguments and renders them through Object.toString().
+			args[i] = fmt.Sprint(v)
+		}
+	}
+	return args
+}
+
 // ClearString return the message String without escape sequence for ansi color.
 func (m Message) ClearString() string {
 	var msg strings.Builder
@@ -216,17 +241,7 @@ func (m Message) ClearString() string {
 
 	// handle translate
 	if m.Translate != "" {
-		args := make([]any, len(m.With))
-		for i, v := range m.With {
-			switch v := v.(type) {
-			case Message:
-				args[i] = v.ClearString()
-			default:
-				args[i] = v
-			}
-		}
-
-		_, _ = fmt.Fprintf(&msg, translateMap[m.Translate], args...)
+		_, _ = fmt.Fprintf(&msg, translateMap[m.Translate], m.translateArgs(Message.ClearString)...)
 	}
 
 	if m.Extra != nil {
@@ -266,7 +281,7 @@ func (m Message) String() string {
 
 	// handle translate
 	if m.Translate != "" {
-		_, _ = fmt.Fprintf(&msg, translateMap[m.Translate], m.With...)
+		_, _ = fmt.Fprintf(&msg, translateMap[m.Translate], m.translateArgs(Message.String)...)
 	}
 
 	if m.Extra != nil {
@@ -309,12 +324,7 @@ func (m Message) LegacyString() string {
 
 	// handle translate
 	if m.Translate != "" {
-		args := make([]any, len(m.With))
-		for i, v := range m.With {
-			args[i] = v
-		}
-
-		_, _ = fmt.Fprintf(&msg, translateMap[m.Translate], args...)
+		_, _ = fmt.Fprintf(&msg, translateMap[m.Translate], m.translateArgs(Message.LegacyString)...)
 	}
 
 	if m.Extra != nil {

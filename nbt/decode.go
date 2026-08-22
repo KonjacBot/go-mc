@@ -9,6 +9,8 @@ import (
 	"math"
 	"reflect"
 	"strings"
+	"unicode/utf16"
+	"unicode/utf8"
 )
 
 // Unmarshal decode binary NBT data and fill into v
@@ -684,7 +686,42 @@ func (d *Decoder) readString() (string, error) {
 	if length > 0 {
 		buf := make([]byte, length)
 		_, err = io.ReadFull(d.r, buf)
-		str = string(buf)
+		if utf8.Valid(buf) {
+			str = string(buf)
+		} else {
+			codeUnits := make([]uint16, 0, len(buf))
+			for index := 0; index < len(buf); {
+				current := buf[index]
+				switch {
+				case current&0x80 == 0:
+					codeUnits = append(codeUnits, uint16(current))
+					index++
+				case current&0xe0 == 0xc0:
+					if index+1 >= len(buf) || buf[index+1]&0xc0 != 0x80 {
+						return "", errors.New("invalid modified UTF-8 string")
+					}
+					value := uint16(current&0x1f)<<6 | uint16(buf[index+1]&0x3f)
+					if value != 0 && value < 0x80 {
+						return "", errors.New("invalid modified UTF-8 string")
+					}
+					codeUnits = append(codeUnits, value)
+					index += 2
+				case current&0xf0 == 0xe0:
+					if index+2 >= len(buf) || buf[index+1]&0xc0 != 0x80 || buf[index+2]&0xc0 != 0x80 {
+						return "", errors.New("invalid modified UTF-8 string")
+					}
+					value := uint16(current&0x0f)<<12 | uint16(buf[index+1]&0x3f)<<6 | uint16(buf[index+2]&0x3f)
+					if value < 0x800 {
+						return "", errors.New("invalid modified UTF-8 string")
+					}
+					codeUnits = append(codeUnits, value)
+					index += 3
+				default:
+					return "", errors.New("invalid modified UTF-8 string")
+				}
+			}
+			str = string(utf16.Decode(codeUnits))
+		}
 	}
 	return str, err
 }

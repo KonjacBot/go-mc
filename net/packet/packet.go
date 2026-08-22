@@ -17,6 +17,14 @@ type Packet struct {
 	Data []byte
 }
 
+// PreparedPacket is an immutable, fully framed packet that can be reused
+// across connections using the same compression threshold. Preparing large,
+// static packets once avoids repeating zlib work for every recipient.
+type PreparedPacket struct {
+	wire      []byte
+	threshold int
+}
+
 // Marshal generate Packet with the ID and Fields
 func Marshal[ID ~int32 | int](id ID, fields ...FieldEncoder) (pk Packet) {
 	var pb Builder
@@ -24,6 +32,45 @@ func Marshal[ID ~int32 | int](id ID, fields ...FieldEncoder) (pk Packet) {
 		pb.WriteField(v)
 	}
 	return pb.Packet(int32(id))
+}
+
+// Prepare frames and, when required, compresses a packet for repeated writes.
+func (p Packet) Prepare(threshold int) (PreparedPacket, error) {
+	var wire bytes.Buffer
+	if err := p.Pack(&wire, threshold); err != nil {
+		return PreparedPacket{}, err
+	}
+	return PreparedPacket{
+		wire:      wire.Bytes(),
+		threshold: threshold,
+	}, nil
+}
+
+// Threshold reports the compression threshold used while preparing the packet.
+func (p PreparedPacket) Threshold() int {
+	return p.threshold
+}
+
+// Len reports the framed packet size in bytes.
+func (p PreparedPacket) Len() int {
+	return len(p.wire)
+}
+
+// WriteTo writes the complete prepared frame, including when the destination
+// performs a legal short write.
+func (p PreparedPacket) WriteTo(w io.Writer) (n int64, err error) {
+	for len(p.wire) > 0 {
+		written, writeErr := w.Write(p.wire)
+		n += int64(written)
+		p.wire = p.wire[written:]
+		if writeErr != nil {
+			return n, writeErr
+		}
+		if written == 0 {
+			return n, io.ErrShortWrite
+		}
+	}
+	return n, nil
 }
 
 // Scan decode the packet and fill data into fields

@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"io"
 
 	pk "github.com/KonjacBot/go-mc/net/packet"
@@ -60,14 +61,44 @@ func (m *Message) UnmarshalJSON(raw []byte) (err error) {
 }
 
 func (t *TranslateArgs) UnmarshalJSON(raw []byte) error {
-	var v []Message
-	err := json.Unmarshal(raw, &v)
-	if err != nil {
+	var values []json.RawMessage
+	if err := json.Unmarshal(raw, &values); err != nil {
 		return err
 	}
 
-	for _, v := range v {
-		*t = append(*t, v)
+	for _, rawValue := range values {
+		rawValue = bytes.TrimSpace(rawValue)
+		if len(rawValue) == 0 {
+			return io.ErrUnexpectedEOF
+		}
+
+		switch rawValue[0] {
+		case '{', '[':
+			var value Message
+			if err := json.Unmarshal(rawValue, &value); err != nil {
+				return err
+			}
+			*t = append(*t, value)
+		case '"':
+			var value string
+			if err := json.Unmarshal(rawValue, &value); err != nil {
+				return err
+			}
+			*t = append(*t, value)
+		default:
+			decoder := json.NewDecoder(bytes.NewReader(rawValue))
+			decoder.UseNumber()
+			var value any
+			if err := decoder.Decode(&value); err != nil {
+				return err
+			}
+			switch value.(type) {
+			case json.Number, bool:
+				*t = append(*t, value)
+			default:
+				return fmt.Errorf("invalid translation argument: %s", rawValue)
+			}
+		}
 	}
 	return nil
 }

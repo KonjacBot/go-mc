@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"math/bits"
 	"strconv"
 
 	"github.com/KonjacBot/go-mc/level/block"
@@ -41,6 +42,7 @@ type Chunk struct {
 	Sections    []Section
 	HeightMaps  HeightMaps
 	BlockEntity []BlockEntity
+	Light       *LightData
 	Status      ChunkStatus
 }
 
@@ -236,28 +238,20 @@ func (c *Chunk) WriteTo(w io.Writer) (int64, error) {
 	if err != nil {
 		return 0, err
 	}
-	light := LightData{
-		SkyLightMask:   make(pk.BitSet, (16*16*16-1)>>6+1),
-		BlockLightMask: make(pk.BitSet, (16*16*16-1)>>6+1),
-		SkyLight:       []pk.ByteArray{},
-		BlockLight:     []pk.ByteArray{},
-	}
-	for i, v := range c.Sections {
-		if v.SkyLight != nil {
-			light.SkyLightMask.Set(i, true)
-			light.SkyLight = append(light.SkyLight, v.SkyLight)
+	light := c.Light
+	if light == nil {
+		derived, err := lightDataFromSections(c.Sections)
+		if err != nil {
+			return 0, err
 		}
-		if v.BlockLight != nil {
-			light.BlockLightMask.Set(i, true)
-			light.BlockLight = append(light.BlockLight, v.BlockLight)
-		}
+		light = &derived
 	}
 	return pk.Tuple{
 		// Heightmaps
 		c.HeightMaps,
 		pk.ByteArray(data),
 		pk.Array(c.BlockEntity),
-		&light,
+		light,
 	}.WriteTo(w)
 }
 
@@ -294,15 +288,15 @@ func (h HeightMap) WriteTo(w io.Writer) (int64, error) {
 
 func (c *Chunk) ReadFrom(r io.Reader) (int64, error) {
 	var (
-		data  pk.ByteArray
-		light LightData
+		data pk.ByteArray
 	)
+	c.Light = new(LightData)
 
 	n, err := pk.Tuple{
 		&c.HeightMaps,
 		&data,
 		pk.Array(&c.BlockEntity),
-		&light,
+		c.Light,
 	}.ReadFrom(r)
 	if err != nil {
 		return n, err
@@ -492,39 +486,138 @@ func (s *Section) ReadFrom(r io.Reader) (int64, error) {
 }
 
 type LightData struct {
-	SkyLightMask   pk.BitSet
-	BlockLightMask pk.BitSet
-	SkyLight       []pk.ByteArray
-	BlockLight     []pk.ByteArray
+	SkyLightMask        pk.BitSet
+	BlockLightMask      pk.BitSet
+	EmptySkyLightMask   pk.BitSet
+	EmptyBlockLightMask pk.BitSet
+	SkyLight            []pk.ByteArray
+	BlockLight          []pk.ByteArray
 }
 
-func bitSetRev(set pk.BitSet) pk.BitSet {
-	rev := make(pk.BitSet, len(set))
-	for i := range rev {
-		rev[i] = ^set[i]
+func lightDataFromSections(sections []Section) (LightData, error) {
+	lightSectionCount := len(sections) + 2
+	wordCount := (lightSectionCount + 63) / 64
+	result := LightData{
+		SkyLightMask:        make(pk.BitSet, wordCount),
+		BlockLightMask:      make(pk.BitSet, wordCount),
+		EmptySkyLightMask:   make(pk.BitSet, wordCount),
+		EmptyBlockLightMask: make(pk.BitSet, wordCount),
 	}
-	return rev
+
+	result.EmptySkyLightMask.Set(0, true)
+	result.EmptyBlockLightMask.Set(0, true)
+	result.EmptyBlockLightMask.Set(lightSectionCount-1, true)
+	hasSkyLight := false
+	for index, section := range sections {
+		lightIndex := index + 1
+		if len(section.SkyLight) == 0 {
+			result.EmptySkyLightMask.Set(lightIndex, true)
+		} else {
+			if len(section.SkyLight) != 2048 {
+				return LightData{}, fmt.Errorf(
+					"section %d sky light length is %d, want 2048",
+					index,
+					len(section.SkyLight),
+				)
+			}
+			result.SkyLightMask.Set(lightIndex, true)
+			result.SkyLight = append(result.SkyLight, pk.ByteArray(section.SkyLight))
+			hasSkyLight = true
+		}
+		if len(section.BlockLight) == 0 {
+			result.EmptyBlockLightMask.Set(lightIndex, true)
+		} else {
+			if len(section.BlockLight) != 2048 {
+				return LightData{}, fmt.Errorf(
+					"section %d block light length is %d, want 2048",
+					index,
+					len(section.BlockLight),
+				)
+			}
+			result.BlockLightMask.Set(lightIndex, true)
+			result.BlockLight = append(result.BlockLight, pk.ByteArray(section.BlockLight))
+		}
+	}
+	if hasSkyLight {
+		result.SkyLightMask.Set(lightSectionCount-1, true)
+		result.SkyLight = append(
+			result.SkyLight,
+			pk.ByteArray(bytes.Repeat([]byte{0xff}, 2048)),
+		)
+	} else {
+		result.EmptySkyLightMask.Set(lightSectionCount-1, true)
+	}
+	return result, nil
 }
 
 func (l *LightData) WriteTo(w io.Writer) (int64, error) {
+	if err := l.validate(); err != nil {
+		return 0, err
+	}
 	return pk.Tuple{
 		l.SkyLightMask,
 		l.BlockLightMask,
-		bitSetRev(l.SkyLightMask),
-		bitSetRev(l.BlockLightMask),
+		l.EmptySkyLightMask,
+		l.EmptyBlockLightMask,
 		pk.Array(l.SkyLight),
 		pk.Array(l.BlockLight),
 	}.WriteTo(w)
 }
 
 func (l *LightData) ReadFrom(r io.Reader) (int64, error) {
-	var RevSkyLightMask, RevBlockLightMask pk.BitSet
-	return pk.Tuple{
+	n, err := pk.Tuple{
 		&l.SkyLightMask,
 		&l.BlockLightMask,
-		&RevSkyLightMask,
-		&RevBlockLightMask,
+		&l.EmptySkyLightMask,
+		&l.EmptyBlockLightMask,
 		pk.Array(&l.SkyLight),
 		pk.Array(&l.BlockLight),
 	}.ReadFrom(r)
+	if err != nil {
+		return n, err
+	}
+	return n, l.validate()
+}
+
+func (l *LightData) validate() error {
+	if bitSetOverlap(l.SkyLightMask, l.EmptySkyLightMask) {
+		return errors.New("sky light and empty sky light masks overlap")
+	}
+	if bitSetOverlap(l.BlockLightMask, l.EmptyBlockLightMask) {
+		return errors.New("block light and empty block light masks overlap")
+	}
+	if got, want := len(l.SkyLight), bitSetOnes(l.SkyLightMask); got != want {
+		return fmt.Errorf("sky light array count is %d, mask contains %d sections", got, want)
+	}
+	if got, want := len(l.BlockLight), bitSetOnes(l.BlockLightMask); got != want {
+		return fmt.Errorf("block light array count is %d, mask contains %d sections", got, want)
+	}
+	for index, data := range l.SkyLight {
+		if len(data) != 2048 {
+			return fmt.Errorf("sky light array %d length is %d, want 2048", index, len(data))
+		}
+	}
+	for index, data := range l.BlockLight {
+		if len(data) != 2048 {
+			return fmt.Errorf("block light array %d length is %d, want 2048", index, len(data))
+		}
+	}
+	return nil
+}
+
+func bitSetOverlap(a, b pk.BitSet) bool {
+	for index := range min(len(a), len(b)) {
+		if a[index]&b[index] != 0 {
+			return true
+		}
+	}
+	return false
+}
+
+func bitSetOnes(set pk.BitSet) int {
+	total := 0
+	for _, word := range set {
+		total += bits.OnesCount64(uint64(word))
+	}
+	return total
 }

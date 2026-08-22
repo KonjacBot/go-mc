@@ -38,6 +38,21 @@ func TestUnmarshal_string(t *testing.T) {
 	}
 }
 
+func TestUnmarshal_stringDecodesModifiedUTF8SupplementaryCharacter(t *testing.T) {
+	data := []byte{
+		TagString, 0, 0, 0, 6,
+		0xed, 0xa0, 0xbc, 0xed, 0xbc, 0xb9,
+	}
+
+	var name string
+	if err := Unmarshal(data, &name); err != nil {
+		t.Fatal(err)
+	}
+	if name != "🌹" {
+		t.Fatalf("decoded modified UTF-8 = %q, want %q", name, "🌹")
+	}
+}
+
 func TestUnmarshal_simple(t *testing.T) {
 	data := []byte{
 		0x0a, 0x00, 0x0b, 0x68, 0x65, 0x6c, 0x6c, 0x6f,

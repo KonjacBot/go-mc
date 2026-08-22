@@ -90,6 +90,17 @@ func TestMessage_ClearString(t *testing.T) {
 	}
 }
 
+func TestMessage_UnmarshalJSON_TranslatePrimitiveArgs(t *testing.T) {
+	chat.SetLanguage(en_us.Map)
+	var message chat.Message
+	if err := json.Unmarshal([]byte(`{"translate":"translation.test.args","with":[255,true]}`), &message); err != nil {
+		t.Fatal(err)
+	}
+	if got := message.ClearString(); got != "255 true" {
+		t.Fatalf("message = %q, want %q", got, "255 true")
+	}
+}
+
 func TestJsonMessage_WriteTo(t *testing.T) {
 	chat.SetLanguage(en_us.Map)
 	var codeMsg bytes.Buffer

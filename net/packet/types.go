@@ -3,6 +3,7 @@ package packet
 import (
 	"encoding/binary"
 	"errors"
+	"fmt"
 	"io"
 	"math"
 
@@ -615,6 +616,9 @@ func (b *BitSet) ReadFrom(r io.Reader) (n int64, err error) {
 	n, err = Len.ReadFrom(r)
 	if err != nil {
 		return
+	}
+	if Len < 0 || Len > MaxDataLength/8 {
+		return n, fmt.Errorf("bit set length %d is outside the protocol limit", Len)
 	}
 	if int(Len) > cap(*b) {
 		*b = make([]int64, Len)

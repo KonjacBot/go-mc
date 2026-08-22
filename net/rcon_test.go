@@ -5,54 +5,55 @@ import (
 	"testing"
 )
 
-func Test(t *testing.T) {
-	c := make(chan int, 1)
-	go server(t, c)
-	<-c
-	client(t)
-	<-c
+func TestRCONRoundTrip(t *testing.T) {
+	listener, err := ListenRCON("localhost:0")
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer listener.Close()
+
+	done := make(chan error, 1)
+	go func() {
+		done <- serveRCONOnce(listener)
+	}()
+
+	client(t, listener.Addr().String())
+	if err := <-done; err != nil {
+		t.Fatal(err)
+	}
 }
 
-func server(t *testing.T, c chan<- int) {
-	l, err := ListenRCON("localhost:25575")
+func serveRCONOnce(listener *RCONListener) error {
+	conn, err := listener.Accept()
 	if err != nil {
-		t.Fatal(err)
+		return err
 	}
-	defer l.Close()
-
-	c <- 1 // prepared
-
-	conn, err := l.Accept()
-	if err != nil {
-		t.Fatal(err)
-	}
+	defer conn.Close()
 
 	err = conn.AcceptLogin("RightPassword")
 	if err != nil {
-		t.Fatal("password wrong")
+		return fmt.Errorf("accept login: %w", err)
 	}
 
 	cmd, err := conn.AcceptCmd()
 	if err != nil {
-		t.Log(err)
-		return
+		return fmt.Errorf("accept command: %w", err)
 	}
 
 	resp := handleCommand(cmd)
 	err = conn.RespCmd(resp)
 	if err != nil {
-		t.Fatal(err)
+		return fmt.Errorf("respond to command: %w", err)
 	}
-
-	c <- 2 // finished
+	return nil
 }
 
 func handleCommand(cmd string) (resp string) {
 	return fmt.Sprintf("your command is %q", cmd)
 }
 
-func client(t *testing.T) {
-	conn, err := DialRCON("localhost:25575", "RightPassword")
+func client(t *testing.T, address string) {
+	conn, err := DialRCON(address, "RightPassword")
 	if err != nil {
 		t.Fatal(err)
 	}
