@@ -132,3 +132,49 @@ func TestMessage_UnmarshalJSON_string(t *testing.T) {
 		}
 	}
 }
+
+func TestMessage_UnmarshalNBT_HoverEvent(t *testing.T) {
+	type hover struct {
+		Action     string         `nbt:"action"`
+		ID         string         `nbt:"id,omitempty"`
+		Count      int32          `nbt:"count,omitempty"`
+		Components map[string]any `nbt:"components,omitempty"`
+		Value      *chat.Message  `nbt:"value,omitempty"`
+	}
+	type part struct {
+		Text  string `nbt:"text"`
+		Hover hover  `nbt:"hover_event"`
+	}
+	type root struct {
+		Text  string `nbt:"text"`
+		Extra []part `nbt:"extra"`
+	}
+	tip := chat.Text("tip")
+	in := root{Text: "商品類型：", Extra: []part{
+		{Text: "地圖", Hover: hover{Action: "show_item", ID: "minecraft:filled_map", Count: 16, Components: map[string]any{"minecraft:map_id": int32(7)}}},
+		{Text: " x 1", Hover: hover{Action: "show_text", Value: &tip}},
+	}}
+	var encoded bytes.Buffer
+	encoder := nbt.NewEncoder(&encoded)
+	encoder.NetworkFormat(true)
+	if err := encoder.Encode(in, ""); err != nil {
+		t.Fatal(err)
+	}
+	var message chat.Message
+	if _, err := message.ReadFrom(&encoded); err != nil {
+		t.Fatalf("decode hover_event: %v", err)
+	}
+	if got := message.ClearString(); got != "商品類型：地圖 x 1" {
+		t.Errorf("text = %q", got)
+	}
+	if len(message.Extra) != 2 || message.Extra[0].Hover == nil || message.Extra[1].Hover == nil {
+		t.Fatalf("hover_event not decoded: %+v", message.Extra)
+	}
+	item := message.Extra[0].Hover
+	if item.Action != "show_item" || item.ID != "minecraft:filled_map" || item.Count != 16 {
+		t.Errorf("show_item = %+v", item)
+	}
+	if text := message.Extra[1].Hover; text.Action != "show_text" || text.Value == nil || text.Value.Text != "tip" {
+		t.Errorf("show_text = %+v", text)
+	}
+}

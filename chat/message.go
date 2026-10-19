@@ -69,6 +69,8 @@ type Message struct {
 	Insertion  string      `json:"insertion,omitempty" nbt:"insertion,omitempty"`
 	ClickEvent *ClickEvent `json:"clickEvent,omitempty" nbt:"clickEvent,omitempty"`
 	HoverEvent *HoverEvent `json:"hoverEvent,omitempty" nbt:"hoverEvent,omitempty"`
+	// Hover is the 1.21.5+ hover_event; HoverEvent is the legacy camelCase form.
+	Hover *Hover `json:"hover_event,omitempty" nbt:"hover_event,omitempty"`
 
 	Translate string        `json:"translate,omitempty" nbt:"translate,omitempty"`
 	With      TranslateArgs `json:"with,omitempty" nbt:"with,omitempty"`
@@ -93,6 +95,8 @@ type translateMsg struct {
 	Insertion  string      `json:"insertion,omitempty" nbt:"insertion,omitempty"`
 	ClickEvent *ClickEvent `json:"clickEvent,omitempty" nbt:"clickEvent,omitempty"`
 	HoverEvent *HoverEvent `json:"hoverEvent,omitempty" nbt:"hoverEvent,omitempty"`
+	// Hover is the 1.21.5+ hover_event; HoverEvent is the legacy camelCase form.
+	Hover *Hover `json:"hover_event,omitempty" nbt:"hover_event,omitempty"`
 
 	Translate string        `json:"translate,omitempty" nbt:"translate,omitempty"`
 	With      TranslateArgs `json:"with,omitempty" nbt:"with,omitempty"`

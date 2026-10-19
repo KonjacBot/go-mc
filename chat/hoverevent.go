@@ -38,3 +38,14 @@ func ShowEntity(entity string) *HoverEvent {
 		Value:  Text(entity),
 	}
 }
+
+// Hover is the hover_event used since 1.21.5. Its fields are flattened into the
+// event instead of nested in "contents": show_text carries "value", show_item
+// carries "id", "count" and "components", show_entity carries "id", "uuid" and "name".
+// Item components are not decoded.
+type Hover struct {
+	Action string   `json:"action" nbt:"action"`
+	Value  *Message `json:"value,omitempty" nbt:"value,omitempty"`
+	ID     string   `json:"id,omitempty" nbt:"id,omitempty"`
+	Count  int32    `json:"count,omitempty" nbt:"count,omitempty"`
+}
