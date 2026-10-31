@@ -174,6 +174,9 @@ func TestMessage_UnmarshalNBT_HoverEvent(t *testing.T) {
 	if item.Action != "show_item" || item.ID != "minecraft:filled_map" || item.Count != 16 {
 		t.Errorf("show_item = %+v", item)
 	}
+	if id, ok := item.Components["minecraft:map_id"].(int32); !ok || id != 7 {
+		t.Errorf("show_item components = %#v", item.Components)
+	}
 	if text := message.Extra[1].Hover; text.Action != "show_text" || text.Value == nil || text.Value.Text != "tip" {
 		t.Errorf("show_text = %+v", text)
 	}
