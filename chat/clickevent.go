@@ -59,3 +59,27 @@ func CopyToClipboard(text string) *ClickEvent {
 		Value:  text,
 	}
 }
+
+// Click is the click_event used since 1.21.5. The value lives in an action-specific
+// field instead of "value": run_command and suggest_command carry "command",
+// open_url carries "url", copy_to_clipboard carries "value", change_page carries "page".
+type Click struct {
+	Action  string `json:"action" nbt:"action"`
+	Command string `json:"command,omitempty" nbt:"command,omitempty"`
+	URL     string `json:"url,omitempty" nbt:"url,omitempty"`
+	Value   string `json:"value,omitempty" nbt:"value,omitempty"`
+	Page    int32  `json:"page,omitempty" nbt:"page,omitempty"`
+}
+
+// Target is the click's payload whatever the action: the command, URL, copied text or page.
+func (c Click) Target() string {
+	switch {
+	case c.Command != "":
+		return c.Command
+	case c.URL != "":
+		return c.URL
+	case c.Page != 0:
+		return strconv.Itoa(int(c.Page))
+	}
+	return c.Value
+}

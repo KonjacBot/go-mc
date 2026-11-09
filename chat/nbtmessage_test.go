@@ -181,3 +181,45 @@ func TestMessage_UnmarshalNBT_HoverEvent(t *testing.T) {
 		t.Errorf("show_text = %+v", text)
 	}
 }
+
+func TestMessage_ReadFrom_clickEvent(t *testing.T) {
+	type click struct {
+		Action  string `nbt:"action"`
+		Command string `nbt:"command,omitempty"`
+		URL     string `nbt:"url,omitempty"`
+		Value   string `nbt:"value,omitempty"`
+	}
+	type part struct {
+		Text  string `nbt:"text"`
+		Click click  `nbt:"click_event"`
+	}
+	type root struct {
+		Text  string `nbt:"text"`
+		Extra []part `nbt:"extra"`
+	}
+	in := root{Text: "", Extra: []part{
+		{Text: "[傳送]", Click: click{Action: "run_command", Command: "/tpaccept"}},
+		{Text: "[網站]", Click: click{Action: "open_url", URL: "https://example.com"}},
+		{Text: "[複製]", Click: click{Action: "copy_to_clipboard", Value: "abc"}},
+	}}
+	var encoded bytes.Buffer
+	encoder := nbt.NewEncoder(&encoded)
+	encoder.NetworkFormat(true)
+	if err := encoder.Encode(in, ""); err != nil {
+		t.Fatal(err)
+	}
+	var message chat.Message
+	if _, err := message.ReadFrom(&encoded); err != nil {
+		t.Fatalf("decode click_event: %v", err)
+	}
+	want := []struct{ action, target string }{{"run_command", "/tpaccept"}, {"open_url", "https://example.com"}, {"copy_to_clipboard", "abc"}}
+	if len(message.Extra) != len(want) {
+		t.Fatalf("extra = %+v", message.Extra)
+	}
+	for i, w := range want {
+		c := message.Extra[i].Click
+		if c == nil || c.Action != w.action || c.Target() != w.target {
+			t.Errorf("click %d = %+v, want %s %s", i, c, w.action, w.target)
+		}
+	}
+}
