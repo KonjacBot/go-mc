@@ -199,6 +199,17 @@ func WrapConn(conn net.Conn) *Conn {
 // Close the connection
 func (c *Conn) Close() error { return c.Socket.Close() }
 
+// Buffered reports how many received bytes are waiting in the read buffer.
+// While it is non-zero the next ReadPacket can usually be served without
+// touching the socket, so callers that refresh a read deadline per packet
+// only need to do so when it is zero.
+func (c *Conn) Buffered() int {
+	if c.buffered == nil {
+		return 0
+	}
+	return c.buffered.Buffered()
+}
+
 // ReadPacket read a Packet from Conn.
 func (c *Conn) ReadPacket(p *pk.Packet) error {
 	return p.UnPack(c.Reader, c.threshold)

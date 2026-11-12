@@ -96,3 +96,28 @@ func TestCipherReaderReadByteMatchesRead(t *testing.T) {
 		}
 	}
 }
+
+func TestBuffered(t *testing.T) {
+	var stream bytes.Buffer
+	for i := range 3 {
+		p := pk.Packet{ID: int32(i), Data: []byte("abc")}
+		if err := p.Pack(&stream, -1); err != nil {
+			t.Fatal(err)
+		}
+	}
+	total := stream.Len()
+	c := WrapConn(&streamConn{r: bytes.NewReader(stream.Bytes())})
+	if c.Buffered() != 0 {
+		t.Fatalf("Buffered before any read = %d", c.Buffered())
+	}
+	var p pk.Packet
+	if err := c.ReadPacket(&p); err != nil {
+		t.Fatal(err)
+	}
+	if got, want := c.Buffered(), total*2/3; got != want {
+		t.Fatalf("Buffered after one packet = %d, want %d", got, want)
+	}
+	if (&Conn{}).Buffered() != 0 {
+		t.Fatal("Buffered on an unwrapped Conn should be 0")
+	}
+}
