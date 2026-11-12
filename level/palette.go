@@ -93,6 +93,18 @@ func NewBiomesPaletteContainerWithData(length int, data []uint64, pat []BiomesSt
 	}
 }
 
+// SingleValue reports the value every entry holds when the container uses a
+// single-value palette (a section that is all air, all stone, one biome...).
+// Such containers carry no per-entry data, so callers can share one instance
+// across many sections as long as they never call Set on it.
+func (p *PaletteContainer[T]) SingleValue() (T, bool) {
+	if sv, ok := p.palette.(*singleValuePalette[T]); ok {
+		return sv.v, true
+	}
+	var zero T
+	return zero, false
+}
+
 func (p *PaletteContainer[T]) Get(i int) T {
 	return p.palette.value(p.data.Get(i))
 }

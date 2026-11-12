@@ -100,3 +100,17 @@ func TestHashPaletteBuildsIndexOnFirstWrite(t *testing.T) {
 		t.Fatalf("119 appears %d times in the palette, want 1", seen)
 	}
 }
+
+func TestSingleValue(t *testing.T) {
+	c := NewStatesPaletteContainer(4096, 7)
+	if v, ok := c.SingleValue(); !ok || v != 7 {
+		t.Fatalf("SingleValue = %d, %v; want 7, true", v, ok)
+	}
+	c.Set(0, 8)
+	if _, ok := c.SingleValue(); ok {
+		t.Fatal("SingleValue reported true after a second value was set")
+	}
+	if v, ok := NewBiomesPaletteContainer(64, 3).SingleValue(); !ok || v != 3 {
+		t.Fatalf("biomes SingleValue = %d, %v; want 3, true", v, ok)
+	}
+}
