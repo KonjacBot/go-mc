@@ -69,3 +69,48 @@ func BenchmarkPaletteContainer(b *testing.B) {
 		}
 	})
 }
+
+func TestHashPaletteBuildsIndexOnFirstWrite(t *testing.T) {
+	values := make([]BlocksState, 20) // 20 entries -> 5 bits -> hash palette
+	for i := range values {
+		values[i] = BlocksState(100 + i)
+	}
+	data := make([]uint64, calcBitStorageSize(5, 4096))
+	c := NewStatesPaletteContainerWithData(4096, data, values)
+	if hp, ok := c.palette.(*hashPalette[BlocksState]); !ok || hp.ids != nil {
+		t.Fatalf("palette = %T with ids built eagerly", c.palette)
+	}
+	if got := c.Get(0); got != 100 {
+		t.Fatalf("Get(0) = %d, want 100", got)
+	}
+	c.Set(1, 119) // existing value: must reuse index 19
+	c.Set(2, 500) // new value: appended
+	if c.Get(1) != 119 || c.Get(2) != 500 || c.Get(3) != 100 {
+		t.Fatalf("after Set: %d %d %d", c.Get(1), c.Get(2), c.Get(3))
+	}
+	// Adding 500 outgrows the decoded palette, so the container is rebuilt
+	// from the values in use; 119 must still appear only once.
+	seen := 0
+	for _, v := range c.palette.export() {
+		if v == 119 {
+			seen++
+		}
+	}
+	if seen != 1 {
+		t.Fatalf("119 appears %d times in the palette, want 1", seen)
+	}
+}
+
+func TestSingleValue(t *testing.T) {
+	c := NewStatesPaletteContainer(4096, 7)
+	if v, ok := c.SingleValue(); !ok || v != 7 {
+		t.Fatalf("SingleValue = %d, %v; want 7, true", v, ok)
+	}
+	c.Set(0, 8)
+	if _, ok := c.SingleValue(); ok {
+		t.Fatal("SingleValue reported true after a second value was set")
+	}
+	if v, ok := NewBiomesPaletteContainer(64, 3).SingleValue(); !ok || v != 3 {
+		t.Fatalf("biomes SingleValue = %d, %v; want 3, true", v, ok)
+	}
+}

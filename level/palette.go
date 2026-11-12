@@ -47,12 +47,7 @@ func NewStatesPaletteContainerWithData(length int, data []uint64, pat []BlocksSt
 			bits:   n,
 		}
 	case 5, 6, 7, 8:
-		ids := make(map[BlocksState]int)
-		for i, v := range pat {
-			ids[v] = i
-		}
 		p = &hashPalette[BlocksState]{
-			ids:    ids,
 			values: pat,
 			bits:   n,
 		}
@@ -96,6 +91,18 @@ func NewBiomesPaletteContainerWithData(length int, data []uint64, pat []BiomesSt
 		palette: p,
 		data:    NewBitStorage(n, length, data),
 	}
+}
+
+// SingleValue reports the value every entry holds when the container uses a
+// single-value palette (a section that is all air, all stone, one biome...).
+// Such containers carry no per-entry data, so callers can share one instance
+// across many sections as long as they never call Set on it.
+func (p *PaletteContainer[T]) SingleValue() (T, bool) {
+	if sv, ok := p.palette.(*singleValuePalette[T]); ok {
+		return sv.v, true
+	}
+	var zero T
+	return zero, false
 }
 
 func (p *PaletteContainer[T]) Get(i int) T {
@@ -343,12 +350,21 @@ func (l *linearPalette[T]) WriteTo(w io.Writer) (n int64, err error) {
 }
 
 type hashPalette[T State] struct {
+	// ids maps a value back to its index. Only writes need it, and most
+	// containers (e.g. chunks a client receives) are only ever read, so it is
+	// built on the first id call instead of when the palette is decoded.
 	ids    map[T]int
 	values []T
 	bits   int
 }
 
 func (h *hashPalette[T]) id(v T) (int, bool) {
+	if h.ids == nil {
+		h.ids = make(map[T]int, len(h.values))
+		for i, x := range h.values {
+			h.ids[x] = i
+		}
+	}
 	if i, ok := h.ids[v]; ok {
 		return i, true
 	}
@@ -391,8 +407,8 @@ func (h *hashPalette[T]) ReadFrom(r io.Reader) (n int64, err error) {
 			n += nn
 		}
 		h.values[i] = T(value)
-		h.ids[T(value)] = i
 	}
+	h.ids = nil // rebuilt from values on the next id call
 	return
 }
 
