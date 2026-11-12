@@ -73,7 +73,7 @@ func (s *Session) verifyHash(msg *Message) bool {
 	// Prev
 	_, _ = h.Write(msg.Prev.Sender[:])
 	_, _ = h.Write(msg.Prev.Session[:])
-	_ = binary.Write(h, binary.BigEndian, msg.Prev.Index)
+	_ = binary.Write(h, binary.BigEndian, int32(msg.Prev.Index))
 	// Body
 	_ = binary.Write(h, binary.BigEndian, msg.Salt)
 	_ = binary.Write(h, binary.BigEndian, msg.Timestamp.Unix())
