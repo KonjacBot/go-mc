@@ -82,6 +82,10 @@ func (a Ary[LEN]) ReadFrom(r io.Reader) (n int64, err error) {
 			maxElements,
 		)
 	}
+	// Every protocol element encodes to at least one byte.
+	if err := checkLength(r, "array", length, 1, maxElements); err != nil {
+		return n, err
+	}
 	if array.Cap() < int(length) {
 		array.Set(reflect.MakeSlice(array.Type(), int(length), int(length)))
 	} else {
@@ -305,6 +309,10 @@ func (i *IDSet) ReadFrom(r io.Reader) (n int64, err error) {
 		n2, err := i.TagName.ReadFrom(r)
 		return n1 + n2, err
 	}
+	// Each ID is a VarInt, so at least one byte on the wire.
+	if err := checkLength(r, "id set", int64(v)-1, 1, MaxDataLength/4); err != nil {
+		return n1, err
+	}
 
 	i.IDs = make([]int32, int(v-1))
 	var d VarInt
@@ -405,4 +413,36 @@ func (r byteReaderWrapper) ReadByte() (byte, error) {
 	var buf [1]byte
 	_, err := io.ReadFull(r.Reader, buf[:])
 	return buf[0], err
+}
+
+// remainingLen reports how many bytes r can still deliver, when r can tell:
+// *bytes.Reader, *bytes.Buffer and *strings.Reader (via Len) and
+// *io.LimitedReader (an upper bound). Packet fields are normally decoded from
+// a *bytes.Reader over the packet payload, so this is usually known.
+func remainingLen(r io.Reader) (int64, bool) {
+	switch r := r.(type) {
+	case interface{ Len() int }:
+		return int64(r.Len()), true
+	case *io.LimitedReader:
+		return r.N, true
+	}
+	return 0, false
+}
+
+// checkLength validates a decoded length prefix before anything is allocated
+// for it. It rejects lengths that are negative, above limit, or that need more
+// bytes than r has left, given each element takes at least minElemSize bytes on
+// the wire. Without the last check a 5-byte prefix could make the decoder
+// allocate up to the limit for a packet that cannot possibly hold the data.
+func checkLength(r io.Reader, what string, length, minElemSize, limit int64) error {
+	if length < 0 {
+		return fmt.Errorf("%s length %d is negative", what, length)
+	}
+	if length > limit {
+		return fmt.Errorf("%s length %d exceeds the protocol limit %d", what, length, limit)
+	}
+	if rem, ok := remainingLen(r); ok && length*minElemSize > rem {
+		return fmt.Errorf("%s length %d needs more than the %d bytes left", what, length, rem)
+	}
+	return nil
 }

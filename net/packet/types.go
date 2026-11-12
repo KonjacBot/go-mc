@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"math"
+	"unsafe"
 
 	"github.com/google/uuid"
 
@@ -126,6 +127,13 @@ func (s *String) ReadFrom(r io.Reader) (n int64, err error) {
 		return nn, err
 	}
 	n += nn
+	if err := checkLength(r, "string", int64(l), 1, MaxDataLength); err != nil {
+		return n, err
+	}
+	if l == 0 {
+		*s = ""
+		return n, nil
+	}
 
 	bs := make([]byte, l)
 	if _, err := io.ReadFull(r, bs); err != nil {
@@ -133,7 +141,9 @@ func (s *String) ReadFrom(r io.Reader) (n int64, err error) {
 	}
 	n += int64(l)
 
-	*s = String(bs)
+	// bs is freshly allocated and never written again, so it can back the
+	// string directly instead of being copied a second time.
+	*s = String(unsafe.String(&bs[0], len(bs)))
 	return n, nil
 }
 
@@ -567,6 +577,9 @@ func (b *ByteArray) ReadFrom(r io.Reader) (n int64, err error) {
 	if Len < 0 {
 		return n1, errors.New("byte array length less than zero")
 	}
+	if err := checkLength(r, "byte array", int64(Len), 1, MaxDataLength); err != nil {
+		return n1, err
+	}
 	if cap(*b) < int(Len) {
 		*b = make(ByteArray, Len)
 	} else {
@@ -620,6 +633,9 @@ func (b *BitSet) ReadFrom(r io.Reader) (n int64, err error) {
 	if Len < 0 || Len > MaxDataLength/8 {
 		return n, fmt.Errorf("bit set length %d is outside the protocol limit", Len)
 	}
+	if err := checkLength(r, "bit set", int64(Len), 8, MaxDataLength/8); err != nil {
+		return n, err
+	}
 	if int(Len) > cap(*b) {
 		*b = make([]int64, Len)
 	} else {
@@ -666,7 +682,8 @@ func (f FixedBitSet) WriteTo(w io.Writer) (n int64, err error) {
 }
 
 func (f FixedBitSet) ReadFrom(r io.Reader) (n int64, err error) {
-	n2, err := r.Read(f)
+	// A single Read may legally return fewer bytes than asked for.
+	n2, err := io.ReadFull(r, f)
 	return int64(n2), err
 }
 
