@@ -122,15 +122,15 @@ func (p *Packet) packWithoutCompression(w io.Writer) error {
 		return err
 	}
 
-	_, err := w.Write(lenBuf[:lenN])
-	if err != nil {
-		return err
-	}
-	_, err = w.Write(idBuf[:idN])
-	if err != nil {
-		return err
-	}
-	_, err = w.Write(p.Data)
+	// One Write per packet: on an encrypted connection every Write is a
+	// separate syscall, so writing the three parts separately tripled them.
+	buff := bufPool.Get().(*bytes.Buffer)
+	defer bufPool.Put(buff)
+	buff.Reset()
+	buff.Write(lenBuf[:lenN])
+	buff.Write(idBuf[:idN])
+	buff.Write(p.Data)
+	_, err := w.Write(buff.Bytes())
 	return err
 }
 
@@ -218,6 +218,46 @@ func (p *Packet) unpackWithoutCompression(r io.Reader) error {
 	return nil
 }
 
+// inflater holds the per-frame state of compressed decoding so it can be
+// reused: the raw frame buffer, a reader over it and a zlib reader. Creating a
+// zlib reader allocates its ~40 KB window, which used to dominate the cost of
+// reading a compressed packet.
+type inflater struct {
+	frame []byte
+	br    bytes.Reader
+	zr    io.ReadCloser // always also a zlib.Resetter
+}
+
+// maxPooledFrame caps the frame buffer kept in the pool, so one huge packet
+// does not pin megabytes of memory for the life of the process.
+const maxPooledFrame = 256 << 10
+
+var inflaterPool = sync.Pool{New: func() any { return new(inflater) }}
+
+// zlibReader returns a zlib reader positioned at the start of inf.br.
+func (inf *inflater) zlibReader() (io.Reader, error) {
+	if inf.zr == nil {
+		zr, err := zlib.NewReader(&inf.br)
+		if err != nil {
+			return nil, err
+		}
+		inf.zr = zr
+		return zr, nil
+	}
+	if err := inf.zr.(zlib.Resetter).Reset(&inf.br, nil); err != nil {
+		return nil, err
+	}
+	return inf.zr, nil
+}
+
+func (inf *inflater) release() {
+	if cap(inf.frame) > maxPooledFrame {
+		inf.frame = nil
+	}
+	inf.br.Reset(nil)
+	inflaterPool.Put(inf)
+}
+
 func (p *Packet) unpackWithCompression(r io.Reader, threshold int) error {
 	var packetLength VarInt
 	_, err := packetLength.ReadFrom(r)
@@ -228,53 +268,61 @@ func (p *Packet) unpackWithCompression(r io.Reader, threshold int) error {
 		return fmt.Errorf("compressed packet error: invalid packet length %d", packetLength)
 	}
 
-	lr := &io.LimitedReader{R: r, N: int64(packetLength)}
+	// Read the whole frame first. This always consumes exactly packetLength
+	// bytes from r, including the zlib checksum the decompressor may not ask
+	// for, so the next frame starts where it should. It also lets the
+	// decompressor read from memory through io.ByteReader, which avoids the
+	// bufio.Reader that flate would otherwise allocate per packet.
+	inf := inflaterPool.Get().(*inflater)
+	defer inf.release()
+	if cap(inf.frame) < int(packetLength) {
+		inf.frame = make([]byte, packetLength)
+	} else {
+		inf.frame = inf.frame[:packetLength]
+	}
+	if _, err := io.ReadFull(r, inf.frame); err != nil {
+		return err
+	}
+	inf.br.Reset(inf.frame)
 
 	var dataLength VarInt
-	n2, err := dataLength.ReadFrom(lr)
-	if err != nil {
+	if _, err := dataLength.ReadFrom(&inf.br); err != nil {
 		return err
 	}
 
-	var payloadReader io.Reader = lr
 	var packetID VarInt
-	var payloadLen int
-
-	if dataLength != 0 {
-		if int(dataLength) < threshold {
-			return fmt.Errorf("compressed packet error: size of %d is below threshold of %d", dataLength, threshold)
-		}
-		if dataLength > MaxDataLength {
-			return fmt.Errorf("compressed packet error: size of %d is larger than protocol maximum of %d", dataLength, MaxDataLength)
-		}
-
-		zr, err := zlib.NewReader(lr)
-		if err != nil {
+	if dataLength == 0 {
+		// Below the threshold: the rest of the frame is the raw packet.
+		if _, err := packetID.ReadFrom(&inf.br); err != nil {
 			return err
 		}
-		defer zr.Close()
-
-		payloadReader = zr
-
-		n3, err := packetID.ReadFrom(payloadReader)
-		if err != nil {
-			return err
-		}
-
-		payloadLen = int(dataLength) - int(n3)
-		if payloadLen < 0 || payloadLen > MaxDataLength {
+		payloadLen := inf.br.Len()
+		if payloadLen > MaxDataLength {
 			return fmt.Errorf("compressed packet error: invalid payload length %d", payloadLen)
 		}
-	} else {
-		n3, err := packetID.ReadFrom(payloadReader)
-		if err != nil {
-			return err
-		}
+		p.ID = int32(packetID)
+		p.Data = append(p.Data[:0], inf.frame[len(inf.frame)-payloadLen:]...)
+		return nil
+	}
 
-		payloadLen = int(packetLength) - int(n2) - int(n3)
-		if payloadLen < 0 || payloadLen > MaxDataLength {
-			return fmt.Errorf("compressed packet error: invalid payload length %d", payloadLen)
-		}
+	if int(dataLength) < threshold {
+		return fmt.Errorf("compressed packet error: size of %d is below threshold of %d", dataLength, threshold)
+	}
+	if dataLength > MaxDataLength {
+		return fmt.Errorf("compressed packet error: size of %d is larger than protocol maximum of %d", dataLength, MaxDataLength)
+	}
+
+	zr, err := inf.zlibReader()
+	if err != nil {
+		return err
+	}
+	n3, err := packetID.ReadFrom(zr)
+	if err != nil {
+		return err
+	}
+	payloadLen := int(dataLength) - int(n3)
+	if payloadLen < 0 || payloadLen > MaxDataLength {
+		return fmt.Errorf("compressed packet error: invalid payload length %d", payloadLen)
 	}
 
 	if cap(p.Data) < payloadLen {
@@ -282,16 +330,7 @@ func (p *Packet) unpackWithCompression(r io.Reader, threshold int) error {
 	} else {
 		p.Data = p.Data[:payloadLen]
 	}
-
 	p.ID = int32(packetID)
-	_, err = io.ReadFull(payloadReader, p.Data)
-	if err != nil {
-		return err
-	}
-
-	if lr.N != 0 && dataLength == 0 {
-		return fmt.Errorf("compressed packet error: %d unread bytes left in frame", lr.N)
-	}
-
-	return nil
+	_, err = io.ReadFull(zr, p.Data)
+	return err
 }

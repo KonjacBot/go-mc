@@ -1,0 +1,48 @@
+goos: linux
+goarch: amd64
+pkg: github.com/KonjacBot/go-mc/net/packet
+cpu: Intel(R) Xeon(R) Processor @ 2.30GHz
+BenchmarkUnpack/uncompressed/1KB-4         	12153146	        27.08 ns/op	37808.40 MB/s	       0 B/op	       0 allocs/op
+BenchmarkUnpack/uncompressed/1KB-4         	12770220	        31.73 ns/op	32270.99 MB/s	       0 B/op	       0 allocs/op
+BenchmarkUnpack/uncompressed/1KB-4         	12610693	        32.04 ns/op	31961.69 MB/s	       0 B/op	       0 allocs/op
+BenchmarkUnpack/uncompressed/1KB-4         	12551186	        28.85 ns/op	35497.48 MB/s	       0 B/op	       0 allocs/op
+BenchmarkUnpack/uncompressed/1KB-4         	12566830	        30.26 ns/op	33834.54 MB/s	       0 B/op	       0 allocs/op
+BenchmarkUnpack/uncompressed/1KB-4         	12895634	        28.04 ns/op	36525.48 MB/s	       0 B/op	       0 allocs/op
+BenchmarkUnpack/below-threshold/100B-4     	 2709650	       137.1 ns/op	 729.38 MB/s	      58 B/op	       5 allocs/op
+BenchmarkUnpack/below-threshold/100B-4     	 2372458	       129.6 ns/op	 771.88 MB/s	      58 B/op	       5 allocs/op
+BenchmarkUnpack/below-threshold/100B-4     	 2645506	       126.2 ns/op	 792.70 MB/s	      58 B/op	       5 allocs/op
+BenchmarkUnpack/below-threshold/100B-4     	 2218160	       137.3 ns/op	 728.14 MB/s	      58 B/op	       5 allocs/op
+BenchmarkUnpack/below-threshold/100B-4     	 2857856	       121.3 ns/op	 824.41 MB/s	      58 B/op	       5 allocs/op
+BenchmarkUnpack/below-threshold/100B-4     	 2850194	       128.4 ns/op	 778.59 MB/s	      58 B/op	       5 allocs/op
+BenchmarkUnpack/compressed/300B-4          	   26166	     12724 ns/op	  23.58 MB/s	   44817 B/op	      14 allocs/op
+BenchmarkUnpack/compressed/300B-4          	   28836	     10647 ns/op	  28.18 MB/s	   44817 B/op	      14 allocs/op
+BenchmarkUnpack/compressed/300B-4          	   30112	     11801 ns/op	  25.42 MB/s	   44817 B/op	      14 allocs/op
+BenchmarkUnpack/compressed/300B-4          	   28003	     11503 ns/op	  26.08 MB/s	   44817 B/op	      14 allocs/op
+BenchmarkUnpack/compressed/300B-4          	   31324	     12539 ns/op	  23.92 MB/s	   44817 B/op	      14 allocs/op
+BenchmarkUnpack/compressed/300B-4          	   27878	     12753 ns/op	  23.52 MB/s	   44817 B/op	      14 allocs/op
+BenchmarkUnpack/compressed/joingame-30KB-4 	    5499	     56513 ns/op	 545.84 MB/s	   46318 B/op	      52 allocs/op
+BenchmarkUnpack/compressed/joingame-30KB-4 	    6668	     54449 ns/op	 566.53 MB/s	   46317 B/op	      52 allocs/op
+BenchmarkUnpack/compressed/joingame-30KB-4 	    5925	     53160 ns/op	 580.27 MB/s	   46318 B/op	      52 allocs/op
+BenchmarkUnpack/compressed/joingame-30KB-4 	    5740	     52660 ns/op	 585.77 MB/s	   46318 B/op	      52 allocs/op
+BenchmarkUnpack/compressed/joingame-30KB-4 	    5923	     51259 ns/op	 601.78 MB/s	   46318 B/op	      52 allocs/op
+BenchmarkUnpack/compressed/joingame-30KB-4 	    6598	     50291 ns/op	 613.37 MB/s	   46317 B/op	      52 allocs/op
+BenchmarkStringReadFrom-4                  	 5753776	        62.64 ns/op	      64 B/op	       2 allocs/op
+BenchmarkStringReadFrom-4                  	 5555571	        61.70 ns/op	      64 B/op	       2 allocs/op
+BenchmarkStringReadFrom-4                  	 5399605	        65.97 ns/op	      64 B/op	       2 allocs/op
+BenchmarkStringReadFrom-4                  	 5702662	        58.22 ns/op	      64 B/op	       2 allocs/op
+BenchmarkStringReadFrom-4                  	 6017336	        59.06 ns/op	      64 B/op	       2 allocs/op
+BenchmarkStringReadFrom-4                  	 6343870	        62.59 ns/op	      64 B/op	       2 allocs/op
+PASS
+ok  	github.com/KonjacBot/go-mc/net/packet	13.511s
+goos: linux
+goarch: amd64
+pkg: github.com/KonjacBot/go-mc/net
+cpu: Intel(R) Xeon(R) Processor @ 2.30GHz
+BenchmarkConnReadPacket-4   	   77203	      4676 ns/op	 571.66 MB/s	         4.083 reads/packet	   11265 B/op	       9 allocs/op
+BenchmarkConnReadPacket-4   	   74992	      4732 ns/op	 564.88 MB/s	         4.083 reads/packet	   11265 B/op	       9 allocs/op
+BenchmarkConnReadPacket-4   	   75526	      4828 ns/op	 553.64 MB/s	         4.083 reads/packet	   11265 B/op	       9 allocs/op
+BenchmarkConnReadPacket-4   	   77614	      4687 ns/op	 570.26 MB/s	         4.083 reads/packet	   11265 B/op	       9 allocs/op
+BenchmarkConnReadPacket-4   	   71888	      5078 ns/op	 526.39 MB/s	         4.083 reads/packet	   11265 B/op	       9 allocs/op
+BenchmarkConnReadPacket-4   	   60994	      4935 ns/op	 541.60 MB/s	         4.083 reads/packet	   11265 B/op	       9 allocs/op
+PASS
+ok  	github.com/KonjacBot/go-mc/net	2.969s

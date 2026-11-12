@@ -2,6 +2,7 @@
 package net
 
 import (
+	"bufio"
 	"context"
 	"crypto/cipher"
 	"errors"
@@ -31,12 +32,10 @@ func ListenMC(addr string) (*Listener, error) {
 // Accept a minecraft Conn
 func (l Listener) Accept() (Conn, error) {
 	conn, err := l.Listener.Accept()
-	return Conn{
-		Socket:    conn,
-		Reader:    conn,
-		Writer:    conn,
-		threshold: -1,
-	}, err
+	if err != nil {
+		return Conn{Socket: conn, Reader: conn, Writer: conn, threshold: -1}, err
+	}
+	return *WrapConn(conn), nil
 }
 
 // Conn is a minecraft Connection
@@ -46,7 +45,15 @@ type Conn struct {
 	io.Writer
 
 	threshold int
+	// buffered is the read buffer between Socket and everything above it,
+	// set by WrapConn. Encryption is layered on top of it, never below, so
+	// bytes already buffered when SetCipher is called are still decrypted.
+	buffered *bufio.Reader
 }
+
+// readBufferSize is the per-connection read buffer. Without it every VarInt
+// byte of a packet header was its own Read on the socket.
+const readBufferSize = 16 << 10
 
 var DefaultDialer = Dialer{}
 
@@ -150,35 +157,6 @@ func (d *Dialer) DialMCContext(ctx context.Context, addr string) (*Conn, error) 
 	return nil, firstErr
 }
 
-// deadline returns the earliest of:
-//   - now+Timeout
-//   - d.Deadline
-//   - the context's deadline
-//
-// Or zero, if none of Timeout, Deadline, or context's deadline is set.
-//
-// Copied from net/dial.go
-func (d *Dialer) deadline(ctx context.Context, now time.Time) (earliest time.Time) {
-	if d.Timeout != 0 { // including negative, for historical reasons
-		earliest = now.Add(d.Timeout)
-	}
-	if d, ok := ctx.Deadline(); ok {
-		earliest = minNonzeroTime(earliest, d)
-	}
-	return minNonzeroTime(earliest, d.Deadline)
-}
-
-// Copied from net/dial.go
-func minNonzeroTime(a, b time.Time) time.Time {
-	if a.IsZero() {
-		return b
-	}
-	if b.IsZero() || a.Before(b) {
-		return a
-	}
-	return b
-}
-
 // partialDeadline returns the deadline to use for a single address,
 // when multiple addresses are pending.
 //
@@ -208,11 +186,13 @@ func partialDeadline(now, deadline time.Time, addrsRemaining int) (time.Time, er
 // WrapConn warp a net.Conn to MC-Conn
 // Helps you modify the connection process (e.g. using DialContext).
 func WrapConn(conn net.Conn) *Conn {
+	buffered := bufio.NewReaderSize(conn, readBufferSize)
 	return &Conn{
 		Socket:    conn,
-		Reader:    conn,
+		Reader:    buffered,
 		Writer:    conn,
 		threshold: -1,
+		buffered:  buffered,
 	}
 }
 
@@ -247,14 +227,51 @@ func (c *Conn) WritePreparedPacket(p pk.PreparedPacket) error {
 // SetCipher load the decode/encode stream to this Conn
 func (c *Conn) SetCipher(ecoStream, decoStream cipher.Stream) {
 	// 加密连接
-	c.Reader = cipher.StreamReader{ // Set receiver for AES
-		S: decoStream,
-		R: c.Socket,
+	var src io.Reader = c.Socket
+	if c.buffered != nil {
+		src = c.buffered
 	}
+	c.Reader = newCipherReader(decoStream, src)
 	c.Writer = cipher.StreamWriter{
 		S: ecoStream,
 		W: c.Socket,
 	}
+}
+
+// cipherReader decrypts src with s. Unlike cipher.StreamReader it implements
+// io.ByteReader, so VarInt decoding reads single bytes from the buffer instead
+// of issuing one-byte Reads.
+type cipherReader struct {
+	s    cipher.Stream
+	src  io.Reader
+	bsrc io.ByteReader // src as a ByteReader, or nil
+	one  [1]byte       // scratch for ReadByte; a field so it does not escape per call
+}
+
+func newCipherReader(s cipher.Stream, src io.Reader) *cipherReader {
+	r := &cipherReader{s: s, src: src}
+	r.bsrc, _ = src.(io.ByteReader)
+	return r
+}
+
+func (r *cipherReader) Read(p []byte) (int, error) {
+	n, err := r.src.Read(p)
+	r.s.XORKeyStream(p[:n], p[:n])
+	return n, err
+}
+
+func (r *cipherReader) ReadByte() (byte, error) {
+	if r.bsrc != nil {
+		b, err := r.bsrc.ReadByte()
+		if err != nil {
+			return 0, err
+		}
+		r.one[0] = b
+	} else if _, err := io.ReadFull(r.src, r.one[:]); err != nil {
+		return 0, err
+	}
+	r.s.XORKeyStream(r.one[:], r.one[:])
+	return r.one[0], nil
 }
 
 // SetThreshold set threshold to Conn.
